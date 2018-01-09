@@ -3,16 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ExtensiveTesting's documentation!
-==================================================
+Bienvenue sur la documentation ExtensiveTesting!
+================================================
  
 .. _about-docs:
 
 .. toctree::
    :maxdepth: 2
-   :caption: About ExtensiveTesting
+   :caption: ExtensiveTesting
 
-   about\authors
+   about/authors
    
 .. _user-docs:
 
@@ -20,7 +20,7 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Utilisateur
 
-   user\getting_started
+   user/getting_started
    
 .. _admin-docs:
 
@@ -28,7 +28,7 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Administration
 
-   admin\install
+   admin/install
 
 .. _feature-docs:
 
@@ -36,7 +36,7 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Fonctionnalités
 
-   features\cache
+   features/cache
    
 .. _dev-docs:
 
@@ -44,4 +44,4 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Développements
 
-   developer\contributing
+   developer/contributing
