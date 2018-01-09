@@ -18,7 +18,7 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guides Utilisateurs
+   :caption: Guide Utilisateur
 
    user/getting_started
    
@@ -34,7 +34,7 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Les Fonctionnalités
+   :caption: Guide Fonctionnalités
 
    features/cache
    
@@ -42,6 +42,6 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide Développeurs
+   :caption: Guide Développeur
 
    developer/contributing
