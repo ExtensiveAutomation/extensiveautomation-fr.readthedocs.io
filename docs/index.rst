@@ -20,7 +20,7 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Utilisateur
 
-   about\getting_started
+   user\getting_started
    
 .. _admin-docs:
 
@@ -28,7 +28,7 @@ Welcome to ExtensiveTesting's documentation!
    :maxdepth: 2
    :caption: Documentation Administration
 
-   about\install
+   admin\install
 
 .. _feature-docs:
 
