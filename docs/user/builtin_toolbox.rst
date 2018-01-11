@@ -1,2 +1,2 @@
-La boite à outils
-=================
+Boite à outils
+==============

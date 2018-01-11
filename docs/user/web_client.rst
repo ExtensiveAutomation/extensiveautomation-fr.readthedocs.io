@@ -1,2 +1,2 @@
-L'interface Web
-===============
+Interface Web
+=============
