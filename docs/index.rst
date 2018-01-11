@@ -14,6 +14,7 @@ Bienvenue sur la documentation ExtensiveTesting!
 
    about/purpose
    about/download
+   about/releasenotes
    about/authors
    about/contact
    

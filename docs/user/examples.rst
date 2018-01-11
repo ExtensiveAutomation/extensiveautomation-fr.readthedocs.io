@@ -1,5 +1,5 @@
-Exemples
-========
+Exemples de tests
+=================
 
 Cas de test multiple 
 --------------------
