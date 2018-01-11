@@ -24,6 +24,11 @@ Bienvenue sur la documentation ExtensiveTesting!
    :caption: Guide Utilisateur
 
    user/getting_started
+   user/examples
+   user/test_snippets
+   user/builtin_client
+   user/builtin_toolbox
+   user/web_client
    
 .. _admin-docs:
 
