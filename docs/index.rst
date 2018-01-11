@@ -12,7 +12,10 @@ Bienvenue sur la documentation ExtensiveTesting!
    :maxdepth: 2
    :caption: A propos de ExtensiveTesting
 
+   about/purpose
+   about/download
    about/authors
+   about/contact
    
 .. _user-docs:
 
