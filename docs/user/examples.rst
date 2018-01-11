@@ -1,8 +1,8 @@
 Exemples de tests
 =================
 
-Cas de test multiple 
---------------------
+Cas de test
+-----------
 
 Variables de test
 ----------------

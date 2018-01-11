@@ -22,11 +22,12 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide Utilisateur
+   :caption: Guide utilisateur
 
    user/getting_started
    user/examples
    user/test_snippets
+   user/variables
    user/builtin_client
    user/builtin_toolbox
    user/web_client
@@ -35,15 +36,19 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide Administrateur
+   :caption: Guide administrateur
 
    admin/install
+   admin/projects
+   admin/users
+   admin/variables
+   admin/troubleshooting
 
 .. _feature-docs:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide Fonctionnalités
+   :caption: Guide des fonctionnalités
 
    features/cache
    
@@ -51,6 +56,6 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Guide Développeur
+   :caption: Guide développeur
 
    developer/contributing
