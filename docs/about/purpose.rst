@@ -9,7 +9,7 @@ Concepts
 L'ojectif de la solution est de fournir un environnement de création de tests automatiques, complet et clé en main.
 L'installation est simplifiée et intégre d'autres produits open source existants.
 
-Le projet a plusieurs objectifs depuis la création:
+Le projet a plusieurs objectifs depuis sa création:
  - Unifier les différents outils de test dans un seul environnement
  - Simplifier l'écriture, l'exécution et l'analyse des tests automatiques
  - Partager les tests automatiques et permettre l'exécution depuis n'importe où
