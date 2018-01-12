@@ -11,13 +11,14 @@ Version précédentes
 
 .. note:: 
 
-Version 17.0.0 disponible le 04/06/2017
-Passage en mode 64bits par défaut pour le client et la boite à outils
-Ajouts de fonctionnalités majeures
-Apports de corrections
+ Version 17.0.0 disponible le 04/06/2017
+ Passage en mode 64bits par défaut pour le client et la boite à outils
+ Ajouts de fonctionnalités majeures
+ Apports de corrections
 
 .. note:: 
-Version 16.1.0 disponible le 30/03/2017
+ 
+ Version 16.1.0 disponible le 30/03/2017
 
 
 Version 16.0.0
