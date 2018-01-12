@@ -6,7 +6,7 @@ Version courante
 
 .. note::
 
- Version 17.1.0 disponible le 22/10/2017
+ **Version 17.1.0 disponible depuis le 22/10/2017**
  
  - Améliorations de l'API REST
  - Ajout de fonctionnalités majeures dans le framework de test
@@ -19,7 +19,7 @@ Versions précédentes
 
 .. note:: 
 
- Version 17.0.0 disponible le 04/06/2017
+ Version 17.0.0 sortie le 04/06/2017
  
  - Passage en mode 64bits par défaut pour le client et la boite à outils
  - Ajout de fonctionnalités majeures dans le framework de test
@@ -29,7 +29,7 @@ Versions précédentes
 
 .. note:: 
  
- Version 16.1.0 disponible le 30/03/2017
+ Version 16.1.0 sortie le 30/03/2017
  
  - Apports de corrections
  - Amélioration de l'interface graphique sur le client
@@ -37,7 +37,7 @@ Versions précédentes
  
 .. note::
 
- Version 16.0.0 disponible le 25/02/2017
+ Version 16.0.0 sortie le 25/02/2017
  
  - Apports de corrections
  - Amélioration de l'api REST
@@ -49,7 +49,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 15.0.3 disponible le 04/11/2016
+ Version 15.0.3 sortie le 04/11/2016
  
  - Apports de corrections
  - Nouveau plugins pour le client
@@ -59,7 +59,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 14.0.0 disponible le 27/08/2016
+ Version 14.0.0 sortie le 27/08/2016
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de test
@@ -73,7 +73,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 13.0.0 disponible le 23/06/2016
+ Version 13.0.0 sortie le 23/06/2016
  
  - Apports de corrections
  - Ajout API REST sur le serveur
@@ -84,7 +84,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 12.1.0 disponible le 29/04/2016
+ Version 12.1.0 sortie le 29/04/2016
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de test
@@ -93,7 +93,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 12.0.0 disponible le 12/02/2016
+ Version 12.0.0 sortie le 12/02/2016
  
  - Apports de corrections
  - Ajout de fonctionnalités au niveau l'API XmlRPC
@@ -102,7 +102,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 11.2.0 disponible le 22/11/2015
+ Version 11.2.0 sortie le 22/11/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de test
@@ -113,7 +113,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 11.1.0 disponible le 18/10/2015
+ Version 11.1.0 sortie le 18/10/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités au niveau l'API XmlRPC
@@ -121,7 +121,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 11.0.0 disponible le 14/09/2015
+ Version 11.0.0 sortie le 14/09/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités dans l'interface web
@@ -131,7 +131,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 10.1.0 disponible le 12/07/2015
+ Version 10.1.0 sortie le 12/07/2015
  
  - Apports de corrections
  - CentOS 4 et 5 ne sont plus supportés officiellement
@@ -140,7 +140,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 10.0.0 disponible le 28/05/2015
+ Version 10.0.0 sortie le 28/05/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités dans l'interface web
@@ -150,7 +150,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 9.1.0 disponible le 22/03/2015
+ Version 9.1.0 sortie le 22/03/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de test
@@ -159,7 +159,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 9.0.0 disponible le 05/01/2015
+ Version 9.0.0 sortie le 05/01/2015
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de test
@@ -169,7 +169,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 8.0.0 disponible le 25/10/2014
+ Version 8.0.0 sortie le 25/10/2014
  
  - Apports de corrections
  - Amélioration de l'interface graphique sur le client
@@ -179,7 +179,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 7.1.0 disponible le 20/09/2014
+ Version 7.1.0 sortie le 20/09/2014
  
  - Apports de corrections
  - Mise à jour documentations
@@ -190,7 +190,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 7.0.0 disponible le 08/08/2014
+ Version 7.0.0 sortie le 08/08/2014
  
  - Apports de corrections
  - Amélioration de l'ordonnanceur
@@ -204,7 +204,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 6.2.0 disponible le 02/06/2014
+ Version 6.2.0 sortie le 02/06/2014
  
  - Apports de corrections
  - Mise à jour des agents
@@ -214,7 +214,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 6.1.0 disponible le 25/04/2014
+ Version 6.1.0 sortie le 25/04/2014
  
  - Apports de corrections
  - Ajout de fonctionnalités dans l'interface web
@@ -223,7 +223,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 6.0.0 disponible le 23/03/2014
+ Version 6.0.0 sortie le 23/03/2014
  
  - Apports de corrections
  - Nouveau mode de paquetage pour les adaptateurs et librairies
@@ -236,14 +236,14 @@ Versions précédentes
  
 .. note:: 
 
- Version 5.2.0 disponible le 12/01/2014
+ Version 5.2.0 sortie le 12/01/2014
  
  - Apports de corrections
  - Ajout de fonctionnalités mineures
  
 .. note:: 
 
- Version 5.1.0 disponible le 08/12/2013
+ Version 5.1.0 sortie le 08/12/2013
  
  - Ajout de fonctionnalités dans l'interface web
  - Apports de corrections
@@ -251,7 +251,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 5.0.0 disponible le 15/09/2013
+ Version 5.0.0 sortie le 15/09/2013
  
  - Apports de corrections
  - Ajout majeurs de fonctionnalités dans le framework de tests
@@ -259,14 +259,14 @@ Versions précédentes
 
 .. note:: 
 
- Version 4.2.0 disponible le 08/04/2013
+ Version 4.2.0 sortie le 08/04/2013
  
  - Apports de corrections
  - Ajout de fonctionnalités dans l'interface web
  
 .. note:: 
 
- Version 4.1.0 disponible le 10/03/2013
+ Version 4.1.0 sortie le 10/03/2013
  
  - Apports de corrections
  - Ajout de fonctionnalités dans l'interface web
@@ -275,7 +275,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 4.0.0 disponible le 30/01/2013
+ Version 4.0.0 sortie le 30/01/2013
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de tests
@@ -285,14 +285,14 @@ Versions précédentes
  
 .. note:: 
 
- Version 3.2.0 disponible le 29/09/2012
+ Version 3.2.0 sortie le 29/09/2012
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de tests
  
 .. note:: 
 
- Version 3.1.0 disponible le 14/07/2012
+ Version 3.1.0 sortie le 14/07/2012
  
  - Apports de corrections
  - Ajout de fonctionnalités dans le framework de tests
@@ -301,7 +301,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 3.0.0 disponible le 09/06/2012
+ Version 3.0.0 sortie le 09/06/2012
  
  - Apports de corrections
  - Ajout de fonctions dans l'API XmlRPC 
@@ -310,7 +310,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 2.2.0 disponible le 28/03/2012
+ Version 2.2.0 sortie le 28/03/2012
  
  - Ajout de fonctions majeures dans l'API XmlRPC 
  - Apports de corrections
@@ -318,7 +318,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 2.0.0 disponible le 27/02/2012
+ Version 2.0.0 sortie le 27/02/2012
  
  - Ajout de fonctions dans l'API XmlRPC 
  - Ajout de la génération de la documentation du framework et adaptateurs
@@ -327,7 +327,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 1.2.0 disponible le 14/01/2012
+ Version 1.2.0 sortie le 14/01/2012
  
  - Amélioration de l'ordonnanceur
  - Ajout de fonctions dans l'API XmlRPC 
@@ -337,7 +337,7 @@ Versions précédentes
  
 .. note:: 
 
- Version 1.0.0 disponible le 13/12/2011
+ Version 1.0.0 sortie le 13/12/2011
  
  - 1ière version officielle
  - Support CentOS 5
@@ -345,6 +345,6 @@ Versions précédentes
  
 .. note:: 
 
- Version 0.1.0 disponible le 17/05/2010
+ Version 0.1.0 sortie le 17/05/2010
  
  - 1ière version beta
