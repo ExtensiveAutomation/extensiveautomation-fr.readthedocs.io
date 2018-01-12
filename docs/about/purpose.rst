@@ -1,35 +1,34 @@
 Extensive Testing
 =================
 
-Bienvenue sur le projet ExtensiveTesting.
+Bienvenue sur le projet Extensive Testing.
 
 Concepts
 --------
 
-L'ojectif de la solution est de fournir un environnement de test automatique complet et clé en main.
+L'ojectif de la solution est de fournir un environnement de création de tests automatiques, complet et clé en main.
 L'installation est simplifiée et intégre d'autres produits open source existants.
 
-Le projet a plusieurs objectif depuis la création:
- - Unifié les différents outils de test dans un seul environnement
- - Fournir un tableau de bord
+Le projet a plusieurs objectifs depuis la création:
+ - Unifier les différents outils de test dans un seul environnement
  - Simplifier l'écriture, l'exécution et l'analyse des tests automatiques
  - Partager les tests automatiques et permettre l'exécution depuis n'importe où
  - Fournir un environnement de travail agréable
- 
+ - Fournir un tableau de bord
  
 .. image:: /_static/images/concept.png
 
 Usages
 ------
 
-La solution couvre plusieurs usages et peut être utiliser pour les cas suivants:
-- automatiser les tests dans les environnements d'intégration
-- automatiser les tests de non-régression et fonctionnels
-- automatiser les tests de bout-en-bout
-- automatiser le déploiement de serveurs
-- automatiser le déploiement d'applications
+La solution couvre plusieurs usages et peut être utilisé pour les cas suivants:
+ - automatiser les tests dans les environnements d'intégration
+ - automatiser les tests de non-régression et fonctionnels
+ - automatiser les tests de bout-en-bout
+ - automatiser le déploiement de serveurs
+ - automatiser le déploiement d'applications
 
-.. note:: La solution est développée en python donc l'ensemble de vos scripts déjà existants peut etre intégré ou exécuté par la solution.
+.. note:: La solution est développée en python donc l'ensemble de vos scripts peut etre intégré ou exécuté par la solution.
 
 License
 -------
@@ -47,6 +46,6 @@ Contact
 
 Pour rentrer en contact, plusieurs posibilités:
  - par email d.machard@gmail.com
- - sur twitter https://twitter.com/Extensive_Tests
- - sur le forum google https://groups.google.com/forum/#!forum/extensive-testing-users
- - sur github https://github.com/ExtensiveTesting 
+ - depuis twitter https://twitter.com/Extensive_Tests
+ - depuis le forum google https://groups.google.com/forum/#!forum/extensive-testing-users
+ - depuis github https://github.com/ExtensiveTesting 
