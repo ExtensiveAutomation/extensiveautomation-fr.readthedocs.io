@@ -20,5 +20,5 @@ La boite à outils est disponible sous trois formes:
  
 .. note:: Le client et la boite à outils sont compatibles Windows et Linux, en mode 64bits seulement.
 
- .. warning:: Le client ou la boite à outils en mode installation peuvent nécessiter des droits d'administrations
+.. warning:: Le client ou la boite à outils en mode installation peuvent nécessiter des droits d'administration
  

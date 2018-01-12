@@ -1,8 +1,8 @@
 Notes de version
 ================
 
-Version 17.1.0
---------------
+Version courante
+---------------
 
 .. warning:: 
 
