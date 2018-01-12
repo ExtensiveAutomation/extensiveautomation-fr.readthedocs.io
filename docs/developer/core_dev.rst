@@ -1,11 +1,14 @@
-Développement Coeur
+Contributions
 ===================
 
+Développement solution
+----------------------
+
 Client
-------
+~~~~~~
 
 Boite à outils
---------------
+~~~~~~~~~~~~~~
 
 Serveur
--------
+~~~~~~

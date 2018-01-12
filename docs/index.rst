@@ -64,8 +64,5 @@ Bienvenue sur la documentation ExtensiveTesting!
 
    developer/architecture
    developer/specifications
-   developer/core_dev
-   developer/plugins_dev
-   developer/api_common
-   developer/api_tester
-   developer/api_admin
+   developer/contributions
+   developer/api
