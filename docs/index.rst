@@ -10,7 +10,7 @@ Bienvenue sur la documentation ExtensiveTesting!
 
 .. toctree::
    :maxdepth: 2
-   :caption: A propos de ExtensiveTesting
+   :caption: A propos de
 
    about/purpose
    about/download
