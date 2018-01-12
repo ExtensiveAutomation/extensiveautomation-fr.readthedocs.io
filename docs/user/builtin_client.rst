@@ -4,8 +4,8 @@ Client lourd
 L'espace de travail
 -------------------
 
-les tests distants
-~~~~~~~~~~~~~~~~~~
+Tests distants
+~~~~~~~~~~~~~~
 
 Ecriture des tests
 ~~~~~~~~~~~~~~~~~~

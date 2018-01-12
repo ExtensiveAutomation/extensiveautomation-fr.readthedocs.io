@@ -25,12 +25,12 @@ Bienvenue sur la documentation ExtensiveTesting!
    :caption: Guide utilisateur
 
    user/getting_started
-   user/examples
-   user/test_snippets
-   user/variables
    user/builtin_client
    user/builtin_toolbox
    user/web_client
+   user/examples
+   user/test_snippets
+   user/variables
    
 .. _admin-docs:
 
@@ -50,12 +50,22 @@ Bienvenue sur la documentation ExtensiveTesting!
    :maxdepth: 2
    :caption: Guide des fonctionnalités
 
-   features/cache
-   
+   features/testdefinition
+   features/testlibrary
+   features/testreporting
+   features/testextensions
+   features/taskmanager
+
 .. _dev-docs:
 
 .. toctree::
    :maxdepth: 2
    :caption: Guide développeur
 
-   developer/contributing
+   developer/architecture
+   developer/specifications
+   developer/core_dev
+   developer/plugins_dev
+   developer/api_common
+   developer/api_tester
+   developer/api_admin

@@ -1,5 +1,11 @@
 Variables réutilisables
 =======================
 
-Description environnement de tests
-----------------------------------
+Ajout d'une variable
+-----------------
+
+Suppression d'une variable
+---------------------------
+
+Préparation jeu de données
+--------------------------
