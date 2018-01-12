@@ -28,7 +28,7 @@ La solution couvre plusieurs usages et peut être utilisé pour les cas suivants
  - automatiser le déploiement de serveurs
  - automatiser le déploiement d'applications
 
-.. note:: La solution est développée en python donc l'ensemble de vos scripts peut etre intégré ou exécuté par la solution.
+.. note:: ExtensiveTesting est développée en python donc l'ensemble de vos scripts sont intégrables ou exécutables par la solution.
 
 License
 -------
