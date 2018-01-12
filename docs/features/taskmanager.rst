@@ -1,5 +1,5 @@
-Ordonnanceur
-============
+Ordonnanceur de tâches
+======================
 
 Programmation des exécutions
 ----------------------------

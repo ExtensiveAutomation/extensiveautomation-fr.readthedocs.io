@@ -1,5 +1,5 @@
-Extensions
-==========
+Extensions pour les tests
+=========================
 
 Adaptateurs
 -----------

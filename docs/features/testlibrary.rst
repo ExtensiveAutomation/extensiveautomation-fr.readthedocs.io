@@ -1,5 +1,5 @@
-Moteur de test
-==============
+Framework de test
+================
 
 Cas de test
 -----------
@@ -37,6 +37,3 @@ Entrants/Sortants
 
 Agents
 ~~~~~
-
-Suivi des évènements
---------------------
