@@ -1,4 +1,4 @@
-Traçabilité d'une exécution
+Gestion de la traçabilité
 ==========================
 
 Exécution évènementielle
@@ -7,5 +7,5 @@ Exécution évènementielle
 Génération des rapports
 -----------------------
 
-Les logs générés par un test
+Accès aux logs complémentaires
 ---------------------------

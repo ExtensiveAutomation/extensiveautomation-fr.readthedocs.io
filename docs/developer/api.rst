@@ -1,11 +1,11 @@
 API
 ===
 
-Fonctions accessible à tous
----------------------------
+common
+------
 
-Fonctions testeurs
-------------------
+tester
+------
 
-Fonctions administrateurs
------------------------
+admin
+-----

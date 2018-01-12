@@ -24,10 +24,10 @@ Bienvenue sur la documentation ExtensiveTesting!
    :maxdepth: 2
    :caption: Guide utilisateur
 
-   user/getting_started
    user/builtin_client
    user/builtin_toolbox
    user/web_client
+   user/getting_started
    user/examples
    user/test_snippets
    user/variables
