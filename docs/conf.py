@@ -201,7 +201,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'ExtensiveTesting.tex', u'Read the ExtensiveTesting Documentation',
+  ('index', 'ExtensiveTesting.tex', u'ExtensiveTesting Documentation',
    u'ExtensiveTesting', 'manual'),
 ]
 
@@ -231,7 +231,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'extensivetesting', u'Read the ExtensiveTesting Documentation',
+    ('index', 'extensivetesting', u'ExtensiveTesting Documentation',
      [u'ExtensiveTesting'], 1)
 ]
 
@@ -245,7 +245,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'ExtensiveTesting', u'Read the ExtensiveTesting Documentation',
+  ('index', 'ExtensiveTesting', u'ExtensiveTesting Documentation',
    u'Read the Docs', 'ExtensiveTesting', 'One line description of project.',
    'Miscellaneous'),
 ]

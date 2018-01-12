@@ -18,4 +18,4 @@ La boite à outils est disponible sous trois formes:
  - version en mode installation
  - version non compilé en mode ligne de commande
  
-.. note:: Le client et la boite à outils sont compatibles Windows et Linux
+.. note:: Le client et la boite à outils sont compatibles Windows et Linux, en mode 64bits seulement.
