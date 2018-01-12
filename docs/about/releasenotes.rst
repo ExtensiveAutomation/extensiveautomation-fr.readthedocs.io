@@ -12,8 +12,11 @@ Version précédentes
 .. note:: 
 
  Version 17.0.0 disponible le 04/06/2017
+ 
  - Passage en mode 64bits par défaut pour le client et la boite à outils
  - Ajouts de fonctionnalités majeures dans le framework de test
+ - Mise à disposition d'un swagger pour l'API rest
+ - Mise à jour de selenium 3 et 2 dans la boite à outils
  - Apports de corrections
 
 .. note:: 
