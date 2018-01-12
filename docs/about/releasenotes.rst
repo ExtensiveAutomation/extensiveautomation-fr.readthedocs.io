@@ -4,7 +4,7 @@ Notes de version
 Version courante
 ---------------
 
-.. rubric:: 17.1.0
+.. notes::
 
  Version 17.1.0 disponible le 22/10/2017
  
