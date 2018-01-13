@@ -17,7 +17,7 @@ Version courante
 Versions précédentes
 -------------------
 
-.. note:: 
+..
 
  Version 17.0.0 sortie le 04/06/2017
  
