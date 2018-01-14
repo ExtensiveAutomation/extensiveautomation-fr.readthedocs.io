@@ -233,6 +233,8 @@ Le comportement du client peut être modifié à travers les préférences du cl
 
 .. image:: /_static/images/client/preferences.png
 
+.. note:: Les préférences sont stockées dans le fichier settings.ini .
+
 Compléments
 -----------
 
