@@ -168,6 +168,13 @@ Il permet d'afficher l'ensemble des évènements du test et de faciliter l'analy
 
 .. image:: /_static/images/client/analyseur.png
 
+Visualisation des évènements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Vue détaillée
+~~~~~~~~~~~~~
+
+
 L'explorateur
 -------------
 
@@ -178,7 +185,7 @@ L'historique complet des résultats de tests est disponible depuis le client.
 Ils sont triés par date et heure d'exécution. 
 Le client permet d'afficher les rapports mais si de télécharger les logs générés durant l'exécution du test.
 
-.. image:: /_static/images/client/explorateur_historique.png
+.. image:: /_static/images/client/explorer_historique.png
 
 Visualisation des rapports de tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,7 +195,7 @@ Deux types de rapports sont disponibles:
  - rapport avancé
  - rapport simple
  
-.. image:: /_static/images/client/explorateur_rapport.png
+.. image:: /_static/images/client/explorer_rapport.png
 
 .. note:: les rapports sont exportables aux formats html, xml et csv.
 
