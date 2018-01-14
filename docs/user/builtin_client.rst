@@ -158,10 +158,15 @@ dans le framework de test et les différentes extensions.
 
 .. image:: /_static/images/client/workspace_help_online.png
 
-.. note:: Un drag & drop depuis la documentation sur un test insére automatiquement le squelette de la fonction.
+.. note:: Un drag & drop depuis la documentation sur un test; insére automatiquement le squelette de la fonction.
 
 L'analyseur
 -----------
+
+L'analyseur permet de suivre l'exécution en temps ou différé d'un test. 
+Il permet d'afficher l'ensemble des évènements du test et de faciliter l'analyse du bon déroulement ou des erreurs.
+
+.. image:: /_static/images/client/analyseur.png
 
 L'explorateur
 -------------
@@ -169,11 +174,32 @@ L'explorateur
 Visualisation des résultats
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+L'historique complet des résultats de tests est disponible depuis le client.
+Ils sont triés par date et heure d'exécution. 
+Le client permet d'afficher les rapports mais si de télécharger les logs générés durant l'exécution du test.
+
+.. image:: /_static/images/client/explorateur_historique.png
+
 Visualisation des rapports de tests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Les rapports de tests sont visibles directement depuis le client. 
+Deux types de rapports sont disponibles:
+ - rapport avancé
+ - rapport simple
+ 
+.. image:: /_static/images/client/explorateur_rapport.png
+
+.. note:: les rapports sont exportables aux formats html, xml et csv.
 
 Préférences de configuration
 ---------------------------
 
+Le comportement du client peut être modifié à travers les préférences du client.
+
+.. image:: /_static/images/client/preferences.png
+
 Compléments
 -----------
+
+Il est possible d'ajouter des plugins dans le client. Les plugins sont à ajouter dans le répertoire "Plugins".
