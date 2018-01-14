@@ -115,7 +115,7 @@ cas de test en changeant les paramètres d'entrés.
 
 .. image:: /_static/images/client/workspace_test_suite.png
 
-.. note:: le raccourci Ctrl+F permet de rechercher du texte dans vos tests
+.. note:: Le raccourci Ctrl+F permet de rechercher du texte dans vos tests.
 
 Conception assisté
 ~~~~~~~~~~~~~~~~~~
@@ -171,9 +171,36 @@ Il permet d'afficher l'ensemble des évènements du test et de faciliter l'analy
 Visualisation des évènements
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Différents types d'évènements sont possibles (colonne event type):
+
+ - DEBUG
+ - INFO
+ - WARNING
+ - ERROR
+ 
+ - SEND
+ - RECEIVED
+ 
+ - STEP-STARTED
+ - STEP-PASSED
+ - STEP-FAILED
+ 
+ - MATCH-STARTED
+ - MATCH-INFO
+ - MATCH-STOPPED
+ - MATCH-EXCEEDED
+
+.. note:: Filtrer sur l'evènement **ERROR** permet de voir rapidement pourquoi le test est en erreur. 
+
+.. note:: Le filtre **SEND|RECEIVED** permet d'afficher les messages envoyés ou reçus par le système à tester/piloter. 
+
 Vue détaillée
 ~~~~~~~~~~~~~
 
+Selectionner un évènement dans la liste permet d'afficher la vue détaillée.
+La vue détaillée affiche le contenu de l'évènement et plus encore.
+
+.. image:: /_static/images/client/analyseur_details.png
 
 L'explorateur
 -------------
@@ -197,7 +224,7 @@ Deux types de rapports sont disponibles:
  
 .. image:: /_static/images/client/explorer_rapport.png
 
-.. note:: les rapports sont exportables aux formats html, xml et csv.
+.. note:: Les rapports sont exportables aux formats html, xml et csv.
 
 Préférences de configuration
 ---------------------------
