@@ -16,11 +16,11 @@ L'interface se divise en 3 parties principales:
  - l'espace de travail
  - l'analyseur
  - l'explorateur
-  
-.. note:: Le client est disponible sur Windows et Linux, en mode 64bits
 
 .. image:: /_static/images/client/workspace.png
- 
+   
+.. note:: Le client est disponible sur Windows et Linux, en mode 64bits
+
 L'espace de travail
 -------------------
 
@@ -37,10 +37,10 @@ Dépôt des tests
 Le client permet d'accéder aux dépôts de tests local et distant.
 
 Le **dépôt local** donne la possibilité de stocker ses tests sur son poste, donc non partagé.
-Cette fonctionnalité n'est pas activé par défaut car ce n'est pas dans la phylosophie de la solution de l'utiliser.
+Cette fonctionnalité n'est pas activée par défaut car ce n'est pas dans la phylosophie de la solution de l'utiliser.
 Néanmoins le dépôt peut être activé à travers les préférences du client.
 
-.. warning:: Certaines fonctionnalités sont manquantes dans le dépôt local de test, son utilisation n'est pas conseillé!
+.. warning:: Certaines fonctionnalités sont manquantes dans le dépôt local, son utilisation n'est pas conseillé!
 
 Le **dépôt distant** permet de stocker ses tests sur le serveur de tests, donc de les partager avec les autres utilisateurs.
 L'arborescence se compose de fichiers et répertoires. La gestion des tests peut se faire depuis le client.
@@ -51,6 +51,8 @@ Les tests peuvent être organisés par projet si nécessaire.
 .. note:: Le projet "Common" contient les tests réutisables et divers exemples.
 
 .. note:: Les répertoires "Recycle" et "Sandbox" sont des répertoires réservés, les supprimer est impossible.
+
+.. note:: Il est possible d'ouvrir un test en faisant un drag and drop du fichier vers l'espace d'écriture.
 
 Dépôt des extensions
 ~~~~~~~~~~~~~~~~~~~~
@@ -75,6 +77,8 @@ La fenêtre 'Test properties > Test Data > Inputs' contient la liste des varaiab
 L'ajout de variable peut se faire en faisant un clic droit 'Add parameter'.
 
 .. image:: /_static/images/client/workspace_tests_properties_inputs.png
+
+.. note:: Pour insérer un paramètre dans un test, il suffit de faire un drap & drop.
 
 .. note:: 
  Il est possible de choisir la version des adaptateurs et librairies à utiliser pour le test
@@ -123,7 +127,12 @@ Il couvre les différents actions possibles:
  - Test d'application avec capture d'écran (basé sur le projet Sikuli)
  - Test de site internet (basé sur le projet Selenium)
  - Test d'application mobile Android
- 
+
+L'assistant consiste à décrire les actions à effectuer, ensuite il est possible d'exporter 
+les actions vers un test unit ou suite.
+
+.. image:: /_static/images/client/workspace_assistant.png
+
 Conception conditionnel
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,6 +153,12 @@ Le test "global" permet de décrire des campagnes de tests en incluant des tests
 Documentations en ligne
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+La documentation en ligne est générée par le serveur, elle décrit l'ensemble des fonctions disponibles 
+dans le framework de test et les différentes extensions.
+
+.. image:: /_static/images/client/workspace_help_online.png
+
+.. note:: Un drag & drop depuis la documentation sur un test insére automatiquement le squelette de la fonction.
 
 L'analyseur
 -----------
