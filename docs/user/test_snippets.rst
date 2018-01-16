@@ -13,7 +13,12 @@ Mise en cache d'une valeur
 Ce test réutilisable consiste à sauvegarder une valeur dans le cache de données disponible durant l'exécution d'un test.
 
 Les paramètres à configurer:
- - DATAS
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| DATAS           |                |
++-----------------+----------------+
  
 <image à insérer>
 
@@ -26,7 +31,12 @@ Affichage d'une valeur
 Ce test réutilisable permet d'afficher la valeur d'une clé présente dans le cache durant l'exécution du test.
 
 Les paramètres à configurer:
- - MESSAGES
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| MESSAGES        |                |
++-----------------+----------------+
  
 <image à insérer>
 
@@ -45,7 +55,12 @@ Vérification d'une valeur dans le cache
 
 Ce test réutilisable permet de vérifier la valeur dans une clé présente dans le cache.
 Les paramètres à configurer:
- - CHECKING
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| CHECKING        |                |
++-----------------+----------------+
 
 Les opérateurs disponibles:
  - contains
@@ -66,7 +81,12 @@ Suppression d'une entrée dans le cache
 
 Ce test réutilisable permet de supprimer une clé et sa valeur associée dans le cache.
 Les paramètres à configurer:
- - MESSAGES
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| MESSAGES        |                |
++-----------------+----------------+
  
 <image à insérer>
 
@@ -80,7 +100,12 @@ Mise en attente
 
 Ce test réutilisable permet d'attendre xx secondes durant l'exécution du test.
 Les paramètres à configurer:
- - DURATION
+
++-----------------+-------------------+
+|Paramètres       |   Description     |
++-----------------+-------------------+
+| DURATION        | durée en secondes |
++-----------------+-------------------+
 
 Arrêt d'un test
 ~~~~~~~~~~~~~~
@@ -95,14 +120,22 @@ Ce test réutilisable permet de charger dans le cache les données de son enviro
 Par contre les adresses, compte d'accès des serveurs, etc.
 
 Les paramètres à configurer:
- - ENVIRONMENT
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| ENVIRONMENT     |                |
++-----------------+----------------+
 
 L'environnement doit être spécifié en sélectionnant d'une variable réutilisable.
 
 .. note:: 
- l'environnement peut être directement précisé au format JSON.
+ L'environnement peut être directement précisé au format JSON.
  Un exemple: 
- {
+ 
+ .. code-block:: python
+ 
+   {
     "PLATFORM": {
         "CLUSTER": [
             { "NODE": {
@@ -126,7 +159,7 @@ L'environnement doit être spécifié en sélectionnant d'une variable réutilis
         ]
     },
     "DATASET": [    ]
- }
+   }
 
 Générateurs
 -----------
@@ -136,46 +169,84 @@ Hash SHA
 
 Ce test réutilisable permet de générer un hash d'une valeur et de la stocker dans le cache.
 Les paramètres à configurer:
- - DATA_IN
- - CACHE_KEY
- - SHA
+
++-----------------+------------------------------------+
+|Paramètres       |   Description                      |
++-----------------+------------------------------------+
+| DATA_IN         |                                    |
++-----------------+------------------------------------+
+| CACHE_KEY       | Nom de la clé                      |
++-----------------+------------------------------------+
+| SHA             | Type de hash réaliser              |
++-----------------+------------------------------------+
 
 Hash MD5
 ~~~~~~~~~
 
 Ce test réutilisable permet de générer un hash md5 d'une valeur et de la stocker dans le cache.
 Les paramètres à configurer:
- - DATA_IN
- - CACHE_KEY
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| DATA_IN         |                |
++-----------------+----------------+
+| CACHE_KEY       | Nom de la clé  |
++-----------------+----------------+
+
 
 UUID
 ~~~~
 
 Ce test réutilisable permet de générer un id uuid et de la stocker dans le cache.
 Les paramètres à configurer:
- - CACHE_KEY
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| CACHE_KEY       | Nom de la clé  |
++-----------------+----------------+
+
  
 BASE64
 ~~~~~~
 
 Ce test réutilisable permet d'encoder ou décoder une chaine de caractère et de stocker le résultat dans le cache.
 Les paramètres à configurer:
- - CACHE_KEY
- - DECODE
- - ENCODE
- - URLSAFE
- - STR_BASE64
- 
+
++-----------------+-----------------------------------------------------+
+|Paramètres       |   Description                                       |
++-----------------+-----------------------------------------------------+
+| CACHE_KEY       | Nom de la clé                                       |
++-----------------+-----------------------------------------------------+
+| DECODE          |                                                     |
++-----------------+-----------------------------------------------------+
+| ENCODE          |                                                     |
++-----------------+-----------------------------------------------------+
+| URLSAFE         |                                                     |
++-----------------+-----------------------------------------------------+
+| STR_BASE64      | Chaine de caractère à encoder/décoder               |
++-----------------+-----------------------------------------------------+
+
+
 GZIP
 ~~~~
 
 Ce test réutilisable permet de compresser ou décompresser une chaine de caractère et de stocker le résultat dans le cache.
 Les paramètres à configurer:
- - CACHE_KEY
- - COMPRESS
- - UNCOMPRESS
- - STR_GZIP
- 
+
++-----------------+-------------------------------------------------------------+
+|Paramètres       |   Description                                               |
++-----------------+-------------------------------------------------------------+
+| CACHE_KEY       | Nom de la clé                                               |
++-----------------+-------------------------------------------------------------+
+| COMPRESS        |                                                             |
++-----------------+-------------------------------------------------------------+
+| UNCOMPRESS      |                                                             |
++-----------------+-------------------------------------------------------------+
+| STR_GZIP        | Chaine de caractère à compresser/décompresser               |
++-----------------+-------------------------------------------------------------+
+
 Protocoles réseaux
 ------------------
 
@@ -184,7 +255,12 @@ SSH
 
 Ce test réutilisable permet d'envoyer un enchainement de commandes ssh.
 Les paramètres à configurer:
- - SERVERS
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| SERVERS         |                |
++-----------------+----------------+
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
@@ -221,8 +297,13 @@ Contrôle applications
 
 Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
 Les paramètres à configurer:
- - APP_PATH
- 
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| APP_PATH        |                |
++-----------------+----------------+
+
 .. warning: un agent de type `sikulix-server` est obligatoire.
 
 Contrôle navigateur
@@ -230,8 +311,13 @@ Contrôle navigateur
 
 Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
 Les paramètres à configurer:
- - LOADING_URL
- 
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| LOADING_URL     |                |
++-----------------+----------------+
+
 .. warning: un agent de type `selenium-server` est obligatoire.
 
 Vérifications
@@ -242,14 +328,27 @@ Contenu de type XML
 
 Ce test réutilisable permet de vérifier du contenu de type XML avec  l'outil xpath.
 Les paramètres à configurer:
- - XML_STR
- - XML_XPATH
- - XML_NAMESPACES
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| XML_STR         |                |
++-----------------+----------------+
+| XML_XPATH       |                |
++-----------------+----------------+
+| XML_NAMESPACES  |                |
++-----------------+----------------+
 
 Contenu de type JSON
 ~~~~~~~~~~~~~~~~~~~~
 
 Ce test réutilisable permet de vérifier du contenu de type JSON avec l'outil jsonpath
 Les paramètres à configurer:
- - JSON_STR
- - JSON_XPATH
+
++-----------------+----------------+
+|Paramètres       |   Description  |
++-----------------+----------------+
+| JSON_STR        |                |
++-----------------+----------------+
+| JSON_XPATH      |                |
++-----------------+----------------+
