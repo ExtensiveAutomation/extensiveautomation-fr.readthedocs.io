@@ -1,7 +1,7 @@
 Tests réutilisables
 ===================
 
-Les tests réutilisables sont à utiliser en mode test "plan". 
+Ces types de tests sont à utiliser en mode test "plan". 
 L'intérêt premier est de pouvoir réutiliser des morceaux de tests dans le but de créer des scénarios.
 
 Données partagées
@@ -10,7 +10,7 @@ Données partagées
 Mise en cache d'une valeur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ce test réutilisable conciste à sauvegarder une valeur dans le cache de données disponible durant l'exécution d'un texte.
+Ce test réutilisable consiste à sauvegarder une valeur dans le cache de données disponible durant l'exécution d'un test.
 
 Les paramètres à configurer:
  - DATAS
@@ -131,7 +131,7 @@ L'environnement doit être spécifié en sélectionnant d'une variable réutilis
 Générateurs
 -----------
 
-hash SHA
+Hash SHA
 ~~~~~~~~~
 
 Ce test réutilisable permet de générer un hash d'une valeur et de la stocker dans le cache.
@@ -140,7 +140,7 @@ Les paramètres à configurer:
  - CACHE_KEY
  - SHA
 
-hash MD5
+Hash MD5
 ~~~~~~~~~
 
 Ce test réutilisable permet de générer un hash md5 d'une valeur et de la stocker dans le cache.
@@ -204,8 +204,9 @@ Les paramètres à configurer:
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
+
 JSON
-~~~
+~~~~
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du JSON en vérifiant la réponse reçue.
 Les paramètres à configurer:

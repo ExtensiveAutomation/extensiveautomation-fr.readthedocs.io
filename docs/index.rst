@@ -60,6 +60,7 @@ Bienvenue sur la documentation ExtensiveTesting!
    :maxdepth: 2
    :caption: Guide développeur
 
+   developer/requirements
    developer/architecture
    developer/specifications
    developer/contributions
