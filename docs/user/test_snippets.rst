@@ -1,8 +1,11 @@
 Tests réutilisables
 ===================
 
+L'intérêt des tests réutilisables 
+ - factoriser la base de tests
+ - réutiliser les tests
+ - limiter l'écriture de script pour écrire les scénarios
 Ces types de tests sont à utiliser en mode test "plan". 
-L'intérêt premier est de pouvoir réutiliser des morceaux de tests dans le but de créer des scénarios.
 
 Données partagées
 -----------------

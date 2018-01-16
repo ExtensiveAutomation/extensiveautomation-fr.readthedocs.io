@@ -44,7 +44,7 @@ La 2ième fenêtre d'analyse montre l'exécution du test "Scenario_A" et notamme
 Ce premier usage montre comment exécuter un test et un scénario ansi que la surcharge des variables de tests.
 
 
-Conception assisté
+Conception assistée
 ------------------
 
 L'assistant permet de créer des tests sans connaissances en développement. Il peut être utilisé pour:
@@ -59,15 +59,23 @@ Basique
 
 Liste des actions disponibles:
 
- - LOG MESSAGE 		Affiche un message d'information durant l'exécution du test
- - LOG WARNING 		Affiche un message d'attention durant l'exécution du tet
- - SET VALUE 		Sauvegarde une donnée dans le cache
- - RESET CACHE 		Vide complètement le cache
- - USERCODE 		Permet d'ajouter du code personalisé dans le test
- - WAIT DURING 		Attend pendant xx secondes
- - CHECK IF VALUE 	Vérifie si la value contient un texte spécifique
- - ASK SOMETHING 	Demande une valeur à l'utilisateur (mode interaction)
-
++--------------------+-----------------------------------------------------------------+
+| LOG MESSAGE        |  Affiche un message d'information durant l'exécution du test    |
++--------------------+-----------------------------------------------------------------+
+| LOG WARNING        |  Affiche un message d'attention durant l'exécution du tet       |
++--------------------+-----------------------------------------------------------------+
+| SET VALUE          |  Sauvegarde une donnée dans le cache                            |
++--------------------+-----------------------------------------------------------------+
+| RESET CACHE        |   Vide complètement le cache                                    |
++--------------------+-----------------------------------------------------------------+
+| USERCODE           |    Permet d'ajouter du code personalisé dans le test            |
++--------------------+-----------------------------------------------------------------+
+| WAIT DURING        |   Attend pendant xx secondes                                    |
++--------------------+-----------------------------------------------------------------+
+| CHECK IF VALUE     |   Vérifie si la value contient un texte spécifique              |
++--------------------+-----------------------------------------------------------------+
+| ASK SOMETHING      |   Demande une valeur à l'utilisateur (mode interaction)         |
++--------------------+-----------------------------------------------------------------+
 
 Système
 ~~~~~~~
