@@ -2,8 +2,9 @@ Boite à outils
 ==============
 
 La boite à outils permet de démarrer des agents ou des sondes sur des postes dédiés.
-Les agents sont indispensables pour exécuter des tests selenium sur des postes dédiés ou bien pour déporter l'exécution d'un test.
-Les sondes peuvent être utilisées pour récupérer des logs automatiquement durant l'exécution d'un test.
+
+ - Les agents sont indispensables pour exécuter des tests selenium sur des postes dédiés ou bien pour déporter l'exécution d'un test.
+ - Les sondes peuvent être utilisées pour récupérer des logs automatiquement durant l'exécution d'un test.
 
 .. image:: /_static/images/toolbox/toolbox.png
    
