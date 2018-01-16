@@ -5,8 +5,8 @@ Serveur
 ------
 
 +-----------------+------------+
-| Characteristics |   Minimum  |
-+=================+============+
+|Caractéristiques |   Minimum  |
++-----------------+------------+
 | OS              | CentOS 6.5 |
 +-----------------+------------+
 | Python          |    2.6     | 
@@ -25,19 +25,37 @@ Serveur
 Client
 ------
 
-Characteristics 	Minimum
-OS 					Windows XP, 7 and more
-Arch 				x86_64*
-Mem 				8Go
-Disk usage 			~500Mo
++-----------------+---------------------------+
+|Caractéristiques |   Minimum                 |
++-----------------+---------------------------+
+| OS              | Windows 7 and more, Linux |
++-----------------+---------------------------+
+| Arch            |    x86_64                 |
++-----------------+---------------------------+
+| Mémoire         |    8Go                    |
++-----------------+---------------------------+
+| Disque          |    ~1Go                   |
++-----------------+---------------------------+
 
-32-bit architecture no more supported since the version 17.0.0, but the client can always compilated from the source code.
+.. note:
+ L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
+ Cependant il est toujours de compiler les sources sur un environnement 32bits. 
 
 Boite à outils
 ------------
 
-characteristics 	Minimum
-OS 					Windows XP, 7 and more or CentOS 6
-Arch 				x86_64*
-Mem 				8Go
-Disk usage 			~1Go
++-----------------+----------------------------+
+|Caractéristiques |   Minimum                  |
++-----------------+----------------------------+
+| OS              | Windows 7 and more, Linux  |
++-----------------+----------------------------+
+| Arch            |    x86_64                  |
++-----------------+----------------------------+
+| Mémoire         |    8Go                     |
++-----------------+----------------------------+
+| Disque          |    ~1Go                    |
++-----------------+----------------------------+
+
+.. note:
+ L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
+ Cependant il est toujours de compiler les sources sur un environnement 32bits. 
