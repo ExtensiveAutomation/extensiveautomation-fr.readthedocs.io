@@ -27,6 +27,7 @@ et le met à disposition dans le cache.
 Déclaration d'un noeud SAMPLE_NODE:
 
 .. code-block:: python
+
  {
 	"COMMON": {
 		"HOSTNAME": "extensivetesting"
@@ -53,6 +54,7 @@ Déclaration d'un noeud SAMPLE_NODE:
 Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
 
 .. code-block:: python
+
  {
 		 "login":         "admin",
 		 "password":      ""
@@ -61,6 +63,7 @@ Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
 Déclaration de l'environnement SAMPLE_ENVIRONMENT:
 
 .. code-block:: python
+
  {
 	"PLATFORM": {
 		"CLUSTER": [
