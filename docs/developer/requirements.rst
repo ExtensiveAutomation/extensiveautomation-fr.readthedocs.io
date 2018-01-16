@@ -1,4 +1,4 @@
-Prérequis systèmes
+ï»¿PrÃ©requis systÃ¨mes
 =================
 
 Serveur
@@ -7,19 +7,19 @@ Serveur
 +-----------------+------------+
 | Characteristics |   Minimum  |
 +=================+============+
-| OS            |    CentOS 6.5     |
+| OS              | CentOS 6.5 |
 +-----------------+------------+
-| Python        |    2.6     | 
+| Python          |    2.6     | 
 +-----------------+------------+
-| Arch         |    x86_64  |
+| Arch            |    x86_64  |
 +-----------------+------------+
-| Mémoire         |    8Go  |
+| MÃ©moire         |    8Go     |
 +-----------------+------------+
-| CPU         |    4 Core  |
+| CPU             |    4 Core  |
 +-----------------+------------+
-| Disque         |    ~50Go |
+| Disque          |    ~50Go   |
 +-----------------+------------+
-| Réseau         |    1Gbit/s  |
+| RÃ©seau          |    1Gbit/s |
 +-----------------+------------+
 
 Client
@@ -33,7 +33,7 @@ Disk usage 			~500Mo
 
 32-bit architecture no more supported since the version 17.0.0, but the client can always compilated from the source code.
 
-Boite à outils
+Boite Ã  outils
 ------------
 
 characteristics 	Minimum
