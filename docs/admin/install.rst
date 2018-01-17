@@ -13,14 +13,15 @@ Ntpd properly configured and running
 
 Upload the tar.gz package on your target and uncompressed-it. Before to untar, please to check if you have enough disk space. Go inside the new folder ./ExtensiveTesting.X.X.X
 
-.. code-block::
+.. code-block:: bash
 
 	# tar xf ExtensiveTesting-X.X.X.tar.gz
 	# cd ExtensiveTesting-X.X.X
+	
 
 Go inside the folder and execute the script ./install.sh:
 
-.. code-block::
+.. code-block:: bash
 
 	./install.sh
 	Are you sure to install the product? (yes or no) yes
@@ -58,16 +59,18 @@ Go inside the folder and execute the script ./install.sh:
 	- Installation terminated!
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	=========================================================================
+	
 
 Check the status of server, perform until to have the “running” message.
 
-.. code-block::
+.. code-block:: bash
 
 	# xtctl status
 	Extensive Testing is starting...
 	...
 	# xtctl status
 	Extensive Testing is running
+	
 
 This step is optionnal, follow this page if you want to add the additionals packages.
 
@@ -89,14 +92,15 @@ MYSQL_PASSWORD
 
 Upload the tar.gz package on your target and uncompressed-it. Go inside the new folder ExtensiveTesting.X.X.X
 
-.. code-block::
+.. code-block:: bash
 
 	# tar xf ExtensiveTesting-X.X.X.tar.gz
 	# cd ExtensiveTesting-X.X.X
+	
 
 Execute the script ./custom.sh and respond to each questions
 
-.. code-block::
+.. code-block:: bash
 
 	./custom.sh
 	======================================================
@@ -159,25 +163,23 @@ Execute the script ./custom.sh and respond to each questions
 	- Installation terminated!
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	==================================================================
+	
 
 Check the status of server, perform until to have the “running” message.
 
-.. code-block::
+.. code-block:: bash
 
 	# xtctl status
 	Extensive Testing is starting...
 	...
 	# xtctl status
 	Extensive Testing is running
+	
 
 You can access to the web interface of the server with https://<EXTERNAL_FQDN>/ Several default accounts exists after the installation without password:
 	Admin
 	Tester
-	Developer
-	Leader
-	Automaton
 
-		
 Installation manuelle
 ~~~~~~~~~~~~~~~~~~~~~
 	
@@ -221,7 +223,7 @@ Go inside the folder used to install the product
 
 Execute the script ./rollback.sh and provies the previous targetted version X.X.X
 
-.. code-block::
+.. code-block:: bash
 
 	# ./rollback.sh X.X.X
 	==================================================
@@ -237,7 +239,7 @@ Execute the script ./rollback.sh and provies the previous targetted version X.X.
 	=========================================================================
 	- Rollback terminated!
 	=========================================================================
-
+	
 
 Désintallation
 ~~~~~~~~~~~~~~
@@ -248,7 +250,7 @@ Go inside the folder used to install the product
 
 Execute the script ./uninstall.sh
 
-.. code-block::
+.. code-block:: bash
 
 	# ./uninstall.sh 
 	===================================================
@@ -270,6 +272,7 @@ Execute the script ./uninstall.sh
 	=========================================================================
 	- Uninstallation terminated!
 	=========================================================================
+	
 
 Notes:   If errors occurred during uninstall, you can retry and continue the uninstallation with the option force.
 
@@ -295,11 +298,13 @@ ExtensiveTesting_Client_X.X.X_Setup.exe
 
 No restart needed, just re-deploy the new client as below:
 
-# xtctl deploy
-Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
-Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
-Deploying portable clients... (No client)
-Deploying portable tools... (No client)
+.. code-block:: bash
+	# xtctl deploy
+	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
+	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
+	Deploying portable clients... (No client)
+	Deploying portable tools... (No client)
+	
 
 Deploy a new client version for Linux
 
@@ -312,15 +317,14 @@ ExtensiveTesting_Client_X.X.X_Setup.tar.gz
 
 No restart needed, just re-deploy the new client as below:
 
-# xtctl deploy
-Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
-Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
-Deploying portable clients... (No client)
-Deploying portable tools... (No client)
-
-
+.. code-block:: bash
+	# xtctl deploy
+	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
+	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
+	Deploying portable clients... (No client)
+	Deploying portable tools... (No client)
 	
-	
+
 Client
 ------
 
