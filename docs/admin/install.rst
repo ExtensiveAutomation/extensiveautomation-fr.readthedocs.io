@@ -15,8 +15,8 @@ Upload the tar.gz package on your target and uncompressed-it. Before to untar, p
 
 .. code-block:: bash
 
-	# tar xf ExtensiveTesting-X.X.X.tar.gz
-	# cd ExtensiveTesting-X.X.X
+	tar xf ExtensiveTesting-X.X.X.tar.gz
+	cd ExtensiveTesting-X.X.X
 	
 
 Go inside the folder and execute the script ./install.sh:
@@ -65,10 +65,10 @@ Check the status of server, perform until to have the “running” message.
 
 .. code-block:: bash
 
-	# xtctl status
+	xtctl status
 	Extensive Testing is starting...
 	...
-	# xtctl status
+	xtctl status
 	Extensive Testing is running
 	
 
@@ -94,8 +94,8 @@ Upload the tar.gz package on your target and uncompressed-it. Go inside the new 
 
 .. code-block:: bash
 
-	# tar xf ExtensiveTesting-X.X.X.tar.gz
-	# cd ExtensiveTesting-X.X.X
+	tar xf ExtensiveTesting-X.X.X.tar.gz
+	cd ExtensiveTesting-X.X.X
 	
 
 Execute the script ./custom.sh and respond to each questions
@@ -169,10 +169,10 @@ Check the status of server, perform until to have the “running” message.
 
 .. code-block:: bash
 
-	# xtctl status
+	xtctl status
 	Extensive Testing is starting...
 	...
-	# xtctl status
+	xtctl status
 	Extensive Testing is running
 	
 
@@ -225,7 +225,7 @@ Execute the script ./rollback.sh and provies the previous targetted version X.X.
 
 .. code-block:: bash
 
-	# ./rollback.sh X.X.X
+	./rollback.sh X.X.X
 	==================================================
 	=  - Rollback of the ExtensiveTesting product -  =
 	=                 Denis Machard                  =
@@ -252,7 +252,7 @@ Execute the script ./uninstall.sh
 
 .. code-block:: bash
 
-	# ./uninstall.sh 
+	./uninstall.sh 
 	===================================================
 	=  - Uninstall of the ExtensiveTesting product -  =
 	=                 Denis Machard                   =
@@ -299,7 +299,7 @@ ExtensiveTesting_Client_X.X.X_Setup.exe
 No restart needed, just re-deploy the new client as below:
 
 .. code-block:: bash
-	# xtctl deploy
+	./xtctl deploy
 	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
 	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
 	Deploying portable clients... (No client)
@@ -318,7 +318,7 @@ ExtensiveTesting_Client_X.X.X_Setup.tar.gz
 No restart needed, just re-deploy the new client as below:
 
 .. code-block:: bash
-	# xtctl deploy
+	./xtctl deploy
 	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
 	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
 	Deploying portable clients... (No client)

@@ -95,24 +95,21 @@ Les niveaux suivants sont disponibles:
 
  - info
 
-.. code-block:: python
+	.. code-block:: python
  
-  Trace(self).info(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-  
+		Trace(self).info(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
  - warning
  
-.. code-block:: python
+	.. code-block:: python
 
-  Trace(self).warning(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-  
+		Trace(self).warning(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
  - error
  
-.. code-block:: python
+	.. code-block:: python
  
-  Trace(self).error(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-  
+		Trace(self).error(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
 .. notes: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
 
