@@ -37,7 +37,7 @@ Une étape se définie par:
 
 La définition des étapes du test sont à faire dans la section `description`:
 
-.. code-block: python
+.. code-block:
 
 	self.step1 = self.addStep(
 							expected="Logged in", 
@@ -51,13 +51,13 @@ Le résultat d'une étape est à préciser dans la section `description`
 
 Mettre le résultat à PASS
 
-.. code-block: python
+.. code-block:
 
 	self.step1.setPassed(actual="step executed as expected")
 
 Mettre le résultat à FAILED
 
-.. code-block: python
+.. code-block:
 
 	self.step1.setFailed(actual="error to run the step")
 
@@ -69,14 +69,14 @@ Annulation d'un test
 
 Il est possible de forcer l'exécution d'un cas de test en utilisation la fonction `interrupt` dans la section description de votre test.
 
-.. code-block: python
+.. code-block:
 
 	Test(self).interrupt(err="aborted by tester")
 
 Utiliser la fonction interrupt permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
 Dans ce cas précis, l'argument `aborted` est positioné à True par le framework pour indiquer l'annulation du test.
 
-.. code-block: python
+.. code-block:
 
 	def definition(self):
 		Test(self).interrupt("bad response received")
@@ -93,19 +93,19 @@ Les niveaux suivants sont disponibles:
 
  - info
 
- .. code-block: python
+.. code-block:
  
     Trace(self).info(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
  - warning
  
- .. code-block: python
- 
+.. code-block:
+
 	Trace(self).warning(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
  - error
  
- .. code-block: python
+.. code-block:
  
     Trace(self).error(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
 
@@ -143,13 +143,13 @@ Les logs sont organisés par répertoire:
  
 Exemple pour sauvegarder du texte `hello world` dans un fichier `my_logs` depuis le cas de test
 
- .. code-block: python
+.. code-block:
  
     Private(self).saveFile(destname="my_logs", data="hello world")
 
 Exemple pour ajouter du texte dans un fichier de log déjà existant
 
- .. code-block: python
+.. code-block:
  
     Private(self).appendFile(destname="my_logs", data="hello world2")
 
@@ -167,20 +167,20 @@ Le cache est de type clé/valeur.
 
 Exemple pour sauvegarder une valeur dans le cache
 
- .. code-block: python
+.. code-block:
  
     Cache().set(name="my_data", data="hello")
 
 Lire une valeur depuis le cache
 
- .. code-block: python
+.. code-block:
  
     my_data= Cache().get(name="my_data")
     Trace(self).warning(my_data)
 
 Exemple pour capturer une donnée avec une expression régulière et l'enregistrer dans le cache
 
- .. code-block: python
+.. code-block:
  
 	my_data="March, 25 2017 07:38:58 AM"
 
@@ -196,15 +196,15 @@ Cette fonction permet de faire une pause durant l'exécution d'un test.
 
 Exemple de mise en attente pendant 10 secondes: 
 
- .. code-block: python
+.. code-block:
  
     Time(self).wait(timeout=10)
 
 Exemple de mise en attente tant qu'on est pas le 12 septembre 2016 à 2h: 
 
- .. code-block: python
+.. code-block:
  
-    Time(self).waitUntil(dt='2016-09-12 02:00:00', fmt='%Y-%m-%d %H:%M:%S', delta=0)
+	Time(self).waitUntil(dt='2016-09-12 02:00:00', fmt='%Y-%m-%d %H:%M:%S', delta=0)
 
 Interaction avec le testeur
 ---------------------------
@@ -214,17 +214,17 @@ Cette fonction peut être intéressant pour faire un test en mode question/répo
 
 Exemple demandant le nom de la personne:
 
- .. code-block: python
- 
-    user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
+.. code-block:
+
+	user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 
 .. notes: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
 
 Les variables d'un test
 -----------------------
 
-Entrants
-~~~~~~~~
+Variables entrantes
+~~~~~~~~~~~~~~~~~~
 
 Les paramètres entrants (inputs) sont à utiliser pour ajouter des variables sur un test.
 
@@ -288,7 +288,7 @@ Il existent plusieurs types de paramètres:
 
 Les variables sont accessibles depuis un test avec la fonction `input(...)`
 
-.. code-block: python
+.. code-block:
 
 	input('DEBUG')
 
@@ -329,7 +329,7 @@ La création d'un alias permet de changer le nom d'un paramètre sans changer le
 Variable agents
 ~~~~~~~~~~~~~~
 
-.. code-block: python
+.. code-block:
 
     self.ADP_REST= SutAdapters.REST.Client(
                                             parent=self,
