@@ -37,9 +37,9 @@ Une étape se définie par:
 
 La définition des étapes du test sont à faire dans la section `description`:
 
-.. code-block::
+.. code-block:: python
 
-  self.step1 = self.addStep(
+    self.step1 = self.addStep(
 						expected="Logged in", 
 						description="Login throught the rest api", 
 						summary="Login throught the rest api", 
