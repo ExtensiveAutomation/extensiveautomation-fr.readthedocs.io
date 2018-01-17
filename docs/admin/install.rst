@@ -7,19 +7,16 @@ Serveur
 Installation automatique
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Network already configured on the server
-Yum working fine, you can reach default repositories without problems
-Ntpd properly configured and running
+.. warning::
+  Configuration de base à respecter du serveur avant de lancer l'installation:
+	- l'interface réseau est correcte configurée sur le serveur
+	- l'accès aux dépôts officiel est disponible
 
-Upload the tar.gz package on your target and uncompressed-it. Before to untar, please to check if you have enough disk space. Go inside the new folder ./ExtensiveTesting.X.X.X
+L'installation de la solution peut se faire en utiliser le script `install.sh` présent dans le tar.gz.
+Si les prérequis sont respectés alors l'installation se fera en mode automatique c'est à dire que les paquets manquants 
+seronts récupérés automatiquements.
 
-.. code-block:: bash
-
-	tar xf ExtensiveTesting-X.X.X.tar.gz
-	cd ExtensiveTesting-X.X.X
-	
-
-Go inside the folder and execute the script ./install.sh:
+Exemple d'installation en mode automatique
 
 .. code-block:: bash
 
@@ -59,46 +56,33 @@ Go inside the folder and execute the script ./install.sh:
 	- Installation terminated!
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	=========================================================================
-	
 
-Check the status of server, perform until to have the “running” message.
+Exemple pour vérifier si le serveur fonctionne correctement.
 
 .. code-block:: bash
 
 	xtctl status
-	Extensive Testing is starting...
-	...
-	xtctl status
 	Extensive Testing is running
 	
 
-This step is optionnal, follow this page if you want to add the additionals packages.
+Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
+Il est possible d'utiliser les comptes pas défauts pour se connecter:
+ - utilisateur `admin`
+ - utilisateur `tester`
+ 
+.. notes:: Les comptes par défaut n'ont pas de mot de passe.
 
-Notes:  Don’t forget to change all default passwords!
+.. warning:: Ne pas oublier de changer les mots de passe des comptes par défaut ou de désactiver les comptes.
 
 	
 Installation personnalisée
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This part is only for advanced user! If you use the recommanded system (centOS), the custom installation is not needed.
+.. warning:: Ce mode d'installation est recommandé que pour les utilisateurs avancés.
 
-Prepare the table before to start the custom install
-Key 	Value
-EXTERNAL_IP 	
-EXTERNAL_FQDN 	
-MYSQL_IP 	
-MYSQL_LOGIN 	
-MYSQL_PASSWORD 	
+Le mode personnalisée peut être utilisé changer la destination de l'installation par exemple.
 
-Upload the tar.gz package on your target and uncompressed-it. Go inside the new folder ExtensiveTesting.X.X.X
-
-.. code-block:: bash
-
-	tar xf ExtensiveTesting-X.X.X.tar.gz
-	cd ExtensiveTesting-X.X.X
-	
-
-Execute the script ./custom.sh and respond to each questions
+Exemple d'installation en mode personnalisé
 
 .. code-block:: bash
 
@@ -115,13 +99,13 @@ Execute the script ./custom.sh and respond to each questions
 	* Download automatically all missing packages? [Yes] 
 	* In which directory do you want to install the ExtensiveTesting product? [/opt/xtc/]
 	* What is the directory that contains the init scripts? [/etc/init.d/]
-	* What is the external ip of your server? [XX.XX.XX.XX] <EXTERNAL_IP>
-	* What is the FQDN associated to the external ip of your server? [XX.XX.XX.XX] <EXTERNAL_FQDN>
+	* What is the external ip of your server? [XX.XX.XX.XX] <IP_EXTERNE>
+	* What is the FQDN associated to the external ip of your server? [XX.XX.XX.XX] <FQDN>
 	* What is the database name? [xtcXXX]
 	* What is the table prefix? [xtc]
-	* What is the ip of your mysql/mariadb server? [127.0.0.1] <MYSQL_IP>
-	* What is the login to connect to your mysql/mariadb server? [root] <MYSQL_LOGIN>
-	* What is the password of previous user to connect to your mysql/mariadb server? [] <MYSQL_PASSWORD>
+	* What is the ip of your mysql/mariadb server? [127.0.0.1] <IP_BASE>
+	* What is the login to connect to your mysql/mariadb server? [root] <LOGIN_BASE>
+	* What is the password of previous user to connect to your mysql/mariadb server? [] <MOTDEPASSE_BASE>
 	* What is the sock file of your mysql/mariadb server? [/var/lib/mysql/mysql.sock]
 	* Do you want to configure iptables automatically? [Yes]?
 	* Do you want to configure php automatically? [Yes]?
@@ -164,26 +148,28 @@ Execute the script ./custom.sh and respond to each questions
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	==================================================================
 	
-
-Check the status of server, perform until to have the “running” message.
+Exemple pour vérifier si le serveur fonctionne correctement.
 
 .. code-block:: bash
 
 	xtctl status
-	Extensive Testing is starting...
-	...
-	xtctl status
 	Extensive Testing is running
-	
 
-You can access to the web interface of the server with https://<EXTERNAL_FQDN>/ Several default accounts exists after the installation without password:
-	Admin
-	Tester
+Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
+Il est possible d'utiliser les comptes pas défauts pour se connecter:
+ - utilisateur `admin`
+ - utilisateur `tester`
+ 
+.. notes:: Les comptes par défaut n'ont pas de mot de passe.
 
-Installation manuelle
-~~~~~~~~~~~~~~~~~~~~~
-	
-<décrier les packages python à installer>
+.. warning:: Ne pas oublier de changer les mots de passe des comptes par défaut ou de désactiver les comptes.
+
+Installation depuis les sources
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning:: Ce mode d'installation est recommandé que pour les utilisateurs avancés.
+
+<décrire les packages python à installer>
 
 Mise à jour
 ~~~~~~~~~~~
@@ -244,11 +230,7 @@ Execute the script ./rollback.sh and provies the previous targetted version X.X.
 Désintallation
 ~~~~~~~~~~~~~~
 
-Uninstall
-
-Go inside the folder used to install the product
-
-Execute the script ./uninstall.sh
+La désinstallation du produit peut se faire en utilisant le script `./uninstall.sh` présent dans le paquet d'installation.
 
 .. code-block:: bash
 
@@ -273,12 +255,18 @@ Execute the script ./uninstall.sh
 	- Uninstallation terminated!
 	=========================================================================
 	
-
-Notes:   If errors occurred during uninstall, you can retry and continue the uninstallation with the option force.
-
+.. notes: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désintallation. 
 	
 Déploiement
 ~~~~~~~~~~~
+
+La solution permet de mettre à disposition auprès des utilisateurs les paquets suivants pour faciliter la diffusion:
+ - le client lourd
+ - la boite à outils
+ - les différents plugins.
+
+Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
+notifier les utilisateurs de la mise à jour.
 
 Push a new client
 
@@ -331,59 +319,31 @@ Client
 Installation Windows
 ~~~~~~~~~~~~~~~~~~~~
 
-Installer for Windows
+Il existe 2 modes d'installation:
+ - mode portable (version recommandée)
+ - mode installation
 
-Go to your online test center and navigate in the menu to Overview > Packages. Download the Windows package.
-
-Execute the package ExtensiveTestingClient_XX.XX.XX_<32bit|64bit>_Setup.exe, read and accept the license agreement and click on Next.
-
-You are ready to install the client. Click on the button Install.
-
-Click on Finish. Read the release notes if you want.
-
-Click on the icon to open the application
-
-Portable version for Windows
-
-Use the portable version if you have restricted rights on your Windows pc. Go to your online test center and navigate in the menu to Overview > Packages. Download the portable version.
-
-Unzip the file ExtensiveTestingClient_XX.XX.XX_<32bit|64bit>_Portable.zip and go inside.
-
-Click on ExtensiveTestingClient.exe to open the client.
-
-
+Le client peut être récupéré depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingClient.exe`
 	
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
+Aucune version pré-compilée existe pour Linux.
+Il faut récupérer les sources depuis github, installer les paquets manquants et exécuter le fichier suivant
 
-
-Go to your online test center and navigate in the menu to Overview > Packages. Download the Linux package.
-
-Untar the file ExtensiveTestingClient_XX.XX.XX_Setup.tar.gz and go inside.
-
-Execute the file ./ExtensiveTestingClient
-
+.. code-block:: python
+	python Main.py
 	
 Mise à jour
 ~~~~~~~~~~~
 
-Automatic or manual mode are supported to update the client. Client binaries are stored on the server and can be downloaded by tester.
-Manual Update
+La mise à jour du client est possible en mode automatique (si présent sur le serveur) ou manuel.
+Depuis le client lourd il est possible de vérifier la présence d'un mise à jour.
 
-The user can also check manually from the menu Get Started > Check for update The other way is to download the package directly from the web interface.
-Automatic Update
+<insérer image>
 
-Open the application and connect to the test center with your account.
-
-A popup appears to inform of the availability of a new client. Click on the button Download and wait during the download.
-
-When the download is finished, click on OK to close the popup. After that, the application is closed automatically too.
-
-Go the folder Update in the installation directory and execute the new package. Install the client as usual without remove the previous version to keep the configuration.
-
-Notes:  The update of the client with a major version is mandatory!
-
+.. notes:: Si la version proposée est une version majeure alors la mise à jour est obligatoire.
 	
 Boite à outils
 --------------

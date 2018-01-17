@@ -31,7 +31,7 @@ Etapes de test
 
 Un cas de test se découpe en sous étapes.
 Une étape se définie par: 
- - un résumé de l'action a réaliser
+ - un résumé de l'action à réaliser
  - la description détaillé de l'action à réaliser
  - la description du résultat attendus pour valider l'étape.
 
