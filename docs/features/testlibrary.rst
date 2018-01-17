@@ -53,15 +53,15 @@ Mettre le résultat à PASS
 
 .. code-block:: python
 
-	self.step1.setPassed(actual="step executed as expected")
-	
+  self.step1.setPassed(actual="step executed as expected")
+  
 
 Mettre le résultat à FAILED
 
 .. code-block:: python
 
-	self.step1.setFailed(actual="error to run the step")
-	
+  self.step1.setFailed(actual="error to run the step")
+  
 
 .. notes: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme UNDEFINED.
 
@@ -72,19 +72,19 @@ Il est possible de forcer l'exécution d'un cas de test en utilisation la foncti
 
 .. code-block:: python
 
-	Test(self).interrupt(err="aborted by tester")
-	
+  Test(self).interrupt(err="aborted by tester")
+  
 
 Utiliser la fonction interrupt permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
 Dans ce cas précis, l'argument `aborted` est positioné à True par le framework pour indiquer l'annulation du test.
 
 .. code-block:: python
 
-	def definition(self):
-		Test(self).interrupt("bad response received")
+  def definition(self):
+	Test(self).interrupt("bad response received")
 
-	def cleanup(self, aborted):
-		if aborted: self.step1.setFailed(actual="%s" % aborted)
+  def cleanup(self, aborted):
+	if aborted: self.step1.setFailed(actual="%s" % aborted)
 	
 
 Ajout de trace
@@ -97,22 +97,22 @@ Les niveaux suivants sont disponibles:
 
 .. code-block:: python
  
-    Trace(self).info(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-	
+  Trace(self).info(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
+  
 
  - warning
  
 .. code-block:: python
 
-	Trace(self).warning(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-	
+  Trace(self).warning(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
+  
 
  - error
  
 .. code-block:: python
  
-    Trace(self).error(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
-	
+  Trace(self).error(txt="hello world", bold=False, italic=False, multiline=False, raw=False)
+  
 
 .. notes: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
 
@@ -149,15 +149,15 @@ Exemple pour sauvegarder du texte `hello world` dans un fichier `my_logs` depuis
 
 .. code-block:: python
  
-    Private(self).saveFile(destname="my_logs", data="hello world")
-	
+  Private(self).saveFile(destname="my_logs", data="hello world")
+  
 
 Exemple pour ajouter du texte dans un fichier de log déjà existant
 
 .. code-block:: python
  
-    Private(self).appendFile(destname="my_logs", data="hello world2")
-	
+  Private(self).appendFile(destname="my_logs", data="hello world2")
+  
 
 .. notes: Il est possible de sauvegarder des fichiers depuis un adaptateur
 	
@@ -175,27 +175,27 @@ Exemple pour sauvegarder une valeur dans le cache
 
 .. code-block:: python
  
-    Cache().set(name="my_data", data="hello")
-	
+  Cache().set(name="my_data", data="hello")
+  
 
 Lire une valeur depuis le cache
 
 .. code-block:: python
  
-    my_data= Cache().get(name="my_data")
-    Trace(self).warning(my_data)
-	
+  my_data= Cache().get(name="my_data")
+  Trace(self).warning(my_data)
+  
 
 Exemple pour capturer une donnée avec une expression régulière et l'enregistrer dans le cache
 
 .. code-block:: python
  
-	my_data="March, 25 2017 07:38:58 AM"
-
-	Cache().capture(data=my_data, regexp=".* (?P<TIME>\d{2}:\d{2}:\d{2}) .*")
-
-	Trace(self).info( txt=Cache().get(name="TIME") )
-	
+  my_data="March, 25 2017 07:38:58 AM"
+  
+  Cache().capture(data=my_data, regexp=".* (?P<TIME>\d{2}:\d{2}:\d{2}) .*")
+  
+  Trace(self).info( txt=Cache().get(name="TIME") )
+  
 
 Mettre en attente
 -----------------
@@ -206,14 +206,14 @@ Exemple de mise en attente pendant 10 secondes:
 
 .. code-block:: python
  
-    Time(self).wait(timeout=10)
+  Time(self).wait(timeout=10)
 	
 
 Exemple de mise en attente tant qu'on est pas le 12 septembre 2016 à 2h: 
 
 .. code-block:: python
  
-	Time(self).waitUntil(dt='2016-09-12 02:00:00', fmt='%Y-%m-%d %H:%M:%S', delta=0)
+  Time(self).waitUntil(dt='2016-09-12 02:00:00', fmt='%Y-%m-%d %H:%M:%S', delta=0)
 	
 
 Interaction avec le testeur
@@ -226,7 +226,7 @@ Exemple demandant le nom de la personne:
 
 .. code-block:: python
 
-	user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
+  user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
 
 .. notes: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
@@ -301,9 +301,11 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
 
 .. code-block:: python
 
-	input('DEBUG')
+  input('DEBUG')
+  
 
 .. notes:
+
   Le nom d'un paramètre est unique et obligatoirement en majuscule.
 
   Il est possible d'afficher des variables dans le rapport de test en préfixant les variables:
@@ -342,7 +344,7 @@ Variable agents
 
 .. code-block:: python
 
-    self.ADP_REST= SutAdapters.REST.Client(
+  self.ADP_REST= SutAdapters.REST.Client(
                                             parent=self,
                                             destinationIp=input('HOST'),
                                             destinationPort=input('PORT'),
@@ -351,4 +353,4 @@ Variable agents
                                             agentSupport=input('SUPPORT_AGENT'), 
                                             agent=agent('AGENT_SOCKET')
                                            )
-	
+  
