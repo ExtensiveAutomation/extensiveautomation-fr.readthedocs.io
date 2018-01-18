@@ -12,7 +12,7 @@ L'ordonnanceur présent dans le serveur permet de programmer l'exécution des te
  - Exécuter le test tous les jours à <heure>
  - Exécuter le test une fois par semaine le <jour de la semaine> à <heure>
 
-<images à insérer>
-
+.. image:: /_static/images/testlibrary/test_scheduling.png
+   
 Gestion des tâches
 ------------------

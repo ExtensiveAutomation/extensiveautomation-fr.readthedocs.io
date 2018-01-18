@@ -10,13 +10,13 @@ L'approche consiste à écrire les tests avec le formalisme suivant:
  - Pendant un interval donné, je regarde et compare tous les évènements reçues avec un attendu.
  - Je décide de l'action suivante
     * après avoir reçu l'évènement que j'attendais
-    * ou bien quand l'interval d'observation est terminé.
+    * ou bien quand l'intervalle d'observation est terminé.
 
 Durant l'exécution d'un test, le framework capture tous les évènements générés par le système tester ou piloter.
 Les évènements sont ensuite convertis et stockés dans un message.
 
-<insérer image>
-
+.. image:: /_static/images/testlibrary/template_message.png
+  
 Des opérateurs sont disponibles pour faciliter la comparaison des messages reçus.
 
 +-----------------+------------------------------------------------------------------+
@@ -37,7 +37,8 @@ Des opérateurs sont disponibles pour faciliter la comparaison des messages reç
 | RegEx           | Vérifie si la chaine de caractère répond à l'expression régulière|
 +-----------------+------------------------------------------------------------------+
 
-<insérer image>
+.. image:: /_static/images/testlibrary/template_expected.png
+ 
 
 Le client permet de visualiser graphiquement la comparaison effectué par le framework.
 Définition du code couleur:

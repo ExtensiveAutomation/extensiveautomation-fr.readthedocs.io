@@ -8,13 +8,14 @@ Installation automatique
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning::
-  Configuration de base à respecter du serveur avant de lancer l'installation:
-	- l'interface réseau est correcte configurée sur le serveur
-	- l'accès aux dépôts officiel est disponible
+  Configuration de base à respecter avant de lancer l'installation:
+	- l'interface réseau est correctement configurée sur le serveur
+	- l'accès aux dépôts officiels est disponible
+    - utilisation d'un système linux CentOS 6/7 ou RedHat
 
 L'installation de la solution peut se faire en utiliser le script `install.sh` présent dans le tar.gz.
 Si les prérequis sont respectés alors l'installation se fera en mode automatique c'est à dire que les paquets manquants 
-seronts récupérés automatiquements.
+seronts récupérés automatiquement.
 
 Exemple d'installation en mode automatique
 
