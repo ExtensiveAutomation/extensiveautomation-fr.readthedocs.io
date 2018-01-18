@@ -135,13 +135,14 @@ Il permet de sauvegarder des logs générés ou récupérer lors de l'exécution
 Ces logs sont automatiquement mis à disposition de l'utilisateur lorsque le test est terminé dans un fichier zip
 Ils sont récupables depuis le client ou bien depuis l'API du serveur.
 
-<images à insérer private_storage.zip>
-
+.. image:: /_static/images/testlibrary/private_storage.png
+  
 Les logs sont organisés par répertoire:
  - Répertoire TC-TESTCASE-#<id_tc>: contient les logs générés par le cas de test
  - Répertoire ADP-#<id_adp>: contient les logs générés par les différents adaptateurs utilisés durant le test
 
- 
+.. image:: /_static/images/testlibrary/private_storage_zip.png
+
 Exemple pour sauvegarder du texte `hello world` dans un fichier `my_logs` depuis le cas de test
 
 .. code-block:: python
@@ -166,7 +167,7 @@ Cette fonction peut être nécessaire lors de l'écriture d'un scénario de test
 
 Le cache est de type clé/valeur.
 
-<image à insérer>
+.. image:: /_static/images/testlibrary/client_cache.png
 
 Exemple pour sauvegarder une valeur dans le cache
 

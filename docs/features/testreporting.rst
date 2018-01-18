@@ -4,42 +4,68 @@ Gestion de la traçabilité
 Exécution évènementielle
 -----------------------
 
-The Test Events Logger
-Introduction
+L'exécution évènementielle permet d'avoir des tests robustes grâce à la définition des intervalles d'observations.
+L'approche consiste à écrire les tests avec le formalisme suivant:
+ - J'exécute une action dans mon test.
+ - Pendant un interval donné, je regarde et compare tous les évènements reçues avec un attendu.
+ - Je décide de l'action suivante
+    * après avoir reçu l'évènement que j'attendais
+    * ou bien quand l'interval d'observation est terminé.
 
-Events received or sent during the execution of a test are stored in the test result by the test logger. All things that happen during the execution of a test are converted to a event as template message. These events enables to make a complete analysis of what happened.
+Durant l'exécution d'un test, le framework capture tous les évènements générés par le système tester ou piloter.
+Les évènements sont ensuite convertis et stockés dans un message.
 
-Events can be handled only by the adapters. Each adapters contains a queue to store all events.
-Do, watch and compare
+<insérer image>
 
-The test framework of the solution is based on the following test construction:
+Des opérateurs sont disponibles pour faciliter la comparaison des messages reçus.
 
-    Do an action in your test
-    Watch what happens until the end of a timeout
-    During this interval, you can compare a model provided by the tester with all events received.
++-----------------+------------------------------------------------------------------+
+|Nom              |   Description                                                    |
++-----------------+------------------------------------------------------------------+
+| Any             | Accepte toute les valeurs                                        |
++-----------------+------------------------------------------------------------------+
+| Contains        | Vérifie si la chaine de caractère contients des caractères       |
++-----------------+------------------------------------------------------------------+
+| Endswith        | Vérifie si la chaine de caractère se termine par                 |
++-----------------+------------------------------------------------------------------+
+| Startswith      | Vérifie si la chaine de caractère commence par                   |
++-----------------+------------------------------------------------------------------+
+| GreaterThan     | Vérifie si un entier est plus grand que                          |
++-----------------+------------------------------------------------------------------+
+| LowerThan       | Vérifie si un entier est plus petit que                          |
++-----------------+------------------------------------------------------------------+
+| RegEx           | Vérifie si la chaine de caractère répond à l'expression régulière|
++-----------------+------------------------------------------------------------------+
 
-The template message
+<insérer image>
 
-All events received from the SUT are converted to a template message. Below some explanations about the construction of a template message. A template message is constructed with one or more template layer. A templayer layer is constructed with one ore more key/value. The value can be also a template layer.
+Le client permet de visualiser graphiquement la comparaison effectué par le framework.
+Définition du code couleur:
 
-Flexible comparison with operators
++-----------------+------------------------------------------------------------------+
+|Vert             |   Correspondance parfaite entre la valeur reçue et attendue      |
++-----------------+------------------------------------------------------------------+
+|Rouge            |   La valeur reçue ne correspond pas à la valeur attendue         |
++-----------------+------------------------------------------------------------------+
+|Jaune            |   La valeur attendue n'a pas été vérifié                         |
++-----------------+------------------------------------------------------------------+
 
-Operators can be used to compare templates messages together with a flexible approach.
-Name 	Description
-Any 	Match anything
-Contains 	Check if a string contains the characters provided
-Endswith 	Check if a string ends with the characters provided
-Startswith 	Check if a string starts with the characters provided
-GreaterThan 	Check if an integer is greater than the value providede
-LowerThan 	Check if an integer is lower than the value provided
-RegEx 	Match a specific regular expression.
-
-An example of a template message expected by the tester:
-
-
+<insérer image>
 
 Génération des rapports
 -----------------------
 
+Après chaque exécution d'un test, le framework génère automatiquement les rapports de tests associés.
+Il existe 2 type rapports:
+ - Rapport avancé
+ - Rapport basique
+
+Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l'API.
+
+.. notes:: Les rapports sont peut être exportés au format html, csv, xml et pdf.
+ 
 Accès aux logs complémentaires
----------------------------
+------------------------------
+
+Le framework permet d'enregistre des logs durants l'exécution d'un test.
+Ils sont ensuite accessible depuis le client lourd ou bien l'API.
