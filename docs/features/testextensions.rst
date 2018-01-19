@@ -282,10 +282,8 @@ Liste des outils supportés:
 Agents
 ------
 
-Les agents sont disponibles dans la boite à outils et sont à utiliser conjointement avec les adaptateurs.
-Les agents sont à utilisés obligatoire pour exécuter des tests d'interfaces (ex: selenium).
-Ils peuvent être aussi utilisés pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
-en direct par le serveur de test.
+Les agents sont disponibles depuis la boite à outils. Il sont à utiliser conjointement avec les adaptateurs pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
+en direct par le serveur de test (ex: une page web)
 
 +------------------+--------------------------------------------------------------------------------------+
 | dummy            |  Disponible en exemple, pour le développement                                        |
@@ -335,6 +333,6 @@ automatiquement des logs (trace réseaux, fichiers) durant l'exécution d'un tes
 | file           |  Récupération de fichiers de configuration sur Windows ou Linux                      |
 +----------------+--------------------------------------------------------------------------------------+
 
-L'utilisation d'une sonde dans un test est à définir dans les propriétés
+L'utilisation d'une sonde dans un test est à définir dans les propriétés.
 
 <insérer image>
