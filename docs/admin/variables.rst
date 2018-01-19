@@ -1,22 +1,22 @@
-Variables réutilisables
+Variables rÃ©utilisables
 =======================
 
-Les variables réutilisables sont principalement utilisées pour décrire son environnement de tests.
+Les variables rÃ©utilisables sont principalement utilisÃ©es pour dÃ©crire son environnement de tests.
 
 Ajout/suppression d'une variable
 -----------------
 
-L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
+L'ajout ou la suppression d'une variable peut se faire Ã  travers l'interface web ou bien depuis l'api.
 Le format attendu est de type `JSON`.
 
 Description environnement de test
 --------------------------
 
-La description d'un environnement de test doit respecter le formalisme décrit ci-dessous.
-Ce type de déclaration est à utiliser avec le test réutilisable qui initialise l'environnement 
-et le met à disposition dans le cache.
+La description d'un environnement de test doit respecter le formalisme dÃ©crit ci-dessous.
+Ce type de dÃ©claration est Ã  utiliser avec le test rÃ©utilisable qui initialise l'environnement 
+et le met Ã  disposition dans le cache.
 
-Déclaration d'un noeud SAMPLE_NODE:
+DÃ©claration d'un noeud SAMPLE_NODE:
 
 .. code-block:: python
 
@@ -43,7 +43,7 @@ Déclaration d'un noeud SAMPLE_NODE:
 	}
  }
  
-Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
+DÃ©claration d'une donnÃ©e de test SAMPLE_DATASET_AUTH:
 
 .. code-block:: python
 
@@ -52,7 +52,7 @@ Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
 		 "password":      ""
  }
 
-Déclaration de l'environnement SAMPLE_ENVIRONMENT:
+DÃ©claration de l'environnement SAMPLE_ENVIRONMENT:
 
 .. code-block:: python
 

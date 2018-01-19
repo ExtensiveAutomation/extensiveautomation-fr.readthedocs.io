@@ -304,6 +304,7 @@ Les clients sont à déposer dans le répertoire `<INSTALL_PATH>/current/Package
 La prise en compte du nouveau client nécessite d'exécuter la commande `xtctl deploy`
 
 .. code-block:: bash
+
 	./xtctl deploy
 	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
 	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
@@ -330,6 +331,7 @@ Aucune version pré-compilée existe pour Linux.
 Il faut récupérer les sources depuis github, installer les paquets manquants et exécuter le fichier suivant
 
 .. code-block:: bash
+
 	python Main.py
 	
 Mise à jour
@@ -364,6 +366,7 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
  - ./toolprobe
 
 .. code-block:: bash
+
     ./toolagent
     Command line tool launcher
 
@@ -385,6 +388,7 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     
 
 .. code-block:: bash
+
     ./toolprobe
     Command line tool launcher
 
