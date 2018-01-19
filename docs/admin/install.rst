@@ -9,8 +9,8 @@ Installation automatique
 
 .. warning::
   Configuration de base à respecter avant de lancer l'installation:
-	- l'interface réseau est correctement configurée sur le serveur
-	- l'accès aux dépôts officiels est disponible
+    - l'interface réseau est correctement configurée sur le serveur
+    - l'accès aux dépôts officiels est disponible
     - utilisation d'un système linux CentOS 6/7 ou RedHat
 
 L'installation de la solution peut se faire en utiliser le script `install.sh` présent dans le tar.gz.
@@ -168,47 +168,77 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
 Installation depuis les sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning:: Ce mode d'installation est recommandé que pour les utilisateurs avancés.
+.. warning:: Ce mode d'installation est à recommander que pour les utilisateurs avancés.
 
 <décrire les packages python à installer>
 
 Mise à jour
 ~~~~~~~~~~~
 
-This part can be useful to deploy a new test server with old data. Read the backup page for more details about backups.
-Migration
+La mise à jour du serveur est possible en exécutant le script `./update.sh`
+Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
 
-Make a new from scratch deployment, follow the installation guide.
+.. code-block:: bash
+    ./update.sh
+    ================================================
+    =  - Update of the ExtensiveTesting product -  =
+    =              Denis Machard                   =
+    =          www.extensivetesting.org            =
+    ================================================
+    * Detecting the operating system                           [  OK  ]
+    * Detecting the system architecture                        [  OK  ]
+    Current product version X.X.X
+    Current database name xtcXXX
+    New product version: Y.Y.Y
+    New database name: xtcYYY
+    Are you sure to update the product? (yes or no ) yes
+    Starting update...
+    * Stopping the current version X.X.X                       [  OK  ]
+    * Detecting the operating system                           [  OK  ]
+    * Detecting the system architecture                        [  OK  ]
+    * Detecting Perl, Python                                   [  OK  ]
+    * Detecting primary network address (192.168.1.19)         [  OK  ]
+    * Adding external libraries ...............                [  OK  ]
+    * Detecting Apache                                         [  OK  ]
+    * Detecting MySQL/MariaDB                                  [  OK  ]
+    * Detecting Postfix                                        [  OK  ]
+    * Detecting Openssl                                        [  OK  ]
+    * Detecting Php                                            [  OK  ]
+    * Copying source files                                     [  OK  ]
+    * Adding startup service                                   [  OK  ]
+    * Updating configuration files                             [  OK  ]
+    * Creating extensivetesting user                           [  OK  ]
+    * Updating folders rights                                  [  OK  ]
+    * Updating iptables                                        [  OK  ]
+    * Updating php configuration                               [  OK  ]
+    * Updating httpd configuration                             [  OK  ]
+    * Adding virtual host                                      [  OK  ]
+    * Restarting httpd                                         [  OK  ]
+    * Restarting firewall                                      [  OK  ]
+    * Restarting MySQL/MariaDB                                 [  OK  ]
+    * Restarting postfix                                       [  OK  ]
+    * Adding the ExtensiveTesting database                     [  OK  ]
+    * Starting the ExtensiveTesting Y.Y.Y                      [  OK  ]
+    * Stopping the new version Y.Y.Y                           [  OK  ]
+    * Restoring SUT adapters from X.X.X to Y.Y.Y                  [  OK  ]
+    * Restoring SUT libraries from X.X.X to Y.Y.Y                 [  OK  ]
+    * Restoring database from X.X.X to Y.Y.Y                      [  OK  ]
+    * Updating database model to Y.Y.Y                            [  OK  ]
+    * Restoring tests from X.X.X to Y.Y.Y                         [  OK  ]
+    * Restoring tasks from X.X.X to Y.Y.Y                         [  OK  ]
+    * Restarting the new version Y.Y.Y                         [  OK  ]
+    =========================================================================
+    - Update terminated!
+    - Continue and go to the web interface (https://xxxxxxxxx/web/index.php)
+    =========================================================================
 
-Retrieve all backups from the old server (folder /opt/xtc/current/Var/Backups)
-	Tests
-	Adapters
-	Librairies
-	Database dump
-	Tasks
+.. notes:: La mise à jour est refusé si aucune version du produit est détectée.
 
-Restore adapters package in /opt/xtc/current/Packages/SutAdapters/
-
-Restore libraries package in /opt/xtc/current/Packages/SutLibraries/
-
-Import the dump of the database
-	users table
-	projects table
-	environment data table
-
-Restore all tests, unzip your backup in /opt/xtc/current/Var/Tests/
-
-And finally, restore tasks backup in /opt/xtc/current/Var/Backups/Tasks/
-
-	
 Retour arrière
 ~~~~~~~~~~~
 
-Rollback
-
-Go inside the folder used to install the product
-
-Execute the script ./rollback.sh and provies the previous targetted version X.X.X
+Le retour arrière est possible vers les versions antérieures déjà installées sur le serveur.
+Exécuter le script `rollback.sh` avec la version précédente.
 
 .. code-block:: bash
 
@@ -269,23 +299,9 @@ La solution permet de mettre à disposition auprès des utilisateurs les paquets
 Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
 notifier les utilisateurs de la mise à jour.
 
-Push a new client
+Les clients sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/Client`
 
-Use this feature can be useful to dispatch to all testers a new version of the client.
-
-Deploy a new client version for Windows
-Deploy a new client version for Linux
-
-Deploy a new client version for Windows
-
-Go to the folder <INSTALL_PATH>/current/Packages/Client
-
-Upload the new Windows version in the folder /win32/ or /win64/
-
-[ win32]# ls
-ExtensiveTesting_Client_X.X.X_Setup.exe
-
-No restart needed, just re-deploy the new client as below:
+La prise en compte du nouveau client nécessite d'exécuter la commande `xtctl deploy`
 
 .. code-block:: bash
 	./xtctl deploy
@@ -293,26 +309,6 @@ No restart needed, just re-deploy the new client as below:
 	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
 	Deploying portable clients... (No client)
 	Deploying portable tools... (No client)
-	
-
-Deploy a new client version for Linux
-
-Go to the folder <INSTALL_PATH>/current/Packages/Client
-
-Upload the new version in the folder /linux2/
-
-[ linux2]# ls
-ExtensiveTesting_Client_X.X.X_Setup.tar.gz
-
-No restart needed, just re-deploy the new client as below:
-
-.. code-block:: bash
-	./xtctl deploy
-	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
-	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
-	Deploying portable clients... (No client)
-	Deploying portable tools... (No client)
-	
 
 Client
 ------
@@ -333,7 +329,7 @@ Installation Linux
 Aucune version pré-compilée existe pour Linux.
 Il faut récupérer les sources depuis github, installer les paquets manquants et exécuter le fichier suivant
 
-.. code-block:: python
+.. code-block:: bash
 	python Main.py
 	
 Mise à jour
@@ -352,88 +348,63 @@ Boite à outils
 Installation Windows
 ~~~~~~~~~~~~~~~~~~~~
 
-Installer for Windows
+Il existe 2 modes d'installation:
+ - mode portable (version recommandée)
+ - mode installation
 
-Connect to the test center and go to the menu Overview > Packages > Toolbox. Download the toolbox package according to your environment (Windows or Linux)
-
-Execute the package ExtensiveTestingToolbox_XX.XX.XX_<32bit|64bit>_Setup.exe
-
-Accept the license
-
-Select components to install, select all by default
-
-Follow steps of the wizard installation. The installation takes some minutes. When the installation is terminated, open-it! A shortcut is also available on your desktop. The toolbox is automatically installed on the startup folder of the operating system.
-
-Portable version for Windows
-
-Use the portable version if you have restricted rights on your Windows pc. Go to your online test center and navigate in the menu to Overview > Packages. Download the portable version.
-
-Unzip the file ExtensiveTestingToolbox_XX.XX.XX_<32bit|64bit>_Portable.zip and go inside.
-
-Execute the file ExtensiveTestingToolbox.exe to open the toolbox.
-
-
+La boite à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingToolbox.exe`
 	
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
+La boite à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+2 scripts sont disponibles pour démarrer un agent ou une sonde.
+ - ./toolagent
+ - ./toolprobe
 
+.. code-block:: bash
+    ./toolagent
+    Command line tool launcher
 
-Go to your online test center and navigate in the menu to Overview > Packages. Download the Linux package.
+    Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
 
-Untar the file ExtensiveTestingToolbox_XX.XX.XX_Setup.tar.gz and go inside.
+    * Server parameters
+    [test-server-ip]: your test server ip or hostname. This option is mandatory.
+    [test-server-port]: your test server port. This option is mandatory.
+    [ssl-support=True/False]: ssl support. This option is mandatory.
 
-Execute the script ./toolagent or ./toolprobe to display the help
+    * Tools parameters
+    [Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
+    [tool-name]: The tool name. This option is mandatory.
+    [tool-description]: The tool description. This option is mandatory.
 
-./toolagent
-Command line tool launcher
+    * Proxy parameters
+    [proxy-ip]: proxy address. This option is optional.
+    [proxy-port]: proxy port. This option is optional.
+    
 
+.. code-block:: bash
+    ./toolprobe
+    Command line tool launcher
 
-Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
+    Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
 
+    * Server parameters
+    [test-server-ip]: your test server ip or hostname. This option is mandatory.
+    [test-server-port]: your test server port. This option is mandatory.
+    [ssl-support=True/False]: ssl support. This option is mandatory.
 
-* Server parameters
-[test-server-ip]: your test server ip or hostname. This option is mandatory.
-[test-server-port]: your test server port. This option is mandatory.
-[ssl-support=True/False]: ssl support. This option is mandatory.
+    * Tools parameters
+    [Values expected: dummy|textual|network|file]: tool type to start. This option is mandatory.
+    [tool-name]: The tool name. This option is mandatory.
+    [tool-description]: The tool description. This option is mandatory.
 
+    * Proxy parameters
+    [proxy-ip]: proxy address. This option is optional.
+    [proxy-port]: proxy port. This option is optional.
+    
 
-* Tools parameters
-[Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
-[tool-name]: The tool name. This option is mandatory.
-[tool-description]: The tool description. This option is mandatory.
-
-
-* Proxy parameters
-[proxy-ip]: proxy address. This option is optional.
-[proxy-port]: proxy port. This option is optional.
-
-
-./toolprobe
-Command line tool launcher
-
-
-Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
-
-
-* Server parameters
-[test-server-ip]: your test server ip or hostname. This option is mandatory.
-[test-server-port]: your test server port. This option is mandatory.
-[ssl-support=True/False]: ssl support. This option is mandatory.
-
-
-* Tools parameters
-[Values expected: dummy|textual|network|file]: tool type to start. This option is mandatory.
-[tool-name]: The tool name. This option is mandatory.
-[tool-description]: The tool description. This option is mandatory.
-
-
-* Proxy parameters
-[proxy-ip]: proxy address. This option is optional.
-[proxy-port]: proxy port. This option is optional.
-
-
-	
 Mise à jour
 ~~~~~~~~~~~
 

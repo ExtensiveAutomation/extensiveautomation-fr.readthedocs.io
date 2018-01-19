@@ -16,3 +16,13 @@ L'ordonnanceur présent dans le serveur permet de programmer l'exécution des te
    
 Gestion des tâches
 ------------------
+
+Les actions suivantes sont disponibles pour gérer les tâches programmées par les utilisateurs:
+ - annuler une ou plusieurs tâches
+ - forcer l'arrêt d'une ou plusieurs tâches
+ - reprogrammer une ou plusieurs tâches
+ - visualiser l'historique des exécutions.
+ 
+L'ensemble de ses actions est réalisable depuis le client lourd ou bien depuis l'API.
+
+<insérer image>

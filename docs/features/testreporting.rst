@@ -12,7 +12,7 @@ L'approche consiste à écrire les tests avec le formalisme suivant:
     * après avoir reçu l'évènement que j'attendais
     * ou bien quand l'intervalle d'observation est terminé.
 
-Durant l'exécution d'un test, le framework capture tous les évènements générés par le système tester ou piloter.
+Durant l'exécution d'un test, le framework capture tous les évènements générés par le système testé ou piloté.
 Les évènements sont ensuite convertis et stockés dans un message.
 
 .. image:: /_static/images/testlibrary/template_message.png
@@ -40,7 +40,7 @@ Des opérateurs sont disponibles pour faciliter la comparaison des messages reç
 .. image:: /_static/images/testlibrary/template_expected.png
  
 
-Le client permet de visualiser graphiquement la comparaison effectué par le framework.
+Le client permet de visualiser graphiquement la comparaison effectuée par le framework.
 Définition du code couleur:
 
 +-----------------+------------------------------------------------------------------+
@@ -70,3 +70,5 @@ Accès aux logs complémentaires
 
 Le framework permet d'enregistre des logs durants l'exécution d'un test.
 Ils sont ensuite accessible depuis le client lourd ou bien l'API.
+
+<insérer image du client>
