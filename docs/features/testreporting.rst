@@ -69,12 +69,12 @@ Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l
 Rapport avancée
 ~~~~~~~~~~~~~~~
 
-.. image:: /_static/images/client/testlibrary/advanced_report.png
+.. image:: /_static/images/testlibrary/advanced_report.png
 
 Rapport basique
 ~~~~~~~~~~~~~~~
 
-.. image:: /_static/images/client/testlibrary/basic_report.png
+.. image:: /_static/images/testlibrary/basic_report.png
 
 Accès aux logs complémentaires
 ------------------------------

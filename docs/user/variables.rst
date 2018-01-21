@@ -11,6 +11,7 @@ Le format attendu est de type `JSON`.
 
 .. image:: /_static/images/webinterface/read_variable.png
 
+
 Description environnement de test
 --------------------------
 
