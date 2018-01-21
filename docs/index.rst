@@ -39,7 +39,6 @@ Bienvenue sur la documentation ExtensiveTesting!
    admin/install
    admin/projects
    admin/users
-   admin/variables
    admin/troubleshooting
 
 .. _feature-docs:
