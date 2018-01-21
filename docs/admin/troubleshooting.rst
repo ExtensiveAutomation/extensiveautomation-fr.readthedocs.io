@@ -25,7 +25,9 @@ Les logs sont configurés en mode INFO par défaut.
 
 Le niveau DEBUG peut être activé depuis les préférences du client.
 
-<insérer image>
+.. image:: /_static/images/client/preferences_application_logs.png
+
+.. image:: /_static/images/client/client_logs.png
 
 Boites à outils
 ~~~~~~~~~~~~~~
@@ -38,6 +40,8 @@ Le niveau DEBUG peut être activé depuis le fichier `settings.ini`.
 .. code-block::
     [Trace]
     level=DEBUG
+    
+.. image:: /_static/images/client/toolbox_logs.png
     
 .. notes: Un redémarrage de la boite à outils est nécessaire pour prendre en compte le changement
 
@@ -62,6 +66,7 @@ Afficher la version du serveur?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: bash
+
     ./xtctl version
     Server version: 18.0.0
     

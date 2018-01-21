@@ -9,13 +9,7 @@ Ajout/suppression d'une variable
 L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
 Le format attendu est de type `JSON`.
 
-<image à insérer>
-
-{
-         "login":         "admin",
-         "password":      ""
-}
-
+.. image:: /_static/images/testlibrary/webinterface/read_variable.png
 
 Description environnement de test
 --------------------------

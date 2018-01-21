@@ -12,7 +12,7 @@ Ajout d'un projet
 L'ajout d'un projet peut se faire avec un compte administrateur. 
 La création d'un projet nécessite de préciser son nom et peut se faire via l'interface web ou bien l'API
 
-<insérer_image>
+.. image:: /_static/images/testlibrary/webinterface/add_project.png
 
 Suppression d'un projet
 ----------------------
@@ -20,6 +20,6 @@ Suppression d'un projet
 La suppression d'un projet peut se faire avec un compte administrateur.
 Cette action peut se faire à travers l'interface web ou bien l'API.
 
-<insérer_image>
+.. image:: /_static/images/testlibrary/webinterface/delete_project.png
 
 .. notes: Si le projet est associé à un utilisateur, la suppression n'est pas autorisée.

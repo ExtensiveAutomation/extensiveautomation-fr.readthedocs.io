@@ -51,7 +51,8 @@ Définition du code couleur:
 |Jaune            |   La valeur attendue n'a pas été vérifié                         |
 +-----------------+------------------------------------------------------------------+
 
-<insérer image>
+.. image:: /_static/images/client/client_event_mismatch.png
+
 
 Génération des rapports
 -----------------------
@@ -63,12 +64,22 @@ Il existe 2 type rapports:
 
 Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l'API.
 
-.. notes:: Les rapports sont peut être exportés au format html, csv, xml et pdf.
- 
+.. notes:: Les rapports peuvent être exportés au format html, csv, xml et pdf.
+
+Rapport avancée
+~~~~~~~~~~~~~~~
+
+.. image:: /_static/images/client/testlibrary/advanced_report.png
+
+Rapport basique
+~~~~~~~~~~~~~~~
+
+.. image:: /_static/images/client/testlibrary/basic_report.png
+
 Accès aux logs complémentaires
 ------------------------------
 
 Le framework permet d'enregistre des logs durants l'exécution d'un test.
-Ils sont ensuite accessible depuis le client lourd ou bien l'API.
+Ils sont ensuite accessibles depuis le client lourd ou bien l'API.
 
 <insérer image du client>

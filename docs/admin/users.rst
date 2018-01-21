@@ -5,6 +5,7 @@ La solution peut être utilisée en mode multi-utilisateur.
 Des utilisateurs suivants existent par défaut:
  - Admin
  - Tester
+ - Monitor
 
 .. notes:: Ne pas oublier de désactiver les comptes par défaut dans un environnement de production.
 
@@ -16,7 +17,7 @@ La création d'un utilisateur nécessite à minima les paramètres suivants et p
  - nom d'utilisateur
  - mot de passe
 
-<insérer_image>
+.. image:: /_static/images/testlibrary/webinterface/add_user.png
 
 .. notes:: L'email est utilisée par la solution pour envoyer les rapports de tests et résultats.
 
@@ -28,4 +29,4 @@ Suppression d'un utilisateur
 La suppression d'un utilisateur peut se faire avec un compte administrateur. 
 Cette action peut se faire à travers l'interface web ou bien l'API.
 
-<insérer_image>
+.. image:: /_static/images/testlibrary/webinterface/delete_user.png

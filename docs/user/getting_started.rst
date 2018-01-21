@@ -15,27 +15,60 @@ Une fois la connexion réussie, l'utilisateur peut accéder à l'ensemble des te
 Ecriture d'un test
 ------------------
 
+La première utilisation consiste à créer un très simple premier cas de test en affichant la valeur d'un paramètre du test.
+
 1. Créer un test de type "Unit"
-2. Ajouter le paramètre MON_PARAMETRE avec la valeur "bonjour"
-3. Modifier le test pour afficher la valeur du paramètre.
-4. Enregistrer le test dans le dépôt avec le nom "Test_A"
+   
+   .. image:: /_static/images/client/client_new_tux.png
+
+2. Ajouter le paramètre MON_PARAMETRE de type `str` avec la valeur "bonjour"
+   
+   .. image:: /_static/images/client/client_new_param.png
+
+3. Modifier le test au niveau de la section `definition` pour afficher la valeur du paramètre.
+   
+   .. image:: /_static/images/client/client_new_trace.png
+
+4. Enregistrer le test dans le dépôt avec le nom "Test_A" dans le répertoire `Sandbox`
+   
+   .. image:: /_static/images/client/client_new_save.png
 
 Ecriture d'un scénario
 ----------------------
 
+.. notes:: Ce mini guide part du principe que vous avez suivi le chapitre `Ecriture d'un test`.
+
+L'exemple suivant explique comment créer son premier scénario avec une surcharge des variables de tests.
+
 1. Créer un test de type "Plan".
-2. Insérer le test "Test_A" dans le scénario.
-3. Enregistrer le scénario dans le dépôt de test avec le nom "Scenario_A"
-4. Ajouter le paramètre MON_PARAMETRE avec la valeur "au revoir" 
+   
+   .. image:: /_static/images/client/client_new_tpx.png
+
+2. Insérer le test "Test_A" dans le scénario. Cliquer sur le bouton `Insert Child` et sélectionner le test `Test_A`.
+
+   .. image:: /_static/images/client/client_new_insert.png
+
+3. Après insertion, cliquer sur le test `Test_A` et insérer de nouveau le même test.
+
+   .. image:: /_static/images/client/client_new_insert_again.png
+
+4. Enregistrer le scénario dans le dépôt de test avec le nom "Scenario_A" dans le répertoire `Sandbox`.
+
+5. Ajouter le paramètre MON_PARAMETRE avec la valeur "au revoir" au niveau du scénario.
+
+.. tip:: Ne pas hésitez à définir un alias pour le nom du test pour rendre le scénario plus lisible.
 
 Exécution d'un test
 -------------------
 
-1. Ouvrir le "Test_A" et cliquer sur le bouton `Execute` pour lancer l'exécution.
-2. Ouvrir le "Scenario_A" et cliquer sur le bouton `Execute` pour lancer l'exécution.
+L'exécution d'un test peut se faire en cliquant sur le bouton `Execute`.
+Ouvrir les tests `Test_A` et `Scenario_A` et les exécuter.
 
 Analyse des résultats
 ---------------------
+
+.. notes:: Ce mini guide part du principe que vous avez suivi les chapitres `Ecriture d'un test` et `Ecriture d'un scénario`.
+
 
 La 1ière fenêtre d'analyse montre l'exécution du test "Test_A" et notamment le message "bonjour".
 

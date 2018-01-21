@@ -123,6 +123,8 @@ Un espace publique est disponible sur le serveur de test. Cet espace permet de m
  
 <ajouter_image>
 
+   .. image:: /_static/images/testlibrary/espace_public.png
+
 Les fichiers sont stockés dans le répertoire `/opt/xtc/current/Var/Public/` sur le serveur.
 
 .. warning:: Cet espace est commun à l'ensemble des projets configurés sur le serveur.

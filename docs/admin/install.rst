@@ -70,6 +70,7 @@ Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
 Il est possible d'utiliser les comptes pas défauts pour se connecter:
  - utilisateur `admin`
  - utilisateur `tester`
+ - utilisateur `monitor`
  
 .. notes:: Les comptes par défaut n'ont pas de mot de passe.
 
