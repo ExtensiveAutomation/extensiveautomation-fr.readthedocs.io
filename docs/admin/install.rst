@@ -11,10 +11,10 @@ Installation automatique
   Configuration de base à respecter avant de lancer l'installation:
     - l'interface réseau est correctement configurée sur le serveur
     - l'accès aux dépôts officiels est disponible
-    - utilisation d'un système linux CentOS 6/7 ou RedHat
+    - utilisation d'un système Linux CentOS 6/7 ou RedHat
 
-L'installation de la solution peut se faire en utiliser le script `install.sh` présent dans le tar.gz.
-Si les prérequis sont respectés alors l'installation se fera en mode automatique c'est à dire que les paquets manquants 
+L'installation de la solution peut se faire en utilisant le script `install.sh` présent dans le tar.gz.
+Si les prérequis sont respectés alors l'installation se fera en mode automatique, c'est à dire que les paquets manquants 
 seronts récupérés automatiquement.
 
 Exemple d'installation en mode automatique
@@ -58,6 +58,10 @@ Exemple d'installation en mode automatique
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	=========================================================================
 
+..
+		Quand on utilise Terminated en anglais, ça veut dire Interrompue, donnant l'impression qu'il y a eu problème ou interruption.
+		Tu voudrais plutôt dire Completed Successfully, pour Terminée avec succès.
+	
 Exemple pour vérifier si le serveur fonctionne correctement.
 
 .. code-block:: bash
@@ -80,11 +84,11 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
 Installation personnalisée
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning:: Ce mode d'installation est recommandé que pour les utilisateurs avancés.
+.. warning:: Ce mode d'installation n'est recommandé que pour les utilisateurs avancés.
 
-Le mode personnalisée peut être utilisé changer la destination de l'installation par exemple.
+Ce mode est utilisé pour changer la destination de l'installation ou spécifier certains paramètres (voir l'exemple).
 
-Exemple d'installation en mode personnalisé
+Exemple d'installation en mode personnalisé (ici, la destination de xtc)
 
 .. code-block:: bash
 
@@ -119,6 +123,10 @@ Exemple d'installation en mode personnalisé
 	* Do you want to configure selinux automatically? [No]?
 	* What is the path of the openssl binary? [/usr/bin/openssl]
 
+..	
+	Ici, c'est l'inversion typique du français à l'anglais. Tu dois dire:
+	Wait for the installation process to complete
+	
 	Wait during the process of installation
 
 	* Adding external libraries ......................         [  OK  ]
@@ -149,6 +157,9 @@ Exemple d'installation en mode personnalisé
 	- Installation terminated!
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	==================================================================
+
+..
+	Même commentaire que plus haut:  completed, pas terminated.  Faudra changer les scripts d'installation partout.
 	
 Exemple pour vérifier si le serveur fonctionne correctement.
 
@@ -158,9 +169,10 @@ Exemple pour vérifier si le serveur fonctionne correctement.
 	Extensive Testing is running
 
 Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
-Il est possible d'utiliser les comptes pas défauts pour se connecter:
+Il est possible d'utiliser les comptes par défaut pour se connecter:
  - utilisateur `admin`
  - utilisateur `tester`
+ - utilisateur `monitor`
  
 .. note:: Les comptes par défaut n'ont pas de mot de passe.
 
@@ -169,7 +181,7 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
 Installation depuis les sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning:: Ce mode d'installation est à recommander que pour les utilisateurs avancés.
+.. warning:: Ce mode d'installation n'est recommandé que pour les utilisateurs avancés.
 
 <décrire les packages python à installer>
 
@@ -233,7 +245,11 @@ Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
     - Continue and go to the web interface (https://xxxxxxxxx/web/index.php)
     =========================================================================
 
-.. note:: La mise à jour est refusé si aucune version du produit est détectée.
+..
+	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
+
+	
+.. note:: La mise à jour est refusée si aucune version du produit n'est détectée.
 
 Retour arrière
 ~~~~~~~~~~~
@@ -257,6 +273,9 @@ Exécuter le script `rollback.sh` avec la version précédente.
 	=========================================================================
 	- Rollback terminated!
 	=========================================================================
+
+..
+	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
 	
 
 Désintallation
@@ -286,6 +305,9 @@ La désinstallation du produit peut se faire en utilisant le script `./uninstall
 	=========================================================================
 	- Uninstallation terminated!
 	=========================================================================
+
+..
+	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
 	
 .. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désintallation. 
 	
@@ -294,15 +316,27 @@ Déploiement
 
 La solution permet de mettre à disposition auprès des utilisateurs les paquets suivants pour faciliter la diffusion:
  - le client lourd
- - la boite à outils
+ - la boîte à outils
  - les différents plugins.
 
 Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
 notifier les utilisateurs de la mise à jour.
 
-Les clients sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/Client`
+Les paquets sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/`
 
-La prise en compte du nouveau client nécessite d'exécuter la commande `xtctl deploy`
++-----------------+-------------------------------------------------+
+|Client           | Contients la version portable et installation   |
++-----------------+-------------------------------------------------+
+|ClientPlugins    |  Contients les plugins                          |
++-----------------+-------------------------------------------------+
+|Toolbox          |  Contients la version portable et installation  |
++-----------------+-------------------------------------------------+
+|ToolboxPlugins   |  Contients les plugins                          |
++-----------------+-------------------------------------------------+
+
+Après dépôt, les paquets logiciels sont automatiquements disponibles depuis l'interface web.
+Pour la mise à jour en mode automatique du client, il faut exécuter la commande `xtctl deploy` sur le serveur
+pour prendre en compte le nouveau client déployé.
 
 .. code-block:: bash
 
@@ -328,7 +362,7 @@ Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingClient
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
-Aucune version pré-compilée existe pour Linux.
+Il n'y a pas de version pré-compilée pour Linux.
 Il faut récupérer les sources depuis github, installer les paquets manquants et exécuter le fichier suivant
 
 .. code-block:: bash
@@ -339,13 +373,13 @@ Mise à jour
 ~~~~~~~~~~~
 
 La mise à jour du client est possible en mode automatique (si présent sur le serveur) ou manuel.
-Depuis le client lourd il est possible de vérifier la présence d'un mise à jour.
+Depuis le client lourd il est possible de vérifier la présence d'une mise à jour.
 
 .. image:: /_static/images/client/client_update.png
 
 .. note:: Si la version proposée est une version majeure alors la mise à jour est obligatoire.
 	
-Boite à outils
+Boîte à outils
 --------------
 
 Installation Windows
@@ -355,13 +389,13 @@ Il existe 2 modes d'installation:
  - mode portable (version recommandée)
  - mode installation
 
-La boite à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
 Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingToolbox.exe`
 	
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
-La boite à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
 2 scripts sont disponibles pour démarrer un agent ou une sonde.
  - ./toolagent
  - ./toolprobe
@@ -371,7 +405,9 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     ./toolagent
     Command line tool launcher
 
-    Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
+    Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|
+    database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] 
+    [tool-description] [[proxy-ip] [proxy-port]]
 
     * Server parameters
     [test-server-ip]: your test server ip or hostname. This option is mandatory.
@@ -379,7 +415,8 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     [ssl-support=True/False]: ssl support. This option is mandatory.
 
     * Tools parameters
-    [Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
+    [Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|
+    command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
     [tool-name]: The tool name. This option is mandatory.
     [tool-description]: The tool description. This option is mandatory.
 
@@ -393,7 +430,8 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     ./toolprobe
     Command line tool launcher
 
-    Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
+    Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|
+    file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
 
     * Server parameters
     [test-server-ip]: your test server ip or hostname. This option is mandatory.
@@ -413,7 +451,7 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
 Mise à jour
 ~~~~~~~~~~~
 
-La mise à jour de la boites à outils est à faire manuellement.
+La mise à jour de la boîte à outils est à faire manuellement.
 Il faut récupérer le paquet depuis le site internet ou bien depuis le serveur de test.
 
 La mise à jour nécessite

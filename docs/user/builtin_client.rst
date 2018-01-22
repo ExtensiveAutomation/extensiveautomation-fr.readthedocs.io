@@ -239,3 +239,17 @@ Compléments
 -----------
 
 Il est possible d'ajouter des plugins dans le client. Les plugins sont à ajouter dans le répertoire "Plugins".
+
+.. note:: Il est nécessaire de redémarrer le client pour prendre en compte les plugins déployés.
+
+Plugin HP ALM
+~~~~~~~~~~~~~~
+
+Plugin Jenkins
+~~~~~~~~~~~~~~
+
+Plugin Shell Recorder
+~~~~~~~~~~~~~~~~~~~~~~
+
+Plugin SeleniumIDE
+~~~~~~~~~~~~~~~~~~

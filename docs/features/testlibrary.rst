@@ -2,7 +2,7 @@ Framework de test
 ================
 
 Le framework de test fournit un cadre permettant de normaliser la création des cas de tests.
-Les principales fonctionnalitées:
+Les principales fonctionnalités:
  - le support des cas de tests avec étapes
  - le support des extensions permettant de communiquer avec le système à tester ou piloter
  - la génération automatique des rapports de tests.
@@ -11,31 +11,31 @@ Cas de test
 -----------
 
 La création d'un cas de test dans la solution est normalisée.
-Un cas de test de découpe en 4 sections:
- - description des différentes étapes du test (description)
- - préparation des extensions permettant de communiquer avec le système à tester ou piloter (prepare)
- - description du test (definition)
- - phase de nettoyage (cleanup)
+Un cas de test se découpe en 4 sections:
+ - **description**: description des différentes étapes du test
+ - **prepare**: préparation des extensions permettant de communiquer avec le système à tester ou piloter
+ - **definition**: description du test
+ - **cleanup**: phase de nettoyage
  
 Le résultat d'un cas de test est automatiquement calculé par le framework lorsque le test est terminé
-en fonction des différentes étapes définits.
+en fonction des différentes étapes définies.
 Il existe 3 résultats possibles:
- - PASS: toutes les étapes du tests ont été exécutés avec succès
+ - PASS: toutes les étapes du tests ont été exécutées avec succès
  - FAILED: au moins une étape est en erreur après exécution
- - UNDEFINED: au moins une étape du test n'a pas été exécuté
+ - UNDEFINED: au moins une étape du test n'a pas été exécutée
 
-.. note:: La section `cleanup` est systèmatiquement appéle, même en cas d'erreur.
+.. note:: La section `cleanup` est systématiquement appelée, même en cas d'erreur.
 
 Etapes de test
 --------------
 
-Un cas de test se découpe en sous étapes.
-Une étape se définie par: 
+Un cas de test se découpe en sous-étapes.
+Une étape se définit par: 
  - un résumé de l'action à réaliser
- - la description détaillé de l'action à réaliser
- - la description du résultat attendus pour valider l'étape.
+ - la description détaillée de l'action à réaliser
+ - la description du résultat attendu pour valider l'étape.
 
-La définition des étapes du test sont à faire dans la section `description`:
+La définition des étapes du test doit être faite dans la section `description`:
 
 .. code-block:: python
 
@@ -68,15 +68,15 @@ Mettre le résultat à FAILED
 Annulation d'un test
 -------------------
 
-Il est possible de forcer l'exécution d'un cas de test en utilisation la fonction `interrupt` dans la section description de votre test.
+Il est possible de forcer l'exécution d'un cas de test en utilisant la fonction `interrupt` dans la section `description` de votre test.
 
 .. code-block:: python
 
   Test(self).interrupt(err="aborted by tester")
   
 
-Utiliser la fonction interrupt permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
-Dans ce cas précis, l'argument `aborted` est positioné à True par le framework pour indiquer l'annulation du test.
+Utiliser la fonction `interrupt` permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
+Dans ce cas précis, l'argument `aborted` est mis à True par le framework pour indiquer l'annulation du test.
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Dans ce cas précis, l'argument `aborted` est positioné à True par le framewor
 Ajout de trace
 --------------
 
-Le framework mets à disposition des fonctions pour ajouter des messages durant l'exécution d'un test.
+Le framework met à disposition certaines fonctions pour ajouter des messages durant l'exécution d'un test.
 Les niveaux suivants sont disponibles:
 
  - info
@@ -111,17 +111,17 @@ Les niveaux suivants sont disponibles:
  
 		Trace(self).error(txt="hello world")
 
-.. note:: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
+.. note:: Si un message de niveau `error` est affiché alors le résultat sera automatiquement mis à FAILED.
+
+.. note:: Les messages apparaissent automatiquement dans le rapport basique.
 
 Stockage des données
 --------------------
 
-Publique
-~~~~~~~~
+Public
+~~~~~~
 
-Un espace publique est disponible sur le serveur de test. Cet espace permet de mettre à jour disposition des fichiers qui sont nécessaire durant l'exécution d'un test.
- 
-<ajouter_image>
+Un espace public est disponible sur le serveur de test. Cet espace permet de mettre à disposition des fichiers qui sont nécessaire durant l'exécution d'un test.
 
    .. image:: /_static/images/testlibrary/espace_public.png
 
@@ -133,8 +133,8 @@ Privé
 ~~~~~
 
 L'espace de stockage privé n'existe que durant l'exécution d'un test.
-Il permet de sauvegarder des logs générés ou récupérer lors de l'exécution du test.
-Ces logs sont automatiquement mis à disposition de l'utilisateur lorsque le test est terminé dans un fichier zip
+Il permet de sauvegarder des logs générés ou récupérés lors de l'exécution du test.
+Ces logs sont automatiquement mis à la disposition de l'utilisateur dans un fichier zip lorsque le test est terminé.
 Ils sont récupables depuis le client ou bien depuis l'API du serveur.
 
 .. image:: /_static/images/testlibrary/private_storage.png
@@ -219,8 +219,8 @@ Exemple de mise en attente tant qu'on est pas le 12 septembre 2016 à 2h:
 Interaction avec le testeur
 ---------------------------
 
-Le framework permet d'écrire des tests semi-automatiques, c'est à dire en mode automatique.
-Cette fonction peut être intéressant pour faire un test en mode question/réponse (ex: configuration d'un équipement)
+Le framework permet d'écrire des tests semi-automatiques, c'est à dire en mode interaction.
+Cette fonction peut être intéressante pour faire un test en mode question/réponse (ex: configuration d'un équipement)
 
 Exemple demandant le nom de la personne:
 
@@ -229,7 +229,7 @@ Exemple demandant le nom de la personne:
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
 
-.. note:: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
+.. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`.
 
 Les variables d'un test
 -----------------------
@@ -241,22 +241,22 @@ Les paramètres entrants (inputs) sont à utiliser pour ajouter des variables su
 
 <inserer image>
 
-Il existent plusieurs types de paramètres:
+Il existe plusieurs types de paramètres:
 
 +----------------+----------------------------------------------------------+
 | Type           |  Description usage                                       |
 +----------------+----------------------------------------------------------+
-| str/pwd        | chaine de caractère                                      |
+| str/pwd        | chaîne de caractères                                     |
 +----------------+----------------------------------------------------------+
-| text           | chaine de caractère multiligne                           |
+| text           | chaîne de caractères multiligne                          |
 +----------------+----------------------------------------------------------+
 | custom         | paramètre avancé                                         |
 +----------------+----------------------------------------------------------+
-| list           | liste de chaine de caractère                             |
+| list           | liste de chaînes de caractères                           |
 +----------------+----------------------------------------------------------+
-| bool           | valeur boolean                                           |
+| bool           | valeur booléen                                           |
 +----------------+----------------------------------------------------------+
-| hex            | valeur hexadécimal                                       |
+| hex            | valeur hexadécimale                                      |
 +----------------+----------------------------------------------------------+
 | none           | valeur nulle                                             |
 +----------------+----------------------------------------------------------+
@@ -266,21 +266,21 @@ Il existent plusieurs types de paramètres:
 +----------------+----------------------------------------------------------+
 | list-shared    | liste de valeurs de variables projets                    |
 +----------------+----------------------------------------------------------+
-| cache          | clé d'une valeur présence dans le cache                  |
+| cache          | clé d'une valeur présente dans le cache                  |
 +----------------+----------------------------------------------------------+
 | int            | entier                                                   |
 +----------------+----------------------------------------------------------+
 | float          | décimal                                                  |
 +----------------+----------------------------------------------------------+
-| dataset        | intégre un fichier de type dataset                       |
+| dataset        | intègre un fichier de type dataset                       |
 +----------------+----------------------------------------------------------+
-| remote-image   | intégre une image présent dans le dépôts de tests        |
+| remote-image   | intègre une image présente dans le dépôts de tests       |
 +----------------+----------------------------------------------------------+
-| local-image    | intégre une image présente en local sur un le poste      |
+| local-image    | intègre une image présente en local sur un le poste      |
 +----------------+----------------------------------------------------------+
-| snapshot-image | intégre une capture d'écran                              |
+| snapshot-image | intègre une capture d'écran                              |
 +----------------+----------------------------------------------------------+
-| local-file     | intégre un fichier présent en local sur le poste         |
+| local-file     | intègre un fichier présent en local sur le poste         |
 +----------------+----------------------------------------------------------+
 | date           | date                                                     |
 +----------------+----------------------------------------------------------+
@@ -288,13 +288,13 @@ Il existent plusieurs types de paramètres:
 +----------------+----------------------------------------------------------+
 | date-time      | date et heure                                            |
 +----------------+----------------------------------------------------------+
-| self-ip        | liste des adresses ip du serveur                         |
+| self-ip        | liste des adresses IP du serveur                         |
 +----------------+----------------------------------------------------------+
-| self-mac       | liste des adresses mac du serveur                        |
+| self-mac       | liste des adresses MAC du serveur                        |
 +----------------+----------------------------------------------------------+
 | sef-eth        | liste des interfaces réseau du serveur                   |
 +----------------+----------------------------------------------------------+
-| json           | returne une valeur au format json                        |
+| json           | returne une valeur au format JSON                        |
 +----------------+----------------------------------------------------------+
 
 Les variables sont accessibles depuis un test avec la fonction `input(...)`
@@ -313,20 +313,22 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
    - DATA_		Variables décrivant des données spécifiques
    - USER_		Variables utilisateurs
   
-  Cette fonctionnalité peut être utile pour augmenter le niveau de tracabilité dans les rapports.
+  Cette fonctionnalité peut être utile pour augmenter le niveau de traçabilité dans les rapports.
   
-  <insérer image exemple>
+.. image:: /_static/images/testlibrary/inputs_sut.png
+  
+.. image:: /_static/images/testlibrary/report_inputs.png
   
 Variable personnalisable
 ~~~~~~~~~~~~~~~
 
-Ce type de paramètre est intéressant car il permet de constuire des valeurs appelant d'autres variables.
+Ce type de paramètre est intéressant car il permet de construire des valeurs appelant d'autres variables.
 
 Prenons l'exemple d'un test contenant les 2 variables suivantes:
  - DEST_IP avec la valeur 192.168.1.1
  - DEST_PORT avec la valeur 8080
 
-Le type `custom` va nous permettre de constuire une 3ième variable 
+Le type `custom` va nous permettre de construire une 3ième variable 
  - DEST_URL avec la valeur https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
 
 Le mot clé `[!INPUT:<NOM_VARIABLE_ENTRANTE:]` permet d'appeler une autre variable entrante.
@@ -336,7 +338,7 @@ On obtiendra comme valeur https://192.168.1.1:8080/welcome pour la variable DEST
 Variable alias
 ~~~~~~~~~~~~~~
 
-Un alias de paramètre peut être utilise durant la définition d'un test plan.
+Un alias de paramètre peut être utilisé durant la définition d'un test plan.
 La création d'un alias permet de changer le nom d'un paramètre sans changer le nom initial.
 
 Variable agents

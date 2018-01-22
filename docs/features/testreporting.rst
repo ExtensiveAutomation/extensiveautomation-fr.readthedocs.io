@@ -19,28 +19,29 @@ Les évènements sont ensuite convertis et stockés dans un message.
   
 Des opérateurs sont disponibles pour faciliter la comparaison des messages reçus.
 
-+-----------------+------------------------------------------------------------------+
-|Nom              |   Description                                                    |
-+-----------------+------------------------------------------------------------------+
-| Any             | Accepte toute les valeurs                                        |
-+-----------------+------------------------------------------------------------------+
-| Contains        | Vérifie si la chaine de caractère contients des caractères       |
-+-----------------+------------------------------------------------------------------+
-| Endswith        | Vérifie si la chaine de caractère se termine par                 |
-+-----------------+------------------------------------------------------------------+
-| Startswith      | Vérifie si la chaine de caractère commence par                   |
-+-----------------+------------------------------------------------------------------+
-| GreaterThan     | Vérifie si un entier est plus grand que                          |
-+-----------------+------------------------------------------------------------------+
-| LowerThan       | Vérifie si un entier est plus petit que                          |
-+-----------------+------------------------------------------------------------------+
-| RegEx           | Vérifie si la chaine de caractère répond à l'expression régulière|
-+-----------------+------------------------------------------------------------------+
++-----------------+-------------------------------------------------------------------+
+|Nom              |   Description                                                     |
++-----------------+-------------------------------------------------------------------+
+| Any             | Accepte toute les valeurs                                         |
++-----------------+-------------------------------------------------------------------+
+| Contains        | Vérifie si la chaîne de caractères contients des caractères       |
++-----------------+-------------------------------------------------------------------+
+| Endswith        | Vérifie si la chaîne de caractères se termine par                 |
++-----------------+-------------------------------------------------------------------+
+| Startswith      | Vérifie si la chaîne de caractères commence par                   |
++-----------------+-------------------------------------------------------------------+
+| GreaterThan     | Vérifie si un entier est plus grand que                           |
++-----------------+-------------------------------------------------------------------+
+| LowerThan       | Vérifie si un entier est plus petit que                           |
++-----------------+-------------------------------------------------------------------+
+| RegEx           | Vérifie si la chaîne de caractères répond à l'expression régulière|
++-----------------+-------------------------------------------------------------------+
 
 .. image:: /_static/images/testlibrary/template_expected.png
  
 
 Le client permet de visualiser graphiquement la comparaison effectuée par le framework.
+
 Définition du code couleur:
 
 +-----------------+------------------------------------------------------------------+
@@ -48,7 +49,7 @@ Définition du code couleur:
 +-----------------+------------------------------------------------------------------+
 |Rouge            |   La valeur reçue ne correspond pas à la valeur attendue         |
 +-----------------+------------------------------------------------------------------+
-|Jaune            |   La valeur attendue n'a pas été vérifié                         |
+|Jaune            |   La valeur attendue n'a pas été vérifiée                        |
 +-----------------+------------------------------------------------------------------+
 
 .. image:: /_static/images/client/client_event_mismatch.png
@@ -60,26 +61,50 @@ Génération des rapports
 Après chaque exécution d'un test, le framework génère automatiquement les rapports de tests associés.
 Il existe 2 type rapports:
  - Rapport avancé
- - Rapport basique
+ - Rapport basique (accessible par défaut depuis le client graphique)
 
 Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l'API.
 
 .. note:: Les rapports peuvent être exportés au format html, csv, xml et pdf.
 
-Rapport avancée
-~~~~~~~~~~~~~~~
+Rapport avancé
+~~~~~~~~~~~~~~
 
+Le rapport avancé affiche un certain nombre de paramètres:
+ - la durée d'exécution de chaque cas de test
+ - la description complète des étapes de test.
+ - des statistiques sur l'exécution.
+ - des paramètres de tests.
+ 
 .. image:: /_static/images/testlibrary/advanced_report.png
 
 Rapport basique
 ~~~~~~~~~~~~~~~
+
+Le rapport basique résume le résultat de l'ensemble des cas de tests et des états.
+
+Code couleur:
+
++-----------------+------------------------------------------------------------------+
+|Vert             |   Le cas de test est valide                                      |
++-----------------+------------------------------------------------------------------+
+|Rouge            |   Le cas de test est en erreur                                   |
++-----------------+------------------------------------------------------------------+
+|Orange           |   Le résultat du cas de test n'est pas déterminé                 |
++-----------------+------------------------------------------------------------------+
+|Orange           |   Le cas de test n'a pas été exécuté                             |
++-----------------+------------------------------------------------------------------+
+
+.. note:: Il faut cliquer sur les cas de tests pour afficher les étapes.
+
+.. note:: Les messages affichés par le test avec la fonction `Trace(self).info()` sont disponibles dans le rapport en cliquant sur le lien `[logs details]`.
 
 .. image:: /_static/images/testlibrary/basic_report.png
 
 Accès aux logs complémentaires
 ------------------------------
 
-Le framework permet d'enregistre des logs durants l'exécution d'un test.
+Le framework permet d'enregistrer des logs durants l'exécution d'un test.
 Ils sont ensuite accessibles depuis le client lourd ou bien l'API.
 
 <insérer image du client>

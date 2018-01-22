@@ -1,5 +1,5 @@
-Extensions pour les tests
-=========================
+Compléments Serveur
+===================
 
 Adaptateurs
 -----------
@@ -8,15 +8,19 @@ Les adaptateurs permettent de communiquer avec le système à tester ou piloter.
  - support de protocoles réseaux
  - support de protocoles niveau application
  - communication avec les bases de données
- - intéraction systèmes
- - intéraction avec les interfaces graphiques
+ - interaction systèmes
+ - interaction avec les interfaces graphiques
  - support de protocoles télécom
 
-Les adaptaters ont deux modes d'utilisations:
- - un mode direct: la communication se faire directement depuis le serveur de test vers le système à contrôler.
- - un mode agent: la communication avec le système à contrôler se fait par l'intermédiare d'un agent communiquant avec le serveur de test.
- 
-Liste des adaptateurs disponibles par défauts:
+Les adaptateurs ont deux modes d'utilisation:
+ - un mode direct: la communication se fait directement depuis le serveur de test vers le système à contrôler.
+ - un mode agent: la communication avec le système à contrôler se fait par l'intermédiaire d'un agent communiquant avec le serveur de test.
+
+.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
+
+.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
+
+Liste des adaptateurs disponibles par défaut:
 
 **Protocoles réseaux**
 
@@ -65,9 +69,9 @@ Liste des adaptateurs disponibles par défauts:
 +--------------+--------------------------------------+-------------------------------------------+
 | Adb          | adb                                  | Intégration avec la passerelle Android    |
 +--------------+--------------------------------------+-------------------------------------------+
-| Selenium     | selenium2-server ou selenium3-server | Intégration avec le projet selenium       |
+| Selenium     | selenium2-server ou selenium3-server | Intégration avec le projet Selenium       |
 +--------------+--------------------------------------+-------------------------------------------+	
-| Sikuli       | sikulix-server                       | Intégration avec le projet sikulix        |
+| Sikuli       | sikulix-server                       | Intégration avec le projet SikuliX        |
 +--------------+--------------------------------------+-------------------------------------------+					
 
 **Bases de données**
@@ -75,7 +79,7 @@ Liste des adaptateurs disponibles par défauts:
 +---------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs   | Agents       | Descriptions                                                                |
 +---------------+--------------+-----------------------------------------------------------------------------+
-| Microsoft SQL | database     | Communication avec une base de type microsoft SQL                           |
+| Microsoft SQL | database     | Communication avec une base de type Microsoft SQL                           |
 +---------------+--------------+-----------------------------------------------------------------------------+
 | MySQL         | database     | Communication avec une base de type MySQL/MariaDB                           |
 +---------------+--------------+-----------------------------------------------------------------------------+	
@@ -93,9 +97,9 @@ Liste des adaptateurs disponibles par défauts:
 +----------------+--------------+-----------------------------------------------------------------------------+	
 | FTP            | ftp          | Client avec support TLS                                                     |
 +----------------+--------------+-----------------------------------------------------------------------------+	
-| System File    | file         | Permet l'intéraction avec les fichiers systèmes Linux ou Windows            |
+| System File    | file         | Permet l'interaction avec les fichiers systèmes Linux ou Windows            |
 +----------------+--------------+-----------------------------------------------------------------------------+	
-| System Win/Unix| command      | Permet de contrôle les systèmes Linux et Windows (wmic)                     |
+| System Win/Unix| command      | Permet de contrôler les systèmes Linux et Windows (wmic)                    |
 +----------------+--------------+-----------------------------------------------------------------------------+	
 | Cisco Catalyst | ssh          | Client de configuration, basé sur l'adaptateur Telnet                       |
 +----------------+--------------+-----------------------------------------------------------------------------+	
@@ -105,29 +109,25 @@ Liste des adaptateurs disponibles par défauts:
 +--------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs  | Agents       | Descriptions                                                                |
 +--------------+--------------+-----------------------------------------------------------------------------+
-| SMS Gateway  | gateway-sms  |  Permet de recevoir ou d'envoyer des SMS en utilisant un smartphone android |
+| SMS Gateway  | gateway-sms  |  Permet de recevoir ou d'envoyer des SMS en utilisant un smartphone Android |
 +--------------+--------------+-----------------------------------------------------------------------------+	
 | SIP          | socket       |  Téléphone SIP                                                              |
 +--------------+--------------+-----------------------------------------------------------------------------+
 | RTP          | socket       |  Module permettant d'envoyer et recevoir des flux audios et vidéos          |
 +--------------+--------------+-----------------------------------------------------------------------------+		
 
-.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
-
-.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
-
 Librairies
 ----------
 
-Une librarie permet de mettre à disposition rapidement des fonctions pour 
- - supporter les méthodes de chiffrement de donnée
+Une librairie permet de mettre à disposition rapidement des fonctions pour 
+ - supporter les méthodes de chiffrement de données
  - supporter les formats de compression existants
  - supporter les fonctions d'authentification
  - manipuler les différents format de date, heure et unités
- - supporter les codecs (xml, json, etc...)
+ - supporter les codecs (XML, JSON, etc...)
  - supporter les fonctions de hash de données
 
-Une librarie ne communique pas en direct avec le système à tester ou piloter. Elle sont utilisées:
+Une librairie ne communique pas en direct avec le système à tester ou piloter. Elle est utilisée:
  - directement depuis les tests
  - depuis les adaptateurs.
 
@@ -165,13 +165,13 @@ Liste des librairies disponibles par défauts:
 +--------------+-----------------------------------------------+
 | JSON         |  Encode ou décode du texte au format JSON     |
 +--------------+-----------------------------------------------+
-| XML          |  Encode ou décode du texte au format XMl      |
+| XML          |  Encode ou décode du texte au format XML      |
 +--------------+-----------------------------------------------+
 
 **Compression**	
 
 +--------+-------------------------------------------------+
-| GZIP   | Compression ou décompression au format Gzip     |
+| GZIP   | Compression ou décompression au format GZIP     |
 +--------+-------------------------------------------------+	
 
 **Hashing**	
@@ -209,7 +209,7 @@ Liste des librairies disponibles par défauts:
 +--------------+---------------------------------------------------------------+
 | SDP          |  Décode ou encode des messages SDP                            |
 +--------------+---------------------------------------------------------------+
-| WavContainer |  Création de fichier audio de type Wav                        |
+| WavContainer |  Création de fichier audio de type WAV                        |
 +--------------+---------------------------------------------------------------+
 | Waves        |  Générateur d'ondes simples                                   |
 +--------------+---------------------------------------------------------------+
@@ -228,13 +228,13 @@ Liste des librairies disponibles par défauts:
 +-------------+------------------------------------------------------+
 | Digest      |  Décode ou encode l'autorisation                     |
 +-------------+------------------------------------------------------+
-| Hmac        |   Décode ou encode l'autorisation                    |
+| Hmac        |  Décode ou encode l'autorisation                     |
 +-------------+------------------------------------------------------+
 | Oauth       |  Décode ou encode l'autorisation                     |
 +-------------+------------------------------------------------------+
-| Wsse        |   Décode ou encode l'autorisation                    |
+| Wsse        |  Décode ou encode l'autorisation                     |
 +-------------+------------------------------------------------------+
-| Certificate | Décode les certificats dans un format lisible        |
+| Certificate |  Décode les certificats dans un format lisible       |
 +-------------+------------------------------------------------------+
 | JWT         |  Décode ou encode des tokens                         |
 +-------------+------------------------------------------------------+
@@ -255,7 +255,7 @@ Liste des librairies disponibles par défauts:
 Interopérabilité
 ---------------
 
-Le produit embarque de base un certain nombre de plugins pour s'interfacer avec 
+Le produit vient à la base avec un certain nombre de plugins pour s'interfacer avec 
 d'autre d'outils existants (suivi de défaut, managements de tests, etc..).
 
 Liste des outils supportés:
@@ -279,10 +279,28 @@ Liste des outils supportés:
     La solution dispose d'une API REST, elle peut être pilotée aussi par ces outils.
      - Plugin `Jenkins`: https://wiki.jenkins.io/display/JENKINS/ExtensiveTesting+Plugin
 
+HP ALM
+~~~~~~
+
+Jenkins
+~~~~~~
+
+VSphere
+~~~~~~
+
+ExtensiveTesting
+~~~~~~~~~~~~~~~~
+
+Jira
+~~~~
+
+Git
+~~~~
+
 Agents
 ------
 
-Les agents sont disponibles depuis la boite à outils. Il sont à utiliser conjointement avec les adaptateurs pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
+Les agents sont disponibles depuis la boîte à outils. Il sont à utiliser conjointement avec les adaptateurs pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
 en direct par le serveur de test (ex: une page web)
 
 +------------------+--------------------------------------------------------------------------------------+
@@ -302,25 +320,25 @@ en direct par le serveur de test (ex: une page web)
 +------------------+--------------------------------------------------------------------------------------+
 | command          |  Permet d'exécuter des commandes systèmes sur Windows ou Linux                       |
 +------------------+--------------------------------------------------------------------------------------+
-| file             |  Permet de récupérer des fichiers sur les systèmes sur Windows ou Linux              |
+| file             |  Permet de récupérer des fichiers sur les systèmes Windows ou Linux                  |
 +------------------+--------------------------------------------------------------------------------------+
 | adb              |  Permet de piloter les smartphones Android                                           |
 +------------------+--------------------------------------------------------------------------------------+
 | gateway-sms      |  Permet d'envoyer ou recevoir des SMS                                                |
 +------------------+--------------------------------------------------------------------------------------+
-| database         |  Permet de requêter les bases de données (MySQL, Microsoft SQL et PostgreSQL         |
+| database         |  Permet de requêter les bases de données (MySQL, Microsoft SQL et PostgreSQL)        |
 +------------------+--------------------------------------------------------------------------------------+
 | ssh              |  Permet de se connecter sur des machines via SSH ou SFTP                             |
 +------------------+--------------------------------------------------------------------------------------+
 
 .. note:: L'utilisation de l'agent Selenium3-Server nécessiste au minimum d'avoir Java8 sur le poste.
 
-.. tip: Il est conseillé de limité l'usage des agents car la mise en place des tests se retrouve plus complexe.
+.. tip: Il est conseillé de limiter l'usage des agents car la mise en place des tests se retrouve plus complexe.
 
 Sondes
 ------
 
-Les sondes sont disponibles dans la boite à outils. Le but principal est de récupérer 
+Les sondes sont disponibles dans la boîte à outils. Le but principal est de récupérer 
 automatiquement des logs (trace réseaux, fichiers) durant l'exécution d'un test.
 
 +----------------+--------------------------------------------------------------------------------------+
