@@ -37,7 +37,8 @@ Client
 | Disque          |    ~1Go                   |
 +-----------------+---------------------------+
 
-.. note:
+.. note::
+
  L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
  Cependant il est toujours de compiler les sources sur un environnement 32bits. 
 
@@ -56,6 +57,7 @@ Boite à outils
 | Disque          |    ~1Go                    |
 +-----------------+----------------------------+
 
-.. note:
+.. note::
+
  L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
  Cependant il est toujours de compiler les sources sur un environnement 32bits. 

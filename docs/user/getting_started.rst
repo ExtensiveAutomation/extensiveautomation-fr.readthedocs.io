@@ -10,7 +10,9 @@ Pour se faire il faut avoir à disposition son compte utilisateur ainsi que l'ad
 La fenêtre de connexion est disponible depuis le menu `Get Started > Connect` ou bien directement sur la page d'accueil.
 Une fois la connexion réussie, l'utilisateur peut accéder à l'ensemble des tests automatiques existent sur le serveur.
 
-.. note: l'utilisateur `admin` peut être utilisé dans le cadre de la découverte de la solution.
+.. image:: /_static/images/client/client_connect.png
+
+.. note:: l'utilisateur `admin` peut être utilisé dans le cadre de la découverte de la solution.
 
 Ecriture d'un test
 ------------------
@@ -36,7 +38,7 @@ La première utilisation consiste à créer un très simple premier cas de test 
 Ecriture d'un scénario
 ----------------------
 
-.. notes:: Ce mini guide part du principe que vous avez suivi le chapitre `Ecriture d'un test`.
+.. note:: Ce mini guide part du principe que vous avez suivi le chapitre `Ecriture d'un test`.
 
 L'exemple suivant explique comment créer son premier scénario avec une surcharge des variables de tests.
 
@@ -61,13 +63,17 @@ L'exemple suivant explique comment créer son premier scénario avec une surchar
 Exécution d'un test
 -------------------
 
+.. note:: Ce mini guide part du principe que vous avez suivi les chapitres `Ecriture d'un test` et `Ecriture d'un scénario`.
+
 L'exécution d'un test peut se faire en cliquant sur le bouton `Execute`.
 Ouvrir les tests `Test_A` et `Scenario_A` et les exécuter.
+
+.. image:: /_static/images/client/client_execute.png
 
 Analyse des résultats
 ---------------------
 
-.. notes:: Ce mini guide part du principe que vous avez suivi les chapitres `Ecriture d'un test` et `Ecriture d'un scénario`.
+.. note:: Ce mini guide part du principe que vous avez suivi les chapitres `Ecriture d'un test` et `Ecriture d'un scénario`.
 
 
 La 1ière fenêtre d'analyse montre l'exécution du test "Test_A" et notamment le message "bonjour".
@@ -99,16 +105,26 @@ Liste des actions disponibles:
 +--------------------+-----------------------------------------------------------------+
 | SET VALUE          |  Sauvegarde une donnée dans le cache                            |
 +--------------------+-----------------------------------------------------------------+
-| RESET CACHE        |   Vide complètement le cache                                    |
+| RESET CACHE        |  Vide complètement le cache                                     |
 +--------------------+-----------------------------------------------------------------+
-| USERCODE           |    Permet d'ajouter du code personalisé dans le test            |
+| USERCODE           |  Permet d'ajouter du code personalisé dans le test              |
 +--------------------+-----------------------------------------------------------------+
-| WAIT DURING        |   Attend pendant xx secondes                                    |
+| WAIT DURING        |  Attend pendant xx secondes                                     |
 +--------------------+-----------------------------------------------------------------+
-| CHECK IF VALUE     |   Vérifie si la value contient un texte spécifique              |
+| CHECK IF VALUE     |  Vérifie si la value contient un texte spécifique               |
 +--------------------+-----------------------------------------------------------------+
-| ASK SOMETHING      |   Demande une valeur à l'utilisateur (mode interaction)         |
+| ASK SOMETHING      |  Demande une valeur à l'utilisateur (mode interaction)          |
 +--------------------+-----------------------------------------------------------------+
+
+.. image:: /_static/images/client_assistant/aa_basic_link.png
+
+.. image:: /_static/images/client_assistant/aa_basic.png
+
+.. image:: /_static/images/client_assistant/aa_basic_log.png
+
+.. image:: /_static/images/client_assistant/aa_basic_check.png
+
+.. image:: /_static/images/client_assistant/aa_basic_test.png
 
 Système
 ~~~~~~~
@@ -128,6 +144,10 @@ Liste des actions disponibles:
 +--------------------+-----------------------------------------------------------------+
 | CHECKING IF SCREEN |  Vérifie si l'écran contient un texte spécifique                |
 +--------------------+-----------------------------------------------------------------+
+
+.. image:: /_static/images/client_assistant/aa_system_open.png
+
+.. image:: /_static/images/client_assistant/aa_system_check.png
 
 Application
 ~~~~~~~~~~~~
@@ -195,6 +215,29 @@ Liste des actions disponibles:
 +---------------------------+----------------------------------------------------------------------------+
 | DRAG IMAGE AND DROP TO    |  Detect the visual pattern on the screen and drop it to the position (x,y) |
 +---------------------------+----------------------------------------------------------------------------+
+
+.. image:: /_static/images/client_assistant/aa_app_steps1.png
+
+.. image:: /_static/images/client_assistant/aa_app_steps2.png
+
+.. image:: /_static/images/client_assistant/aa_app_steps3.png
+
+.. image:: /_static/images/client_assistant/aa_app_img1.png
+
+.. image:: /_static/images/client_assistant/aa_app_img2.png
+
+.. image:: /_static/images/client_assistant/aa_app_img3.png
+
+.. image:: /_static/images/client_assistant/aa-app-clipboard.png
+
+.. image:: /_static/images/client_assistant/aa_app_img4.png
+
+.. image:: /_static/images/client_assistant/aa_app_word1.png
+
+.. image:: /_static/images/client_assistant/aa_app_word2.png
+
+.. image:: /_static/images/client_assistant/aa_app_mouse.png
+
 
 Web
 ~~~
@@ -273,6 +316,10 @@ Liste des actions disponibles:
 | TYPE TEXT ON HTML ELEMENT |  Envoi du texte sur un élement HTML précis                      |
 +---------------------------+-----------------------------------------------------------------+	
 
+.. image:: /_static/images/client_assistant/aa_web_step1.png
+
+.. image:: /_static/images/client_assistant/aa_web_step3.png
+
 Mobile
 ~~~~~~
 
@@ -319,4 +366,9 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | SWIPE FROM POSITION       |  Swipe from position x1,y1 to x2,y2                             |
 +---------------------------+-----------------------------------------------------------------+
-				
+
+.. image:: /_static/images/client_assistant/aa_mob_preview.png
+
+.. image:: /_static/images/client_assistant/aa_mobile_step1.png
+
+.. image:: /_static/images/client_assistant/aa_mob_steps.png

@@ -64,7 +64,7 @@ Il existe 2 type rapports:
 
 Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l'API.
 
-.. notes:: Les rapports peuvent être exportés au format html, csv, xml et pdf.
+.. note:: Les rapports peuvent être exportés au format html, csv, xml et pdf.
 
 Rapport avancée
 ~~~~~~~~~~~~~~~

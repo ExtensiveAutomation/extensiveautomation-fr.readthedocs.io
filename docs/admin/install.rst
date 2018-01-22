@@ -72,7 +72,7 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
  - utilisateur `tester`
  - utilisateur `monitor`
  
-.. notes:: Les comptes par défaut n'ont pas de mot de passe.
+.. note:: Les comptes par défaut n'ont pas de mot de passe.
 
 .. warning:: Ne pas oublier de changer les mots de passe des comptes par défaut ou de désactiver les comptes.
 
@@ -162,7 +162,7 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
  - utilisateur `admin`
  - utilisateur `tester`
  
-.. notes:: Les comptes par défaut n'ont pas de mot de passe.
+.. note:: Les comptes par défaut n'ont pas de mot de passe.
 
 .. warning:: Ne pas oublier de changer les mots de passe des comptes par défaut ou de désactiver les comptes.
 
@@ -233,7 +233,7 @@ Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
     - Continue and go to the web interface (https://xxxxxxxxx/web/index.php)
     =========================================================================
 
-.. notes:: La mise à jour est refusé si aucune version du produit est détectée.
+.. note:: La mise à jour est refusé si aucune version du produit est détectée.
 
 Retour arrière
 ~~~~~~~~~~~
@@ -287,7 +287,7 @@ La désinstallation du produit peut se faire en utilisant le script `./uninstall
 	- Uninstallation terminated!
 	=========================================================================
 	
-.. notes: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désintallation. 
+.. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désintallation. 
 	
 Déploiement
 ~~~~~~~~~~~
@@ -341,9 +341,9 @@ Mise à jour
 La mise à jour du client est possible en mode automatique (si présent sur le serveur) ou manuel.
 Depuis le client lourd il est possible de vérifier la présence d'un mise à jour.
 
-<insérer image>
+.. image:: /_static/images/client/client_update.png
 
-.. notes:: Si la version proposée est une version majeure alors la mise à jour est obligatoire.
+.. note:: Si la version proposée est une version majeure alors la mise à jour est obligatoire.
 	
 Boite à outils
 --------------
@@ -420,4 +420,4 @@ La mise à jour nécessite
  - supprimer la version courante
  - ajouter la nouvelle version et reconfigurer les agents ou sondes à redémarrer.
  
-.. notes: La mise à jour automatique n'est pas encore supportée.
+.. note:: La mise à jour automatique n'est pas encore supportée.

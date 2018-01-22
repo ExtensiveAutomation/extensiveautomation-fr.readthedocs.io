@@ -24,7 +24,7 @@ Il existe 3 résultats possibles:
  - FAILED: au moins une étape est en erreur après exécution
  - UNDEFINED: au moins une étape du test n'a pas été exécuté
 
-.. notes: La section `cleanup` est systèmatiquement appéle, même en cas d'erreur.
+.. note:: La section `cleanup` est systèmatiquement appéle, même en cas d'erreur.
 
 Etapes de test
 --------------
@@ -63,7 +63,7 @@ Mettre le résultat à FAILED
   self.step1.setFailed(actual="error to run the step")
   
 
-.. notes: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme UNDEFINED.
+.. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme UNDEFINED.
 
 Annulation d'un test
 -------------------
@@ -111,7 +111,7 @@ Les niveaux suivants sont disponibles:
  
 		Trace(self).error(txt="hello world")
 
-.. notes: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
+.. note:: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
 
 Stockage des données
 --------------------
@@ -159,7 +159,7 @@ Exemple pour ajouter du texte dans un fichier de log déjà existant
   Private(self).appendFile(destname="my_logs", data="hello world2")
   
 
-.. notes: Il est possible de sauvegarder des fichiers depuis un adaptateur
+.. note:: Il est possible de sauvegarder des fichiers depuis un adaptateur
 	
 En cache
 ~~~~~
@@ -229,7 +229,7 @@ Exemple demandant le nom de la personne:
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
 
-.. notes: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
+.. note:: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
 
 Les variables d'un test
 -----------------------
@@ -304,7 +304,7 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
   input('DEBUG')
   
 
-.. notes:
+.. note::
 
   Le nom d'un paramètre est unique et obligatoirement en majuscule.
 

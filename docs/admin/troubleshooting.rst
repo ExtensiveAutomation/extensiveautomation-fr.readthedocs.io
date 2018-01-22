@@ -9,13 +9,13 @@ Serveur
 
 Les logs serveurs sont stockés sur `/opt/xtc/current/Var/Logs/`.
 Les logs sont configurés en mode INFO par défaut.
-Le niveau DEBUG peut être activé depuis le fichier settings.ini
+Le niveau DEBUG peut être activé depuis le fichier settings.ini.
 
 .. code-block::
     [Trace]
     level=DEBUG
 
-.. notes:: Il est possible de changer le niveau de logs à chaud en faisant un `xtcl reload`
+.. note:: Il est possible de changer le niveau de logs à chaud en faisant un `xtcl reload`
 
 Client
 ~~~~~~~
@@ -43,7 +43,7 @@ Le niveau DEBUG peut être activé depuis le fichier `settings.ini`.
     
 .. image:: /_static/images/client/toolbox_logs.png
     
-.. notes: Un redémarrage de la boite à outils est nécessaire pour prendre en compte le changement
+.. note:: Un redémarrage de la boite à outils est nécessaire pour prendre en compte le changement
 
 FAQ
 ---
@@ -60,7 +60,7 @@ Comment changer le port de connexion du client ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Le port de destination peut être modifié depuis les préférences du client.
-Ou bien directement depuis le fichier `settings.ini`
+Ou bien directement depuis le fichier `settings.ini`.
 
 Afficher la version du serveur?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

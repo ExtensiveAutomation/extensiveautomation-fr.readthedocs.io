@@ -112,9 +112,9 @@ Liste des adaptateurs disponibles par défauts:
 | RTP          | socket       |  Module permettant d'envoyer et recevoir des flux audios et vidéos          |
 +--------------+--------------+-----------------------------------------------------------------------------+		
 
-.. notes:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
+.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
 
-.. notes:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
+.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
 Librairies
 ----------
@@ -275,7 +275,7 @@ Liste des outils supportés:
 +------------------+------------------------------------------------------------+
 
 
-.. notes:: 
+.. note:: 
     La solution dispose d'une API REST, elle peut être pilotée aussi par ces outils.
      - Plugin `Jenkins`: https://wiki.jenkins.io/display/JENKINS/ExtensiveTesting+Plugin
 
@@ -313,7 +313,7 @@ en direct par le serveur de test (ex: une page web)
 | ssh              |  Permet de se connecter sur des machines via SSH ou SFTP                             |
 +------------------+--------------------------------------------------------------------------------------+
 
-.. notes:: L'utilisation de l'agent Selenium3-Server nécessiste au minimum d'avoir Java8 sur le poste.
+.. note:: L'utilisation de l'agent Selenium3-Server nécessiste au minimum d'avoir Java8 sur le poste.
 
 .. tip: Il est conseillé de limité l'usage des agents car la mise en place des tests se retrouve plus complexe.
 

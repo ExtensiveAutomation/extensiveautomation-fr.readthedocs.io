@@ -25,7 +25,7 @@ La création d'un utilisateur nécessite à minima de préciser:
  - son niveau d'accès (administrateur, testeur)
  - les projets autorisés
 
-.. note:: Si une adresse email est précisée, alors il est possible de recevoir les résultats des tests automatiquement dans sa boite mails.
+.. note:: Si une adresse email est précisée, alors il est possible de recevoir les résultats des tests automatiquement dans sa boite mail.
 
 .. warning: Ne pas oublier de modifier les mots de passes des utilisateurs `admin` et `tester`, par défaut ils n'ont pas de mot de passe.
 
