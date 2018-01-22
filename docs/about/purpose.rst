@@ -7,7 +7,7 @@ Concepts
 --------
 
 L'ojectif de la solution est de fournir un environnement de création de tests automatiques, complet et clé en main.
-L'installation est simplifiée et intégre d'autres produits open source existants.
+L'installation est simplifiée et intègre d'autres produits open source existants.
 
 Le projet a plusieurs objectifs depuis sa création:
  - Unifier les différents outils de test dans un seul environnement
@@ -21,7 +21,7 @@ Le projet a plusieurs objectifs depuis sa création:
 Usages
 ------
 
-La solution couvre plusieurs usages et peut être utilisé pour les cas suivants:
+La solution couvre plusieurs usages et peut être utilisée pour les cas suivants:
  - automatiser les tests dans les environnements d'intégration
  - automatiser les tests de non-régression et fonctionnels
  - automatiser les tests de bout-en-bout
@@ -30,10 +30,10 @@ La solution couvre plusieurs usages et peut être utilisé pour les cas suivants
 
 .. note:: La solution est développée en python donc l'ensemble de vos scripts sont intégrables ou exécutables par la solution.
 
-License
+Licence
 -------
 
-L'environnement est open source et sous license LGPL 2.1.
+L'environnement est open source et sous licence LGPL 2.1.
 Le code source est disponible sur github (https://github.com/ExtensiveTesting).
 
 Auteur
@@ -44,7 +44,7 @@ Le projet a été initialisé en 2010. Il est dévelopé et maintenu par Denis M
 Contact
 -------
 
-Pour rentrer en contact, plusieurs posibilités:
+Pour entrer en contact:
  - par email d.machard@gmail.com
  - depuis twitter https://twitter.com/Extensive_Tests
  - depuis le forum google https://groups.google.com/forum/#!forum/extensive-testing-users
