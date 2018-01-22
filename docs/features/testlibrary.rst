@@ -12,10 +12,10 @@ Cas de test
 
 La création d'un cas de test dans la solution est normalisée.
 Un cas de test de découpe en 4 sections:
- - description des différentes étapes du test (description)
- - préparation des extensions permettant de communiquer avec le système à tester ou piloter (prepare)
- - description du test (definition)
- - phase de nettoyage (cleanup)
+ - **description**: description des différentes étapes du test
+ - **prepare**: préparation des extensions permettant de communiquer avec le système à tester ou piloter
+ - **definition**: description du test
+ - **cleanup**: phase de nettoyage
  
 Le résultat d'un cas de test est automatiquement calculé par le framework lorsque le test est terminé
 en fonction des différentes étapes définits.
@@ -32,7 +32,7 @@ Etapes de test
 Un cas de test se découpe en sous étapes.
 Une étape se définie par: 
  - un résumé de l'action à réaliser
- - la description détaillé de l'action à réaliser
+ - la description détaillée de l'action à réaliser
  - la description du résultat attendus pour valider l'étape.
 
 La définition des étapes du test sont à faire dans la section `description`:
@@ -68,14 +68,14 @@ Mettre le résultat à FAILED
 Annulation d'un test
 -------------------
 
-Il est possible de forcer l'exécution d'un cas de test en utilisation la fonction `interrupt` dans la section description de votre test.
+Il est possible de forcer l'exécution d'un cas de test en utilisation la fonction `interrupt` dans la section `description` de votre test.
 
 .. code-block:: python
 
   Test(self).interrupt(err="aborted by tester")
   
 
-Utiliser la fonction interrupt permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
+Utiliser la fonction `interrupt` permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
 Dans ce cas précis, l'argument `aborted` est positioné à True par le framework pour indiquer l'annulation du test.
 
 .. code-block:: python
@@ -111,7 +111,9 @@ Les niveaux suivants sont disponibles:
  
 		Trace(self).error(txt="hello world")
 
-.. note:: si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED
+.. note:: Si un message de niveau est `error` est affiché alors le résultat sera automatiquement positionné à FAILED.
+
+.. note:: Les messages apparaissent automatiquement dans le rapport basique.
 
 Stockage des données
 --------------------
@@ -119,9 +121,7 @@ Stockage des données
 Publique
 ~~~~~~~~
 
-Un espace publique est disponible sur le serveur de test. Cet espace permet de mettre à jour disposition des fichiers qui sont nécessaire durant l'exécution d'un test.
- 
-<ajouter_image>
+Un espace publique est disponible sur le serveur de test. Cet espace permet de mettre à disposition des fichiers qui sont nécessaire durant l'exécution d'un test.
 
    .. image:: /_static/images/testlibrary/espace_public.png
 
@@ -134,7 +134,7 @@ Privé
 
 L'espace de stockage privé n'existe que durant l'exécution d'un test.
 Il permet de sauvegarder des logs générés ou récupérer lors de l'exécution du test.
-Ces logs sont automatiquement mis à disposition de l'utilisateur lorsque le test est terminé dans un fichier zip
+Ces logs sont automatiquement mis à disposition de l'utilisateur lorsque le test est terminé dans un fichier zip.
 Ils sont récupables depuis le client ou bien depuis l'API du serveur.
 
 .. image:: /_static/images/testlibrary/private_storage.png
@@ -219,7 +219,7 @@ Exemple de mise en attente tant qu'on est pas le 12 septembre 2016 à 2h:
 Interaction avec le testeur
 ---------------------------
 
-Le framework permet d'écrire des tests semi-automatiques, c'est à dire en mode automatique.
+Le framework permet d'écrire des tests semi-automatiques, c'est à dire en mode intéraction.
 Cette fonction peut être intéressant pour faire un test en mode question/réponse (ex: configuration d'un équipement)
 
 Exemple demandant le nom de la personne:
@@ -229,7 +229,7 @@ Exemple demandant le nom de la personne:
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
 
-.. note:: si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`
+.. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`.
 
 Les variables d'un test
 -----------------------
@@ -315,7 +315,9 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
   
   Cette fonctionnalité peut être utile pour augmenter le niveau de tracabilité dans les rapports.
   
-  <insérer image exemple>
+.. image:: /_static/images/testlibrary/inputs_sut.png
+  
+.. image:: /_static/images/testlibrary/report_inputs.png
   
 Variable personnalisable
 ~~~~~~~~~~~~~~~

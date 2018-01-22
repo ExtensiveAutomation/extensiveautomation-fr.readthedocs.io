@@ -1,5 +1,5 @@
-Extensions pour les tests
-=========================
+Compléments Serveur
+===================
 
 Adaptateurs
 -----------
@@ -15,7 +15,11 @@ Les adaptateurs permettent de communiquer avec le système à tester ou piloter.
 Les adaptaters ont deux modes d'utilisations:
  - un mode direct: la communication se faire directement depuis le serveur de test vers le système à contrôler.
  - un mode agent: la communication avec le système à contrôler se fait par l'intermédiare d'un agent communiquant avec le serveur de test.
- 
+
+.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
+
+.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
+
 Liste des adaptateurs disponibles par défauts:
 
 **Protocoles réseaux**
@@ -111,10 +115,6 @@ Liste des adaptateurs disponibles par défauts:
 +--------------+--------------+-----------------------------------------------------------------------------+
 | RTP          | socket       |  Module permettant d'envoyer et recevoir des flux audios et vidéos          |
 +--------------+--------------+-----------------------------------------------------------------------------+		
-
-.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
-
-.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
 Librairies
 ----------
@@ -278,6 +278,24 @@ Liste des outils supportés:
 .. note:: 
     La solution dispose d'une API REST, elle peut être pilotée aussi par ces outils.
      - Plugin `Jenkins`: https://wiki.jenkins.io/display/JENKINS/ExtensiveTesting+Plugin
+
+HP ALM
+~~~~~~
+
+Jenkins
+~~~~~~
+
+VSphere
+~~~~~~
+
+ExtensiveTesting
+~~~~~~~~~~~~~~~~
+
+Jira
+~~~~
+
+Git
+~~~~
 
 Agents
 ------

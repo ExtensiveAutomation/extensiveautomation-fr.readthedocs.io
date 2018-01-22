@@ -54,7 +54,7 @@ Comment changer le port d'écoute (tcp/443) du serveur ?
 Editer le fichier `/etc/httpd/conf.d/extensivetesting.conf` et modifier le port d'écoute du virtual host 443.
 Ne pas oublier de modifier le fichier `/etc/httpd/conf/httpd.conf` pour ajouter le nouveau port d'écoute.
 
-Un redémarrage d'apache est nécessaire.
+.. note:: Un redémarrage d'apache est nécessaire.
 
 Comment changer le port de connexion du client ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,6 +1,8 @@
 Interface Web
 =============
 
+.. image:: /_static/images/webinterface/tests_center_main_page.png
+
 Partie tests
 ------------
 

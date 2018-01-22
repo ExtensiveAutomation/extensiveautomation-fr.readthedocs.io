@@ -40,7 +40,7 @@ Client
 .. note::
 
  L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
- Cependant il est toujours de compiler les sources sur un environnement 32bits. 
+ Cependant il est toujours possible de compiler les sources sur un environnement 32bits. 
 
 Boite à outils
 ------------
@@ -60,4 +60,4 @@ Boite à outils
 .. note::
 
  L'architecture 32-bit n'est plus supporté depuis la version 17.0.0. 
- Cependant il est toujours de compiler les sources sur un environnement 32bits. 
+ Cependant il est toujours possible de compiler les sources sur un environnement 32bits. 

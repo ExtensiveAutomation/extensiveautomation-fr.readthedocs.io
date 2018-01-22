@@ -10,7 +10,7 @@ L'approche consiste à écrire les tests avec le formalisme suivant:
  - Pendant un interval donné, je regarde et compare tous les évènements reçues avec un attendu.
  - Je décide de l'action suivante
     * après avoir reçu l'évènement que j'attendais
-    * ou bien quand l'intervalle d'observation est terminé.
+    * ou bien quand l'interval d'observation est terminé.
 
 Durant l'exécution d'un test, le framework capture tous les évènements générés par le système testé ou piloté.
 Les évènements sont ensuite convertis et stockés dans un message.
@@ -41,6 +41,7 @@ Des opérateurs sont disponibles pour faciliter la comparaison des messages reç
  
 
 Le client permet de visualiser graphiquement la comparaison effectuée par le framework.
+
 Définition du code couleur:
 
 +-----------------+------------------------------------------------------------------+
@@ -60,7 +61,7 @@ Génération des rapports
 Après chaque exécution d'un test, le framework génère automatiquement les rapports de tests associés.
 Il existe 2 type rapports:
  - Rapport avancé
- - Rapport basique
+ - Rapport basique (accessible par défaut depuis le client graphique)
 
 Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l'API.
 
@@ -69,10 +70,34 @@ Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l
 Rapport avancée
 ~~~~~~~~~~~~~~~
 
+Le rapport avancée affiche un certain nombre de paramètres:
+ - la durée d'exécution de chaque cas de test
+ - la description complète des étapes de test.
+ - des statistiques sur l'exécution.
+ - des paramètres de tests.
+ 
 .. image:: /_static/images/testlibrary/advanced_report.png
 
 Rapport basique
 ~~~~~~~~~~~~~~~
+
+Le rapport basique résume le résultat de l'ensemble des cas de tests et des états.
+
+Code couleur:
+
++-----------------+------------------------------------------------------------------+
+|Vert             |   Le cas de test est valide                                      |
++-----------------+------------------------------------------------------------------+
+|Rouge            |   Le cas de test est en erreur                                   |
++-----------------+------------------------------------------------------------------+
+|Orange           |   Le résultat du cas de test n'est pas déterminé                 |
++-----------------+------------------------------------------------------------------+
+|Orange           |   Le cas de test n'a pas été exécuté                             |
++-----------------+------------------------------------------------------------------+
+
+.. note:: Il faut cliquer sur les cas de tests pour afficher les étapes.
+
+.. note:: Les messages affichés par le test avec la fonction `Trace(self).info()` sont disponibles dans le rapport en cliquant sur le lien `[logs details]`.
 
 .. image:: /_static/images/testlibrary/basic_report.png
 

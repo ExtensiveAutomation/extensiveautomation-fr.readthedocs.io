@@ -158,9 +158,10 @@ Exemple pour vérifier si le serveur fonctionne correctement.
 	Extensive Testing is running
 
 Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
-Il est possible d'utiliser les comptes pas défauts pour se connecter:
+Il est possible d'utiliser les comptes par défaut pour se connecter:
  - utilisateur `admin`
  - utilisateur `tester`
+ - utilisateur `monitor`
  
 .. note:: Les comptes par défaut n'ont pas de mot de passe.
 
@@ -169,7 +170,7 @@ Il est possible d'utiliser les comptes pas défauts pour se connecter:
 Installation depuis les sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning:: Ce mode d'installation est à recommander que pour les utilisateurs avancés.
+.. warning:: Ce mode d'installation est à recommander pour les utilisateurs avancés.
 
 <décrire les packages python à installer>
 
@@ -233,7 +234,7 @@ Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
     - Continue and go to the web interface (https://xxxxxxxxx/web/index.php)
     =========================================================================
 
-.. note:: La mise à jour est refusé si aucune version du produit est détectée.
+.. note:: La mise à jour est refusée si aucune version du produit est détectée.
 
 Retour arrière
 ~~~~~~~~~~~
@@ -300,9 +301,21 @@ La solution permet de mettre à disposition auprès des utilisateurs les paquets
 Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
 notifier les utilisateurs de la mise à jour.
 
-Les clients sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/Client`
+Les paquets sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/`
 
-La prise en compte du nouveau client nécessite d'exécuter la commande `xtctl deploy`
++-----------------+-------------------------------------------------+
+|Client           | Contients la version portable et installation   |
++-----------------+-------------------------------------------------+
+|ClientPlugins    |  Contients les plugins                          |
++-----------------+-------------------------------------------------+
+|Toolbox          |  Contients la version portable et installation  |
++-----------------+-------------------------------------------------+
+|ToolboxPlugins   |  Contients les plugins                          |
++-----------------+-------------------------------------------------+
+
+Après dépôt, les paquets logiciels sont automatiquements disponible depuis l'interface web.
+Pour la mise à jour en mode automatique du client, il faut exécuter la commande `xtctl deploy` sur le serveur
+pour prendre en compte le nouveau client déployé.
 
 .. code-block:: bash
 
@@ -371,7 +384,9 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     ./toolagent
     Command line tool launcher
 
-    Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
+    Usage: ./toolagent [test-server-ip] [test-server-port] [ssl-support] [ftp|sikulix|socket|dummy|
+    database|selenium|gateway-sms|command|soapui|file|adb|ssh] [tool-name] 
+    [tool-description] [[proxy-ip] [proxy-port]]
 
     * Server parameters
     [test-server-ip]: your test server ip or hostname. This option is mandatory.
@@ -379,7 +394,8 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     [ssl-support=True/False]: ssl support. This option is mandatory.
 
     * Tools parameters
-    [Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
+    [Values expected: ftp|sikulix|socket|dummy|database|selenium|gateway-sms|
+    command|soapui|file|adb|ssh]: tool type to start. This option is mandatory.
     [tool-name]: The tool name. This option is mandatory.
     [tool-description]: The tool description. This option is mandatory.
 
@@ -393,7 +409,8 @@ La boite à outils peut être récupérée depuis le site internet https://www.e
     ./toolprobe
     Command line tool launcher
 
-    Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
+    Usage: ./toolprobe [test-server-ip] [test-server-port] [ssl-support] [dummy|textual|network|
+    file] [tool-name] [tool-description] [[proxy-ip] [proxy-port]]
 
     * Server parameters
     [test-server-ip]: your test server ip or hostname. This option is mandatory.
