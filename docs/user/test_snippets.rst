@@ -17,12 +17,28 @@ Ce test réutilisable consiste à sauvegarder une valeur dans le cache de donné
 
 Les paramètres à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| DATAS           |                |
-+-----------------+----------------+
- 
++-----------------+-----------------------------------------------------------+
+|Paramètres       |   Description                                             |
++-----------------+-----------------------------------------------------------+
+| DATAS           |   Contient la liste des valeurs à sauvegarder             |
++-----------------+-----------------------------------------------------------+
+
+.. code-block::
+
+    # Save misc data
+    [!TO:CACHE:EXAMPLE:];hello world
+
+    # Save server information in the cache
+    [!TO:CACHE:SERVER_DESCRIPTION:];[!FROM:INPUT:TEST_PURPOSE:]
+    
+Le paramètre `DATAS` contient la liste des valeurs à sauvegarder avec le format:
+
+.. code-block::
+
+   # mon commentaire
+   
+.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/01_Set_Cache.tux
+
 <image à insérer>
 
 .. note:: Il est possible de sauvegarder plusieurs valeurs avec ce test.

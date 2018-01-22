@@ -39,7 +39,7 @@ Scénario
 --------
 
 Un scénario permet d'exécuter plusieurs cas de tests à la suite avec des conditions de résultats entre eux.
-Il est possible de surchager les paramètres de tests au niveau du scénario.
+Il est possible de surcharger les paramètres de tests au niveau du scénario.
 
 .. image:: /_static/images/client/exemple_testplan.png
 
