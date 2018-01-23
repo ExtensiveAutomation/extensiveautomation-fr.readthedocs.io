@@ -1,20 +1,6 @@
 Conception assistée
 ===================
 
-Connexion du client au serveur
-------------------------------
-
-Après avoir ouvert le client, la première étape consiste à se connecter au serveur de test.
-Pour ce faire il faut avoir à disposition son compte utilisateur ainsi que l'adresse du serveur.
-
-La fenêtre de connexion est disponible depuis le menu `Get Started > Connect` ou bien directement sur la page d'accueil.
-Une fois la connexion réussie, l'utilisateur peut accéder à l'ensemble des tests automatiques existant sur le serveur.
-
-.. image:: /_static/images/client/client_connect.png
-
-.. note:: l'utilisateur `admin` peut être utilisé dans le cadre de la découverte de la solution.
-
-
 Le client lourd comporte un assistant qui permet de créer des tests sans avoir de connaissances en développement. On peut s'en servir pour:
  - Utiliser les fonctions basiques du framework
  - Exécuter des commandes systèmes (ssh)
@@ -23,7 +9,7 @@ Le client lourd comporte un assistant qui permet de créer des tests sans avoir 
  - Exécuter des actions sur un mobile Android
 
 Fonctions Basiques
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Liste des actions disponibles:
 
@@ -56,7 +42,7 @@ Liste des actions disponibles:
 .. image:: /_static/images/client_assistant/aa_basic_test.png
 
 Commandes Système
-~~~~~~~~~~~~~~~~~
+-----------------
 
 Liste des actions disponibles: 
 
@@ -79,7 +65,7 @@ Liste des actions disponibles:
 .. image:: /_static/images/client_assistant/aa_system_check.png
 
 Applications au client lourd
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 Liste des actions disponibles:
 
@@ -169,7 +155,7 @@ Liste des actions disponibles:
 
 
 Applications Web
-~~~~~~~~~~~~~~~~
+----------------
 
 Liste des actions disponibles:
 
@@ -250,7 +236,7 @@ Liste des actions disponibles:
 .. image:: /_static/images/client_assistant/aa_web_step3.png
 
 Applications Android sur Mobile
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
 
 Liste des actions disponibles:
 

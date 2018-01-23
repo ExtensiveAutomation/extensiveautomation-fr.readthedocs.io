@@ -100,15 +100,15 @@ Exemple d'installation en mode personnalisé (ici, la destination de xtc)
 	* Detecting Perl, Python                                   [  OK  ]
 	* Detecting primary network address (XX.XX.XX.XX)          [  OK  ]
 	* Download automatically all missing packages? [Yes] 
-	* In which directory do you want to install the ExtensiveTesting product? [/opt/xtc/] **/usr/xtc/**
+	* In which directory do you want to install the ExtensiveTesting product? [/opt/xtc/] <INSTALL_PATH>
 	* What is the directory that contains the init scripts? [/etc/init.d/]
-	* What is the external ip of your server? [XX.XX.XX.XX] **<IP_EXTERNE>**
-	* What is the FQDN associated to the external ip of your server? [XX.XX.XX.XX] **<FQDN>**
+	* What is the external ip of your server? <IP_EXTERNE>
+	* What is the FQDN associated to the external ip of your server? <FQDN>
 	* What is the database name? [xtcXXX]
 	* What is the table prefix? [xtc]
-	* What is the ip of your mysql/mariadb server? [127.0.0.1] **<IP_BASE>**
-	* What is the login to connect to your mysql/mariadb server? [root] **<LOGIN_BASE>**
-	* What is the password of previous user to connect to your mysql/mariadb server? [] **<MOTDEPASSE_BASE>**
+	* What is the ip of your mysql/mariadb server? [127.0.0.1] <IP_BASE>
+	* What is the login to connect to your mysql/mariadb server? [root] <LOGIN_BASE>
+	* What is the password of previous user to connect to your mysql/mariadb server? [] <MOTDEPASSE_BASE>
 	* What is the sock file of your mysql/mariadb server? [/var/lib/mysql/mysql.sock]
 	* Do you want to configure iptables automatically? [Yes]?
 	* Do you want to configure php automatically? [Yes]?
