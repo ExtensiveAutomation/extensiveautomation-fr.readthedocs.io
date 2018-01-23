@@ -167,8 +167,8 @@ Les résultats de tests sont stockés sur le serveur dans le répertoire `/opt/x
 
 Organisation des résultats:
 
-.. code-block::
-    
+.. code-block:: bash
+
     Répertoire: <project_id>
         - Répertoire: <yyyy-mm-dd>
             - Répertoire: <yyyy-mm-dd_hh:mm:ss.testid.testname.username>

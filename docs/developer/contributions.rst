@@ -36,8 +36,8 @@ Pour préparer son environnement de développement, il est nécessaire de récup
 
 Il est nécessaire d'installer les paquets Python supplémentaires avec la commande `pip`
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> C:\Windows\system32>py -3.4 -m pip install py2exe Cx_Freeze pyinstaller pylint
     
 
@@ -51,22 +51,22 @@ Client - x64 centos py2.7 qt4
 
 Préparation de son environnement de développement sur un système Linux CentOS 6 ou 7.
 
-.. code-block::
-	
+.. code-block:: bash
+
 	yum install epel-release PyQt4 python-test
 	yum install PyQt4-webkit qscintilla-python
 	yum install python-pip
 	yum install PyQt4-devel
 	
 
-.. code-block::
-	
+.. code-block:: bash
+
 	pip install dpkt
 	pip install cx_freeze
 	
 
-.. code-block::
-	
+.. code-block:: bash
+
 	cd Scripts/qt4/
 	bash MakeResources.sh
 	Building files resources...
@@ -75,8 +75,8 @@ Préparation de son environnement de développement sur un système Linux CentOS
 	cd ../..
 	
 
-.. code-block::
-	
+.. code-block:: bash
+
 	python Main.py
     
 
@@ -85,21 +85,21 @@ Client - x64 ubuntu py3.5 qt5
 
 Préparation de son environnement de développement sur un système Linux Ubuntu 17.04
 
-.. code-block::
-	
+.. code-block:: bash
+
 	sudo apt-get –y install python3-pyqt5
 	sudo apt-get –y install python3-pyqt5.qsci
 	sudo apt-get –y install python3-pyqt5.qtwebengine
 	sudo apt-get –y install pyqt5-dev-tools
     
 
-.. code-block::
-	
+.. code-block:: bash
+
 	sudo pip install dpkt
     
 
-.. code-block::
-	
+.. code-block:: bash
+
 	cd Scripts/qt5/
 	chmod +x MakeResources.sh MakeTranslations.sh
 	bash MakeResources.sh
@@ -109,8 +109,8 @@ Préparation de son environnement de développement sur un système Linux Ubuntu
 	cd ../..
 	
 
-.. code-block::
-	
+.. code-block:: bash
+
 	python3 Main.py
     
 
@@ -123,16 +123,16 @@ Pour préparer son environnement de développement, il est nécessaire de récup
  - TortoiseGit-2.5.0.0-64bit.msi
  - InnoSetup 5.5.9 – http://www.jrsoftware.org/isdl.php
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> py -m pip install pyinstaller pylint
 	> py -m pip install pyqt5
 	> py -m pip install qscintilla
     
 Installer les librairies utilisées par les différents agents:
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> py -3.6 -m pip install Cx_Freeze py2exe pyinstaller pylint
 	> py -3.6 -m pip install requests PyMySQL psycopg2 paramiko 
 	> py -3.6 -m pip install pymssql-2.1.3-cp36-cp36m-win_amd64.whl
@@ -140,8 +140,8 @@ Installer les librairies utilisées par les différents agents:
 
 Installer la librairie selenium dédié pour la solution:
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> c:\Python36\python.exe setup.py install
     
 Boite à outils - x64 win py3.4 qt4
@@ -156,16 +156,16 @@ Pour préparer son environnement de développement, il est nécessaire de récup
     
 Installer les librairies utilisées par les différents agents:
 
-.. code-block::
-	
+.. code-block:: bash
+
     > py -3.4 -m pip install Cx_Freeze py2exe pylint
 	> py -3.4 -m pip install requests PyMySQL psycopg2 pymssql paramiko 
     
 
 Installer la librairie selenium dédié pour la solution:
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> c:\Python34\python.exe setup.py install
     
 Boite à outils - x64 centos py3.5 qt5
@@ -175,8 +175,8 @@ Préparation de son environnement de développement sur un système Linux CentOS
 
 Installer la librairie Qt5 (binding python)
 
-.. code-block::
-	
+.. code-block:: bash
+
 	sudo apt-get –y install python3-pyqt5
 	sudo apt-get –y install pyqt5-dev-tools
 	cd Scripts/qt5/
@@ -190,8 +190,8 @@ Installer la librairie Qt5 (binding python)
 
 Installer les librairies additionnelles 
 
-.. code-block::
-	
+.. code-block:: bash
+
 	sudo apt install python3-pip
 	pip3 install pyinstaller py2exe pylint
 	pip3 install paramiko requests
@@ -204,8 +204,8 @@ Installer les librairies additionnelles
 
 Exécution de la boite à outils en mode graphique
 
-.. code-block::
-    
+.. code-block:: bash
+
 	python3 Systray.py
     
 
@@ -216,8 +216,8 @@ Préparation de son environnement de développement sur un système Linux CentOS
 
 Installer les librairies additionnelles 
 
-.. code-block::
-	
+.. code-block:: bash
+
 	yum install python-test
 	yum install python-pip
 	pip install pyinstaller py2exe pylint
@@ -231,8 +231,8 @@ Installer les librairies additionnelles
 
 Installer la librairie Qt4 (binding python)
 
-.. code-block::
-	
+.. code-block:: bash
+
 	yum install epel-release PyQt4
 	yum install PyQt4-devel
 	cd Scripts/qt4/
@@ -246,8 +246,8 @@ Installer la librairie Qt4 (binding python)
 
 Exécution de la boite à outil en mode graphique
 
-.. code-block::
-	
+.. code-block:: bash
+
 	python Systray.py
 	
 
