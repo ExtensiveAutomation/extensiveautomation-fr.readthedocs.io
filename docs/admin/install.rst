@@ -23,6 +23,11 @@ Exemple d'installation en mode automatique
 
 	./install.sh
 	Are you sure to install the product? (yes or no) yes
+	
+..
+	Are you sure you want to install the product?
+	c'est à modifier dans le script
+	
 	======================================================
 	=  - Installation of the ExtensiveTesting product -  =
 	=                    Denis Machard                   =
@@ -278,7 +283,7 @@ Exécuter le script `rollback.sh` avec la version précédente.
 	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
 	
 
-Désintallation
+Désinstallation
 ~~~~~~~~~~~~~~
 
 La désinstallation du produit peut se faire en utilisant le script `./uninstall.sh` présent dans le paquet d'installation.
@@ -309,7 +314,7 @@ La désinstallation du produit peut se faire en utilisant le script `./uninstall
 ..
 	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
 	
-.. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désintallation. 
+.. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désinstallation. 
 	
 Déploiement
 ~~~~~~~~~~~
@@ -334,7 +339,7 @@ Les paquets sont à déposer dans le répertoire `<INSTALL_PATH>/current/Package
 |ToolboxPlugins   |  Contients les plugins                          |
 +-----------------+-------------------------------------------------+
 
-Après dépôt, les paquets logiciels sont automatiquements disponibles depuis l'interface web.
+Après dépôt, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
 Pour la mise à jour en mode automatique du client, il faut exécuter la commande `xtctl deploy` sur le serveur
 pour prendre en compte le nouveau client déployé.
 
