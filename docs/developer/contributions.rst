@@ -15,8 +15,8 @@ Pour préparer son environnement de développement, il est nécessaire de récup
 
 Il est nécessaire d'installer les paquets Python supplémentaire avec la commande `pip`
 
-.. code-block::
-	
+.. code-block:: bash
+
 	> py -m pip install pyinstaller pylint
 	> py -m pip install pyqt5
 	> py -m pip install qscintilla
