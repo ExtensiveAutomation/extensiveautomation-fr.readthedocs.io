@@ -1,15 +1,44 @@
 Conception assistée
 ===================
 
-Le client lourd comporte un assistant qui permet de créer des tests sans avoir de connaissances en développement. On peut s'en servir pour:
+Le client lourd comporte un assistant qui permet de créer des tests sans avoir de connaissances en développement. 
+On peut s'en servir pour:
  - Utiliser les fonctions basiques du framework
  - Exécuter des commandes systèmes (ssh)
  - Tester des applications avec un client lourd
  - Tester des applications web
  - Exécuter des actions sur un mobile Android
 
-Fonctions Basiques
+Le test se compose d'un enchainement d'action à réaliser.
+L'assistant génére automatiquement le test `unit` ou `suite`. 
+Un test (script) existant peut être mis à jour depuis l'assistant aussi.
+
+Pour ajouter une action dans l'assitant, il faut 
+ - sélectionner l'action à réaliser 
+ - la configurer
+ - enregistrer l'action
+
+ 
+L'assistant supporte nativement l'utilisation du cache. Il est donc possible 
+de se sauvegarder ou récupérer depuis le cache des valeurs.
+
+.. image:: /_static/images/client_assistant/aa_basic_log.png
+
+.. note:: Il est possible de mélanger les différents types d'actions.
+  
+Onglet Framework
 ------------------
+
+L'onglet **framework** permet d'utiliser les fonctions de bases du framework de test.
+
+Exemple de test réalisé avec l'assistant:
+ 1. Affiche du message "bonjour" dans le test
+ 2. Demande à l'utilisateur durant l'exécution son prénom et l'enregistre dans le cache avec la clé `prenom`
+ 3. Affiche le prénom dans le log du test
+ 4. Vérifie depuis le cache si le prénom contient une valeur spécifique.
+
+.. image:: /_static/images/client_assistant/aa_basic_test.png
+
 
 Liste des actions disponibles:
 
@@ -31,18 +60,21 @@ Liste des actions disponibles:
 | ASK SOMETHING      |  Demande une valeur à l'utilisateur (mode interaction)          |
 +--------------------+-----------------------------------------------------------------+
 
-.. image:: /_static/images/client_assistant/aa_basic_link.png
-
-.. image:: /_static/images/client_assistant/aa_basic.png
-
-.. image:: /_static/images/client_assistant/aa_basic_log.png
-
-.. image:: /_static/images/client_assistant/aa_basic_check.png
-
-.. image:: /_static/images/client_assistant/aa_basic_test.png
-
-Commandes Système
+Onglet Système
 -----------------
+
+L'onglet **système** permet d'exécuter des commandes sur un serveur distant disponible via SSH.
+
+Exemple de test réalisé avec l'assistant:
+ 1. Ouverture de la session ssh sur la machine distante 192.186.1.251
+ 2. Envoi du texte `su -`
+ 3. Attend de détecter le texte `Password:` à l'écran
+ 4. Demande à l'utilisateur le mot de passe root et le stocke dans le cache avec la clé `pwd`
+ 5. Envoi le mot de passe root en utilisant la valeur stocké dans le cache
+ 6. Attend de détecter à l'écran le prompt de connexion
+ 7. Ferme la connexion SSH.
+ 
+.. image:: /_static/images/client_assistant/aa_sys_example.png
 
 Liste des actions disponibles: 
 
@@ -60,12 +92,34 @@ Liste des actions disponibles:
 | CHECKING IF SCREEN |  Vérifie si l'écran contient un texte spécifique                |
 +--------------------+-----------------------------------------------------------------+
 
-.. image:: /_static/images/client_assistant/aa_system_open.png
+.. note:: L'utilisation de l'action `OPEN SSH SESSION` est obligatoire pour utiliser les autres disponibles.
 
-.. image:: /_static/images/client_assistant/aa_system_check.png
+Onglet Application
+------------------
 
-Applications au client lourd
-----------------------------
+L'onglet **application** permet d'automatiser des applications riches en permettant:
+ - de simuler le clavier
+ - de simuler la souris
+ - de rechercher des élements graphiques à l'écran
+ - de rechercher du texte
+
+.. warning:: un agent **sikulix-server** est nécessaire pour utiliser les actions.
+
+Exemple de test réalisé avec l'assistant:
+ 1. Envoi le raccourci clavier `Win+R` pour ouvrir la fenêtre exécuter
+ 2. Type le texte `cmd`
+ 3. Envoi le raccourci clavier `Enter` pour ouvrir une fenêtre cmd.
+ 4. Attend de détecter l'icône de la fenêtre cmd
+ 5. Type le texte `cls & ver` pour afficher la version de windows
+ 6. Envoi le raccourci clavier `Enter` pour valider
+ 7. Envoi le raccourci clavier `Ctrl+A` pour sélectionner le texte dans la fenêtre
+ 8. Envoi le raccourci clavier `Ctrl+C` pour copier le texte sélectionné dans le presse papier
+ 9. Récupère le texte du presse papier et l'enregistre dans la cache
+ 10. Affiche le texte copié depuis le cache
+ 11. Type le texte `exit` dans la fenêtre cmd
+ 12. Envoi le raccourci clavier `Enter` pour fermer la fenêtre.
+
+.. image:: /_static/images/client_assistant/aa_app_example.png
 
 Liste des actions disponibles:
 
@@ -78,9 +132,9 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | RIGHT CLICK ON POSITION   |  Clic droit sur la position (x,y)                               |
 +---------------------------+-----------------------------------------------------------------+
-| MOUSE WHEEL DOWN          |  Mouse wheel down                                               |
+| MOUSE WHEEL DOWN          |  Tourne la molette de la souris vers le bas                     |
 +---------------------------+-----------------------------------------------------------------+
-| MOUSE WHEEL UP            |  Mouse wheel up                                                 |
+| MOUSE WHEEL UP            |  Tourne la molette de la souris vers le haut                    |
 +---------------------------+-----------------------------------------------------------------+
 | MOVE TO POSITION          |  Déplace le curseur sur la position (x,y)                       |
 +---------------------------+-----------------------------------------------------------------+
@@ -88,74 +142,68 @@ Liste des actions disponibles:
 **Contrôle du clavier** 	
 
 +---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT                 |  Simulate keyboard and type text                                |
+| TYPE TEXT                 |  Type du texte                                                  |
 +---------------------------+-----------------------------------------------------------------+
-| TYPE PATH                 |  Simulate keyboard and type text path                           |
+| TYPE PATH                 |  Type du texte (à utiliser pour les chemins d'accès)            |
 +---------------------------+-----------------------------------------------------------------+
-| TYPE PASSWORD             |  Simulate keyboard and type password                            |
+| TYPE PASSWORD             |  Type du texte (à utiliser pour taper un mot de passe)          |
 +---------------------------+-----------------------------------------------------------------+
 | GET TEXT FROM CLIPBOARD   |  Récupère le texte présent dans le presse papier                |
 +---------------------------+-----------------------------------------------------------------+
-| KEYBOARD SHORTCUT         |  Simulate keyboard interactions                                 |
+| KEYBOARD SHORTCUT         |  Permet de taper un raccourci clavier                           |
 +---------------------------+-----------------------------------------------------------------+
 
 **Contrôle chaine de caractères** 	
 
 +---------------------------+-----------------------------------------------------------------+
-| CLICK ON WORD             |  Detect the word on the screen and click on it                  |
+| CLICK ON WORD             |  Recherche un mot à l'écran et clic dessus                      |
 +---------------------------+-----------------------------------------------------------------+
-| DOUBLE CLICK ON WORD      |  Detect the word on the screen and double click on it           |
+| DOUBLE CLICK ON WORD      |  Recherche un mot à l'écran et double clic dessus               |
 +---------------------------+-----------------------------------------------------------------+
-| RIGHT CLICK ON WORD       |  Detect the word on the screen and right click on it            |
+| RIGHT CLICK ON WORD       |  Recherche un mot à l'écran et effectue un clic droit dessus    |
 +---------------------------+-----------------------------------------------------------------+
-| WAIT WORD                 |  Search the word until it appears                               |
+| WAIT WORD                 |  Recherche un mot jusqu'à qu'il apparaisse                      |
 +---------------------------+-----------------------------------------------------------------+
-| WAIT AND CLICK ON WORD    |  Search the word until it appears and click on it               |
+| WAIT AND CLICK ON WORD    |  Recherche un mot jusqu'à qu'il apparaisse et clic dessus       |
 +---------------------------+-----------------------------------------------------------------+	
  
 **Contrôle d'images**
 
 +---------------------------+----------------------------------------------------------------------------+
-| CLICK ON IMAGE            |  Detect the visual pattern on the screen and click on it                   |
+| CLICK ON IMAGE            |  Recherche une image et clic dessus                                        |
 +---------------------------+----------------------------------------------------------------------------+
-| DOUBLE CLICK ON IMAGE     |  Detect the visual pattern on the screen and double click on it            |
+| DOUBLE CLICK ON IMAGE     |  Recherche une image et double clic dessus                                 |
 +---------------------------+----------------------------------------------------------------------------+
-| RIGHT CLICK ON IMAGE      |  Detect the visual pattern on the screen and right click on it             |
+| RIGHT CLICK ON IMAGE      |  Recherche une image et effectue un clic droit dessus                      |
 +---------------------------+----------------------------------------------------------------------------+
-| WAIT IMAGE                |  Search the visual pattern until the image appears                         |
+| WAIT IMAGE                |  Recherche une image jusqu'à la voir apparaitre à l'écran                  |
 +---------------------------+----------------------------------------------------------------------------+
-| WAIT AND CLICK ON IMAGE   |  Search the visual pattern until the image appears and click on it         |
+| WAIT AND CLICK ON IMAGE   |  Recherche une image jusqu'à la voir apparaitre à l'écran et clic dessus   |
 +---------------------------+----------------------------------------------------------------------------+
-| HOVER MOUSE ON            |  Detect the visual pattern on the screen and mouve the cursor on it        |
+| HOVER MOUSE ON            |  Recherche une image et déplace le curseur de la souris dessus             |
 +---------------------------+----------------------------------------------------------------------------+
-| DRAG IMAGE AND DROP TO    |  Detect the visual pattern on the screen and drop it to the position (x,y) |
+| DRAG IMAGE AND DROP TO    |  Recherche une image et effectue un drag and drop vers la position (x,y)   |
 +---------------------------+----------------------------------------------------------------------------+
 
-.. image:: /_static/images/client_assistant/aa_app_steps1.png
-
-.. image:: /_static/images/client_assistant/aa_app_steps2.png
-
-.. image:: /_static/images/client_assistant/aa_app_steps3.png
-
-.. image:: /_static/images/client_assistant/aa_app_img1.png
-
-.. image:: /_static/images/client_assistant/aa_app_img2.png
-
-.. image:: /_static/images/client_assistant/aa_app_img3.png
-
-.. image:: /_static/images/client_assistant/aa-app-clipboard.png
-
-.. image:: /_static/images/client_assistant/aa_app_img4.png
-
-.. image:: /_static/images/client_assistant/aa_app_word1.png
-
-.. image:: /_static/images/client_assistant/aa_app_word2.png
-
-.. image:: /_static/images/client_assistant/aa_app_mouse.png
-
-
-Applications Web
+Onglet Navigateur
 ----------------
+
+L'onglet **navigateur** permet d'automatiser des applications web en permettant:
+ - de piloter les navigateurs (firefox, internet explorer, chrome, edge)
+ - de simuler le clavier
+
+.. warning:: un agent **selenium3-server** ou **selenium2-server** est nécessaire pour utiliser les actions.
+
+.. tip:: 
+ Pour cliquer sur un élement HTML, il est conseillé d'utiliser systématiquement 
+ la fonction `WAIT VISIBLE AND CLICK ON HTML ELEMENT`.
+
+Exemple de test réalisé avec l'assistant:
+ 1. Récupère depuis le cache le prénom et l'envoi dans l'élement HTML trouvé par le xpath
+ 2. Clic sur l'élement HTML trouvé par le xpath
+ 3. Recherche l'élement HTML trouvé par le xpath et clic dessus dès qu'il est visible à l'écran.
+ 
+.. image:: /_static/images/client_assistant/aa_web_example.png
 
 Liste des actions disponibles:
 
@@ -192,9 +240,9 @@ Liste des actions disponibles:
 **Actions sur les éléments html**
 
 +--------------------------------+----------------------------------------------------------------------+
-| WAIT HTML ELEMENT              | Wait html element to appear on the page                              |
+| WAIT HTML ELEMENT              | Attend l'apparition d'un élément HTML précis                         |
 +--------------------------------+----------------------------------------------------------------------+
-| WAIT AND CLICK ON HTML ELEMENT | Wait html element to appear on the page and click on it              |
+| WAIT AND CLICK ON HTML ELEMENT | Attend l'apparition d'un élément HTML précis et clic dessus          |
 +--------------------------------+----------------------------------------------------------------------+
 | HOVER ON HTML ELEMENT          | Déplace le curseur de la souris sur un élement HTML précis           |
 +--------------------------------+----------------------------------------------------------------------+
@@ -202,7 +250,7 @@ Liste des actions disponibles:
 +--------------------------------+----------------------------------------------------------------------+
 | DOUBLE CLICK ON HTML ELEMENT   | Double clic sur un élément HTML précis                               |
 +--------------------------------+----------------------------------------------------------------------+
-| CLEAR TEXT ON HTML ELEMENT     | Clear the text on the html element                                   |
+| CLEAR TEXT ON HTML ELEMENT     | Vide le texte sur un élément HTML précis                             |
 +--------------------------------+----------------------------------------------------------------------+
 | SELECT ITEM BY TEXT            | Select item according to the text (for combolist or list)            |
 +--------------------------------+----------------------------------------------------------------------+
@@ -231,12 +279,34 @@ Liste des actions disponibles:
 | TYPE TEXT ON HTML ELEMENT |  Envoie du texte sur un élément HTML précis                     |
 +---------------------------+-----------------------------------------------------------------+	
 
-.. image:: /_static/images/client_assistant/aa_web_step1.png
+Onglet Android
+--------------
 
-.. image:: /_static/images/client_assistant/aa_web_step3.png
+L'onglet **android** permet d'automatiser des applications mobiles en permettant:
+ - de simulant le clavier
+ - de simuler l'utilisation du doigts sur l'écran
+ - de piloter le système et les applications 
 
-Applications Android sur Mobile
--------------------------------
+.. warning:: un agent **adb** est nécessaire pour utiliser les actions.
+
+Aperçu de l'agent
+
+.. image:: /_static/images/client_assistant/aa_mob_preview.png
+
+Exemple de test réalisé avec l'assistant:
+ 1. Réveille l'appareil
+ 2. Débloque l'appareil
+ 3. Clic sur le bouton `HOME`
+ 4. Arrête l'application
+ 5. Clic sur l'application `Play Store` pour l'ouvrir
+ 6. Attend que l'application s'ouvre et recherche le menu `APPS & GAMES`
+ 7. Clic sur le texte `ENTERTAINMENT`
+ 8. Clic sur le menu `MOVIES & TV`
+ 9. Attend pendant 5 secondes
+ 10. Recherche l'image
+ 11. Mise en veille de l'appareil.
+
+.. image:: /_static/images/client_assistant/aa_sys_mobile.png
 
 Liste des actions disponibles:
 
@@ -277,13 +347,7 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | CLICK TO POSITION         |  Clic sur la position x,y                                       |
 +---------------------------+-----------------------------------------------------------------+
-| DRAG FROM POSITION        |  Drag from position x1,y1 to x2,y2                              |
+| DRAG FROM POSITION        |  Drag depuis la position x1,y1 vers x2,y2                       |
 +---------------------------+-----------------------------------------------------------------+
-| SWIPE FROM POSITION       |  Swipe from position x1,y1 to x2,y2                             |
+| SWIPE FROM POSITION       |  Swipe depuis la position x1,y1 vers x2,y2                      |
 +---------------------------+-----------------------------------------------------------------+
-
-.. image:: /_static/images/client_assistant/aa_mob_preview.png
-
-.. image:: /_static/images/client_assistant/aa_mobile_step1.png
-
-.. image:: /_static/images/client_assistant/aa_mob_steps.png

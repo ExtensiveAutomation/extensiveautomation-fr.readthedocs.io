@@ -25,4 +25,4 @@ Les actions suivantes sont disponibles pour gérer les tâches programmées par 
  
 L'ensemble de ses actions est réalisable depuis le client lourd ou bien depuis l'API.
 
-<insérer image>
+.. image:: /_static/images/client/task_manager.png

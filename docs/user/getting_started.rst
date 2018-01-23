@@ -78,6 +78,10 @@ Analyse des résultats
 
 La 1ière fenêtre d'analyse montre l'exécution du test "Test_A" et notamment le message "bonjour".
 
+.. image:: /_static/images/client/test_result_simple.png
+
 La 2ième fenêtre d'analyse montre l'exécution du test "Scenario_A" et notamment le message "au revoir".
+
+.. image:: /_static/images/client/test_result_surcharge.png
 
 Ce premier usage montre comment exécuter un test et un scénario ansi que la surcharge des variables de tests.
