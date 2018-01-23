@@ -36,11 +36,13 @@ Les flux sont bidirectionnels.
 Agents
 ------
 
+Un agent est contrôlé par un adaptateur, il permet de déporter le point de communication
+avec le système à tester ou piloter.
 Les agents utilisent un flux tcp/443 (https) pour communiquer avec le serveur.
 
-Agents: active component, extend the possibility of testing
 
 Sondes
 ------
 
-Les sondes utilisent un flux tcp/443 (https) pour communiquer avec le serveur.
+les sondes permettent de récupérer durant l'exécution d'un test des traces réseaux, fichiers de configuration ou logs.
+La communication avec le serveur s'effectue sur le port tcp/443 (https).

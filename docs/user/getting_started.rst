@@ -12,7 +12,7 @@ Une fois la connexion réussie, l'utilisateur peut accéder à l'ensemble des te
 
 .. image:: /_static/images/client/client_connect.png
 
-.. note:: l'utilisateur `admin` peut être utilisé dans le cadre de la découverte de la solution.
+.. note:: L'utilisateur `admin` peut être utilisé dans le cadre de la découverte de la solution.
 
 Écriture d'un test script
 ---------------------------------

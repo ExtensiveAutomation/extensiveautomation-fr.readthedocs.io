@@ -14,6 +14,8 @@ Version courante
  - Amélioration de l'interface graphique sur le client
  - Support expérimental du client sur Ubuntu
 
+La release notes détaillée est disponible dans le paquet d'installation.
+
 Versions précédentes
 -------------------
 

@@ -92,7 +92,7 @@ Code couleur:
 +-----------------+------------------------------------------------------------------+
 |Orange           |   Le résultat du cas de test n'est pas déterminé                 |
 +-----------------+------------------------------------------------------------------+
-|Orange           |   Le cas de test n'a pas été exécuté                             |
+|Gris             |   Le cas de test n'a pas été exécuté                             |
 +-----------------+------------------------------------------------------------------+
 
 .. note:: Il faut cliquer sur les cas de tests pour afficher les étapes.
