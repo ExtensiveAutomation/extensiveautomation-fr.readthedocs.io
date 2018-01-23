@@ -23,11 +23,6 @@ Exemple d'installation en mode automatique
 
 	./install.sh
 	Are you sure to install the product? (yes or no) yes
-	
-..
-	Are you sure you want to install the product?
-	c'est à modifier dans le script
-	
 	======================================================
 	=  - Installation of the ExtensiveTesting product -  =
 	=                    Denis Machard                   =
@@ -59,14 +54,11 @@ Exemple d'installation en mode automatique
 	* Adding the ExtensiveTesting database                     [  OK  ]
 	* Starting ExtensiveTesting X.X.X                          [  OK  ]
 	=========================================================================
-	- Installation terminated!
+	- Installation completed successfully!
 	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
 	=========================================================================
 
-..
-		Quand on utilise Terminated en anglais, ça veut dire Interrompue, donnant l'impression qu'il y a eu problème ou interruption.
-		Tu voudrais plutôt dire Completed Successfully, pour Terminée avec succès.
-	
+
 Exemple pour vérifier si le serveur fonctionne correctement.
 
 .. code-block:: bash
@@ -108,15 +100,15 @@ Exemple d'installation en mode personnalisé (ici, la destination de xtc)
 	* Detecting Perl, Python                                   [  OK  ]
 	* Detecting primary network address (XX.XX.XX.XX)          [  OK  ]
 	* Download automatically all missing packages? [Yes] 
-	* In which directory do you want to install the ExtensiveTesting product? [/opt/xtc/]
+	* In which directory do you want to install the ExtensiveTesting product? [/opt/xtc/] **/usr/xtc/**
 	* What is the directory that contains the init scripts? [/etc/init.d/]
-	* What is the external ip of your server? [XX.XX.XX.XX] <IP_EXTERNE>
-	* What is the FQDN associated to the external ip of your server? [XX.XX.XX.XX] <FQDN>
+	* What is the external ip of your server? [XX.XX.XX.XX] **<IP_EXTERNE>**
+	* What is the FQDN associated to the external ip of your server? [XX.XX.XX.XX] **<FQDN>**
 	* What is the database name? [xtcXXX]
 	* What is the table prefix? [xtc]
-	* What is the ip of your mysql/mariadb server? [127.0.0.1] <IP_BASE>
-	* What is the login to connect to your mysql/mariadb server? [root] <LOGIN_BASE>
-	* What is the password of previous user to connect to your mysql/mariadb server? [] <MOTDEPASSE_BASE>
+	* What is the ip of your mysql/mariadb server? [127.0.0.1] **<IP_BASE>**
+	* What is the login to connect to your mysql/mariadb server? [root] **<LOGIN_BASE>**
+	* What is the password of previous user to connect to your mysql/mariadb server? [] **<MOTDEPASSE_BASE>**
 	* What is the sock file of your mysql/mariadb server? [/var/lib/mysql/mysql.sock]
 	* Do you want to configure iptables automatically? [Yes]?
 	* Do you want to configure php automatically? [Yes]?
@@ -127,44 +119,6 @@ Exemple d'installation en mode personnalisé (ici, la destination de xtc)
 	* What is the directory that contains the virtual host? [/var/www/]
 	* Do you want to configure selinux automatically? [No]?
 	* What is the path of the openssl binary? [/usr/bin/openssl]
-
-..	
-	Ici, c'est l'inversion typique du français à l'anglais. Tu dois dire:
-	Wait for the installation process to complete
-	
-	Wait during the process of installation
-
-	* Adding external libraries ......................         [  OK  ]
-	* Adding external libraries ..........                     [  OK  ]
-	* Adding interop libraries .......                         [  OK  ]
-	* Detecting Apache                                         [  OK  ]
-	* Detecting MySQL/MariaDB                                  [  OK  ]
-	* Detecting Postfix                                        [  OK  ]
-	* Detecting Openssl                                        [  OK  ]
-	* Detecting Php                                            [  OK  ]
-	* Copying source files                                     [  OK  ]
-	* Adding startup service                                   [  OK  ]
-	* Updating configuration files                             [  OK  ]
-	* Creating extensivetesting user                           [  OK  ]
-	* Updating folders rights                                  [  OK  ]
-	* Updating iptables                                        [  OK  ]
-	* Updating php configuration                               [  OK  ]
-	* Updating httpd configuration                             [  OK  ]
-	* Adding wstunnel module                                   [  OK  ]
-	* Adding virtual host                                      [  OK  ]
-	* Restarting httpd                                         [  OK  ]
-	* Restarting firewall                                      [  OK  ]
-	* Restarting Mysql/MariaDB                                 [  OK  ]
-	* Restarting postfix                                       [  OK  ]
-	* Adding the ExtensiveTesting database                     [  OK  ]
-	* Starting ExtensiveTesting X.X.X server                   [  OK  ]
-	==================================================================
-	- Installation terminated!
-	- Continue and go to the web interface (https://XXX.XXX.XXX.XXX/web/index.php)
-	==================================================================
-
-..
-	Même commentaire que plus haut:  completed, pas terminated.  Faudra changer les scripts d'installation partout.
 	
 Exemple pour vérifier si le serveur fonctionne correctement.
 
@@ -246,14 +200,10 @@ Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
     * Restoring tasks from X.X.X to Y.Y.Y                         [  OK  ]
     * Restarting the new version Y.Y.Y                         [  OK  ]
     =========================================================================
-    - Update terminated!
+    - Update completed successfully!
     - Continue and go to the web interface (https://xxxxxxxxx/web/index.php)
     =========================================================================
 
-..
-	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
-
-	
 .. note:: La mise à jour est refusée si aucune version du produit n'est détectée.
 
 Retour arrière
@@ -276,12 +226,8 @@ Exécuter le script `rollback.sh` avec la version précédente.
 	* Rollbacking to ExtensiveTesting-X.X.X                    [  OK  ]
 	* Restarting the ExtensiveTesting server                   [  OK  ]
 	=========================================================================
-	- Rollback terminated!
+	- Rollback completed successfully!
 	=========================================================================
-
-..
-	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
-	
 
 Désinstallation
 ~~~~~~~~~~~~~~
@@ -308,12 +254,9 @@ La désinstallation du produit peut se faire en utilisant le script `./uninstall
 	* Removing httpd configuration                             [  OK  ]
 	* Restarting httpd                                         [  OK  ]
 	=========================================================================
-	- Uninstallation terminated!
+	- Uninstallation completed successfully!
 	=========================================================================
 
-..
-	completed, pas terminated, scripts ici aussi. Ne jamais oublier l'indication de succès
-	
 .. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désinstallation. 
 	
 Déploiement
