@@ -1,6 +1,75 @@
 Spécifications
 =============
 
+Cycle des versions
+-------------------
+
+L'ensemble des paquets logiciels de la solution respecte les rêgles suivantes pour le nommage des versions.
+
+La version se découpe en 3 chiffres (A.B.C)
+ - A: le 1er chiffre indique la version majeure, l'incrémentation de ce chiffre implique 
+    - l'ajout de fonctionnalités majeures (avec pottentiellement une perte de compatibilité avec la version précédente)
+    - l'ajout de fonctionnalités mineures
+    - la correction de bug
+ - B: Le 2ième chiffre indique une version mineure, une incrémentation indique
+    - l'ajout de fonctionnalités mineures
+    - la correction de bug
+ - C: le 3ième chiffre indique une version de maintenance, une incrémentation indique
+    - la correction de bug
+
+Modèle de données
+-------------------
+
+Une base de donnée est utilisé par le serveur pour stocker :
+ - les utilisateurs de la solution
+ - la liste des projets
+ - les données de tests (variables projets)
+ - des statistiques
+ - l'historique des exécutions
+
++-------------------------+-----------------------------------------------+
+|  Tables                 |    Description                                |
++-------------------------+-----------------------------------------------+
+|  xtc-agents             | Non utilisé                                   |
++-------------------------+-----------------------------------------------+
+|  xtc-agents-stats       | Non utilisé                                   |
++-------------------------+-----------------------------------------------+
+|  xtc-probes             | Non utilisé                                   |
++-------------------------+-----------------------------------------------+
+|  xtc-probes-stats       | Non utilisé                                   |
++-------------------------+-----------------------------------------------+
+|  xtc-config             | Configuration du serveur                      |
++-------------------------+-----------------------------------------------+
+|  xtc-projects           | Liste des projets                             |
++-------------------------+-----------------------------------------------+
+|  xtc-relations-projects | Relation entre les projets et les utilisateurs|
++-------------------------+-----------------------------------------------+
+|  xtc-users              | Liste des utilisateurs                        |
++-------------------------+-----------------------------------------------+
+|  xtc-users-stats        | Statistiques de connexions                    |
++-------------------------+-----------------------------------------------+
+|  xtc-test-environment   | Liste des variables au format JSON            |
++-------------------------+-----------------------------------------------+
+|  xtc-tasks-history      | Historique des tâches exécutées sur le serveur|
++-------------------------+-----------------------------------------------+
+|  xtc-scripts-stats      | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testabstracts-stats| Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testcases-stats    | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testsuites-stats   | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testunits-stats    | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testplans-stats    | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-testglobals-stats  | Statistiques sur les tests exécutés           |
++-------------------------+-----------------------------------------------+
+|  xtc-writing-stats      | Statistiques sur la durée d'écriture des tests|
++-------------------------+-----------------------------------------------+
+
+
 Gestion des mots de passes
 -------------------
 
@@ -185,3 +254,55 @@ Organisation des résultats:
                 - Fichier: <testname>_<replayid>.trv                       # report in csv
                 - Fichier: <testname>_<replayid>.trvx
     
+Contrôle Agents
+---------------
+
+Le pilotage des agents depuis un test s'effectue à travers:
+ - les adaptateurs
+ - et le serveur
+
+La communication s'effectue avec l'échange de quelques messages spécifiques:
+ - init
+ - notify
+ - reset
+ - error
+ - data
+
+Sens de communications disponibles:
+ - Agent -> serveur -> adaptateur -> test
+ - Test -> adaptateur -> serveur -> agent
+ 
++------------------------------+--------------------------------------------+-------------------------------------------------------+
+|  Actions                     |               Agent                        |             Adaptateur                                |
+|  Possibles                   |----------------------+---------------------+------------------------+------------------------------+
+|                              |    Fonction          |   Callback          |    Fonction            |   Callback                   |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envoie d'un message "error"  | def sendError        |                     |                        |   def receivedErrorFromAgent |
+| depuis l'agent vers le test  |    * request         |                     |                        |        * data                |
+|                              |    * data            |                     |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envoie d'un message "notify" | def sendNotify       |                     |                        |  def receivedNotifyFromAgent |
+| depuis l'agent vers le test  |    * request         |                     |                        |        * data                |
+|                              |    * data            |                     |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envoie d'un message "data"   | def sendData         |                     |                        |  def receivedDataFromAgent   |
+| depuis l'agent vers le test  |    * request         |                     |                        |         * data               |
+|                              |    * data            |                     |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envoie d'un message "init"   |                      |  def onAgentInit    |  def initAgent         |                              |
+| depuis le test vers l'agent  |                      |    * client         |     * data             |                              |
+|                              |                      |    * tid            |                        |                              |
+|                              |                      |    * request        |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envoie d'un message "reset"  |                      |  def onAgentNotify  |  def resetAgent        |                              |
+| depuis le test vers l'agent  |                      |    * client         |                        |                              |
+|                              |                      |    * tid            |                        |                              |
+|                              |                      |    * request        |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+| Envooit d'un message "notify"|                      |  def onAgentReset   | def sendNotifyToAgent  |                              |
+| depuis le test vers l'agent  |                      |    * client         |     * data             |                              |
+|                              |                      |    * tid            |                        |                              |
+|                              |                      |    * request        |                        |                              |
++------------------------------+----------------------+---------------------+------------------------+------------------------------+
+
+

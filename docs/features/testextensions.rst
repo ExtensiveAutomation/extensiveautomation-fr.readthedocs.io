@@ -335,6 +335,56 @@ en direct par le serveur de test (ex: une page web)
 
 .. tip: Il est conseillé de limiter l'usage des agents car la mise en place des tests se retrouve plus complexe.
 
+EXPLIQUER POURQUOI ET COMMENT UTILISER CHAQUE AGENT ET SONDE, AVEC EXEMPLES, REQUIS, WARNINGS, ETC.
+
+Agents:
+
+ - dummy
+	pour tester le déroulement basique d'un test, ne retourne rien
+
+ - socket
+    
+ - ftp
+
+ - sikulix-server
+
+ - selenium3-server
+
+ - selenium2-server
+
+ - soapui
+
+ - command
+
+ - file
+
+ - adb
+
+ - gateway-sms
+
+ - database
+
+ - ssh
+
+Sondes:
+
+ - dummy
+ 
+ - textual
+ 
+ - network
+ 
+ - file
+ 
+
+EXPLIQUER COMMENT FAIRE DES TESTS SUR PLUSIEURS MACHINES EN PARALLÈLE ROULANT LE MEME TYPE D'AGENT
+ - MEME TEST SUR PLUSIEURS MACHINES (comment configurer un test pour ça)
+ - MEME SETUP DE COLLECTION DE DONNÉES ET AGENT SUR PLUSIEURS MACHINES, À PARTIR DE TEMPLATE AUTO-INCRÉMENTÉ
+ - DÉFINITION DE POOLS DE MACHINES CONTENANT DES AGENTS IDENTIQUES, POUR TESTS DE ROBUSTESSE/STRESS (comment définir et utiliser dans un test)
+ - COMMENT ROULER LE MÊME TEST SELENIUM SUR PLUSIEURS BROWSERS DIFFÉRENTS (expliquer le setup des agents/adaptateurs, et la config du test)
+
+ 
+ 
 Sondes
 ------
 

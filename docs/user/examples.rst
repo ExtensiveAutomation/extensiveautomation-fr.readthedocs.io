@@ -54,8 +54,64 @@ au niveau des paramètres de la campagne.
 Rest API
 --------
 
-L'exemple suivant montre comment réaliser des tests d'une API REST.
+L'exemple suivant montre comment réaliser des tests d'une API REST. 
 Pour ce faire les tests réutisables sont utilisés.
+
+
+Exemple:
+ 
+Le test appelle le service httpbin.org en https et appelle le service `ip` qui permet d'obtenir l'ip réel du client en json.
+
+.. image:: /_static/images/examples/rest_api.png
+
+Le scénario se décompose en plusieurs étapes:
+ 1. Préparation de l'environnement: description de l'environnement testé (adresse, port réseaux, etc...)
+    L'environnement est configuré dans le paramètre `ENVIRONMENT` du test `PREPARE ENVIRONMENT` (Id=5)
+   .. code-block:: json
+   
+       {
+        "PLATFORM": {
+            "CLUSTER": [
+                { "NODE": {
+                            "COMMON": {
+                                "HOSTNAME": "httpbin"
+                            },
+                            "INSTANCES": {
+                                "HTTP": {
+                                    "REST": {
+                                        "HTTP_DEST_HOST": "httpbin.org",
+                                        "HTTP_DEST_PORT": 443,
+                                        "HTTP_DEST_SSL": true,
+                                        "HTTP_HOSTNAME": "httpbin.org",
+                                        "HTTP_AGENT_SUPPORT": false,
+                                        "HTTP_AGENT": null
+                                    }
+                                }
+                            }
+                         }
+                    }
+            ]
+        },
+        "DATASET": [    ]
+        }
+ 2. Si la préparation de l'environnement ne fonction pas alors le scénario est arrété en appelant le test
+ réutilisable `Snippets/Do/02_Terminate` (Id=16)
+
+ 3. On envoit une requête REST et on décrit la réponse attendue en utilisant le test réutilisable `/Snippets/Protocols/04_Send_JSON` (Id=30). 
+ Si cette étape ne fonctionne pas alors on annule le test (Id=31)
+ 
+ La réponse reçue est vérifiée par le framework et ce qui a été décrit par le testeur dans le paramètre `HTTP_RSP_BODY`
+ 
+ .. code-block:: json
+ 
+   origin		[!CAPTURE:EXTERNAL_IP:]
+   
+ La configuration indique qu'il faut vérifier dans la réponse que la clé `origin` est présente et 
+ d'enregistrer la valeur dans le cache avec la clé `EXTERNAL_IP`
+ 
+ 4. On affiche la valeur reçue dans la réponse avec le test réutilisable `Snippets/Cache/02_Log_Cache` (Id=32)
+ 
+.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: /Samples/Web_API/001_httpbin_rest.tpx.
 
 Contrôles SSH
 -------------
@@ -68,6 +124,24 @@ Navigateurs Internet
 
 L'exemple suivant montre comment utiliser l'assistant pour écrire un test d'une application web
 
+La solution préconise d'écrire les tests web
+ - en identifiant le nombre de page affichée (et la réutilisation possible de ces pages)
+ - en identifiant les différents enchainements de pages pour créer les scénarios
+ - en définissant les parcours utilisateurs 
+
+L'automatiquement des pages web se réalise à travers l'assistant et en générant des test units.
+Les enchainements de pages sont à décrire dans les tests plans
+Le parcours utilisateur est à définir dans un test global
+
+.. image:: /_static/images/examples/web.png
+
+La solution préconise aussi de n'utiliser que des xpath pour identifier des élements HTML.
+
+.. image:: /_static/images/examples/web_xpath.png
+
+.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: /Samples/Tests_Gui/Selenium/.
+
 Mobile Android
 --------------
+
 L'exemple suivant montre comment utiliser l'assistant pour écrire un test d'une application mobile

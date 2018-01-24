@@ -8,66 +8,30 @@ La boite à outils permet de démarrer des agents ou des sondes sur des postes d
 
 .. image:: /_static/images/toolbox/toolbox.png
    
-Fenêtre de déploiement
----------------
+Déploiement
+-----------
 
-Cette fenêtre permet de choisir l'agent ou la sonde à démarrer. Le type d'agent ou sonde à démarrer peut être choisi dans la liste déroulante. 
-Enfin un agent ou sonde nécessite d'être enregistré auprès du serveur de test pour pouvoir l'utiliser.
+Cette fenêtre permet de choisir l'agent ou la sonde à démarrer. Le type d'agent ou sonde à démarrer peut être choisi 
+dans la liste déroulante. Enfin un agent ou sonde nécessite d'être enregistré auprès du serveur de test pour pouvoir l'utiliser.
+
+Un agent va permettre de faire une exécution distribuée de vos tests. 
+Par exemple, un agent déployé sur plusieurs machines va permettent d'exécuter le même test sur différent environnement à tester ou piloter.
+
+La liste complète des agents et sondes disponibles sont décrits dans le chapitre `Compléments Serveur > Agents ou Sondes`.
 
 .. note:: Le nom de l'agent ou la sonde doit être unique pour réussir l'enregistrement.
 
-EXPLIQUER LA LOGIQUE DANS LES NOMS DONNÉS AUX AGENTS ET SONDES
- 
-EXPLIQUER POURQUOI ET COMMENT UTILISER CHAQUE AGENT ET SONDE, AVEC EXEMPLES, REQUIS, WARNINGS, ETC.
-
-Agents:
-
- - dummy
-	pour tester le déroulement basique d'un test, ne retourne rien
-
- - socket
-
- - ftp
-
- - sikulix-server
-
- - selenium3-server
-
- - selenium2-server
-
- - soapui
-
- - command
-
- - file
-
- - adb
-
- - gateway-sms
-
- - database
-
- - ssh
-
-Sondes:
-
- - dummy
- 
- - textual
- 
- - network
- 
- - file
- 
- 
-EXPLIQUER COMMENT FAIRE DES TESTS SUR PLUSIEURS MACHINES EN PARALLÈLE ROULANT LE MEME TYPE D'AGENT
- - MEME TEST SUR PLUSIEURS MACHINES (comment configurer un test pour ça)
- - MEME SETUP DE COLLECTION DE DONNÉES ET AGENT SUR PLUSIEURS MACHINES, À PARTIR DE TEMPLATE AUTO-INCRÉMENTÉ
- - DÉFINITION DE POOLS DE MACHINES CONTENANT DES AGENTS IDENTIQUES, POUR TESTS DE ROBUSTESSE/STRESS (comment définir et utiliser dans un test)
- - COMMENT ROULER LE MÊME TEST SELENIUM SUR PLUSIEURS BROWSERS DIFFÉRENTS (expliquer le setup des agents/adaptateurs, et la config du test)
-
+.. tip:: 
+  Pour une meilleur visibilité des agents ou sondes disponibles, il est conseillé de respecter le formalisme suivant
+  pour les noms:
+    [agent|sonde].[environnement].[prénom_testeur].[nom][numéro_instance]
+    
+    Exemple:
+        agent.win.denis.socket01
 
 Compléments
 -----------
 
+La boite à outils peut être enrichis avec de nouveaux plugins.
+Pour ce faire il faut suivre la procédure décrite dans le chapitre `Contributions > Développement plugins > Boites à outils`.
 Il est possible d'ajouter des plugins, ils sont à ajouter dans le répertoire "Plugins".
