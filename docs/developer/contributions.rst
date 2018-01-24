@@ -153,7 +153,6 @@ Installer la librairie selenium dédié pour la solution:
 	> c:\Python36\python.exe setup.py install
     
 **Environnement x64 win py3.4 qt4**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pour préparer son environnement de développement, il est nécessaire de récupérer et installer les logiciels suivants:
  - Python 3.4.4 64bits
@@ -177,7 +176,6 @@ Installer la librairie selenium dédié pour la solution:
 	> c:\Python34\python.exe setup.py install
     
 **Environnement x64 centos py3.5 qt5**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Préparation de son environnement de développement sur un système Linux CentOS 6 ou 7.
 
@@ -219,7 +217,6 @@ Exécution de la boite à outils en mode graphique
     
 
 **Environnement x64 centos py2.7 qt4**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Préparation de son environnement de développement sur un système Linux CentOS 6 ou 7.
 
@@ -614,7 +611,7 @@ Ajout de traces dans les logs:
 Documentations
 --------------
 
-La documentation est stocké sur github dans le dépôt https://github.com/ExtensiveTesting/extensivetesting-fr.readthedocs.io
+La documentation est stockée sur github dans le dépôt https://github.com/ExtensiveTesting/extensivetesting-fr.readthedocs.io
 Il est possible de contribuer en faisant une demande de participation au dépôt.
 
 La documentation est générée par le service `readthedocs`.

@@ -116,21 +116,44 @@ Le scénario se décompose en plusieurs étapes:
 Contrôles SSH
 -------------
 
-L'exemple suivant montre comment réaliser des tests d'une API REST.
+L'exemple suivant montre comment réaliser des tests système sur une machine distance en utilisant le protocole SSH.
 Pour ce faire les tests réutisables sont utilisés.
+
+.. image:: /_static/images/examples/ssh.png
+
+Le test se décompose en plusieurs étapes:
+ 1. Chargement de la description (ip, compte, mot de passe) de la machine cible dans le cache
+ 2. Appel au test générique `/Snippets/Protocols/01_Send_SSH` pour récupérer la version du serveur
+    La version (si trouvé à l'écran) est sauvegardée dans le cache avec la clé `SERVER_VERSION`
+    Si la version n'est pas trouvée, le test part en erreur.
+    
+   .. code-block:: bash
+  
+     # checking server version
+     xtctl version
+     .*Server version: [!CAPTURE:SERVER_VERSION:]\n.*
+     
+   
+ 3. Affiche de la version depuis le cache.
+
+.. note:: L'exemple complet est disponible dans les échantillons de tests `/Self Testing/SYSTEM/000_System.tpx`.
 
 Navigateurs Internet
 --------------------
 
-L'exemple suivant montre comment utiliser l'assistant pour écrire un test d'une application web
+Pour écrire un test d'une application web, il faut:
+ - obligatoirement déployer un agent `selenium` sur un poste disposant d'un navigateur firefox, chrome, internet explorer ou edge
+ - avoir accès au code source de la page web depuis son navigateur
+ - avoir des connaissances en xpath
+ - connaitre les bases du code HTML
 
-La solution préconise d'écrire les tests web
- - en identifiant le nombre de page affichée (et la réutilisation possible de ces pages)
- - en identifiant les différents enchainements de pages pour créer les scénarios
- - en définissant les parcours utilisateurs 
+L'approche préconisée pour écrire les tests web est la suivante:
+ - identifier le nombre de page affichée à scripter (et la réutilisation possible de ces pages)
+ - identifier les différents enchainements de pages pour créer les scénarios
+ - identifier les parcours utilisateurs 
 
-L'automatiquement des pages web se réalise à travers l'assistant et en générant des test units.
-Les enchainements de pages sont à décrire dans les tests plans
+L'écriture des tests se réalise à travers l'assistant, il permet de décrire les différentes étapes
+et de générer le test unit équivalent. Les enchainements de pages sont à décrire dans les tests plans
 Le parcours utilisateur est à définir dans un test global
 
 .. image:: /_static/images/examples/web.png
@@ -139,9 +162,16 @@ La solution préconise aussi de n'utiliser que des xpath pour identifier des él
 
 .. image:: /_static/images/examples/web_xpath.png
 
+.. tip:: Il est possible d'utiliser les outils de développement des navigateurs pour valider les xpaths.
+
 .. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: /Samples/Tests_Gui/Selenium/.
 
 Mobile Android
 --------------
 
-L'exemple suivant montre comment utiliser l'assistant pour écrire un test d'une application mobile
+Pour écrire le test d'une application mobile, il faut:
+ - déployer un agent `adb` sur un poste avec un mobile android connecté dessus.
+ - avoir accès à la description xml des applications depuis l'agent
+
+L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes
+et de générer le test unit équivalent.
