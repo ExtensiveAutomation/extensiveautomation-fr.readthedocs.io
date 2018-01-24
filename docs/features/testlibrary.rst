@@ -2,7 +2,8 @@ Framework de test
 ================
 
 Le framework de test fournit un cadre permettant de normaliser la création des cas de tests.
-Les principales fonctionnalités:
+
+Les principales fonctionnalités sont:
  - le support des cas de tests avec étapes
  - le support des extensions permettant de communiquer avec le système à tester ou piloter
  - la génération automatique des rapports de tests.
@@ -11,14 +12,16 @@ Cas de test
 -----------
 
 La création d'un cas de test dans la solution est normalisée.
+
 Un cas de test se découpe en 4 sections:
  - **description**: description des différentes étapes du test
- - **prepare**: préparation des extensions permettant de communiquer avec le système à tester ou piloter
- - **definition**: description du test
+ - **prepare**: préparation des adaptateurs et librairies permettant de communiquer avec le système à tester ou piloter
+ - **definition**: déroulement du test
  - **cleanup**: phase de nettoyage
  
 Le résultat d'un cas de test est automatiquement calculé par le framework lorsque le test est terminé
 en fonction des différentes étapes définies.
+
 Il existe 3 résultats possibles:
  - PASS: toutes les étapes du tests ont été exécutées avec succès
  - FAILED: au moins une étape est en erreur après exécution
@@ -30,6 +33,7 @@ Etapes de test
 --------------
 
 Un cas de test se découpe en sous-étapes.
+
 Une étape se définit par: 
  - un résumé de l'action à réaliser
  - la description détaillée de l'action à réaliser
@@ -49,19 +53,20 @@ La définition des étapes du test doit être faite dans la section `description
 
 Le résultat d'une étape est à préciser dans la section `description`
 
-Mettre le résultat à PASS
+Exemple pour mettre le résultat à PASS
 
 .. code-block:: python
 
   self.step1.setPassed(actual="step executed as expected")
   
 
-Mettre le résultat à FAILED
+Exemple pour mettre le résultat à FAILED
 
 .. code-block:: python
 
   self.step1.setFailed(actual="error to run the step")
   
+.. warning:: Il ne faut pas oublier de démarrer une étape avec la fonction `start` sinon il n'est pas possible de mettre le résultat.
 
 .. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme UNDEFINED.
 
@@ -91,21 +96,22 @@ Ajout de trace
 --------------
 
 Le framework met à disposition certaines fonctions pour ajouter des messages durant l'exécution d'un test.
+
 Les niveaux suivants sont disponibles:
 
- - info
+ - Exemple pour afficher un message de type `info`
 
 	.. code-block:: python
  
 		Trace(self).info(txt="hello world")
 
- - warning
+ - Exemple pour afficher un message de type `warning`
  
 	.. code-block:: python
 
 		Trace(self).warning(txt="hello world")
 
- - error
+ - Exemple pour afficher un message de type `error`
  
 	.. code-block:: python
  
@@ -145,7 +151,7 @@ Les logs sont organisés par répertoire:
 
 .. image:: /_static/images/testlibrary/private_storage_zip.png
 
-Exemple pour sauvegarder du texte `hello world` dans un fichier `my_logs` depuis le cas de test
+Exemple pour sauvegarder le texte `hello world` dans un fichier `my_logs` depuis le cas de test
 
 .. code-block:: python
  
@@ -159,7 +165,9 @@ Exemple pour ajouter du texte dans un fichier de log déjà existant
   Private(self).appendFile(destname="my_logs", data="hello world2")
   
 
-.. note:: Il est possible de sauvegarder des fichiers depuis un adaptateur
+.. note:: 
+  Il est aussi possible de sauvegarder des fichiers depuis un adaptateur.
+  Ils seront automatiquement stockés dans un répertoire portant le nom de l'adaptateur.
 	
 En cache
 ~~~~~
@@ -209,7 +217,7 @@ Exemple de mise en attente pendant 10 secondes:
   Time(self).wait(timeout=10)
 	
 
-Exemple de mise en attente tant qu'on est pas le 12 septembre 2016 à 2h: 
+Exemple de mise en attente tant que la date et heure courante ne correspondent pas à la date indiquée:
 
 .. code-block:: python
  
@@ -238,8 +246,7 @@ Variables entrantes
 ~~~~~~~~~~~~~~~~~~
 
 Les paramètres entrants (inputs) sont à utiliser pour ajouter des variables sur un test.
-
-<inserer image>
+Ils sont configurables depuis le client.
 
 Il existe plusieurs types de paramètres:
 
@@ -304,38 +311,30 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
   input('DEBUG')
   
 
-.. note::
-
-  Le nom d'un paramètre est unique et obligatoirement en majuscule.
-
-  Il est possible d'afficher des variables dans le rapport de test en préfixant les variables:
-   - SUT_		Variables décrivant la version du système à tester ou piloter
-   - DATA_		Variables décrivant des données spécifiques
-   - USER_		Variables utilisateurs
-  
-  Cette fonctionnalité peut être utile pour augmenter le niveau de traçabilité dans les rapports.
-  
-.. image:: /_static/images/testlibrary/inputs_sut.png
-  
-.. image:: /_static/images/testlibrary/report_inputs.png
+.. note:: Le nom d'un paramètre est unique et obligatoirement en majuscule.
   
 Variable personnalisable
 ~~~~~~~~~~~~~~~
 
-Ce type de paramètre est intéressant car il permet de construire des valeurs appelant d'autres variables.
+Ce type de paramètre permet de construire des valeurs appelant d'autres variables.
 
 Prenons l'exemple d'un test contenant les 2 variables suivantes:
  - DEST_IP avec la valeur 192.168.1.1
  - DEST_PORT avec la valeur 8080
 
 Le type `custom` va nous permettre de construire une 3ième variable 
- - DEST_URL avec la valeur https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
+ - DEST_URL avec la valeur 
+ 
+   .. code-block::
 
-Le mot clé `[!INPUT:<NOM_VARIABLE_ENTRANTE:]` permet d'appeler une autre variable entrante.
+     https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
+     
+
+Le mot clé `**[!INPUT:<NOM_VARIABLE_ENTRANTE:]**` permet d'appeler une autre variable entrante.
 Le framework remplacera au moment de l'exécution du test les différents mots clés avec la valeur associée.
 On obtiendra comme valeur https://192.168.1.1:8080/welcome pour la variable DEST_URL.
 
-Variable alias
+Variable de type alias
 ~~~~~~~~~~~~~~
 
 Un alias de paramètre peut être utilisé durant la définition d'un test plan.
@@ -343,6 +342,8 @@ La création d'un alias permet de changer le nom d'un paramètre sans changer le
 
 Variable agents
 ~~~~~~~~~~~~~~
+
+Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé `agent()`.
 
 .. code-block:: python
 

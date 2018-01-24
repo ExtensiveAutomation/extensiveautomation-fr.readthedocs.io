@@ -149,7 +149,7 @@ Liste des librairies disponibles par défauts:
 |  XOR      |  Support chiffrement ou déchiffrement |
 +-----------+---------------------------------------+
 |  RSA      |  Générateur clé RSA                   |
-+---------- +---------------------------------------+
++-----------+---------------------------------------+
 
 
 **Codecs**
@@ -186,7 +186,7 @@ Liste des librairies disponibles par défauts:
 | SHA      | Création d'un hash sha1, sha256 et sha512|
 +----------+------------------------------------------+
 | CRC32    | Générateur de checksum                   |
-+--------- +------------------------------------------+
++----------+------------------------------------------+
 
 **Identifiant**
 		

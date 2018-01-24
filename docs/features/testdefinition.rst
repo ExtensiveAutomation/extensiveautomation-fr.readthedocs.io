@@ -23,7 +23,7 @@ Ce format est orienté développement.
 
 .. image:: /_static/images/testlibrary/tux.png
 
-.. note: Python est utilisé comme language de conception des tests
+.. note: Python est utilisé comme language de conception des tests.
 
 Test Suite
 ---------
@@ -33,7 +33,7 @@ Ce format est orienté développement.
 
 .. image:: /_static/images/testlibrary/tsx.png
 
-.. note: Python est utilisé comme language de conception des tests
+.. note: Python est utilisé comme language de conception des tests.
 
 Test Plan
 ----------
@@ -48,7 +48,7 @@ Test Global
 ----------
 
 Le test `global` (tgx) permet d'écrire des campagnes de test.
-La préparation des campagnes se réalise en important les tests `plans`
+La préparation des campagnes se réalise en important les tests `plans`.
 
 .. image:: /_static/images/testlibrary/tgx.png
 
