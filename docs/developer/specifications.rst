@@ -7,20 +7,20 @@ Cycle des versions
 L'ensemble des paquets logiciels de la solution respecte les rêgles suivantes pour le nommage des versions.
 
 La version se découpe en 3 chiffres (A.B.C)
- - A: le 1er chiffre indique la version majeure, l'incrémentation de ce chiffre implique 
+ - A: le 1er chiffre indique la version majeure. L'incrémentation de ce chiffre implique 
     - l'ajout de fonctionnalités majeures (avec pottentiellement une perte de compatibilité avec la version précédente)
     - l'ajout de fonctionnalités mineures
     - la correction de bug
- - B: Le 2ième chiffre indique une version mineure, une incrémentation indique
+ - B: Le 2ième chiffre indique une version mineure. L'incrémentation de ce chiffre indique
     - l'ajout de fonctionnalités mineures
     - la correction de bug
- - C: le 3ième chiffre indique une version de maintenance, une incrémentation indique
+ - C: le 3ième chiffre indique une version de maintenance. L'incrémentation de ce chiffre indique
     - la correction de bug
 
 Modèle de données
 -------------------
 
-Une base de donnée est utilisé par le serveur pour stocker :
+Une base de donnée est utilisée par le serveur pour stocker :
  - les utilisateurs de la solution
  - la liste des projets
  - les données de tests (variables projets)
@@ -274,7 +274,7 @@ Sens de communications disponibles:
  
 +------------------------------+--------------------------------------------+-------------------------------------------------------+
 |  Actions                     |               Agent                        |             Adaptateur                                |
-|  Possibles                   |----------------------+---------------------+------------------------+------------------------------+
+|  Possibles                   +----------------------+---------------------+------------------------+------------------------------+
 |                              |    Fonction          |   Callback          |    Fonction            |   Callback                   |
 +------------------------------+----------------------+---------------------+------------------------+------------------------------+
 | Envoie d'un message "error"  | def sendError        |                     |                        |   def receivedErrorFromAgent |

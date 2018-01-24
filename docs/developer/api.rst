@@ -1,6 +1,42 @@
 API
 ===
 
+authentification
+----------------
+
+Il y a 2 méthodes pour s'authentifier sur l'API REST:
+ - En utilisant un cookie de session
+ - En réalisant une authentification basic
+ 
+Basic Auth
+~~~~~~~~
+
+L'authentification basique nécessite d'utiliser une clé API.
+Cette clé API peut être généré depuis le serveur de test en appelant le script `/opt/xtc/current/Scripts/generate-apikey.py`
+
+.. code-block:: bash
+  
+  ./generate-apikey.py --user=admin
+  
+
+Il faut ensuite ajouter l'header `Authorization` dans l'ensemble des requêtes.
+
+.. code-block:: bash
+
+  Authorization: Basic <mon_api_key>
+
+.. note:: Avec le mode Basic Auth, il n'est pas nécessaire d'appeler la fonction login.
+
+Cookie de session
+~~~~~~~~~~~~~~~~~
+
+L'authentification par cookie nécessite d'appeler en prérequis la fonction `login` pour générer un cookie de session.
+Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `Cookie`.
+
+.. code-block:: bash
+
+  Cookie: session_id=NjQyOTVmOWNlMDgyNGQ2MjlkNzAzNDdjNTQ3ODU5MmU5M
+  
 common
 ------
 
