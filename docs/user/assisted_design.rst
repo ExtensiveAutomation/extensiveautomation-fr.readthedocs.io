@@ -9,8 +9,8 @@ On peut s'en servir pour:
  - Tester des applications web
  - Exécuter des actions sur un mobile Android
 
-Le test se compose d'un enchainement d'action à réaliser.
-L'assistant génére automatiquement le test `unit` ou `suite`. 
+Le test se compose d'un enchaînement d'actions à réaliser.
+L'assistant génère automatiquement le test `unit` ou `suite`. 
 Un test (script) existant peut être mis à jour depuis l'assistant aussi.
 
 Pour ajouter une action dans l'assitant, il faut 
@@ -20,7 +20,7 @@ Pour ajouter une action dans l'assitant, il faut
 
  
 L'assistant supporte nativement l'utilisation du cache. Il est donc possible 
-de se sauvegarder ou récupérer depuis le cache des valeurs.
+de sauvegarder ou récupérer des valeurs depuis le cache.
 
 .. image:: /_static/images/client_assistant/aa_basic_log.png
 
@@ -29,16 +29,19 @@ de se sauvegarder ou récupérer depuis le cache des valeurs.
 Onglet Framework
 ------------------
 
-L'onglet **framework** permet d'utiliser les fonctions de bases du framework de test.
+L'onglet **framework** permet d'utiliser les fonctions de base du framework de test.
 
 Exemple de test réalisé avec l'assistant:
- 1. Affiche du message "bonjour" dans le test
+ 1. Affiche le message "bonjour" dans le test
  2. Demande à l'utilisateur durant l'exécution son prénom et l'enregistre dans le cache avec la clé `prenom`
  3. Affiche le prénom dans le log du test
  4. Vérifie depuis le cache si le prénom contient une valeur spécifique.
 
 .. image:: /_static/images/client_assistant/aa_basic_test.png
 
+..
+	Dans l'image ci-dessus "ASK TO USER" n'est pas anglais (c'est une traduction mot-pour-mot de "Demander à l'usager")
+	On dit plutôt "USER INPUT PROMPT" ou "USER QUESTION", tu vois le genre.
 
 Liste des actions disponibles:
 
@@ -70,11 +73,14 @@ Exemple de test réalisé avec l'assistant:
  2. Envoi du texte `su -`
  3. Attend de détecter le texte `Password:` à l'écran
  4. Demande à l'utilisateur le mot de passe root et le stocke dans le cache avec la clé `pwd`
- 5. Envoi le mot de passe root en utilisant la valeur stocké dans le cache
+ 5. Envoi le mot de passe root en utilisant la valeur stockée dans le cache
  6. Attend de détecter à l'écran le prompt de connexion
  7. Ferme la connexion SSH.
  
 .. image:: /_static/images/client_assistant/aa_sys_example.png
+
+..
+	Dans l'image ci-dessus "ASK TO USER" n'est pas anglais
 
 Liste des actions disponibles: 
 
@@ -92,7 +98,7 @@ Liste des actions disponibles:
 | CHECKING IF SCREEN |  Vérifie si l'écran contient un texte spécifique                |
 +--------------------+-----------------------------------------------------------------+
 
-.. note:: L'utilisation de l'action `OPEN SSH SESSION` est obligatoire pour utiliser les autres disponibles.
+.. note:: L'utilisation de l'action `OPEN SSH SESSION` est obligatoire avant de pouvoir utiliser les autres disponibles.
 
 Onglet Application
 ------------------
@@ -106,18 +112,18 @@ L'onglet **application** permet d'automatiser des applications riches en permett
 .. warning:: un agent **sikulix-server** est nécessaire pour utiliser les actions.
 
 Exemple de test réalisé avec l'assistant:
- 1. Envoi le raccourci clavier `Win+R` pour ouvrir la fenêtre exécuter
- 2. Type le texte `cmd`
- 3. Envoi le raccourci clavier `Enter` pour ouvrir une fenêtre cmd.
+ 1. Envoie le raccourci clavier `Win+R` pour ouvrir la fenêtre exécuter
+ 2. Écrit le texte `cmd`
+ 3. Envoie le raccourci clavier `Enter` pour ouvrir une fenêtre cmd.
  4. Attend de détecter l'icône de la fenêtre cmd
- 5. Type le texte `cls & ver` pour afficher la version de windows
- 6. Envoi le raccourci clavier `Enter` pour valider
- 7. Envoi le raccourci clavier `Ctrl+A` pour sélectionner le texte dans la fenêtre
- 8. Envoi le raccourci clavier `Ctrl+C` pour copier le texte sélectionné dans le presse papier
- 9. Récupère le texte du presse papier et l'enregistre dans la cache
+ 5. Écrit le texte `cls & ver` pour afficher la version de Windows
+ 6. Envoie le raccourci clavier `Enter` pour valider
+ 7. Envoie le raccourci clavier `Ctrl+A` pour sélectionner le texte dans la fenêtre
+ 8. Envoie le raccourci clavier `Ctrl+C` pour copier le texte sélectionné dans le presse-papier
+ 9. Récupère le texte du presse papier et l'enregistre dans le cache
  10. Affiche le texte copié depuis le cache
- 11. Type le texte `exit` dans la fenêtre cmd
- 12. Envoi le raccourci clavier `Enter` pour fermer la fenêtre.
+ 11. Écrit le texte `exit` dans la fenêtre cmd
+ 12. Envoie le raccourci clavier `Enter` pour fermer la fenêtre.
 
 .. image:: /_static/images/client_assistant/aa_app_example.png
 
@@ -142,29 +148,29 @@ Liste des actions disponibles:
 **Contrôle du clavier** 	
 
 +---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT                 |  Type du texte                                                  |
+| TYPE TEXT                 |  Écrit du texte                                                 |
 +---------------------------+-----------------------------------------------------------------+
-| TYPE PATH                 |  Type du texte (à utiliser pour les chemins d'accès)            |
+| TYPE PATH                 |  Écrit du texte (à utiliser pour les chemins d'accès)           |
 +---------------------------+-----------------------------------------------------------------+
-| TYPE PASSWORD             |  Type du texte (à utiliser pour taper un mot de passe)          |
+| TYPE PASSWORD             |  Écrit du texte (à utiliser pour taper un mot de passe)         |
 +---------------------------+-----------------------------------------------------------------+
-| GET TEXT FROM CLIPBOARD   |  Récupère le texte présent dans le presse papier                |
+| GET TEXT FROM CLIPBOARD   |  Récupère le texte présent dans le presse-papier                |
 +---------------------------+-----------------------------------------------------------------+
 | KEYBOARD SHORTCUT         |  Permet de taper un raccourci clavier                           |
 +---------------------------+-----------------------------------------------------------------+
 
-**Contrôle chaine de caractères** 	
+**Contrôle chaîne de caractères** 	
 
 +---------------------------+-----------------------------------------------------------------+
 | CLICK ON WORD             |  Recherche un mot à l'écran et clic dessus                      |
 +---------------------------+-----------------------------------------------------------------+
-| DOUBLE CLICK ON WORD      |  Recherche un mot à l'écran et double clic dessus               |
+| DOUBLE CLICK ON WORD      |  Recherche un mot à l'écran et double-clic dessus               |
 +---------------------------+-----------------------------------------------------------------+
-| RIGHT CLICK ON WORD       |  Recherche un mot à l'écran et effectue un clic droit dessus    |
+| RIGHT CLICK ON WORD       |  Recherche un mot à l'écran et effectue un clic-droit dessus    |
 +---------------------------+-----------------------------------------------------------------+
-| WAIT WORD                 |  Recherche un mot jusqu'à qu'il apparaisse                      |
+| WAIT WORD                 |  Recherche un mot jusqu'à ce qu'il apparaisse                   |
 +---------------------------+-----------------------------------------------------------------+
-| WAIT AND CLICK ON WORD    |  Recherche un mot jusqu'à qu'il apparaisse et clic dessus       |
+| WAIT AND CLICK ON WORD    |  Recherche un mot jusqu'à ce qu'il apparaisse et clic dessus    |
 +---------------------------+-----------------------------------------------------------------+	
  
 **Contrôle d'images**
@@ -172,13 +178,13 @@ Liste des actions disponibles:
 +---------------------------+----------------------------------------------------------------------------+
 | CLICK ON IMAGE            |  Recherche une image et clic dessus                                        |
 +---------------------------+----------------------------------------------------------------------------+
-| DOUBLE CLICK ON IMAGE     |  Recherche une image et double clic dessus                                 |
+| DOUBLE CLICK ON IMAGE     |  Recherche une image et double-clic dessus                                 |
 +---------------------------+----------------------------------------------------------------------------+
-| RIGHT CLICK ON IMAGE      |  Recherche une image et effectue un clic droit dessus                      |
+| RIGHT CLICK ON IMAGE      |  Recherche une image et effectue un clic-droit dessus                      |
 +---------------------------+----------------------------------------------------------------------------+
-| WAIT IMAGE                |  Recherche une image jusqu'à la voir apparaitre à l'écran                  |
+| WAIT IMAGE                |  Recherche une image jusqu'à la voir apparaître à l'écran                  |
 +---------------------------+----------------------------------------------------------------------------+
-| WAIT AND CLICK ON IMAGE   |  Recherche une image jusqu'à la voir apparaitre à l'écran et clic dessus   |
+| WAIT AND CLICK ON IMAGE   |  Recherche une image jusqu'à la voir apparaître à l'écran et clic dessus   |
 +---------------------------+----------------------------------------------------------------------------+
 | HOVER MOUSE ON            |  Recherche une image et déplace le curseur de la souris dessus             |
 +---------------------------+----------------------------------------------------------------------------+
@@ -199,9 +205,9 @@ L'onglet **navigateur** permet d'automatiser des applications web en permettant:
  la fonction `WAIT VISIBLE AND CLICK ON HTML ELEMENT`.
 
 Exemple de test réalisé avec l'assistant:
- 1. Récupère depuis le cache le prénom et l'envoi dans l'élement HTML trouvé par le xpath
- 2. Clic sur l'élement HTML trouvé par le xpath
- 3. Recherche l'élement HTML trouvé par le xpath et clic dessus dès qu'il est visible à l'écran.
+ 1. Récupère depuis le cache le prénom et l'envoie dans l'élément HTML trouvé par le xpath
+ 2. Clic sur l'élément HTML trouvé par le xpath
+ 3. Recherche l'élément HTML trouvé par le xpath et clic dessus dès qu'il est visible à l'écran.
  
 .. image:: /_static/images/client_assistant/aa_web_example.png
 
@@ -283,7 +289,7 @@ Onglet Android
 --------------
 
 L'onglet **android** permet d'automatiser des applications mobiles en permettant:
- - de simulant le clavier
+ - de simuler le clavier
  - de simuler l'utilisation du doigts sur l'écran
  - de piloter le système et les applications 
 
@@ -325,7 +331,7 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | TYPE SHORTCUT             |  Simule un raccourci                                            |
 +---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT ON XML ELEMENT  |  Envoi du texte sur un élément précis de l'interface            |
+| TYPE TEXT ON XML ELEMENT  |  Envoie du texte sur un élément précis de l'interface           |
 +---------------------------+-----------------------------------------------------------------+
 | GET TEXT FROM XML ELEMENT |  Récupère le texte d'un élément précis de l'interface           |
 +---------------------------+-----------------------------------------------------------------+
@@ -337,7 +343,7 @@ Liste des actions disponibles:
 +-------------------------------+--------------------------------------------------------------------------------+
 | CLICK ON XML ELEMENT          |  Clic sur un élément précis de l'interface                                     |
 +-------------------------------+--------------------------------------------------------------------------------+
-| LONG CLICK ON XML ELEMENT     |  Clic longue durée sur un élément précis de l'interface                        |
+| LONG CLICK ON XML ELEMENT     |  Clic longue-durée sur un élément précis de l'interface                        |
 +-------------------------------+--------------------------------------------------------------------------------+
 | WAIT AND CLICK ON XML ELEMENT |  Attend l'apparition d'un élément précis de l'interface et clic dessus         |
 +-------------------------------+--------------------------------------------------------------------------------+		
