@@ -14,20 +14,20 @@ Cas de test
 La création d'un cas de test dans la solution est normalisée.
 
 Un cas de test se découpe en 4 sections:
- - **description**: description des différentes étapes du test
- - **prepare**: préparation des adaptateurs et librairies permettant de communiquer avec le système à tester ou piloter
- - **definition**: déroulement du test
- - **cleanup**: phase de nettoyage
+ - ``description``: description des différentes étapes du test
+ - ``prepare``: préparation des adaptateurs et librairies permettant de communiquer avec le système à tester ou piloter
+ - ``definition``: déroulement du test
+ - ``cleanup``: phase de nettoyage
  
 Le résultat d'un cas de test est automatiquement calculé par le framework lorsque le test est terminé
 en fonction des différentes étapes définies.
 
 Il existe 3 résultats possibles:
- - PASS: toutes les étapes du tests ont été exécutées avec succès
- - FAILED: au moins une étape est en erreur après exécution
- - UNDEFINED: au moins une étape du test n'a pas été exécutée
+ - ``PASS``: toutes les étapes du tests ont été exécutées avec succès
+ - ``FAILED``: au moins une étape est en erreur après exécution
+ - ``UNDEFINED``: au moins une étape du test n'a pas été exécutée
 
-.. note:: La section `cleanup` est systématiquement appelée, même en cas d'erreur.
+.. note:: La section ``cleanup`` est systématiquement appelée, même en cas d'erreur.
 
 Etapes de test
 --------------
@@ -39,7 +39,7 @@ Une étape se définit par:
  - la description détaillée de l'action à réaliser
  - la description du résultat attendu pour valider l'étape.
 
-La définition des étapes du test doit être faite dans la section `description`:
+La définition des étapes du test doit être faite dans la section ``description``:
 
 .. code-block:: python
 
@@ -51,37 +51,37 @@ La définition des étapes du test doit être faite dans la section `description
 					)
   
 
-Le résultat d'une étape est à préciser dans la section `description`
+Le résultat d'une étape est à préciser dans la section ``description``
 
-Exemple pour mettre le résultat à PASS
+Exemple pour mettre le résultat à ``PASS``
 
 .. code-block:: python
 
   self.step1.setPassed(actual="step executed as expected")
   
 
-Exemple pour mettre le résultat à FAILED
+Exemple pour mettre le résultat à ``FAILED``
 
 .. code-block:: python
 
   self.step1.setFailed(actual="error to run the step")
   
-.. warning:: Il ne faut pas oublier de démarrer une étape avec la fonction `start` sinon il n'est pas possible de mettre le résultat.
+.. warning:: Il ne faut pas oublier de démarrer une étape avec la fonction ``start`` sinon il n'est pas possible de mettre le résultat.
 
-.. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme UNDEFINED.
+.. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme ``UNDEFINED``.
 
 Annulation d'un test
 -------------------
 
-Il est possible de forcer l'exécution d'un cas de test en utilisant la fonction `interrupt` dans la section `description` de votre test.
+Il est possible de forcer l'exécution d'un cas de test en utilisant la fonction ``interrupt`` dans la section ``description`` de votre test.
 
 .. code-block:: python
 
   Test(self).interrupt(err="aborted by tester")
   
 
-Utiliser la fonction `interrupt` permet d'arrêter le test et d'appeler automatiquement la section `cleanup` du cas de test.
-Dans ce cas précis, l'argument `aborted` est mis à True par le framework pour indiquer l'annulation du test.
+Utiliser la fonction ``interrupt`` permet d'arrêter le test et d'appeler automatiquement la section ``cleanup`` du cas de test.
+Dans ce cas précis, l'argument ``aborted`` est mis à True par le framework pour indiquer l'annulation du test.
 
 .. code-block:: python
 
@@ -99,19 +99,19 @@ Le framework met à disposition certaines fonctions pour ajouter des messages du
 
 Les niveaux suivants sont disponibles:
 
- - Exemple pour afficher un message de type `info`
+ - Exemple pour afficher un message de type ``info``
 
 	.. code-block:: python
  
 		Trace(self).info(txt="hello world")
 
- - Exemple pour afficher un message de type `warning`
+ - Exemple pour afficher un message de type ``warning``
  
 	.. code-block:: python
 
 		Trace(self).warning(txt="hello world")
 
- - Exemple pour afficher un message de type `error`
+ - Exemple pour afficher un message de type ``error``
  
 	.. code-block:: python
  
@@ -237,7 +237,7 @@ Exemple demandant le nom de la personne:
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
 
-.. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument `default`.
+.. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument ``default``.
 
 Les variables d'un test
 -----------------------
@@ -304,7 +304,7 @@ Il existe plusieurs types de paramètres:
 | json           | returne une valeur au format JSON                        |
 +----------------+----------------------------------------------------------+
 
-Les variables sont accessibles depuis un test avec la fonction `input(...)`
+Les variables sont accessibles depuis un test avec la fonction ``input(...)``
 
 .. code-block:: python
 
@@ -316,23 +316,33 @@ Les variables sont accessibles depuis un test avec la fonction `input(...)`
 Variable personnalisable
 ~~~~~~~~~~~~~~~
 
-Ce type de paramètre permet de construire des valeurs appelant d'autres variables.
+Ce type de paramètre ``custom`` permet de construire des valeurs appelant d'autres variables.
 
 Prenons l'exemple d'un test contenant les 2 variables suivantes:
  - DEST_IP avec la valeur 192.168.1.1
  - DEST_PORT avec la valeur 8080
 
-Le type `custom` va nous permettre de construire une 3ième variable 
+Le type ``custom`` va nous permettre de construire une 3ième variable 
  - DEST_URL avec la valeur 
  
-   .. code-block::
-
-     https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
+   .. code-block:: bash
      
+       https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
+       
 
-Le mot clé `**[!INPUT:<NOM_VARIABLE_ENTRANTE:]**` permet d'appeler une autre variable entrante.
+Le mot clé ``[!INPUT:<NOM_VARIABLE_ENTRANTE:]`` permet d'appeler une autre variable entrante.
 Le framework remplacera au moment de l'exécution du test les différents mots clés avec la valeur associée.
 On obtiendra comme valeur https://192.168.1.1:8080/welcome pour la variable DEST_URL.
+
+Liste des mots clés disponibles dans la variable ``custom``:
+
++-------------------+--------------------------------------------------------------------+
+| Mots clés         |   Description                                                      |
++-------------------+--------------------------------------------------------------------+
+| ``[!INPUT:  :]``  |  Permet de récupérer la valeur d'un paramètre présent dans le test |
++-------------------+--------------------------------------------------------------------+
+| ``[!CACHE:   :]`` |  Permet de récupérer une valeur présente dans le cache             |
++-------------------+--------------------------------------------------------------------+
 
 Variable de type alias
 ~~~~~~~~~~~~~~
@@ -343,7 +353,7 @@ La création d'un alias permet de changer le nom d'un paramètre sans changer le
 Variable agents
 ~~~~~~~~~~~~~~
 
-Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé `agent()`.
+Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé ``agent()``.
 
 .. code-block:: python
 

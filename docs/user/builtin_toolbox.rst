@@ -34,5 +34,5 @@ Compléments
 
 La boite à outils peut être enrichie avec de nouveaux plugins.
 
-Pour ce faire il faut suivre la procédure décrite dans le chapitre `Contributions > Développement plugins > Boites à outils`.
+Pour ce faire il faut suivre la procédure décrite dans le chapitre :doc:`developer/contributions` `Contributions > Développement plugins > Boites à outils`.
 Les plugins sont à déposer dans le répertoire "Plugins".

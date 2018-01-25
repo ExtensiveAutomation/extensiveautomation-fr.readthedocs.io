@@ -116,7 +116,8 @@ Code couleur:
 
 .. tip:: Il faut cliquer sur les cas de tests pour afficher les étapes.
 
-.. note:: Les messages affichés par le test avec la fonction `Trace(self).info()` sont disponibles dans le rapport en cliquant sur le lien `[logs details]`.
+.. note:: Les messages affichés par le test avec la fonction ``Trace(self).info()`` sont disponibles dans le 
+rapport en cliquant sur le lien ``[logs details]``.
 
 
 Accès aux logs complémentaires

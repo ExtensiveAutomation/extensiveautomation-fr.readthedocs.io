@@ -44,5 +44,5 @@ Les agents utilisent un flux tcp/443 (https) pour communiquer avec le serveur.
 Sondes
 ------
 
-les sondes permettent de récupérer durant l'exécution d'un test des traces réseaux, fichiers de configuration ou logs.
+Les sondes permettent de récupérer durant l'exécution d'un test des traces réseaux, fichiers de configurations ou logs.
 La communication avec le serveur s'effectue sur le port tcp/443 (https).

@@ -12,7 +12,7 @@ Basique
 ~~~~~~~~
 
 L'authentification basique nécessite d'utiliser une clé API.
-Cette clé API peut être généré depuis le serveur de test en appelant le script `/opt/xtc/current/Scripts/generate-apikey.py`
+Cette clé API peut être générée depuis le serveur de test en appelant le script ``/opt/xtc/current/Scripts/generate-apikey.py``
 
 .. code-block:: bash
   
@@ -39,23 +39,59 @@ Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `
 
   Cookie: session_id=NjQyOTVmOWNlMDgyNGQ2MjlkNzAzNDdjNTQ3ODU5MmU5M
   
-Ressource common
+Exemple d'utilisation
 ----------------
 
-+---------------------+-------------------------+
-|Ressources           |  Description            |
-+---------------------+-------------------------+
+Exemple avec postman ??
 
-Ressource tester
---------------
+Ressources
+----------
 
-+---------------------+-------------------------+
-|Ressources           |  Description            |
-+---------------------+-------------------------+
+Description des fonctions les plus importantes:
 
-Ressource admin
--------------
+**Authentification**
 
-+---------------------+-------------------------+
-|Ressources           |  Description            |
-+---------------------+-------------------------+
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/session/login      | `Détails <https://demo.extensivetesting.org/web/common-api-rest/index.html#api-Session-sessionLogin>`_          |
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/session/logout     | `Détails <https://demo.extensivetesting.org/web/common-api-rest/index.html#api-Session-sessionLogout>`_         |
++-------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note:: la fonction ``login`` ne nécessite aucune authentification.
+
+**Exécution d'un test**
+
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/tests/schedule     | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Tests-testsSchedule>`_           |
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/tests/schedule/tpg | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Tests-testsScheduleTpg>`_        |
++-------------------------+----------------------------------------------------------------------------------------------------+
+
+**Récupération des résultats**
+
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/results/reports    | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Reports-resultsReports>`_        |
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/results/status     | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Results-resultsStatus>`_         |
++-------------------------+----------------------------------------------------------------------------------------------------+
+|/rest/results/verdict    | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Results-resultsVerdict>`_        |
++-------------------------+----------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

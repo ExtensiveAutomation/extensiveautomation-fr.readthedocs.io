@@ -16,9 +16,9 @@ Les adaptateurs ont deux modes d'utilisation:
  - un mode direct: la communication se fait directement depuis le serveur de test vers le système à contrôler.
  - un mode agent: la communication avec le système à contrôler se fait par l'intermédiaire d'un agent communiquant avec le serveur de test.
 
-.. note:: Le mode `Verbose` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
+.. note:: Le mode ``Verbose`` est activé par défaut sur tous les adapateurs. Ce mode peut être désactivé pour réduire le nombre d'évènements durant un test.
 
-.. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
+.. note:: Le mode ``Debug`` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
 .. note:: 
   Des exemples sont disponibles dans les échantillons de tests
@@ -156,8 +156,7 @@ Liste des librairies disponibles par défauts:
 +-----------+---------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/02_Ciphers
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/02_Ciphers``
 
 **Codecs**
 
@@ -176,8 +175,7 @@ Liste des librairies disponibles par défauts:
 +--------------+-----------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/03_Codecs
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/03_Codecs``
 
 **Compression**	
 
@@ -186,8 +184,7 @@ Liste des librairies disponibles par défauts:
 +--------+-------------------------------------------------+	
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/09_Compression
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/09_Compression``
   
 **Hashing**	
 
@@ -204,8 +201,7 @@ Liste des librairies disponibles par défauts:
 +----------+------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/05_Hashing
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/05_Hashing``
   
 **Identifiant**
 		
@@ -216,8 +212,7 @@ Liste des librairies disponibles par défauts:
 +------------------+-------------------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/07_Identifiers
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/07_Identifiers``
   
 **Média**
 
@@ -238,8 +233,7 @@ Liste des librairies disponibles par défauts:
 +--------------+---------------------------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/04_Media
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/04_Media``
 
 **Date**
 
@@ -248,8 +242,7 @@ Liste des librairies disponibles par défauts:
 +------------------+---------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/11_Date
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/11_Date``
   
 **Sécurité**
 
@@ -270,8 +263,7 @@ Liste des librairies disponibles par défauts:
 +-------------+------------------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/01_Security
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/01_Security``
   
 **Temps**
 		
@@ -280,8 +272,7 @@ Liste des librairies disponibles par défauts:
 +------------------+---------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/06_Time
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/06_Time``
   
 **Unités**	
 
@@ -290,8 +281,7 @@ Liste des librairies disponibles par défauts:
 +------------------+------------------------------------------------------------+
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Libraries/08_Units
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/08_Units``
   
 Interopérabilité
 ---------------
@@ -318,49 +308,43 @@ Liste des outils supportés:
 
 .. note:: 
     La solution dispose d'une API REST, elle peut être pilotée aussi par ces outils.
-     - Plugin `Jenkins`: https://wiki.jenkins.io/display/JENKINS/ExtensiveTesting+Plugin
+     - Plugin ``Jenkins``: https://wiki.jenkins.io/display/JENKINS/ExtensiveTesting+Plugin
 
 HP ALM
 ~~~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/02_HP_QC
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/02_HP_QC``
   
 Jenkins
 ~~~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/06_Jenkins
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/06_Jenkins``
   
 VSphere
 ~~~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/05_VSphere
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/05_VSphere``
 
 ExtensiveTesting
 ~~~~~~~~~~~~~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/03_ExtensiveTesting
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/03_ExtensiveTesting``
 
 Jira
 ~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/01_Jira
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/01_Jira``
 
 Git
 ~~~~
 
 .. note:: 
-  Un exemple est disponible dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Interop/04_Git
+  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/04_Git``
 
 Agents
 ------
@@ -397,7 +381,7 @@ en direct par le serveur de test (ex: une page web)
 | ssh              |  Permet de se connecter sur des machines via SSH ou SFTP                             |
 +------------------+--------------------------------------------------------------------------------------+
 
-.. note:: L'utilisation de l'agent Selenium3-Server nécessiste au minimum d'avoir Java8 sur le poste.
+.. note:: L'utilisation de l'agent ``Selenium3-Server`` nécessiste au minimum d'avoir ``Java 8`` sur le poste.
 
 .. tip: Il est conseillé de limiter l'usage des agents car la mise en place des tests se retrouve plus complexe.
 

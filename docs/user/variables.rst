@@ -7,7 +7,7 @@ Ajout/suppression d'une variable
 -----------------
 
 L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
-Le format attendu est de type `JSON`.
+Le format attendu est de type ``JSON``.
 
 .. image:: /_static/images/webinterface/read_variable.png
 
@@ -19,7 +19,7 @@ La description d'un environnement de test doit respecter le formalisme décrit c
 Ce type de déclaration est à utiliser avec le test réutilisable qui initialise l'environnement 
 et le met à disposition dans le cache.
 
-Déclaration d'un noeud SAMPLE_NODE:
+Déclaration d'un noeud ``SAMPLE_NODE``:
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ Déclaration d'un noeud SAMPLE_NODE:
 	}
  }
  
-Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
+Déclaration d'une donnée de test ``SAMPLE_DATASET_AUTH``:
 
 .. code-block:: python
 
@@ -55,7 +55,7 @@ Déclaration d'une donnée de test SAMPLE_DATASET_AUTH:
 		 "password":      ""
  }
 
-Déclaration de l'environnement SAMPLE_ENVIRONMENT:
+Déclaration de l'environnement ``SAMPLE_ENVIRONMENT``:
 
 .. code-block:: python
 

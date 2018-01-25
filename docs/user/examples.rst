@@ -55,13 +55,13 @@ Rest API
 --------
 
 Pour écrire un test d'api REST, il est conseillé:
- - d'utiliser le test réutilisable `/Snippets/Protocols/04_Send_JSON`
+ - d'utiliser le test réutilisable ``/Snippets/Protocols/04_Send_JSON``
  - de décrire le serveur cible en JSON (ip/port destination, support du http)
 
 
 Exemple:
  
-Le test appelle le service httpbin.org en https et appelle le service `ip` qui permet d'obtenir l'ip réel du client en json.
+Le test appelle le service ``httpbin.org`` en https et appelle le service ``ip`` qui permet d'obtenir l'ip réel du client en json.
 
 .. image:: /_static/images/examples/rest_api.png
 
@@ -96,36 +96,36 @@ Le scénario se décompose en plusieurs étapes:
         "DATASET": [    ]
         }
  2. Si la préparation de l'environnement ne fonction pas alors le scénario est arrété en appelant le test
- réutilisable `Snippets/Do/02_Terminate` (Id=16)
+ réutilisable ``Snippets/Do/02_Terminate`` (Id=16)
 
- 3. On envoit une requête REST et on décrit la réponse attendue en utilisant le test réutilisable `/Snippets/Protocols/04_Send_JSON` (Id=30). 
+ 3. On envoit une requête REST et on décrit la réponse attendue en utilisant le test réutilisable ``/Snippets/Protocols/04_Send_JSON`` (Id=30). 
  Si cette étape ne fonctionne pas alors on annule le test (Id=31)
  
- La réponse reçue est vérifiée par le framework et ce qui a été décrit par le testeur dans le paramètre `HTTP_RSP_BODY`
+ La réponse reçue est vérifiée par le framework et ce qui a été décrit par le testeur dans le paramètre ``HTTP_RSP_BODY``
  
  .. code-block:: json
  
    origin		[!CAPTURE:EXTERNAL_IP:]
    
  La configuration indique qu'il faut vérifier dans la réponse que la clé `origin` est présente et 
- d'enregistrer la valeur dans le cache avec la clé `EXTERNAL_IP`
+ d'enregistrer la valeur dans le cache avec la clé ``EXTERNAL_IP``
  
- 4. On affiche la valeur reçue dans la réponse avec le test réutilisable `Snippets/Cache/02_Log_Cache` (Id=32)
+ 4. On affiche la valeur reçue dans la réponse avec le test réutilisable ``Snippets/Cache/02_Log_Cache`` (Id=32)
  
-.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: /Samples/Web_API/001_httpbin_rest.tpx.
+.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: ``/Samples/Web_API/001_httpbin_rest.tpx``.
 
 Contrôles SSH
 -------------
 
 Pour écrire un test SSH, il est conseillé:
- - d'utiliser le test réutilisable `/Snippets/Protocols/01_Send_SSH`
+ - d'utiliser le test réutilisable ``/Snippets/Protocols/01_Send_SSH``
  - de décrire le serveur cible en JSON (ip, compte, mot de passe à minima)
 
 .. image:: /_static/images/examples/ssh.png
 
 Le test se décompose en plusieurs étapes:
  1. Chargement de la description (ip, compte, mot de passe) de la machine cible dans le cache
- 2. Appel au test générique `/Snippets/Protocols/01_Send_SSH` pour récupérer la version du serveur
+ 2. Appel au test générique ``/Snippets/Protocols/01_Send_SSH`` pour récupérer la version du serveur
     La version (si trouvé à l'écran) est sauvegardée dans le cache avec la clé `SERVER_VERSION`
     Si la version n'est pas trouvée, le test part en erreur.
     
@@ -138,13 +138,13 @@ Le test se décompose en plusieurs étapes:
    
  3. Affiche de la version depuis le cache.
 
-.. note:: L'exemple complet est disponible dans les échantillons de tests `/Self Testing/SYSTEM/000_System.tpx`.
+.. note:: L'exemple complet est disponible dans les échantillons de tests ``/Self Testing/SYSTEM/000_System.tpx``.
 
 Navigateurs Internet
 --------------------
 
 Pour écrire un test d'une application web, il faut:
- - obligatoirement déployer un agent `selenium` sur un poste disposant d'un navigateur firefox, chrome, internet explorer ou edge
+ - obligatoirement déployer un agent ``selenium`` sur un poste disposant d'un navigateur firefox, chrome, internet explorer ou edge
  - avoir accès au code source de la page web depuis son navigateur
  - avoir des connaissances en xpath
  - connaitre les bases du code HTML
@@ -172,7 +172,7 @@ Mobile Android
 --------------
 
 Pour écrire le test d'une application mobile, il faut:
- - déployer un agent `adb` sur un poste avec un mobile android connecté dessus.
+ - déployer un agent ``adb`` sur un poste avec un mobile android connecté dessus.
  - avoir accès à la description xml des applications depuis l'agent
 
 L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes

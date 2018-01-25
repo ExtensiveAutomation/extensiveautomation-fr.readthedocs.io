@@ -36,15 +36,15 @@ Dépôt des tests
 
 Le client permet d'accéder aux deux dépôts de tests: distant et local.
 
-Le **dépôt distant** permet de stocker ses tests sur le serveur de tests, donc de les partager avec les autres utilisateurs.
+Le ``dépôt distant`` permet de stocker ses tests sur le serveur de tests, donc de les partager avec les autres utilisateurs.
 L'arborescence se compose de fichiers et répertoires. La gestion des tests peut se faire depuis le client.
 Les tests peuvent être organisés par projet si nécessaire.
 
 .. image:: /_static/images/client/workspace_remote_tests.png
 
-.. note:: Le projet "Common" contient les tests réutisables et divers exemples.
+.. note:: Le projet ``Common`` contient les tests réutisables et divers exemples.
 
-.. note:: Les répertoires "Recycle" et "Sandbox" sont des répertoires réservés, les supprimer est impossible.
+.. note:: Les répertoires ``Recycle`` et ``Sandbox`` sont des répertoires réservés, les supprimer est impossible.
 
 .. note:: Il est possible d'ouvrir un test en faisant un drag and drop du fichier vers l'espace d'écriture.
 
@@ -63,7 +63,7 @@ qui seront stockées là aussi. Ces extensions sont organisées par version.
 
 .. image:: /_static/images/client/workspace_remote_adapters.png
 
-.. note:: Les extensions sont développées en Python.
+.. note:: Les extensions sont développées en ``Python``.
 
 ..
 	Il faut une explication des raisons pour créer une nouvelle extension, comment faire, 
@@ -78,7 +78,7 @@ Les propriétés disponibles sont:
  - les variables entrantes et sortantes
  - la définition des agents et sondes utilisés par le test
  
-La fenêtre 'Test properties > Test Data > Inputs' contient la liste des variables accessible depuis le test.
+La fenêtre ``Test properties > Test Data > Inputs`` contient la liste des variables accessible depuis le test.
 L'ajout de variable peut se faire en faisant un clic droit 'Add parameter'.
 
 .. image:: /_static/images/client/workspace_tests_properties_inputs.png
@@ -93,7 +93,7 @@ L'ajout de variable peut se faire en faisant un clic droit 'Add parameter'.
 Conception graphique
 ~~~~~~~~~~~~~~~~~~~~
 
-La conception d'un test sous forme graphique est possible avec le test de type "abstract".
+La conception d'un test sous forme graphique est possible avec le test de type ``abstract``.
 Ce mode de conception ne nécessite aucune connaissance en développement. 
 
 .. image:: /_static/images/client/workspace_new_test_abstract.png
@@ -106,12 +106,12 @@ Un clic droit sur la zone de dessin permet de choisir l'élement à ajouter.
 Conception textuelle
 ~~~~~~~~~~~~~~~~~~~~
 
-La conception d'un test en mode "scripting" est possible avec le test de type "unit" et "suite". 
+La conception d'un test en mode "scripting" est possible avec le test de type ``unit`` et ``suite``. 
 Ce mode de conception nécessite des connaissances en développement, i.e. python.
 
 .. image:: /_static/images/client/workspace_new_test_unit_suite.png
 
-Le test de type "unit" représente un cas de test. Il se découpe en 4 sections appelées automatiquement par le framework.
+Le test de type ``unit`` représente un cas de test. Il se découpe en 4 sections appelées automatiquement par le framework.
 
 .. image:: /_static/images/client/workspace_test_unit.png
 
@@ -142,7 +142,7 @@ Conception conditionnelle
 
 La conception conditionnelle permet de construire des scénarios ou des campagnes de tests.
 Cette approche ne nécessite pas de connaissances en développement. 
-Pour réaliser ce type de test, il est nécessaire de créer un nouveau test "plan" ou "global".
+Pour réaliser ce type de test, il est nécessaire de créer un nouveau test ``plan`` ou ``global``.
 
 .. image:: /_static/images/client/workspace_new_test_plan_global.png
 
@@ -194,9 +194,9 @@ Différents types d'évènements sont possibles (colonne event type):
  - MATCH-STOPPED
  - MATCH-EXCEEDED
 
-.. note:: Filtrer sur l'évènement **ERROR** permet de voir rapidement pourquoi le test est en erreur. 
+.. note:: Filtrer sur l'évènement ``ERROR`` permet de voir rapidement pourquoi le test est en erreur. 
 
-.. note:: Le filtre **SEND|RECEIVED** permet d'afficher les messages envoyés ou reçus par le système à tester/piloter. 
+.. note:: Le filtre ``SEND|RECEIVED`` permet d'afficher les messages envoyés ou reçus par le système à tester/piloter. 
 
 Vue détaillée
 ~~~~~~~~~~~~~

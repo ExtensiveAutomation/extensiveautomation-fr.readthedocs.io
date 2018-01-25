@@ -6,7 +6,7 @@ L'intérêt des tests réutilisables
  - réutiliser les tests
  - limiter l'écriture de scripts pour concevoir les scénarios
 
-Ces types de tests sont à utiliser en mode test "plan". 
+Ces types de tests sont à utiliser en mode test ``plan``. 
 
 Données partagées
 -----------------
@@ -14,7 +14,7 @@ Données partagées
 Mise en cache d'une valeur
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/01_Set_Cache.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/01_Set_Cache.tux``
 
 Ce test réutilisable consiste à sauvegarder une valeur dans le cache de données disponible durant l'exécution d'un test.
 
@@ -26,7 +26,7 @@ Paramètre(s) à configurer:
 | DATAS           |   Contient la liste des valeurs à sauvegarder             |
 +-----------------+-----------------------------------------------------------+
 
-Le paramètre `DATAS` contient la liste des valeurs à sauvegarder avec le format:
+Le paramètre ``DATAS`` contient la liste des valeurs à sauvegarder avec le format:
 
 .. code-block:: bash
   
@@ -51,7 +51,7 @@ Exemple
 Affichage d'une valeur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/02_Log_Cache.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Log_Cache.tux``
 
 Ce test réutilisable permet d'afficher la valeur d'une clé présente dans le cache durant l'exécution du test.
 
@@ -77,7 +77,7 @@ Paramètre(s) à configurer:
 Reset du cache
 ~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/02_Reset_Cache.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Reset_Cache.tux``
 
 Ce test réutilisable permet de vider totalement le cache.
 Aucun paramètre à configurer.
@@ -87,7 +87,7 @@ Aucun paramètre à configurer.
 Vérification d'une valeur dans le cache
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/02_Checking_Cache.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Checking_Cache.tux``
 
 Ce test réutilisable permet de vérifier la valeur dans une clé présente dans le cache.
 
@@ -132,7 +132,7 @@ Les opérateurs disponibles:
 Suppression d'une entrée dans le cache
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Cache/02_Delete_Cache.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Delete_Cache.tux``
 
 Ce test réutilisable permet de supprimer une clé et sa valeur associée dans le cache.
 
@@ -158,7 +158,7 @@ Actions basiques
 Mise en attente
 ~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Do/01_Wait.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/01_Wait.tux``
 
 Ce test réutilisable permet d'attendre xx secondes durant l'exécution du test.
 
@@ -173,17 +173,17 @@ Paramètre(s) à configurer:
 Arrêt d'un test
 ~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Do/02_Terminate.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/02_Terminate.tux``
 
 Ce test réutilisable permet de forcer l'arrêt d'un scénario en cas d'erreur.
-Un message expliquant l'arrêt peut être spécifié avec le paramètre `STOP_TEST_MSG`.
+Un message expliquant l'arrêt peut être spécifié avec le paramètre ``STOP_TEST_MSG``.
 
-.. note:: Il est possible de personaliser le message d'arrêt en configurant la variable `STOP_TEST_MSG`.
+.. note:: Il est possible de personaliser le message d'arrêt en configurant la variable ``STOP_TEST_MSG``.
 
 Chargement de l'environnement de test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Do/03_Initilize.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/03_Initilize.tux``
 
 Ce test réutilisable permet de charger dans le cache les données de son environnement de tests.
 Par contre les adresses, compte d'accès des serveurs, etc.
@@ -199,7 +199,7 @@ Paramètre(s) à configurer:
 L'environnement doit être spécifié en sélectionnant d'une variable réutilisable.
 
 .. note:: 
- L'environnement peut être directement précisé au format JSON.
+ L'environnement peut être directement précisé au format ``JSON``.
  Un exemple: 
  
  .. code-block:: python
@@ -230,7 +230,7 @@ L'environnement doit être spécifié en sélectionnant d'une variable réutilis
     "DATASET": [    ]
    }
   
-  Après chargement dans le cache, le serveur est accessible avec la clé `NODE_HTTP_REST`.
+  Après chargement dans le cache, le serveur est accessible avec la clé ``NODE_HTTP_REST``.
   
 Générateurs
 -----------
@@ -238,7 +238,7 @@ Générateurs
 Hash SHA
 ~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Generators/01_Gen_Sha.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Sha.tux``
 
 Ce test réutilisable permet de générer un hash d'une valeur et de la stocker dans le cache.
 
@@ -257,7 +257,7 @@ Paramètre(s) à configurer:
 Hash MD5
 ~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Generators/01_Gen_Md5.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Md5.tux``
 
 Ce test réutilisable permet de générer un hash md5 d'une valeur et de la stocker dans le cache.
 
@@ -275,7 +275,7 @@ Paramètre(s) à configurer:
 UUID
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Generators/01_Gen_Uuid.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Uuid.tux``
 
 Ce test réutilisable permet de générer un id uuid et de la stocker dans le cache.
 
@@ -291,7 +291,7 @@ Paramètre(s) à configurer:
 BASE64
 ~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Generators/01_Gen_Base64.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Base64.tux``
 
 Ce test réutilisable permet d'encoder ou décoder une chaine de caractère et de stocker le résultat dans le cache.
 
@@ -315,7 +315,7 @@ Paramètre(s) à configurer:
 GZIP
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Generators/01_Gen_Gzip.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Gzip.tux``
 
 Ce test réutilisable permet de compresser ou décompresser une chaine de caractère et de stocker le résultat dans le cache.
 
@@ -339,10 +339,10 @@ Protocoles réseaux
 SSH
 ~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_SSH.tsx
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_SSH.tsx``
 
 Ce test réutilisable permet d'envoyer un enchainement de commandes ssh.
-Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer:
 
@@ -364,9 +364,9 @@ Chaque bloc doit respecter le formalisme suivant:
 .. warning:: Chaque bloc sera exécuté même si le précèdent est en erreur. 
     
 L'exemple suivant effectue les actions suivantes:
- 1. envoie de 3 ping sur la machine distante dont l'ip est stockée dans le cache `DEST_HOST`
+ 1. envoie de 3 ping sur la machine distante dont l'ip est stockée dans le cache ``DEST_HOST``
  2. Vérification d'avoir le message à l'écran indiquant que les 3 paquets ont été envoyés.
- Ensuite la valeur mddev est stockée dans le cache avec la clé `STATS` 
+ Ensuite la valeur mddev est stockée dans le cache avec la clé ``STATS` 
  3. Le deuxième bloc efface l'écran en envoyant la commande clear.
  4. Enfin te test attend de trouver le prompt à l'écran
  
@@ -385,19 +385,19 @@ L'exemple suivant effectue les actions suivantes:
 
 .. note:: 
   Par défaut, le test attend 20 secondes au maximum pour trouver la chaine de caractère attendue.
-  Il est possible de configurer cette valeur avec le paramètre `TIMEOUT`.
+  Il est possible de configurer cette valeur avec le paramètre ``TIMEOUT``.
   
 .. note:: 
   Par défaut, le test attend 10 secondes pour effectuer la connexion au serveur distant.
-  Il est possible de configurer cette valeur avec le paramètre `TIMEOUT_CONNECT`.
+  Il est possible de configurer cette valeur avec le paramètre ``TIMEOUT_CONNECT``.
 
 HTTP
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_HTTP.tsx
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_HTTP.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -444,10 +444,10 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 XML
 ~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_XML.tsx
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_XML.tsx``
 
-Ce test réutilisable permet d'envoyer une requête HTTP avec du XML en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
+Ce test réutilisable permet d'envoyer une requête HTTP avec du ``XML`` en vérifiant la réponse reçue.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -497,10 +497,10 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 JSON
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_JSON.tsx
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_JSON.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du JSON en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -551,10 +551,10 @@ Interface utilisateur
 Ouverture application Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/UI/01_Win_OpenApp.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/01_Win_OpenApp.tux``
 
 Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
-Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI`.
+Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI``.
 
 Paramètre(s) à configurer:
 
@@ -569,10 +569,10 @@ Paramètre(s) à configurer:
 Fermeture application Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/UI/02_Win_CloseApp.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/02_Win_CloseApp.tux``
 
 Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
-Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI`.
+Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI``.
 
 Paramètre(s) à configurer:
 
@@ -582,16 +582,16 @@ Paramètre(s) à configurer:
 | APP_NAME        |  Nom de l'application à fermer              |
 +-----------------+---------------------------------------------+
 
-.. warning: un agent de type `sikulix-server` est obligatoire.
+.. warning: un agent de type ``sikulix-server`` est obligatoire.
 
 
 Ouverture navigateur
 ~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/UI/03_OpenBrowser.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/03_OpenBrowser.tux``
 
 Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
-Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI_BROWSER`.
+Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI_BROWSER``.
 
 Paramètre(s) à configurer:
 
@@ -601,20 +601,20 @@ Paramètre(s) à configurer:
 | LOADING_URL     |  Url du site à charger               |
 +-----------------+--------------------------------------+
 
-.. note:: L'url doit obligatoirement commencer par http:// ou https://
+.. note:: L'url doit obligatoirement commencer par ``http://`` ou ``https://``
 
-.. warning: un agent de type `selenium-server` est obligatoire.
+.. warning: un agent de type ``selenium-server`` est obligatoire.
 
 
 Fermeture navigateur
 ~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/UI/03_CloseBrowser.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/03_CloseBrowser.tux``
 
 Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
-Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI_BROWSER`.
+Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI_BROWSER``.
 
-.. warning: un agent de type `selenium-server` est obligatoire.
+.. warning: un agent de type ``selenium-server`` est obligatoire.
 
 
 Vérifications
@@ -623,7 +623,7 @@ Vérifications
 Contenu de type XML
 ~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Verify/01_Check_XML.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Verify/01_Check_XML.tux``
 
 Ce test réutilisable permet de vérifier du contenu de type XML avec l'outil xpath.
 
@@ -639,7 +639,7 @@ Paramètre(s) à configurer:
 | XML_NAMESPACES  | Définitions des namespaces         |
 +-----------------+------------------------------------+
 
-Exemple de valeur pour le paramètre `XML_STR`:
+Exemple de valeur pour le paramètre ``XML_STR``:
 
 .. code-block:: xml
   
@@ -666,19 +666,19 @@ Exemple de valeur pour le paramètre `XML_STR`:
   </Table>
   </NewDataSet>
   
-Exemple de valeur pour le paramètre `XML_XPATH` permettant d'enregistrer dans le cache 
+Exemple de valeur pour le paramètre ``XML_XPATH`` permettant d'enregistrer dans le cache 
 le nom de la ville à la 2ième position dans la liste.
 
 .. code-block:: json
   
   (//NewDataSet/Table)[1]/City	[!CAPTURE:CITY:]
   
-La valeur sera accessible dans le cache avec la clé `CITY`.
+La valeur sera accessible dans le cache avec la clé ``CITY``.
 
 Contenu de type JSON
 ~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable /Snippets/Verify/01_Check_JSON.tux
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Verify/01_Check_JSON.tux``
 
 Ce test réutilisable permet de vérifier du contenu de type JSON avec l'outil jsonpath
 
@@ -692,7 +692,7 @@ Paramètre(s) à configurer:
 | JSON_XPATH      | jsonpath qui sera vérifié par le test |
 +-----------------+---------------------------------------+
 
-Exemple de valeur pour le paramètre `JSON_STR`:
+Exemple de valeur pour le paramètre ``JSON_STR``:
 
 .. code-block:: json
   
@@ -707,11 +707,11 @@ Exemple de valeur pour le paramètre `JSON_STR`:
    "url": "https://httpbin.org/get"
   }
   
-Exemple de valeur pour le paramètre `JSON_XPATH` permettant d'enregistrer dans le cache 
+Exemple de valeur pour le paramètre ``JSON_XPATH`` permettant d'enregistrer dans le cache 
 la valeur de la clé `Connection` dans le dictionnaire `headers`. 
 
 .. code-block:: json
   
   headers.Connection	[!CAPTURE:CX:]
   
-La valeur sera accessible dans le cache avec la clé `CX`.
+La valeur sera accessible dans le cache avec la clé ``CX``.

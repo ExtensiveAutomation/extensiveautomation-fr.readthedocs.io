@@ -40,8 +40,8 @@ Exemple de test réalisé avec l'assistant:
 .. image:: /_static/images/client_assistant/aa_basic_test.png
 
 ..
-	Dans l'image ci-dessus "ASK TO USER" n'est pas anglais (c'est une traduction mot-pour-mot de "Demander à l'usager")
-	On dit plutôt "USER INPUT PROMPT" ou "USER QUESTION", tu vois le genre.
+	Dans l'image ci-dessus ``ASK TO USER`` n'est pas anglais (c'est une traduction mot-pour-mot de "Demander à l'usager")
+	On dit plutôt ``USER INPUT PROMPT`` ou "USER QUESTION", tu vois le genre.
 
 Liste des actions disponibles:
 
@@ -98,7 +98,7 @@ Liste des actions disponibles:
 | CHECKING IF SCREEN |  Vérifie si l'écran contient un texte spécifique                |
 +--------------------+-----------------------------------------------------------------+
 
-.. note:: L'utilisation de l'action `OPEN SSH SESSION` est obligatoire avant de pouvoir utiliser les autres disponibles.
+.. note:: L'utilisation de l'action ``OPEN SSH SESSION`` est obligatoire avant de pouvoir utiliser les autres disponibles.
 
 Onglet Application
 ------------------
@@ -109,7 +109,7 @@ L'onglet **application** permet d'automatiser des applications riches en permett
  - de rechercher des élements graphiques à l'écran
  - de rechercher du texte
 
-.. warning:: un agent **sikulix-server** est nécessaire pour utiliser les actions.
+.. warning:: un agent ``sikulix-server`` est nécessaire pour utiliser les actions.
 
 Exemple de test réalisé avec l'assistant:
  1. Envoie le raccourci clavier `Win+R` pour ouvrir la fenêtre exécuter
