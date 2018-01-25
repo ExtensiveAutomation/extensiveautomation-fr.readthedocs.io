@@ -28,22 +28,23 @@ Paramètre(s) à configurer:
 
 Le paramètre `DATAS` contient la liste des valeurs à sauvegarder avec le format:
 
-.. code-block::
-
-   # mon commentaire
-   [!TO:CACHE:<MA_CLE>:];ma valeur
-    
+.. code-block:: bash
+  
+  # mon commentaire
+  [!TO:CACHE:<MA_CLE>:];ma valeur
+  
 
 Exemple
 
-.. code-block::
+.. code-block:: bash
+  
+  # Save misc data
+  [!TO:CACHE:EXAMPLE:];hello world
 
-    # Save misc data
-    [!TO:CACHE:EXAMPLE:];hello world
-
-    # Save server information in the cache
-    [!TO:CACHE:SERVER_DESCRIPTION:];[!FROM:INPUT:TEST_PURPOSE:]
-    
+  # Save server information in the cache
+  [!TO:CACHE:SERVER_DESCRIPTION:];[!FROM:INPUT:TEST_PURPOSE:]
+  
+  
 .. note:: Il est possible de sauvegarder plusieurs valeurs avec ce test.
 
 
@@ -62,14 +63,14 @@ Paramètre(s) à configurer:
 | MESSAGES        |   Contient la liste des paramètres à logguer dans le test             |
 +-----------------+-----------------------------------------------------------------------+
  
-.. code-block::
-
-    # display cache 
-    [!FROM:CACHE:EXAMPLE:]
-
-    # log timeout input
-    [!FROM:INPUT:TIMEOUT:]
-    
+.. code-block:: bash
+  
+  # display cache 
+  [!FROM:CACHE:EXAMPLE:]
+  
+  # log timeout input
+  [!FROM:INPUT:TIMEOUT:]
+  
 
 .. note:: Il est possible d'afficher plusieurs valeurs en une seule fois
 
@@ -92,35 +93,39 @@ Ce test réutilisable permet de vérifier la valeur dans une clé présente dans
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| CHECKING        |                |
-+-----------------+----------------+
++-----------------+------------------------------------------------+
+|Paramètres       |   Description                                  |
++-----------------+------------------------------------------------+
+| CHECKING        |  Liste des valeurs à vérifier dans le cache    |
++-----------------+------------------------------------------------+
 
 Les opérateurs disponibles:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| contains        |                |
-+-----------------+----------------+
-| matches         |                |
-+-----------------+----------------+
-| ==              |                |
-+-----------------+----------------+
-| !=              |                |
-+-----------------+----------------+
-| >               |                |
-+-----------------+----------------+
-| <               |                |
-+-----------------+----------------+
-| >=              |                |
-+-----------------+----------------+
-| <=              |                |
-+-----------------+----------------+
++-----------------+-----------------------------------------------------------------------+
+|Paramètres       |   Description                                                         |
++-----------------+-----------------------------------------------------------------------+
+| contains        | Permet de vérifier si la valeur contient une chaîne de caractère      |
++-----------------+-----------------------------------------------------------------------+
+| matches         | Permet de vérifier si la valeur correspond à l'expression régulière   |
++-----------------+-----------------------------------------------------------------------+
+| ==              | Permet de vérifier si la valeur est égal à                            |
++-----------------+-----------------------------------------------------------------------+
+| !=              | Permet de vérifier si la valeur est différent de                      |
++-----------------+-----------------------------------------------------------------------+
+| >               | Permet de vérifier si la valeur est supérieur à                       |
++-----------------+-----------------------------------------------------------------------+
+| <               | Permet de vérifier si la valeur est inférieur à                       |
++-----------------+-----------------------------------------------------------------------+
+| >=              | Permet de vérifier si la valeur est supérieur égal à                  |
++-----------------+-----------------------------------------------------------------------+
+| <=              | Permet de vérifier si la valeur est inférieur égal à                  |
++-----------------+-----------------------------------------------------------------------+
 
-<image à insérer>
+.. code-block:: bash
+  
+  # Vérifie si valeur contient la chaine de caractère etst
+  [!FROM:CACHE:EXAMPLE:] contains test
+  
 
 .. note:: Il est possible de vérifier plusieurs valeurs en une seule fois
 
@@ -133,13 +138,17 @@ Ce test réutilisable permet de supprimer une clé et sa valeur associée dans l
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| MESSAGES        |                |
-+-----------------+----------------+
++-----------------+------------------------------------------+
+|Paramètres       |   Description                            |
++-----------------+------------------------------------------+
+| MESSAGES        |  Liste des clés à supprimer              |
++-----------------+------------------------------------------+
  
-<image à insérer>
+.. code-block:: bash
+  
+  # supprime la clé EXEMPLE du cache
+  [!FROM:CACHE:EXEMPLE:]
+   
 
 .. note:: Il est possible de supprimer plusieurs clés en une seule fois
 
@@ -167,7 +176,7 @@ Arrêt d'un test
 .. important:: Chemin d'accès du test réutilisable /Snippets/Do/02_Terminate.tux
 
 Ce test réutilisable permet de forcer l'arrêt d'un scénario en cas d'erreur.
-Un message expliquant l'arrêt peut être spécifié avec le paramètre STOP_TEST_MSG
+Un message expliquant l'arrêt peut être spécifié avec le paramètre `STOP_TEST_MSG`.
 
 .. note:: Il est possible de personaliser le message d'arrêt en configurant la variable `STOP_TEST_MSG`.
 
@@ -220,7 +229,9 @@ L'environnement doit être spécifié en sélectionnant d'une variable réutilis
     },
     "DATASET": [    ]
    }
-
+  
+  Après chargement dans le cache, le serveur est accessible avec la clé `NODE_HTTP_REST`.
+  
 Générateurs
 -----------
 
@@ -233,15 +244,15 @@ Ce test réutilisable permet de générer un hash d'une valeur et de la stocker 
 
 Paramètre(s) à configurer:
 
-+-----------------+------------------------------------+
-|Paramètres       |   Description                      |
-+-----------------+------------------------------------+
-| DATA_IN         |                                    |
-+-----------------+------------------------------------+
-| CACHE_KEY       | Nom de la clé                      |
-+-----------------+------------------------------------+
-| SHA             | Type de hash réaliser              |
-+-----------------+------------------------------------+
++-----------------+----------------------------------------------------------+
+|Paramètres       |   Description                                            |
++-----------------+----------------------------------------------------------+
+| DATA_IN         | Chaine de caractère à hasher                             |
++-----------------+----------------------------------------------------------+
+| CACHE_KEY       | Nom de la clé                                            |
++-----------------+----------------------------------------------------------+
+| SHA             | Type de hash réaliser (sha1, sha256, sha512              |
++-----------------+----------------------------------------------------------+
 
 Hash MD5
 ~~~~~~~~~
@@ -252,13 +263,13 @@ Ce test réutilisable permet de générer un hash md5 d'une valeur et de la stoc
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| DATA_IN         |                |
-+-----------------+----------------+
-| CACHE_KEY       | Nom de la clé  |
-+-----------------+----------------+
++-----------------+--------------------------------------------------------------+
+|Paramètres       |   Description                                                |
++-----------------+--------------------------------------------------------------+
+| DATA_IN         | Chaine de caractère à hasher                                 |
++-----------------+--------------------------------------------------------------+
+| CACHE_KEY       | Nom de la clé ou le résultat sera sauvegarder dans le cache  |
++-----------------+--------------------------------------------------------------+
 
 
 UUID
@@ -270,11 +281,11 @@ Ce test réutilisable permet de générer un id uuid et de la stocker dans le ca
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| CACHE_KEY       | Nom de la clé  |
-+-----------------+----------------+
++-----------------+-----------------------------------------------------------+
+|Paramètres       |   Description                                             |
++-----------------+-----------------------------------------------------------+
+| CACHE_KEY       | Nom de la clé pour sauvegarder le résultat dans le cache  |
++-----------------+-----------------------------------------------------------+
 
  
 BASE64
@@ -286,19 +297,19 @@ Ce test réutilisable permet d'encoder ou décoder une chaine de caractère et d
 
 Paramètre(s) à configurer:
 
-+-----------------+-----------------------------------------------------+
-|Paramètres       |   Description                                       |
-+-----------------+-----------------------------------------------------+
-| CACHE_KEY       | Nom de la clé                                       |
-+-----------------+-----------------------------------------------------+
-| DECODE          |                                                     |
-+-----------------+-----------------------------------------------------+
-| ENCODE          |                                                     |
-+-----------------+-----------------------------------------------------+
-| URLSAFE         |                                                     |
-+-----------------+-----------------------------------------------------+
-| STR_BASE64      | Chaine de caractère à encoder/décoder               |
-+-----------------+-----------------------------------------------------+
++-----------------+------------------------------------------------------------------------------------+
+|Paramètres       |   Description                                                                      |
++-----------------+------------------------------------------------------------------------------------+
+| CACHE_KEY       | Nom de la clé pour sauvegarder le résultat dans le cache                           |
++-----------------+------------------------------------------------------------------------------------+
+| DECODE          | A positionner à True pour encoder                                                  |
++-----------------+------------------------------------------------------------------------------------+
+| ENCODE          | A positionner à True pour décoder                                                  |
++-----------------+------------------------------------------------------------------------------------+
+| URLSAFE         | A positionner à True si le résulat après encodage doit être utilisé dans une url   |
++-----------------+------------------------------------------------------------------------------------+
+| STR_BASE64      | Chaine de caractère à encoder/décoder                                              |
++-----------------+------------------------------------------------------------------------------------+
 
 
 GZIP
@@ -315,9 +326,9 @@ Paramètre(s) à configurer:
 +-----------------+-------------------------------------------------------------+
 | CACHE_KEY       | Nom de la clé                                               |
 +-----------------+-------------------------------------------------------------+
-| COMPRESS        |                                                             |
+| COMPRESS        | A positionner à True pour compresser                        |
 +-----------------+-------------------------------------------------------------+
-| UNCOMPRESS      |                                                             |
+| UNCOMPRESS      | A positionner à True pour décompresser                      |
 +-----------------+-------------------------------------------------------------+
 | STR_GZIP        | Chaine de caractère à compresser/décompresser               |
 +-----------------+-------------------------------------------------------------+
@@ -331,16 +342,54 @@ SSH
 .. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_SSH.tsx
 
 Ce test réutilisable permet d'envoyer un enchainement de commandes ssh.
+Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| SERVERS         |                |
-+-----------------+----------------+
++-----------------+----------------------------------------------------------+
+|Paramètres       |   Description                                            |
++-----------------+----------------------------------------------------------+
+| SERVERS         |  Liste des serveurs à contacter                          |
++-----------------+----------------------------------------------------------+
+| COMMANDS        |  Listes des commandes à exécuter sur la machine distante |
++-----------------+----------------------------------------------------------+
 
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+Le paramètre `COMMANDS` attends un ou plusieurs blocs de 4 lignes.
+Chaque bloc doit respecter le formalisme suivant:
+ 1. Commentaire expliquant l'action, cette information est utilisé pour initialiser l'étape de test
+ 2. La commande a exécuter
+ 3. La chaine de caractère attendue à l'écran, si la valeur attendue n'est pas trouvée alors l'étape par en erreur. (ligne optionnel)
+ 4. vide
+ 
+.. warning:: Chaque bloc sera exécuté même si le précèdent est en erreur. 
+    
+L'exemple suivant effectue les actions suivantes:
+ 1. envoie de 3 ping sur la machine distante dont l'ip est stockée dans le cache `DEST_HOST`
+ 2. Vérification d'avoir le message à l'écran indiquant que les 3 paquets ont été envoyés.
+ Ensuite la valeur mddev est stockée dans le cache avec la clé `STATS` 
+ 3. Le deuxième bloc efface l'écran en envoyant la commande clear.
+ 4. Enfin te test attend de trouver le prompt à l'écran
+ 
+.. code-block:: bash
+  
+  # send a ping 
+  ping -c 3 [!CACHE:SVR:DEST_HOST:]
+  .*3 packets transmitted, 3 received, 0% packet loss.*mdev = [!CAPTURE:STATS:] ms.*
+  
+  # clear the screen
+  clear
+  .*root@.*
+  
+
+.. note:: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+
+.. note:: 
+  Par défaut, le test attend 20 secondes au maximum pour trouver la chaine de caractère attendue.
+  Il est possible de configurer cette valeur avec le paramètre `TIMEOUT`.
+  
+.. note:: 
+  Par défaut, le test attend 10 secondes pour effectuer la connexion au serveur distant.
+  Il est possible de configurer cette valeur avec le paramètre `TIMEOUT_CONNECT`.
 
 HTTP
 ~~~~
@@ -348,8 +397,47 @@ HTTP
 .. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_HTTP.tsx
 
 Ce test réutilisable permet d'envoyer une requête HTTP en vérifiant la réponse reçue.
+Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
 
-Paramètre(s) à configurer:
+Paramètre(s) à configurer pour définir la destination:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| SERVERS         |  Liste des serveurs à contacter |
++-----------------+---------------------------------+
+
+Paramètre(s) pour configurer la requête HTTP à envoyer:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| HTTP_REQ_BODY   | Corps de la requête             |
++-----------------+---------------------------------+
+| HTTP_REQ_HEADERS| Liste des headers à ajouter     |
++-----------------+---------------------------------+
+| HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
++-----------------+---------------------------------+
+| HTTP_REQ_URI    | URI appeler                     |
++-----------------+---------------------------------+
+
+Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
+
++-------------------+----------------------------------------------------+
+|Paramètres         |   Description                                      |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_BODY     | Corps de la réponse attendue.                      |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_CODE     | Le code HTTP attendue. 200 par défaut              |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_HEADERS  | Liste des entêtes attendues                        |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_PHRASE   | La phrase HTTP attendue. OK par défaut             |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_VERSION  | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
++-------------------+----------------------------------------------------+
+
+.. note:: L'utilisation des expressions régulières est possible pour vérifier ou enregistrer une valeur dans le corps de la réponse ou bien dans les entêtes.
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
@@ -359,8 +447,49 @@ XML
 .. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_XML.tsx
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du XML en vérifiant la réponse reçue.
+Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
 
-Paramètre(s) à configurer:
+Paramètre(s) à configurer pour définir la destination:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| SERVERS         |  Liste des serveurs à contacter |
++-----------------+---------------------------------+
+
+Paramètre(s) pour configurer la requête HTTP à envoyer:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| HTTP_REQ_BODY   | Corps de la requête             |
++-----------------+---------------------------------+
+| HTTP_REQ_HEADERS| Liste des headers à ajouter     |
++-----------------+---------------------------------+
+| HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
++-----------------+---------------------------------+
+| HTTP_REQ_URI    | URI appeler                     |
++-----------------+---------------------------------+
+
+Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
+
++--------------------+----------------------------------------------------+
+|Paramètres          |   Description                                      |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_BODY      | Liste des xpaths à vérifier.                       |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_CODE      | Le code HTTP attendue. 200 par défaut              |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_HEADERS   | Liste des entêtes attendues                        |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_NAMESPACES| Liste des namespaces à prendre en compte           |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_PHRASE    | La phrase HTTP attendue. OK par défaut             |
++--------------------+----------------------------------------------------+
+| HTTP_RSP_VERSION   | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
++--------------------+----------------------------------------------------+
+
+.. warning:: Le test sera en erreur si la réponse ne contient pas de XML.
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
@@ -371,8 +500,48 @@ JSON
 .. important:: Chemin d'accès du test réutilisable /Snippets/Protocols/01_Send_JSON.tsx
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du JSON en vérifiant la réponse reçue.
+Il est à utiliser conjointement avec le test réutilisable `/Snippets/Do/03_Initilize.tux` permet de charger un environnement dans le cache.
 
-Paramètre(s) à configurer:
+Paramètre(s) à configurer pour définir la destination:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| SERVERS         |  Liste des serveurs à contacter |
++-----------------+---------------------------------+
+
+Paramètre(s) pour configurer la requête HTTP à envoyer:
+
++-----------------+---------------------------------+
+|Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| HTTP_REQ_BODY   | Corps de la requête             |
++-----------------+---------------------------------+
+| HTTP_REQ_HEADERS| Liste des headers à ajouter     |
++-----------------+---------------------------------+
+| HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
++-----------------+---------------------------------+
+| HTTP_REQ_URI    | URI appeler                     |
++-----------------+---------------------------------+
+
+
+Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
+
++-------------------+----------------------------------------------------+
+|Paramètres         |   Description                                      |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_BODY     | Liste des json xpaths à vérifier.                  |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_CODE     | Le code HTTP attendue. 200 par défaut              |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_HEADERS  | Liste des entêtes attendues                        |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_PHRASE   | La phrase HTTP attendue. OK par défaut             |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_VERSION  | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
++-------------------+----------------------------------------------------+
+
+.. warning:: Le test sera en erreur si la réponse ne contient pas de JSON.
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
@@ -385,14 +554,15 @@ Ouverture application Windows
 .. important:: Chemin d'accès du test réutilisable /Snippets/UI/01_Win_OpenApp.tux
 
 Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
+Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI`.
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| APP_PATH        |                |
-+-----------------+----------------+
++-----------------+--------------------------------------------------------+
+|Paramètres       |   Description                                          |
++-----------------+--------------------------------------------------------+
+| APP_PATH        |  Chemin d'accès de l'application à ouvrir              |
++-----------------+--------------------------------------------------------+
 
 .. warning: un agent de type `sikulix-server` est obligatoire.
 
@@ -402,14 +572,15 @@ Fermeture application Windows
 .. important:: Chemin d'accès du test réutilisable /Snippets/UI/02_Win_CloseApp.tux
 
 Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
+Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI`.
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| APP_NAME        |                |
-+-----------------+----------------+
++-----------------+---------------------------------------------+
+|Paramètres       |   Description                               |
++-----------------+---------------------------------------------+
+| APP_NAME        |  Nom de l'application à fermer              |
++-----------------+---------------------------------------------+
 
 .. warning: un agent de type `sikulix-server` est obligatoire.
 
@@ -420,14 +591,17 @@ Ouverture navigateur
 .. important:: Chemin d'accès du test réutilisable /Snippets/UI/03_OpenBrowser.tux
 
 Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
+Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI_BROWSER`.
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| LOADING_URL     |                |
-+-----------------+----------------+
++-----------------+--------------------------------------+
+|Paramètres       |   Description                        |
++-----------------+--------------------------------------+
+| LOADING_URL     |  Url du site à charger               |
++-----------------+--------------------------------------+
+
+.. note:: L'url doit obligatoirement commencer par http:// ou https://
 
 .. warning: un agent de type `selenium-server` est obligatoire.
 
@@ -438,7 +612,7 @@ Fermeture navigateur
 .. important:: Chemin d'accès du test réutilisable /Snippets/UI/03_CloseBrowser.tux
 
 Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
-Aucun paramètre à configurer.
+Ce test nécessite de définir quel agent sera utilisé avec la clé `AGENT_GUI_BROWSER`.
 
 .. warning: un agent de type `selenium-server` est obligatoire.
 
@@ -451,19 +625,55 @@ Contenu de type XML
 
 .. important:: Chemin d'accès du test réutilisable /Snippets/Verify/01_Check_XML.tux
 
-Ce test réutilisable permet de vérifier du contenu de type XML avec  l'outil xpath.
+Ce test réutilisable permet de vérifier du contenu de type XML avec l'outil xpath.
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| XML_STR         |                |
-+-----------------+----------------+
-| XML_XPATH       |                |
-+-----------------+----------------+
-| XML_NAMESPACES  |                |
-+-----------------+----------------+
++-----------------+------------------------------------+
+|Paramètres       |   Description                      |
++-----------------+------------------------------------+
+| XML_STR         | XML brut à inspecter               |
++-----------------+------------------------------------+
+| XML_XPATH       | xpath qui sera vérifier le test    |
++-----------------+------------------------------------+
+| XML_NAMESPACES  | Définitions des namespaces         |
++-----------------+------------------------------------+
+
+Exemple de valeur pour le paramètre `XML_STR`:
+
+.. code-block:: xml
+  
+  <NewDataSet>
+  <Table>
+    <Country>France</Country>
+    <City>Le Touquet</City>
+  </Table>
+  <Table>
+    <Country>France</Country>
+    <City>Agen</City>
+  </Table>
+  <Table>
+    <Country>France</Country>
+    <City>Cazaux</City>
+  </Table>
+  <Table>
+    <Country>France</Country>
+    <City>Bordeaux / Merignac</City>
+  </Table>
+  <Table>
+    <Country>France</Country>
+    <City>Bergerac</City>
+  </Table>
+  </NewDataSet>
+  
+Exemple de valeur pour le paramètre `XML_XPATH` permettant d'enregistrer dans le cache 
+le nom de la ville à la 2ième position dans la liste.
+
+.. code-block:: json
+  
+  (//NewDataSet/Table)[1]/City	[!CAPTURE:CITY:]
+  
+La valeur sera accessible dans le cache avec la clé `CITY`.
 
 Contenu de type JSON
 ~~~~~~~~~~~~~~~~~~~~
@@ -474,10 +684,34 @@ Ce test réutilisable permet de vérifier du contenu de type JSON avec l'outil j
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| JSON_STR        |                |
-+-----------------+----------------+
-| JSON_XPATH      |                |
-+-----------------+----------------+
++-----------------+---------------------------------------+
+|Paramètres       |   Description                         |
++-----------------+---------------------------------------+
+| JSON_STR        | Json à inspecter                      |
++-----------------+---------------------------------------+
+| JSON_XPATH      | jsonpath qui sera vérifié par le test |
++-----------------+---------------------------------------+
+
+Exemple de valeur pour le paramètre `JSON_STR`:
+
+.. code-block:: json
+  
+  {
+   "args": {}, 
+   "headers": {
+   "Connection": "close", 
+   "Host": "httpbin.org", 
+   "User-Agent": "ExtensiveTesting"
+  }, 
+   "origin": "190.117.217.129", 
+   "url": "https://httpbin.org/get"
+  }
+  
+Exemple de valeur pour le paramètre `JSON_XPATH` permettant d'enregistrer dans le cache 
+la valeur de la clé `Connection` dans le dictionnaire `headers`. 
+
+.. code-block:: json
+  
+  headers.Connection	[!CAPTURE:CX:]
+  
+La valeur sera accessible dans le cache avec la clé `CX`.

@@ -32,7 +32,7 @@ La liste complète des agents et sondes disponibles sont décrits dans le chapit
 Compléments
 -----------
 
-La boite à outils peut être enrichies avec de nouveaux plugins.
+La boite à outils peut être enrichie avec de nouveaux plugins.
 
 Pour ce faire il faut suivre la procédure décrite dans le chapitre `Contributions > Développement plugins > Boites à outils`.
 Les plugins sont à déposer dans le répertoire "Plugins".

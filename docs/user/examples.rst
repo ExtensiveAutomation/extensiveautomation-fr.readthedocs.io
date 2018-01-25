@@ -54,8 +54,9 @@ au niveau des paramètres de la campagne.
 Rest API
 --------
 
-L'exemple suivant montre comment réaliser des tests d'une API REST. 
-Pour ce faire les tests réutisables sont utilisés.
+Pour écrire un test d'api REST, il est conseillé:
+ - d'utiliser le test réutilisable `/Snippets/Protocols/04_Send_JSON`
+ - de décrire le serveur cible en JSON (ip/port destination, support du http)
 
 
 Exemple:
@@ -116,8 +117,9 @@ Le scénario se décompose en plusieurs étapes:
 Contrôles SSH
 -------------
 
-L'exemple suivant montre comment réaliser des tests système sur une machine distance en utilisant le protocole SSH.
-Pour ce faire les tests réutisables sont utilisés.
+Pour écrire un test SSH, il est conseillé:
+ - d'utiliser le test réutilisable `/Snippets/Protocols/01_Send_SSH`
+ - de décrire le serveur cible en JSON (ip, compte, mot de passe à minima)
 
 .. image:: /_static/images/examples/ssh.png
 

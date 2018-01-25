@@ -439,7 +439,7 @@ Run the test, the hello message should appears.
 
 
 
-Boite à outils
+SDK Boite à outils
 ~~~~~~~~~~~~~~
 
 Prepare sources
@@ -522,19 +522,34 @@ Execute the file MakeExe3.bat in the Scripts folder. This file will automaticall
 
 Deploy the output on the client plugins folder. Read the installation guide.
 
-Client
-~~~~~~
-List of plugin’s types to enable the integration on the client, below all types availables:
+SDK Client
+~~~~~~~~~~~~
 
-Type	Description
-basic	This type of plugin enables to add a shortcut on the welcome page
-recorder-app	This type of plugin enables to export/import data in the automation assistant
-recorder-web	This type of plugin enables to export/import data in the automation assistant
-recorder-framework	This type of plugin enables to export/import data in the automation assistant
-recorder-android	This type of plugin enables to export/import data in the automation assistant
-recorder-system	This type of plugin enables to export/import data in the automation assistant
-remote-tests	This type of plugin enables to export/import data in the remote tests
-test-results	This type of plugin enables to export tests results or designs
+Le client supporte l'ajout de plugins. La création d'un plugin nécessite de définir:
+ - d'utiliser le SDK
+ - de définir son type 
+ 
+Liste des types de plugins possibles:
+
++-------------------+---------------------------------------+
+|Type               |   Description                         |
++-------------------+---------------------------------------+
+|basic              |   This type of plugin enables to add a shortcut on the welcome page                         |
++-------------------+---------------------------------------+
+|recorder-app       |   This type of plugin enables to export/import data in the automation assistant                   |
++-------------------+---------------------------------------+
+|recorder-web       |    This type of plugin enables to export/import data in the automation assistant                  |
++-------------------+---------------------------------------+
+|recorder-framework |   This type of plugin enables to export/import data in the automation assistant                   |
++-------------------+---------------------------------------+
+|recorder-android   |  This type of plugin enables to export/import data in the automation assistant                    |
++-------------------+---------------------------------------+
+|recorder-system    |  This type of plugin enables to export/import data in the automation assistant                    |
++-------------------+---------------------------------------+
+|remote-tests       |   This type of plugin enables to export/import data in the remote tests                   |
++-------------------+---------------------------------------+
+|test-results       |   This type of plugin enables to export tests results or designs                   |
++-------------------+---------------------------------------+
 
 
 Prepare your environment, install the following packages:

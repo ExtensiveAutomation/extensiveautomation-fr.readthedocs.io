@@ -20,6 +20,10 @@ Les adaptateurs ont deux modes d'utilisation:
 
 .. note:: Le mode `Debug` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
+.. note:: 
+  Des exemples sont disponibles dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Adapters
+  
 Liste des adaptateurs disponibles par défaut:
 
 **Protocoles réseaux**
@@ -151,6 +155,9 @@ Liste des librairies disponibles par défauts:
 |  RSA      |  Générateur clé RSA                   |
 +-----------+---------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/02_Ciphers
 
 **Codecs**
 
@@ -168,12 +175,20 @@ Liste des librairies disponibles par défauts:
 | XML          |  Encode ou décode du texte au format XML      |
 +--------------+-----------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/03_Codecs
+
 **Compression**	
 
 +--------+-------------------------------------------------+
 | GZIP   | Compression ou décompression au format GZIP     |
 +--------+-------------------------------------------------+	
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/09_Compression
+  
 **Hashing**	
 
 +----------+------------------------------------------+
@@ -188,6 +203,10 @@ Liste des librairies disponibles par défauts:
 | CRC32    | Générateur de checksum                   |
 +----------+------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/05_Hashing
+  
 **Identifiant**
 		
 +------------------+-------------------------------------------------------+
@@ -196,6 +215,10 @@ Liste des librairies disponibles par défauts:
 | UUIDS            |  Générateur de UUID (Universally Unique IDentifier)   |
 +------------------+-------------------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/07_Identifiers
+  
 **Média**
 
 +--------------+---------------------------------------------------------------+
@@ -214,6 +237,9 @@ Liste des librairies disponibles par défauts:
 | Waves        |  Générateur d'ondes simples                                   |
 +--------------+---------------------------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/04_Media
 
 **Date**
 
@@ -221,6 +247,10 @@ Liste des librairies disponibles par défauts:
 | Today            |   Permet de récupérer la date du jour |
 +------------------+---------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/11_Date
+  
 **Sécurité**
 
 +-------------+------------------------------------------------------+
@@ -239,19 +269,30 @@ Liste des librairies disponibles par défauts:
 | JWT         |  Décode ou encode des tokens                         |
 +-------------+------------------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/01_Security
+  
 **Temps**
 		
 +------------------+---------------------------------------+
 | Timestamp        |  Permet de générer un timestamp       |
 +------------------+---------------------------------------+
 
-
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/06_Time
+  
 **Unités**	
 
 +------------------+------------------------------------------------------------+
 | Bytes            |  Permet de convertir des bytes en valeur lisibles          |
 +------------------+------------------------------------------------------------+
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Libraries/08_Units
+  
 Interopérabilité
 ---------------
 
@@ -282,25 +323,50 @@ Liste des outils supportés:
 HP ALM
 ~~~~~~
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/02_HP_QC
+  
 Jenkins
 ~~~~~~
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/06_Jenkins
+  
 VSphere
 ~~~~~~
+
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/05_VSphere
 
 ExtensiveTesting
 ~~~~~~~~~~~~~~~~
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/03_ExtensiveTesting
+
 Jira
 ~~~~
+
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/01_Jira
 
 Git
 ~~~~
 
+.. note:: 
+  Un exemple est disponible dans les échantillons de tests
+  Chemin d'accès: Samples/Tests_Interop/04_Git
+
 Agents
 ------
 
-Les agents sont disponibles depuis la boîte à outils. Il sont à utiliser conjointement avec les adaptateurs pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
+Les agents sont disponibles depuis la boîte à outils. Il sont à utiliser conjointement avec les adaptateurs pour 
+communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
 en direct par le serveur de test (ex: une page web)
 
 +------------------+--------------------------------------------------------------------------------------+

@@ -211,16 +211,23 @@ Exemple de test réalisé avec l'assistant:
  
 .. image:: /_static/images/client_assistant/aa_web_example.png
 
+.. note:: 
+  Il est possible d'ouvrir plusieurs navigateur en parallèle sur le même poste à définissant une nouvelle session.
+  La nom se la session se définit sur l'action `OPEN BROWSER`.
+  Il faut ensuite utiliser l'action `SWITCH TO SESSION` pour changer de session.
+
 Liste des actions disponibles:
+
+.. warning:: Les actions recommandées et suffissantes pour écrire la plupart des tests sont en gras.
 
 **Contrôle navigateur** 
 
 +---------------------------+-----------------------------------------------------------------+
-| OPEN BROWSER              |  Ouvre le navigateur et charge l'url spécifié                   |
+| **OPEN BROWSER**          |  Ouvre le navigateur et charge l'url spécifié                   |
 +---------------------------+-----------------------------------------------------------------+
-| CLOSE BROWSER             |  Ferme le navigateur                                            |
+| **CLOSE BROWSER**         |  Ferme le navigateur                                            |
 +---------------------------+-----------------------------------------------------------------+
-| MAXIMIZE BROWSER          |  Aggrandit la fenêtre du navigateur                             |
+| **MAXIMIZE BROWSER**      |  Aggrandit la fenêtre du navigateur                             |
 +---------------------------+-----------------------------------------------------------------+		
  
 **Actions de navigation**	
@@ -236,54 +243,71 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | DISMISS ALERT             |  Dismiss the javascript alert                                   |
 +---------------------------+-----------------------------------------------------------------+
-| CLOSE WINDOW              |  Ferme la fenêtre courante                                      |
+| CLOSE CURRENT WINDOW      |  Ferme la fenêtre courante                                      |
 +---------------------------+-----------------------------------------------------------------+
 | SWITCH TO NEXT WINDOW     |  Bascule sur la fenêtre suivante                                |
 +---------------------------+-----------------------------------------------------------------+
 | SWITCH TO FRAME           |  Bascule sur la frame suivante                                  |
 +---------------------------+-----------------------------------------------------------------+
+| SWITCH TO SESSION         |  Bascule sur une autre session selenium                         |
++---------------------------+-----------------------------------------------------------------+
+| SWITCH TO WINDOW          |  Bascule sur la frame suivante                                  |
++---------------------------+-----------------------------------------------------------------+
+
+ 
+**Actions javascript **	
+
++------------------------------------+-----------------------------------------------------------------+
+| EXECUTE JAVASCRIPT ON HTML ELEMENT |  Permet d'injecter du javascript script sur un élement html     |
++------------------------------------+-----------------------------------------------------------------+
 
 **Actions sur les éléments html**
 
-+--------------------------------+----------------------------------------------------------------------+
-| WAIT HTML ELEMENT              | Attend l'apparition d'un élément HTML précis                         |
-+--------------------------------+----------------------------------------------------------------------+
-| WAIT AND CLICK ON HTML ELEMENT | Attend l'apparition d'un élément HTML précis et clic dessus          |
-+--------------------------------+----------------------------------------------------------------------+
-| HOVER ON HTML ELEMENT          | Déplace le curseur de la souris sur un élement HTML précis           |
-+--------------------------------+----------------------------------------------------------------------+
-| CLICK ON HTML ELEMENT          | Clic sur un élément HTML précis                                      | 
-+--------------------------------+----------------------------------------------------------------------+
-| DOUBLE CLICK ON HTML ELEMENT   | Double clic sur un élément HTML précis                               |
-+--------------------------------+----------------------------------------------------------------------+
-| CLEAR TEXT ON HTML ELEMENT     | Vide le texte sur un élément HTML précis                             |
-+--------------------------------+----------------------------------------------------------------------+
-| SELECT ITEM BY TEXT            | Select item according to the text (for combolist or list)            |
-+--------------------------------+----------------------------------------------------------------------+
-| SELECT ITEM BY VALUE           | Select item according to the value attribute (for combolist or list) |
-+--------------------------------+----------------------------------------------------------------------+
++-------------------------------------------+----------------------------------------------------------------------+
+| WAIT HTML ELEMENT                         | Attend l'apparition d'un élément HTML précis                         |
++-------------------------------------------+----------------------------------------------------------------------+
+| WAIT AND CLICK ON HTML ELEMENT            | Attend l'apparition d'un élément HTML précis et clic dessus          |
++-------------------------------------------+----------------------------------------------------------------------+
+| WAIT VISIBLE HTML ELEMENT                 | Attend qu'un élément HTML soit visible à l'utilisateur               |
++-------------------------------------------+----------------------------------------------------------------------+
+| WAIT NOT VISIBLE HTML ELEMENT             | Attend qu'un élément HTML ne soit pas visible à l'utilisateur        |
++-------------------------------------------+----------------------------------------------------------------------+
+| **WAIT VISIBLE AND CLICK ON HTML ELEMENT**| Attend qu'un élément HTML soit visible à l'utilisateur et clic dessus|
++-------------------------------------------+----------------------------------------------------------------------+
+| HOVER ON HTML ELEMENT                     | Déplace le curseur de la souris sur un élement HTML précis           |
++-------------------------------------------+----------------------------------------------------------------------+
+| CLICK ON HTML ELEMENT                     | Clic sur un élément HTML précis                                      | 
++-------------------------------------------+----------------------------------------------------------------------+
+| DOUBLE CLICK ON HTML ELEMENT              | Double clic sur un élément HTML précis                               |
++-------------------------------------------+----------------------------------------------------------------------+
+| CLEAR TEXT ON HTML ELEMENT                | Vide le texte sur un élément HTML précis                             |
++-------------------------------------------+----------------------------------------------------------------------+
+| **SELECT ITEM BY TEXT**                   |  Select item according to the text (for combolist or list)           |
++-------------------------------------------+----------------------------------------------------------------------+
+| **SELECT ITEM BY VALUE**                  | Select item according to the value attribute (for combolist or list) |
++-------------------------------------------+----------------------------------------------------------------------+
 
 **Récupération de texte** 
 
-+----------------------------+-----------------------------------------------------------------+
-| GET TEXT ALERT             |  Récupère le texte d'un message alerte javascript               |
-+----------------------------+-----------------------------------------------------------------+
-| GET TEXT FROM HTML ELEMENT |  Récupère le texte un élément html précis                       |
-+----------------------------+-----------------------------------------------------------------+
-| GET PAGE TITLE             |  Récupère le titre de la page                                   |
-+----------------------------+-----------------------------------------------------------------+
-| GET PAGE URL               |  Récupère l'url de la page                                      |
-+----------------------------+-----------------------------------------------------------------+
-| GET PAGE CODE SOURCE       |  Récupère le code source la page                                |
-+----------------------------+-----------------------------------------------------------------+			
++--------------------------------+-----------------------------------------------------------------+
+| GET TEXT ALERT                 |  Récupère le texte d'un message alerte javascript               |
++--------------------------------+-----------------------------------------------------------------+
+| **GET TEXT FROM HTML ELEMENT** |  Récupère le texte un élément html précis                       |
++--------------------------------+-----------------------------------------------------------------+
+| GET PAGE TITLE                 |  Récupère le titre de la page                                   |
++--------------------------------+-----------------------------------------------------------------+
+| GET PAGE URL                   |  Récupère l'url de la page                                      |
++--------------------------------+-----------------------------------------------------------------+
+| GET PAGE CODE SOURCE           |  Récupère le code source la page                                |
++--------------------------------+-----------------------------------------------------------------+			
 
 **Simulation clavier** 	
 
-+---------------------------+-----------------------------------------------------------------+
-| TYPE KEYBOARD SHORTCUT    |  Envoie un raccourci clavier sur un élément HTML précis         |
-+---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT ON HTML ELEMENT |  Envoie du texte sur un élément HTML précis                     |
-+---------------------------+-----------------------------------------------------------------+	
++-------------------------------+-----------------------------------------------------------------+
+| TYPE KEYBOARD SHORTCUT        |  Envoie un raccourci clavier sur un élément HTML précis         |
++-------------------------------+-----------------------------------------------------------------+
+| **TYPE TEXT ON HTML ELEMENT** |  Envoie du texte sur un élément HTML précis                     |
++-------------------------------+-----------------------------------------------------------------+	
 
 Onglet Android
 --------------
