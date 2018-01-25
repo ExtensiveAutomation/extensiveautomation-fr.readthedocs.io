@@ -1,14 +1,14 @@
 API
 ===
 
-authentification
+Authentification
 ----------------
 
 Il y a 2 méthodes pour s'authentifier sur l'API REST:
  - En utilisant un cookie de session
  - En réalisant une authentification basic
  
-Basic Auth
+Basique
 ~~~~~~~~
 
 L'authentification basique nécessite d'utiliser une clé API.
@@ -17,7 +17,9 @@ Cette clé API peut être généré depuis le serveur de test en appelant le scr
 .. code-block:: bash
   
   ./generate-apikey.py --user=admin
-  
+  API Key ID: admin
+  API Key Secret: c025e7a501f144a2e1b40f9f3a91c10a47c8b1d3
+  API Key: YWRtaW46YzAyNWU3YTUwMWYxNDRhMmUxYjQwZjlmM2E5MWMxMGE0N2M4YjFkMw==
 
 Il faut ensuite ajouter l'header `Authorization` dans l'ensemble des requêtes.
 
@@ -37,11 +39,23 @@ Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `
 
   Cookie: session_id=NjQyOTVmOWNlMDgyNGQ2MjlkNzAzNDdjNTQ3ODU5MmU5M
   
-common
-------
+Ressource common
+----------------
 
-tester
-------
++---------------------+-------------------------+
+|Ressources           |  Description            |
++---------------------+-------------------------+
 
-admin
------
+Ressource tester
+--------------
+
++---------------------+-------------------------+
+|Ressources           |  Description            |
++---------------------+-------------------------+
+
+Ressource admin
+-------------
+
++---------------------+-------------------------+
+|Ressources           |  Description            |
++---------------------+-------------------------+

@@ -531,44 +531,49 @@ Le client supporte l'ajout de plugins. La création d'un plugin nécessite de d�
  
 Liste des types de plugins possibles:
 
-+-------------------+---------------------------------------+
-|Type               |   Description                         |
-+-------------------+---------------------------------------+
-|basic              |   This type of plugin enables to add a shortcut on the welcome page                         |
-+-------------------+---------------------------------------+
-|recorder-app       |   This type of plugin enables to export/import data in the automation assistant                   |
-+-------------------+---------------------------------------+
-|recorder-web       |    This type of plugin enables to export/import data in the automation assistant                  |
-+-------------------+---------------------------------------+
-|recorder-framework |   This type of plugin enables to export/import data in the automation assistant                   |
-+-------------------+---------------------------------------+
-|recorder-android   |  This type of plugin enables to export/import data in the automation assistant                    |
-+-------------------+---------------------------------------+
-|recorder-system    |  This type of plugin enables to export/import data in the automation assistant                    |
-+-------------------+---------------------------------------+
-|remote-tests       |   This type of plugin enables to export/import data in the remote tests                   |
-+-------------------+---------------------------------------+
-|test-results       |   This type of plugin enables to export tests results or designs                   |
-+-------------------+---------------------------------------+
++-------------------+------------------------------------------------------------+
+|Type               |   Description                                              |
++-------------------+------------------------------------------------------------+
+|basic              |   Plugin pour ajouter un raccourci sur la page d'accueil   |
++-------------------+------------------------------------------------------------+
+|recorder-app       |   Export/import de données dans l'assistant de conception  |
++-------------------+------------------------------------------------------------+
+|recorder-web       |   Export/import de données dans l'assistant de conception  |
++-------------------+------------------------------------------------------------+
+|recorder-framework |   Export/import de données dans l'assistant de conception  |
++-------------------+------------------------------------------------------------+
+|recorder-android   |   Export/import de données dans l'assistant de conception  |
++-------------------+------------------------------------------------------------+
+|recorder-system    |   Export/import de données dans l'assistant de conception  |
++-------------------+------------------------------------------------------------+
+|remote-tests       |   Export/import de données dans les tests distants         |
++-------------------+------------------------------------------------------------+
+|test-results       |   Export des résultats de tests et rapports                |
++-------------------+------------------------------------------------------------+
 
+La récupération du SDK pour la création de plugin se récupère depuis github
+Il est possible de copier le plugin `Dummy` et l'utiliser comme base.
 
-Prepare your environment, install the following packages:
+Le type et le nom du plugin est à configurer dans le fichier `config.json`
 
-Python 3.4 32bits or 64bits
-PyQT4 or 5
-cx_Freeze
+.. code-block:: json
+  
+  {
+    "plugin": {
+                "name": "MyExample", 
+                "type": "recorder-app", 
+                "version": "1.0.0" 
+                }
+  }
+  
 
-Retrieve plugins from the remote git
-
-Copy the folder dummy to the folder myexample
-
-Go to the folder Scripts in your plugin folder and execute the powershell script CodePrepare.ps1. This script retrieves automatically the generic module.
-
-Finally, edit the file MyPlugin.py and change the key DEBUG to True,
-
-# debug mode
-DEBUGMODE=True
-Activate the debug mode to run the plugin without the client.
+.. tip: 
+  Il est possible d'exécuter le plugin sans le client en activant le mode debug.
+  
+  .. code-block: bash
+      
+    # debug mode
+    DEBUGMODE=True
 
 Configure your plugin
 Edit the file config.json and configure your plugin:
@@ -576,13 +581,7 @@ Edit the file config.json and configure your plugin:
 Define the type
 Define the name
 Define the version
-{
-    "plugin": {
-                "name": "MyExample", 
-                "type": "recorder-app", 
-                "version": "1.0.0" 
-                }
-}
+
 Edit the file MyPlugin.py and update the following keys:
 
 # name of the main developer

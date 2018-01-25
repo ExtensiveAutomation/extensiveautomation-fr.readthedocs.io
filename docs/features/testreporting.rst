@@ -82,6 +82,7 @@ Le rapport avancé affiche un certain nombre de paramètres:
 
 
 Il est possible d'afficher des variables dans le rapport de test en préfixant les variables:
+
 - SUT_		Variables décrivant la version du système à tester ou piloter
 - DATA_		Variables décrivant des données spécifiques
 - USER_		Variables utilisateurs
@@ -113,7 +114,7 @@ Code couleur:
 +-----------------+------------------------------------------------------------------+
 
 
-.. note:: Il faut cliquer sur les cas de tests pour afficher les étapes.
+.. tip:: Il faut cliquer sur les cas de tests pour afficher les étapes.
 
 .. note:: Les messages affichés par le test avec la fonction `Trace(self).info()` sont disponibles dans le rapport en cliquant sur le lien `[logs details]`.
 
