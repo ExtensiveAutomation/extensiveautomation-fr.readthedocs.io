@@ -255,7 +255,7 @@ Les plugins sont accessibles dans le menu ``Plugins`` après redémarrage du cli
 Plugin HP ALM
 ~~~~~~~~~~~~~~
 
-Ce plugin permet d'exporter les tests et résultats depuis le client Extensive vers HP ALM QualityCenter.
+Le plugin ``HP ALM`` permet d'exporter les tests et résultats depuis le client Extensive vers HP ALM QualityCenter.
 Cette approche permet d'être autonome vis à vis de QC.
 
 La configuration du plugin se fait dans la page ``Settings``, il faut configurer à minima:
@@ -263,18 +263,18 @@ La configuration du plugin se fait dans la page ``Settings``, il faut configurer
  - le mot de passe
  - le domaine
  - le projet
- 
-.. note:: Le plugin est compatible avec un HP ALM QC >= 12, l'api REST est utilisée.
 
 Pour exporter un test, il faut générer le design d'un test depuis le client et cliquer sur le plugin HP ALM disponible dans la barre d'outils.
 
 L'export des résultats peut se faire depuis la fenêtre exploration des archives,
 Le plugin doit être disponible dans la barre d'outil lors qu'un rapport de test est chargé.
+ 
+.. note:: Le plugin est compatible avec un HP ALM QC >= 12, l'api REST est utilisée.
 
 Plugin Jenkins
 ~~~~~~~~~~~~~~
 
-Le plugin Jenkins ne fait pas grand chose dans cette version...
+Le plugin ``Jenkins`` ne fait pas grand chose dans cette version...
 Il fournit juste un lien vers l'interface web de son Jenkins préféré.
 
 
@@ -284,40 +284,18 @@ Plugin Shell Recorder
 Le plugin ``Shell Recorder`` permet d'importer une séquence de commandes shell dans l'assistant de conception et de générer le test associé.
 Il permet donc de rejouer facilement une séquence de commandes.
 
-ow to use it
-The first step is to obtain the shell sequence to be imported. If it comes from a putty terminal, you can get it from the Copy all to clipboard option provided by putty.
+La 1ière étape consiste à importer une session ssh (depuis un terminal putty par exemple) depuis le presse papier
+ou en important directement un fichier texte contenant la séquence des commandes shell.
 
-In the shell recorder plugin, you can then click on the Read from clipboard button to get it.
+Le plugin détecte automatiquement le prompt dans la séquence pour parser les commandes et résultats associés.
+Si le prompt n'est pas détecté, il est possible de le modifier manuellement.
 
-If the sequence is already in a text file, you can click on the Read from file button.
-
-You can then modify the sequence by using various tools described further, or, after having filled in the IP address, login and password parameters, directly import it thanks to the Import in Extensive Testing button.
-
-Editing tools
-Add, erase or change a prompt
-The plugin relies on detecting the shell prompts to parse the commands and outputs. So, it is crucial that they are well detected. If this is not the case, the plugin offers the possibility of manually modifying and erasing the detected prompts if necessary, or adding yours. All these operations take place in the detected prompts table.
-
-WARNING: Any of these operations will result to a complete reset of the parsing. So any prior editing operations done to the sequence will be lost and will have to be redone.
-
-To modify a detected prompt simply double-click on it in the table. To erase a prompt, click on it to select it and then, either press the DEL key or right-click and click on Erase selected prompt in the rigt-click menu. To add a new prompt, right-click on the table and click on “Insert new prompt”. A new line appears. Doucble-click on it to edit it and enter your prompt to be detected.
-
-Select and filter the expected output
-It is possible to filter the output of a command by selecting the text you want to expect as an output in the text view. When you select some text, it is highlighted (colored in orange) and the rest is ignored (background colored in grey).
-
-It is possible to do the same operation directly in the top table by editing the correponding cell and inserting the text you want as an output in it.
-
-Modify a command or the expected output
-The same things can be done with a command: selection and cell edition. If when editing, you enter text not matching anything in the original command, it will replace it totally.
-
-All the text, commands and outputs, can be edited directly in the text view by double-clicking on the text to edit. To go out of the edition mode and save the eventual changes, double-click again outside of the edited area.
-
-Insert a command
-A new command (and its correponding output) can be inserted by right-clicking in the table view and click on “Insert line above” in the right-click menu. This will result in the creation of a new command and its corresponding output with “[TBD]” as a value. You will then need to edit it to enter your own values.
+.. image:: /_static/images/client_plugins/plugin_shell_recorder.png
 
 Plugin SeleniumIDE
 ~~~~~~~~~~~~~~~~~~
 
-L'utilisation du plugin SeleniumIDE est assez limité. Il permet de convertier un fichier enregistrer avec le plugin SeleniumIDE de firefox 
+L'utilisation du plugin ``SeleniumIDE`` implique une utilisation basique. Il permet de convertire un fichier enregistré avec le plugin SeleniumIDE de firefox 
 dans l'assistant de conception.
 
-.. tip:: Il est plus efficace d'utiliser l'assistant en direct pour être en phase avec la philosophie de la solution
+.. tip:: Il est plus efficace d'utiliser l'assistant en direct pour être en phase avec la philosophie de la solution.

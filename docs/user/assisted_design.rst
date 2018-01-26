@@ -81,9 +81,6 @@ Exemple de test réalisé avec l'assistant:
  
 .. image:: /_static/images/client_assistant/aa_sys_example.png
 
-..
-	Dans l'image ci-dessus "ASK TO USER" n'est pas anglais
-
 Liste des actions disponibles: 
 
 .. note:: En rouge, les actions indispensables.
