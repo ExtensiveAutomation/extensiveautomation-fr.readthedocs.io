@@ -37,7 +37,7 @@ Projets
 Les tests peuvent être organisés par projet.
 L'ajout ou la suppression de projet peut se faire depuis l'interface web ou directement depuis l'api REST.
 
-.. note:: Le projet Common existe par défaut et accessible par l'ensemble des utilisateurs, il ne peut pas être supprimé.
+.. note:: Le projet ``Common`` existe par défaut et accessible par l'ensemble des utilisateurs, il ne peut pas être supprimé.
 
 Partie système
 --------------

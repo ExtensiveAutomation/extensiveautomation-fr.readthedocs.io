@@ -42,7 +42,21 @@ Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `
 Exemple d'utilisation
 ----------------
 
-Exemple avec postman ??
+L'api est accessible à travers le port 443 (https) sur serveur de test via l'uri `/rest`.
+
+L'exemple ci-dessous montre comment exécuter un test avec une authentification basique
+
+.. code-block:: json
+  
+  todo
+  
+La réponse reçue:
+
+.. code-block:: json
+  
+  todo
+  
+
 
 Ressources
 ----------
@@ -65,7 +79,7 @@ Description des fonctions les plus importantes:
 |/rest/tests/schedule     | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Tests-testsSchedule>`_           |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
 |/rest/tests/schedule/tpg | `Détails <https://demo.extensivetesting.org/web/tester-api-rest/index.html#api-Tests-testsScheduleTpg>`_        |
-+-------------------------+------------------------------------------------------------------------------------------------------------------+
++-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 **Récupération des résultats**
 

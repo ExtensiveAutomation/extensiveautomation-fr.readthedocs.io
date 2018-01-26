@@ -28,18 +28,18 @@ La solution couvre plusieurs usages et peut être utilisée pour les cas suivant
  - automatiser le déploiement de serveurs
  - automatiser le déploiement d'applications
 
-.. note:: La solution est développée en python donc l'ensemble de vos scripts sont intégrables ou exécutables par la solution.
+.. note:: La solution est développée en ``Python`` donc l'ensemble de vos scripts sont intégrables ou exécutables par la solution.
 
 Licence
 -------
 
-L'environnement est open source et sous licence LGPL 2.1.
+L'environnement est open source et sous licence ``LGPL 2.1``.
 Le code source est disponible sur github (https://github.com/ExtensiveTesting).
 
 Auteur
 ------
 
-Le projet a été initialisé en 2010. Il est dévelopé et maintenu par Denis Machard.
+Le projet a été initialisé en 2010. Il est dévelopé et maintenu par ``Denis Machard``.
 
 Contact
 -------

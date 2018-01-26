@@ -73,22 +73,22 @@ Une base de donnée est utilisée par le serveur pour stocker :
 Gestion des mots de passes
 -------------------
 
-Aucun mot de passe en clair n'est stockée dans la base de donnée seul un hash.
-Le hash du mot de passe est stocké dansl a table `xtc-users`.
+Aucun mot de passe (en clair) est stocké dans la base de donnée. L'utilisation d'un hash est par contre utilisé.
+Le hash du mot de passe est stocké dans la table `xtc-users`.
 
 L'algorithme utilisé:
 
 .. code-block::
-
-    hash_password = SHA1 ( SALT + SHA1(user_password) )
-    
+  
+  hash_password = SHA1 ( SALT + SHA1(user_password) )
+  
 
 .. image:: /_static/images/server/server_table_pwd.png
 
 Format des fichiers
 -------------------
 
-Les tests sont au format `XML` zippés. Il existe plusieurs formats de tests:
+Les tests sont au format ``XML`` zippés. Il existe plusieurs formats de tests:
  - Test Abstract Xml
  - Test Unit Xml
  - Test Suite Xml
@@ -232,8 +232,13 @@ Les tests sont au format `XML` zippés. Il existe plusieurs formats de tests:
 Stockage des résultats de tests
 -------------------------------
 
-Les résultats de tests sont stockés sur le serveur dans le répertoire `/opt/xtc/current/Var/TestsResult`.
+Les résultats de tests sont stockés sur le serveur dans le répertoire ``/opt/xtc/current/Var/TestsResult``.
 
+Les résultats sont stockés:
+ - par l'id des projets de test
+ - par la date du jour d'exécution du test
+ - et finalement par la date et heure d'exécutions des tests.
+ 
 Organisation des résultats:
 
 .. code-block:: bash
@@ -262,11 +267,11 @@ Le pilotage des agents depuis un test s'effectue à travers:
  - et le serveur
 
 La communication s'effectue avec l'échange de quelques messages spécifiques:
- - init
- - notify
- - reset
- - error
- - data
+ - ``init``: permet d'initialiser un agent
+ - ``notify``: permet d'envoyer un message à l'agent sans attendre de réponse
+ - ``reset``: permet de faire un reset de l'agent
+ - ``error``: permet à l'agent d'envoyer une erreur à l'adaptateur
+ - ``data``: permet à l'agent d'envoyer des données à l'adaptateur
 
 Sens de communications disponibles:
  - Agent -> serveur -> adaptateur -> test

@@ -46,7 +46,7 @@ L'exemple suivant explique comment créer son premier scénario avec une surchar
    
    .. image:: /_static/images/client/client_new_tpx.png
 
-2. Insérer le test "Test_A" dans le scénario. Cliquer sur le bouton `Insert Child` et sélectionner le test `Test_A`.
+2. Insérer le test "Test_A" dans le scénario. Cliquer sur le bouton ``Insert Child`` et sélectionner le test `Test_A`.
 
    .. image:: /_static/images/client/client_new_insert.png
 
@@ -54,7 +54,7 @@ L'exemple suivant explique comment créer son premier scénario avec une surchar
 
    .. image:: /_static/images/client/client_new_insert_again.png
 
-4. Enregistrer le scénario dans le dépôt de test avec le nom "Scenario_A" dans le répertoire `Sandbox`.
+4. Enregistrer le scénario dans le dépôt de test avec le nom "Scenario_A" dans le répertoire ``Sandbox``.
 
 5. Ajouter le paramètre MON_PARAMETRE avec la valeur "au revoir" au niveau du scénario.
 

@@ -17,10 +17,10 @@ L'exemple montre comment boucler sur un cas de test tout en modifiant les donné
 
 .. image:: /_static/images/client/exemple_testsuite.png
 
-Il est donc possible d'ajouter autant d'argument que nécessaire au niveau de la fonction `execute`
+Il est donc possible d'ajouter autant d'argument que nécessaire au niveau de la fonction ``execute()``
 et de les ajouter à l'identiquer au niveau des 4 sections.
 
-.. note:: Il est possible d'ajouter un préfixe au niveau du cas du test en utilisant l'argument `prefix`.
+.. note:: Il est possible d'ajouter un préfixe au niveau du cas du test en utilisant l'argument ``prefix``.
 
 Variables de test
 ----------------
@@ -166,7 +166,7 @@ La solution préconise aussi de n'utiliser que des xpath pour identifier des él
 
 .. tip:: Il est possible d'utiliser les outils de développement des navigateurs pour valider les xpaths.
 
-.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test: /Samples/Tests_Gui/Selenium/.
+.. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test ``/Samples/Tests_Gui/Selenium/``.
 
 Mobile Android
 --------------

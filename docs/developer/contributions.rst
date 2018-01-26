@@ -4,18 +4,20 @@ Contributions
 Développement solution
 ----------------------
 
-Client
-~~~~~~
+Client graphique
+~~~~~~~~~~~~~~
 
-**Environnement x64 win py3.6 qt5 (recommandé)**
+**Environnement x64 win py3.6 qt5**
 
-Pour préparer son environnement de développement, il est nécessaire de récupérer et installer les logiciels suivants:
+.. tip:: Environnement recommandé.
+
+Pour préparer son environnement de développement, il est nécessaire de récupérer et d'installer les logiciels suivants:
  - Python 3.6.3 64bits
  - Git-2.15.0-64-bit.exe
  - TortoiseGit-2.5.0.0-64bit.msi
  - InnoSetup 5.5.9 – http://www.jrsoftware.org/isdl.php
 
-Il est nécessaire d'installer les paquets Python supplémentaire avec la commande ``pip``
+D'ajouter les paquets Python supplémentaires avec la commande ``pip``
 
 .. code-block:: bash
 
@@ -23,15 +25,17 @@ Il est nécessaire d'installer les paquets Python supplémentaire avec la comman
 	> py -m pip install pyqt5
 	> py -m pip install qscintilla
 	
-Récupérer les sources du client depuis le dépôt sur github.
+Et de récupérer les sources du client depuis le dépôt sur github.
 	
 .. code-block:: bash
 
 	python Main.py
     
-.. note:: Windows XP n'est pas supporté dans ce mode.
+.. warning:: Windows XP n'est pas supporté dans ce mode.
 
 **Environnement x64 win py3.4 qt4**
+
+.. warning:: Cet environnement de développement n'est plus recommandé.
 
 Pour préparer son environnement de développement, il est nécessaire de récupérer et installer les logiciels suivants:
  - Python 3.4.4 64bits
@@ -40,7 +44,7 @@ Pour préparer son environnement de développement, il est nécessaire de récup
  - TortoiseGit-2.5.0.0-64bit.msi
  - InnoSetup 5.5.9 – http://www.jrsoftware.org/isdl.php
 
-Il est nécessaire d'installer les paquets Python supplémentaires avec la commande ``pip``
+D'installer les paquets Python supplémentaires avec la commande ``pip``
 
 .. code-block:: bash
 
@@ -69,7 +73,7 @@ Préparation de son environnement de développement sur un système Linux CentOS
 	pip install dpkt
 	pip install cx_freeze
 	
-Récupérer les sources du client depuis le dépôt sur github.
+Récupération des sources du client depuis le dépôt sur github.
 
 .. code-block:: bash
 
@@ -293,17 +297,17 @@ SDK Boite à outils
 
 .. tip:: Il est conseillé d'utiliser le plugin ``dummy`` comme base de développement de votre agent ou sonde.
 
-En utilisant comme base l'agent ou la sonde ``dummy``, il faut ensemble :
- - mettre à jour la variable ``__TYPE__`` pour indiquer le ntom de l'agent ou la sonde
+En utilisant comme base l'agent ou la sonde ``dummy``, il faut ensuite :
+ - mettre à jour la variable ``__TYPE__`` pour indiquer le nom de l'agent ou la sonde
  - changer le nom de la classe avec le nom de votre agent ou sonde. 
  - mettre à jour le fichier ``__init__`` pour importer votre agent ou sonde.
 
 **Environnement Windows**
 
-La récupération du SDK pour la création de plugin se récupère depuis github
+Le SDK pour la création de plugin se récupère depuis github.
 Il est possible de copier le plugin ``Dummy`` et de l'utiliser comme base.
 
-e type et le nom du plugin est à configurer dans le fichier `config.json`
+Le type et le nom du plugin est à configurer dans le fichier `config.json`
 
 .. code-block:: json
   
@@ -336,7 +340,7 @@ La construction du plugin en binaire s'effectue en appelant le script ``MakeExe3
 SDK Client
 ~~~~~~~~~~~~
 
-Le client supporte l'ajout de plugins. La création d'un plugin nécessite de définir:
+Le client supporte l'ajout de plugins. La création d'un plugin nécessite:
  - d'utiliser le SDK
  - de définir son type 
  
@@ -362,7 +366,7 @@ Liste des types de plugins possibles:
 |test-results       |   Export des résultats de tests et rapports                |
 +-------------------+------------------------------------------------------------+
 
-La récupération du SDK pour la création de plugin se récupère depuis github
+Le SDK pour la création de plugin se récupère depuis github.
 Il est possible de copier le plugin ``Dummy`` et de l'utiliser comme base de développement.
 
 Le type et le nom du plugin est à configurer dans le fichier ``config.json``
@@ -390,18 +394,18 @@ La construction du plugin en binaire s'effectue en appelant le script ``MakeExe3
 
 L'échange de donnée entre le plugin et le client s'effectue avec des messages de type ``JSON``.
 
-Exemple pour envoyer des données au client:
+  1. Envoie de donnée au client:
 
-.. code-block:: python
+     .. code-block:: python
+        
+        self.core().sendMessage( cmd='import', data = {"my message": "hello"} )
   
-  self.core().sendMessage( cmd='import', data = {"my message": "hello"} )
-  
-Exemple pour recevoir des données depuis le client:
+  2. Réception des données depuis le client:
 
-.. code-block:: python
-  
-  class MainPage(QWidget):
-    def insertData(self, data):
+     .. code-block:: python
+        
+        class MainPage(QWidget):
+           def insertData(self, data):
   
 Exemple pour ajouter des traces dans la fenêtre graphique dédiée
 
@@ -421,7 +425,7 @@ Exemple pour ajouter des traces dans les logs:
     Logger.instance().info("my info message")
   
 
-.. tip: 
+.. tip::
   Il est possible d'exécuter le plugin sans le client en activant le mode debug.
   
   .. code-block: bash
@@ -432,7 +436,7 @@ Exemple pour ajouter des traces dans les logs:
 Documentations
 --------------
 
-La documentation est stockée sur github dans le `dépôt <https://github.com/ExtensiveTesting/extensivetesting-fr.readthedocs.io>`
+La documentation est stockée sur github dans le `dépôt <https://github.com/ExtensiveTesting/extensivetesting-fr.readthedocs.io>`_.
 Il est possible de contribuer en faisant une demande de participation au dépôt.
 
 La documentation est générée par le service `readthedocs <https://readthedocs.org/>`_.

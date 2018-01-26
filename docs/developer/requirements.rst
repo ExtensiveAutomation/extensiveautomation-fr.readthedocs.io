@@ -4,6 +4,9 @@
 Serveur
 ------
 
+Pour l'instant le serveur ne peut être exécuté que sur un environnement Linux.
+Il est possible de l'exécuter sur un environnement virtuel ou physique.
+
 +---------------------+------------+------------+
 |Caractéristiques     |   Minimum  | Recommandé |
 +---------------------+------------+------------+
@@ -29,6 +32,8 @@ Serveur
 Client
 ------
 
+Le client peut être exécuté sur un environnement Windows ou Linux.
+
 +-----------------+---------------------------+---------------------------+
 |Caractéristiques |   Minimum                 | Recommandé                |
 +-----------------+---------------------------+---------------------------+
@@ -49,6 +54,8 @@ Client
 
 Boite à outils
 ------------
+
+La boite à outils peut être exécutée sur un environnement Windows ou Linux.
 
 +-----------------+---------------------------+---------------------------+
 |Caractéristiques |   Minimum                 | Recommandé                |

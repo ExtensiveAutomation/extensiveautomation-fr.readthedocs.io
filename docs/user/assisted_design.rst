@@ -25,7 +25,11 @@ de sauvegarder ou récupérer des valeurs depuis le cache.
 .. image:: /_static/images/client_assistant/aa_basic_log.png
 
 .. note:: Il est possible de mélanger les différents types d'actions.
-  
+
+.. important:: 
+  L'assistant permet de générer des tests en mode automatique mais il est aussi possible d'ajouter son propre code à l'intérieur 
+  avec l'action ``USERCODE``.
+
 Onglet Framework
 ------------------
 
@@ -41,12 +45,14 @@ Exemple de test réalisé avec l'assistant:
 
 Liste des actions disponibles:
 
+.. note:: En rouge, les actions indispensables.
+
 +--------------------+-----------------------------------------------------------------+
-| LOG MESSAGE        |  Affiche un message d'information durant l'exécution du test    |
+| ``LOG MESSAGE``    |  Affiche un message d'information durant l'exécution du test    |
 +--------------------+-----------------------------------------------------------------+
 | LOG WARNING        |  Affiche un message d'attention durant l'exécution du test      |
 +--------------------+-----------------------------------------------------------------+
-| SET VALUE          |  Sauvegarde une donnée dans le cache                            |
+| ``SET VALUE``      |  Sauvegarde une donnée dans le cache                            |
 +--------------------+-----------------------------------------------------------------+
 | RESET CACHE        |  Vide complètement le cache                                     |
 +--------------------+-----------------------------------------------------------------+
@@ -54,7 +60,7 @@ Liste des actions disponibles:
 +--------------------+-----------------------------------------------------------------+
 | WAIT DURING        |  Attend pendant xx secondes                                     |
 +--------------------+-----------------------------------------------------------------+
-| CHECK IF VALUE     |  Vérifie si la value contient un texte spécifique               |
+| ``CHECK IF VALUE`` |  Vérifie si la value contient un texte spécifique               |
 +--------------------+-----------------------------------------------------------------+
 | ASK SOMETHING      |  Demande une valeur à l'utilisateur (mode interaction)          |
 +--------------------+-----------------------------------------------------------------+
@@ -80,19 +86,21 @@ Exemple de test réalisé avec l'assistant:
 
 Liste des actions disponibles: 
 
-+--------------------+-----------------------------------------------------------------+
-| OPEN SSH SESSION   |  Ouvre une session SSH                                          |
-+--------------------+-----------------------------------------------------------------+
-| CLOSE SESSION      |  Ferme la session                                               |
-+--------------------+-----------------------------------------------------------------+
-| CLEAR SCREEN       |  Vide l'écran                                                   |
-+--------------------+-----------------------------------------------------------------+
-| SEND TEXT          |  Envoi une chaîne de caractères                                 |
-+--------------------+-----------------------------------------------------------------+
-| SEND SHORTCUT      |  Envoi un raccourci clavier (pour interrompre une action)       |
-+--------------------+-----------------------------------------------------------------+
-| CHECKING IF SCREEN |  Vérifie si l'écran contient un texte spécifique                |
-+--------------------+-----------------------------------------------------------------+
+.. note:: En rouge, les actions indispensables.
+
++------------------------+-----------------------------------------------------------------+
+| ``OPEN SSH SESSION``   |  Ouvre une session SSH                                          |
++------------------------+-----------------------------------------------------------------+
+| CLOSE SESSION          |  Ferme la session                                               |
++------------------------+-----------------------------------------------------------------+
+| CLEAR SCREEN           |  Vide l'écran                                                   |
++------------------------+-----------------------------------------------------------------+
+| ``SEND TEXT``          |  Envoi une chaîne de caractères                                 |
++------------------------+-----------------------------------------------------------------+
+| SEND SHORTCUT          |  Envoi un raccourci clavier (pour interrompre une action)       |
++------------------------+-----------------------------------------------------------------+
+| ``CHECKING IF SCREEN`` |  Vérifie si l'écran contient un texte spécifique                |
++------------------------+-----------------------------------------------------------------+
 
 .. note:: L'utilisation de l'action ``OPEN SSH SESSION`` est obligatoire avant de pouvoir utiliser les autres disponibles.
 
@@ -125,10 +133,12 @@ Exemple de test réalisé avec l'assistant:
 
 Liste des actions disponibles:
 
+.. note:: En rouge, les actions indispensables.
+
 **Contrôle de la souris** 	
 
 +---------------------------+-----------------------------------------------------------------+
-| CLICK ON POSITION         |  Clic sur la position (x,y)                                     |
+| ``CLICK ON POSITION``     |  Clic sur la position (x,y)                                     |
 +---------------------------+-----------------------------------------------------------------+
 | DOUBLE CLICK ON POSITION  |  Double clic sur la position (x,y)                              |
 +---------------------------+-----------------------------------------------------------------+
@@ -144,7 +154,7 @@ Liste des actions disponibles:
 **Contrôle du clavier** 	
 
 +---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT                 |  Écrit du texte                                                 |
+| ``TYPE TEXT``             |  Écrit du texte                                                 |
 +---------------------------+-----------------------------------------------------------------+
 | TYPE PATH                 |  Écrit du texte (à utiliser pour les chemins d'accès)           |
 +---------------------------+-----------------------------------------------------------------+
@@ -152,7 +162,7 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 | GET TEXT FROM CLIPBOARD   |  Récupère le texte présent dans le presse-papier                |
 +---------------------------+-----------------------------------------------------------------+
-| KEYBOARD SHORTCUT         |  Permet de taper un raccourci clavier                           |
+| ``KEYBOARD SHORTCUT``     |  Permet de taper un raccourci clavier                           |
 +---------------------------+-----------------------------------------------------------------+
 
 **Contrôle chaîne de caractères** 	
@@ -171,21 +181,21 @@ Liste des actions disponibles:
  
 **Contrôle d'images**
 
-+---------------------------+----------------------------------------------------------------------------+
-| CLICK ON IMAGE            |  Recherche une image et clic dessus                                        |
-+---------------------------+----------------------------------------------------------------------------+
-| DOUBLE CLICK ON IMAGE     |  Recherche une image et double-clic dessus                                 |
-+---------------------------+----------------------------------------------------------------------------+
-| RIGHT CLICK ON IMAGE      |  Recherche une image et effectue un clic-droit dessus                      |
-+---------------------------+----------------------------------------------------------------------------+
-| WAIT IMAGE                |  Recherche une image jusqu'à la voir apparaître à l'écran                  |
-+---------------------------+----------------------------------------------------------------------------+
-| WAIT AND CLICK ON IMAGE   |  Recherche une image jusqu'à la voir apparaître à l'écran et clic dessus   |
-+---------------------------+----------------------------------------------------------------------------+
-| HOVER MOUSE ON            |  Recherche une image et déplace le curseur de la souris dessus             |
-+---------------------------+----------------------------------------------------------------------------+
-| DRAG IMAGE AND DROP TO    |  Recherche une image et effectue un drag and drop vers la position (x,y)   |
-+---------------------------+----------------------------------------------------------------------------+
++-----------------------------+----------------------------------------------------------------------------+
+| CLICK ON IMAGE              |  Recherche une image et clic dessus                                        |
++-----------------------------+----------------------------------------------------------------------------+
+| DOUBLE CLICK ON IMAGE       |  Recherche une image et double-clic dessus                                 |
++-----------------------------+----------------------------------------------------------------------------+
+| RIGHT CLICK ON IMAGE        |  Recherche une image et effectue un clic-droit dessus                      |
++-----------------------------+----------------------------------------------------------------------------+
+| WAIT IMAGE                  |  Recherche une image jusqu'à la voir apparaître à l'écran                  |
++-----------------------------+----------------------------------------------------------------------------+
+| ``WAIT AND CLICK ON IMAGE`` |  Recherche une image jusqu'à la voir apparaître à l'écran et clic dessus   |
++-----------------------------+----------------------------------------------------------------------------+
+| HOVER MOUSE ON              |  Recherche une image et déplace le curseur de la souris dessus             |
++-----------------------------+----------------------------------------------------------------------------+
+| DRAG IMAGE AND DROP TO      |  Recherche une image et effectue un drag and drop vers la position (x,y)   |
++-----------------------------+----------------------------------------------------------------------------+
 
 Onglet Navigateur
 ----------------
@@ -214,16 +224,16 @@ Exemple de test réalisé avec l'assistant:
 
 Liste des actions disponibles:
 
-.. warning:: Les actions recommandées et suffissantes pour écrire la plupart des tests sont en gras.
+.. note:: En rouge, les actions indispensables.
 
 **Contrôle navigateur** 
 
 +---------------------------+-----------------------------------------------------------------+
-| **OPEN BROWSER**          |  Ouvre le navigateur et charge l'url spécifié                   |
+| ``OPEN BROWSER``          |  Ouvre le navigateur et charge l'url spécifié                   |
 +---------------------------+-----------------------------------------------------------------+
-| **CLOSE BROWSER**         |  Ferme le navigateur                                            |
+| ``CLOSE BROWSER``        |  Ferme le navigateur                                            |
 +---------------------------+-----------------------------------------------------------------+
-| **MAXIMIZE BROWSER**      |  Aggrandit la fenêtre du navigateur                             |
+| MAXIMIZE BROWSER          |  Aggrandit la fenêtre du navigateur                             |
 +---------------------------+-----------------------------------------------------------------+		
  
 **Actions de navigation**	
@@ -268,7 +278,7 @@ Liste des actions disponibles:
 +-------------------------------------------+----------------------------------------------------------------------+
 | WAIT NOT VISIBLE HTML ELEMENT             | Attend qu'un élément HTML ne soit pas visible à l'utilisateur        |
 +-------------------------------------------+----------------------------------------------------------------------+
-| **WAIT VISIBLE AND CLICK ON HTML ELEMENT**| Attend qu'un élément HTML soit visible à l'utilisateur et clic dessus|
+| ``WAIT VISIBLE AND CLICK ON HTML ELEMENT``| Attend qu'un élément HTML soit visible à l'utilisateur et clic dessus|
 +-------------------------------------------+----------------------------------------------------------------------+
 | HOVER ON HTML ELEMENT                     | Déplace le curseur de la souris sur un élement HTML précis           |
 +-------------------------------------------+----------------------------------------------------------------------+
@@ -278,9 +288,9 @@ Liste des actions disponibles:
 +-------------------------------------------+----------------------------------------------------------------------+
 | CLEAR TEXT ON HTML ELEMENT                | Vide le texte sur un élément HTML précis                             |
 +-------------------------------------------+----------------------------------------------------------------------+
-| **SELECT ITEM BY TEXT**                   |  Select item according to the text (for combolist or list)           |
+| ``SELECT ITEM BY TEXT``                   |  Select item according to the text (for combolist or list)           |
 +-------------------------------------------+----------------------------------------------------------------------+
-| **SELECT ITEM BY VALUE**                  | Select item according to the value attribute (for combolist or list) |
+| ``SELECT ITEM BY VALUE``                  | Select item according to the value attribute (for combolist or list) |
 +-------------------------------------------+----------------------------------------------------------------------+
 
 **Récupération de texte** 
@@ -288,7 +298,7 @@ Liste des actions disponibles:
 +--------------------------------+-----------------------------------------------------------------+
 | GET TEXT ALERT                 |  Récupère le texte d'un message alerte javascript               |
 +--------------------------------+-----------------------------------------------------------------+
-| **GET TEXT FROM HTML ELEMENT** |  Récupère le texte un élément html précis                       |
+| ``GET TEXT FROM HTML ELEMENT`` |  Récupère le texte un élément html précis                       |
 +--------------------------------+-----------------------------------------------------------------+
 | GET PAGE TITLE                 |  Récupère le titre de la page                                   |
 +--------------------------------+-----------------------------------------------------------------+
@@ -302,7 +312,7 @@ Liste des actions disponibles:
 +-------------------------------+-----------------------------------------------------------------+
 | TYPE KEYBOARD SHORTCUT        |  Envoie un raccourci clavier sur un élément HTML précis         |
 +-------------------------------+-----------------------------------------------------------------+
-| **TYPE TEXT ON HTML ELEMENT** |  Envoie du texte sur un élément HTML précis                     |
+| ``TYPE TEXT ON HTML ELEMENT`` |  Envoie du texte sur un élément HTML précis                     |
 +-------------------------------+-----------------------------------------------------------------+	
 
 Onglet Android
@@ -336,10 +346,12 @@ Exemple de test réalisé avec l'assistant:
 
 Liste des actions disponibles:
 
+.. note:: En rouge, les actions indispensables.
+
 **Contrôle du mobile**
 	
 +---------------------------+-----------------------------------------------------------------+
-| WAKE UP AND UNLOCK        |  Réveille et débloque l'appareil                                |
+| ``WAKE UP AND UNLOCK``    |  Réveille et débloque l'appareil                                |
 +---------------------------+-----------------------------------------------------------------+
 | REBOOT                    |  Redémarrage de l'appareil                                      |
 +---------------------------+-----------------------------------------------------------------+
@@ -348,30 +360,30 @@ Liste des actions disponibles:
 
 **Textes** 	
 
-+---------------------------+-----------------------------------------------------------------+
-| TYPE SHORTCUT             |  Simule un raccourci                                            |
-+---------------------------+-----------------------------------------------------------------+
-| TYPE TEXT ON XML ELEMENT  |  Envoie du texte sur un élément précis de l'interface           |
-+---------------------------+-----------------------------------------------------------------+
-| GET TEXT FROM XML ELEMENT |  Récupère le texte d'un élément précis de l'interface           |
-+---------------------------+-----------------------------------------------------------------+
++------------------------------+-----------------------------------------------------------------+
+| ``TYPE SHORTCUT``            |  Simule un raccourci                                            |
++------------------------------+-----------------------------------------------------------------+
+| ``TYPE TEXT ON XML ELEMENT`` |  Envoie du texte sur un élément précis de l'interface           |
++------------------------------+-----------------------------------------------------------------+
+| GET TEXT FROM XML ELEMENT    |  Récupère le texte d'un élément précis de l'interface           |
++------------------------------+-----------------------------------------------------------------+
  
 **Contrôles des éléments XML**
 
-+-------------------------------+--------------------------------------------------------------------------------+
-| CLEAR XML ELEMENT             |  Supprime le texte d'un élément précis de l'interface                          |
-+-------------------------------+--------------------------------------------------------------------------------+
-| CLICK ON XML ELEMENT          |  Clic sur un élément précis de l'interface                                     |
-+-------------------------------+--------------------------------------------------------------------------------+
-| LONG CLICK ON XML ELEMENT     |  Clic longue-durée sur un élément précis de l'interface                        |
-+-------------------------------+--------------------------------------------------------------------------------+
-| WAIT AND CLICK ON XML ELEMENT |  Attend l'apparition d'un élément précis de l'interface et clic dessus         |
-+-------------------------------+--------------------------------------------------------------------------------+		
++-----------------------------------+--------------------------------------------------------------------------------+
+| CLEAR XML ELEMENT                 |  Supprime le texte d'un élément précis de l'interface                          |
++-----------------------------------+--------------------------------------------------------------------------------+
+| CLICK ON XML ELEMENT              |  Clic sur un élément précis de l'interface                                     |
++-----------------------------------+--------------------------------------------------------------------------------+
+| LONG CLICK ON XML ELEMENT         |  Clic longue-durée sur un élément précis de l'interface                        |
++-----------------------------------+--------------------------------------------------------------------------------+
+| ``WAIT AND CLICK ON XML ELEMENT`` |  Attend l'apparition d'un élément précis de l'interface et clic dessus         |
++-----------------------------------+--------------------------------------------------------------------------------+		
  
 **Tap sur l'écran** 
 
 +---------------------------+-----------------------------------------------------------------+
-| CLICK TO POSITION         |  Clic sur la position x,y                                       |
+| ``CLICK TO POSITION``     |  Clic sur la position x,y                                       |
 +---------------------------+-----------------------------------------------------------------+
 | DRAG FROM POSITION        |  Drag depuis la position x1,y1 vers x2,y2                       |
 +---------------------------+-----------------------------------------------------------------+

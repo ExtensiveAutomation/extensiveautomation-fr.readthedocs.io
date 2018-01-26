@@ -3,9 +3,9 @@ Utilisateurs
 
 La solution peut être utilisée en mode multi-utilisateur.
 Des utilisateurs suivants existent par défaut:
- - Admin
- - Tester
- - Monitor
+ - ``Admin``
+ - ``Tester``
+ - ``Monitor``
 
 .. note:: Ne pas oublier de désactiver les comptes par défaut dans un environnement de production.
 

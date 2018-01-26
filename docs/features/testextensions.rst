@@ -1,4 +1,4 @@
-Compléments Serveur
+Interopérabilité
 ===================
 
 Adaptateurs
@@ -21,12 +21,12 @@ Les adaptateurs ont deux modes d'utilisation:
 .. note:: Le mode ``Debug`` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
 .. note:: 
-  Des exemples sont disponibles dans les échantillons de tests
-  Chemin d'accès: Samples/Tests_Adapters
+  Des exemples sont disponibles dans les échantillons de tests ``Samples/Tests_Adapters``
   
 Liste des adaptateurs disponibles par défaut:
 
-**Protocoles réseaux**
+Protocoles réseaux
+~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs  | Agents       | Descriptions                                                                |
@@ -50,7 +50,8 @@ Liste des adaptateurs disponibles par défaut:
 | SNMP         | socket       | Réception d'alarmes SNMPv2                                                  |
 +--------------+--------------+-----------------------------------------------------------------------------+						
 
-**Protocoles réseaux applications**
+Protocoles réseaux applications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs  | Agents       | Descriptions                                                                |
@@ -66,7 +67,8 @@ Liste des adaptateurs disponibles par défaut:
 | SoapUI       | soapui       | Client permettant d'exécuter des campagnes SoapUI                           |
 +--------------+--------------+-----------------------------------------------------------------------------+				
 
-**Interfaces utilisateurs**
+Interfaces utilisateurs
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------------------------------+-------------------------------------------+
 | Adaptateurs  | Agents                               | Descriptions                              |
@@ -78,7 +80,8 @@ Liste des adaptateurs disponibles par défaut:
 | Sikuli       | sikulix-server                       | Intégration avec le projet SikuliX        |
 +--------------+--------------------------------------+-------------------------------------------+					
 
-**Bases de données**
+Bases de données
+~~~~~~~~~~~~~~~~
 
 +---------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs   | Agents       | Descriptions                                                                |
@@ -90,8 +93,8 @@ Liste des adaptateurs disponibles par défaut:
 | PostgreSQL    | database     | Communication avec une base de type PostgreSQL                              |
 +---------------+--------------+-----------------------------------------------------------------------------+			
 
-**Contrôles systèmes**	
-
+Contrôles systèmes	
+~~~~~~~~~~~~~~~~~~~
 +----------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs    | Agents       | Descriptions                                                                |
 +----------------+--------------+-----------------------------------------------------------------------------+
@@ -108,7 +111,8 @@ Liste des adaptateurs disponibles par défaut:
 | Cisco Catalyst | ssh          | Client de configuration, basé sur l'adaptateur Telnet                       |
 +----------------+--------------+-----------------------------------------------------------------------------+	
 
-**Protocoles Télécoms**	
+Protocoles Télécoms
+~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------+-----------------------------------------------------------------------------+
 | Adaptateurs  | Agents       | Descriptions                                                                |
@@ -139,7 +143,8 @@ Une librairie ne communique pas en direct avec le système à tester ou piloter.
 
 Liste des librairies disponibles par défauts:
 
-**Chiffrement**
+Chiffrement
+~~~~~~~~~~
 
 +-----------+---------------------------------------+
 |  AES      | Support chiffrement ou déchiffrement  |
@@ -158,7 +163,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/02_Ciphers``
 
-**Codecs**
+Codecs
+~~~~~~
 
 +--------------+-----------------------------------------------+
 | Base64       |  Encode ou décode au format base64            |
@@ -177,7 +183,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/03_Codecs``
 
-**Compression**	
+Compression
+~~~~~~~~~~
 
 +--------+-------------------------------------------------+
 | GZIP   | Compression ou décompression au format GZIP     |
@@ -186,7 +193,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/09_Compression``
   
-**Hashing**	
+Hashing	
+~~~~~~~~~~
 
 +----------+------------------------------------------+
 | Checksum | Générateur de checksum                   |
@@ -203,8 +211,9 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/05_Hashing``
   
-**Identifiant**
-		
+Identifiant
+~~~~~~~~~~
+
 +------------------+-------------------------------------------------------+
 | SessionID        |  Générateur de session ID                             |
 +------------------+-------------------------------------------------------+
@@ -214,7 +223,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/07_Identifiers``
   
-**Média**
+Média
+~~~~~
 
 +--------------+---------------------------------------------------------------+
 | ChartsJS     |  Générateur de graphique visible dans les rapports de test    |
@@ -235,7 +245,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/04_Media``
 
-**Date**
+Date
+~~~~
 
 +------------------+---------------------------------------+
 | Today            |   Permet de récupérer la date du jour |
@@ -244,7 +255,8 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/11_Date``
   
-**Sécurité**
+Sécurité
+~~~~~~~~~~
 
 +-------------+------------------------------------------------------+
 | Basic       |  Décode ou encode l'autorisation                     |
@@ -265,16 +277,18 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/01_Security``
   
-**Temps**
-		
-+------------------+---------------------------------------+
-| Timestamp        |  Permet de générer un timestamp       |
-+------------------+---------------------------------------+
+Temps
+~~~~~
+
++------------------+-------------------------------------------------------------------------+
+| Timestamp        |  Permet de générer un timestamp ou de convertir en valeur lisible       |
++------------------+-------------------------------------------------------------------------+
 
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/06_Time``
   
-**Unités**	
+Unités	
+~~~~~~
 
 +------------------+------------------------------------------------------------+
 | Bytes            |  Permet de convertir des bytes en valeur lisibles          |
@@ -283,11 +297,13 @@ Liste des librairies disponibles par défauts:
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/08_Units``
   
-Interopérabilité
+Outils tiers
 ---------------
 
 Le produit vient à la base avec un certain nombre de plugins pour s'interfacer avec 
-d'autre d'outils existants (suivi de défaut, managements de tests, etc..).
+d'autre d'outils existants (suivi de défauts, managements de tests, etc..).
+
+Ces plugins peuvent être utilisés directement depuis un test.
 
 Liste des outils supportés:
 
@@ -313,11 +329,27 @@ Liste des outils supportés:
 HP ALM
 ~~~~~~
 
+Ce plugin permet d'exporter des résultats de tests dans l'outil HP ALM.
+Il peut etre utilisé depuis un etst pour exporter des résultats sans intervention utilisateur.
+
+Exemple d'utilisation:
+
+  HP ALM 
+    |------> Appel REST API ------- ->   ET 
+    |                                    |
+    ^                                    v
+    |                             Exécution du test demandé
+    |                                    |
+    |<-------- Push du résultat ---------|
+    
+    
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/02_HP_QC``
   
 Jenkins
 ~~~~~~
+
+Ce plugin permet de lancer un build depuis la solution Extensive.
 
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/06_Jenkins``
@@ -325,11 +357,18 @@ Jenkins
 VSphere
 ~~~~~~
 
+Ce plugin permet de piloter un environnement virtuel VMware. Il peut être utilisé pour:
+ - créer des machines virtuelles en mode automatiquement
+ - supprimer des machines
+
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/05_VSphere``
 
 ExtensiveTesting
 ~~~~~~~~~~~~~~~~
+
+Ce plugin permet de faire un lien entre plusieurs environnement (dev, intégration, qualification) en permettant 
+d'exécuter des tests d'un environnement à l'autre.
 
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/03_ExtensiveTesting``
@@ -337,11 +376,16 @@ ExtensiveTesting
 Jira
 ~~~~
 
+Ce plugin permet de créer des tickets suite à l'exécution d'un test dans l'outil Jira.
+
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/01_Jira``
 
 Git
 ~~~~
+
+Ce plugin permet de récupérer ou pousser des fichiers depuis un dépôt de sources.
+Il peut être utilisé en prérequis d'un test.
 
 .. note:: 
   Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/04_Git``
@@ -349,16 +393,41 @@ Git
 Agents
 ------
 
-Les agents sont disponibles depuis la boîte à outils. Il sont à utiliser conjointement avec les adaptateurs pour 
-communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible
-en direct par le serveur de test (ex: une page web)
+Les agents sont disponibles depuis la boîte à outils. Il sont à utiliser conjointement avec les adaptateurs 
+ - pour communiquer avec le système à tester ou piloter lorsque qu'il n'est pas accessible en direct par le serveur de test (ex: une page web)
+ - exécuter un test sur plusieurs environnements différents.
+ 
+.. note:: L'agent ``dummy`` est à utiliser comme base pour le développement d'un nouvel agent.
 
-+------------------+--------------------------------------------------------------------------------------+
-| dummy            |  Disponible en exemple, pour le développement                                        |
+.. tip: Il est conseillé de limiter l'usage des agents car la mise en place des tests se retrouve plus complexe.
+
+
+Protocoles réseaux
+~~~~~~~~~~~~~~~~~~
+
 +------------------+--------------------------------------------------------------------------------------+
 | socket           |  Permet de démarrer des sockets TCP/UDP                                              |
 +------------------+--------------------------------------------------------------------------------------+
 | ftp              |  Permet de se connecter sur un serveur FTP(S)                                        |
++------------------+--------------------------------------------------------------------------------------+
+| database         |  Permet de requêter les bases de données (MySQL, Microsoft SQL et PostgreSQL)        |
++------------------+--------------------------------------------------------------------------------------+
+| ssh              |  Permet de se connecter sur des machines via SSH ou SFTP                             |
++------------------+--------------------------------------------------------------------------------------+
+
+Systèmes
+~~~~~~~
+
++------------------+--------------------------------------------------------------------------------------+
+| command          |  Permet d'exécuter des commandes systèmes sur Windows ou Linux                       |
++------------------+--------------------------------------------------------------------------------------+
+| file             |  Permet de récupérer des fichiers sur les systèmes Windows ou Linux                  |
++------------------+--------------------------------------------------------------------------------------+
+
+
+Outils tiers
+~~~~~~~~~~~~
+
 +------------------+--------------------------------------------------------------------------------------+
 | sikulix-server   |  Intéractions avec les applications lourdes                                          |
 +------------------+--------------------------------------------------------------------------------------+
@@ -368,22 +437,14 @@ en direct par le serveur de test (ex: une page web)
 +------------------+--------------------------------------------------------------------------------------+
 | soapui           |  Permet d'exécuter des tests SoapUI                                                  |
 +------------------+--------------------------------------------------------------------------------------+
-| command          |  Permet d'exécuter des commandes systèmes sur Windows ou Linux                       |
-+------------------+--------------------------------------------------------------------------------------+
-| file             |  Permet de récupérer des fichiers sur les systèmes Windows ou Linux                  |
-+------------------+--------------------------------------------------------------------------------------+
 | adb              |  Permet de piloter les smartphones Android                                           |
 +------------------+--------------------------------------------------------------------------------------+
 | gateway-sms      |  Permet d'envoyer ou recevoir des SMS                                                |
 +------------------+--------------------------------------------------------------------------------------+
-| database         |  Permet de requêter les bases de données (MySQL, Microsoft SQL et PostgreSQL)        |
-+------------------+--------------------------------------------------------------------------------------+
-| ssh              |  Permet de se connecter sur des machines via SSH ou SFTP                             |
-+------------------+--------------------------------------------------------------------------------------+
+
 
 .. note:: L'utilisation de l'agent ``Selenium3-Server`` nécessiste au minimum d'avoir ``Java 8`` sur le poste.
 
-.. tip: Il est conseillé de limiter l'usage des agents car la mise en place des tests se retrouve plus complexe.
 
 EXPLIQUER POURQUOI ET COMMENT UTILISER CHAQUE AGENT ET SONDE, AVEC EXEMPLES, REQUIS, WARNINGS, ETC.
 
@@ -441,16 +502,15 @@ Sondes
 Les sondes sont disponibles dans la boîte à outils. Le but principal est de récupérer 
 automatiquement des logs (trace réseaux, fichiers) durant l'exécution d'un test.
 
-+----------------+--------------------------------------------------------------------------------------+
-| dummy          |  Disponible en exemple, pour le développement                                        |
-+----------------+--------------------------------------------------------------------------------------+
-| textual        |  Permet de faire suivre des fichiers de logs sur Windows ou Linux (tailf)            |
-+----------------+--------------------------------------------------------------------------------------+
-| network        |  Prise de traces réseaux, sonde basée sur tcpdump sur linux, ou tshark sur Windows   |
-+----------------+--------------------------------------------------------------------------------------+
-| file           |  Récupération de fichiers de configuration sur Windows ou Linux                      |
-+----------------+--------------------------------------------------------------------------------------+
++----------------+------------------------------------------------------------------------------------------+
+| textual        |  Permet de faire suivre des fichiers de logs sur Windows ou Linux (tailf)                |
++----------------+------------------------------------------------------------------------------------------+
+| network        |  Prise de traces réseaux, sonde basée sur tcpdump sur linux, ou tshark sur Windows       |
++----------------+------------------------------------------------------------------------------------------+
+| file           |  Récupération de fichiers de configuration sur Windows ou Linux                          |
++----------------+------------------------------------------------------------------------------------------+
 
 L'utilisation d'une sonde dans un test est à définir dans les propriétés.
 
-<insérer image>
+ 
+.. note:: L'agent ``dummy`` est à utiliser comme base pour le développement d'un nouvel agent.

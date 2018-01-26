@@ -53,7 +53,8 @@ Bienvenue sur la documentation ExtensiveTesting!
    features/testreporting
    features/testextensions
    features/taskmanager
-
+   features/examples
+   
 .. _dev-docs:
 
 .. toctree::
