@@ -4,7 +4,7 @@ Projets
 La solution peut être utilisée en mode multi-projet. Il est donc possible d'organiser les tests par projets et d'accorder des droits d'accès pour les 
 utilisateurs.
 
-.. note:: Le projet `Common` existe par défaut, il est accessible par l'ensemble des utilisateurs et ne peux pas être supprimé.
+.. note:: Le projet ``Common`` existe par défaut, il est accessible par l'ensemble des utilisateurs et ne peux pas être supprimé.
 
 Ajout d'un projet
 -----------------

@@ -13,7 +13,7 @@ Installation automatique
     - l'accès aux dépôts officiels est disponible
     - utilisation d'un système Linux CentOS 6/7 ou RedHat
 
-L'installation de la solution peut se faire en utilisant le script `install.sh` présent dans le tar.gz.
+L'installation de la solution peut se faire en utilisant le script ``install.sh`` présent dans le tar.gz.
 Si les prérequis sont respectés alors l'installation se fera en mode automatique, c'est à dire que les paquets manquants 
 seronts récupérés automatiquement.
 
@@ -69,9 +69,9 @@ Exemple pour vérifier si le serveur fonctionne correctement.
 
 Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
 Il est possible d'utiliser les comptes pas défauts pour se connecter:
- - utilisateur `admin`
- - utilisateur `tester`
- - utilisateur `monitor`
+ - utilisateur ``admin``
+ - utilisateur ``tester``
+ - utilisateur ``monitor``
  
 .. note:: Les comptes par défaut n'ont pas de mot de passe.
 
@@ -147,7 +147,7 @@ Installation depuis les sources
 Mise à jour
 ~~~~~~~~~~~
 
-La mise à jour du serveur est possible en exécutant le script `./update.sh`
+La mise à jour du serveur est possible en exécutant le script ``./update.sh``
 Les anciens tests, adaptateurs et utilisateurs sont automatiquement migrés.
 
 .. code-block:: bash
@@ -210,7 +210,7 @@ Retour arrière
 ~~~~~~~~~~~
 
 Le retour arrière est possible vers les versions antérieures déjà installées sur le serveur.
-Exécuter le script `rollback.sh` avec la version précédente.
+Exécuter le script ``rollback.sh`` avec la version précédente.
 
 .. code-block:: bash
 
@@ -232,7 +232,7 @@ Exécuter le script `rollback.sh` avec la version précédente.
 Désinstallation
 ~~~~~~~~~~~~~~
 
-La désinstallation du produit peut se faire en utilisant le script `./uninstall.sh` présent dans le paquet d'installation.
+La désinstallation du produit peut se faire en utilisant le script ``./uninstall.sh`` présent dans le paquet d'installation.
 
 .. code-block:: bash
 
@@ -257,7 +257,7 @@ La désinstallation du produit peut se faire en utilisant le script `./uninstall
 	- Uninstallation completed successfully!
 	=========================================================================
 
-.. note:: Il est possible d'utiliser le mode `force` en cas d'erreur durant la désinstallation. 
+.. note:: Il est possible d'utiliser le mode ``force`` en cas d'erreur durant la désinstallation. 
 	
 Déploiement
 ~~~~~~~~~~~
@@ -270,7 +270,7 @@ La solution permet de mettre à disposition auprès des utilisateurs les paquets
 Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
 notifier les utilisateurs de la mise à jour.
 
-Les paquets sont à déposer dans le répertoire `<INSTALL_PATH>/current/Packages/`
+Les paquets sont à déposer dans le répertoire ``<INSTALL_PATH>/current/Packages/``
 
 +-----------------+-------------------------------------------------+
 |Client           | Contients la version portable et installation   |
@@ -283,7 +283,7 @@ Les paquets sont à déposer dans le répertoire `<INSTALL_PATH>/current/Package
 +-----------------+-------------------------------------------------+
 
 Après dépôt, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
-Pour la mise à jour en mode automatique du client, il faut exécuter la commande `xtctl deploy` sur le serveur
+Pour la mise à jour en mode automatique du client, il faut exécuter la commande ``xtctl deploy`` sur le serveur
 pour prendre en compte le nouveau client déployé.
 
 .. code-block:: bash
@@ -338,7 +338,7 @@ Il existe 2 modes d'installation:
  - mode installation
 
 La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
-Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingToolbox.exe`
+Ensuite il faut le décompresser et exécuter le fichier ``ExtensiveTestingToolbox.exe``
 	
 Installation Linux
 ~~~~~~~~~~~~~~~~~~

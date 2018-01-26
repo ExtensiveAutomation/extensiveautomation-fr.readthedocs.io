@@ -10,7 +10,7 @@ La solution se base sur différents types de tests pour:
 Test Abstract
 -------------
 
-Le test ``abstract`` (tax) permet d'écire un cas de test avec plusieurs étapes.
+Le ``test abstract`` (tax) permet d'écire un cas de test avec plusieurs étapes.
 Ce format est orienté modélisation graphique donc ne nécessaite aucune connaissance en développement.
 
 .. image:: /_static/images/testlibrary/tax.png
@@ -18,7 +18,7 @@ Ce format est orienté modélisation graphique donc ne nécessaite aucune connai
 Test Unit
 ---------
 
-Le test ``unit`` (tux) permet d'écire un cas de test avec plusieurs étapes.
+Le ``test unit`` (tux) permet d'écire un cas de test avec plusieurs étapes.
 Ce format est orienté développement.
 
 .. image:: /_static/images/testlibrary/tux.png
@@ -28,7 +28,7 @@ Ce format est orienté développement.
 Test Suite
 ---------
 
-Le test ``suite`` (tsx) permet d'écire plusieurs cas de test avec plusieurs étapes.
+Le ``test suite`` (tsx) permet d'écire plusieurs cas de test avec plusieurs étapes.
 Ce format est orienté développement.
 
 .. image:: /_static/images/testlibrary/tsx.png
@@ -38,8 +38,8 @@ Ce format est orienté développement.
 Test Plan
 ----------
 
-Le test ``plan`` (tpx) permet d'écrire des scénarios de test.
-La conception se réalise en imbriquant les tests ``abstract``, ``unit`` et ``suite``
+Le ``test plan`` (tpx) permet d'écrire des scénarios de test.
+La conception se réalise en imbriquant les tests `abstract`, `unit` et `suite`
 Ce format de test necéssite aucune connaissance en développement.
 
 .. image:: /_static/images/testlibrary/tpx.png
@@ -47,8 +47,8 @@ Ce format de test necéssite aucune connaissance en développement.
 Test Global
 ----------
 
-Le test ``global`` (tgx) permet d'écrire des campagnes de test.
-La préparation des campagnes se réalise en important les tests ``plans``.
+Le ``test global`` (tgx) permet d'écrire des campagnes de test.
+La préparation des campagnes se réalise en important les tests `plans`.
 
 .. image:: /_static/images/testlibrary/tgx.png
 

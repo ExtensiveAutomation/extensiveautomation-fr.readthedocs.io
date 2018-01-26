@@ -21,7 +21,7 @@ La création d'un utilisateur nécessite à minima les paramètres suivants et p
 
 .. note:: L'email est utilisée par la solution pour envoyer les rapports de tests et résultats.
 
-.. note:: Il est possible de configurer plusieurs adresses email pour un utilisateur en les séparants avec `;`
+.. note:: Il est possible de configurer plusieurs adresses email pour un utilisateur en les séparants avec ``;``
 
 Suppression d'un utilisateur
 ----------------------

@@ -6,7 +6,7 @@ Version courante
 
 .. note::
 
- **Version 17.1.0 disponible depuis le 22/10/2017**
+ **Version ``17.1.0`` disponible depuis le 22/10/2017**
  
  - Amélioration de l'API REST
  - Ajout de fonctionnalités majeures dans le framework de test

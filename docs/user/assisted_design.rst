@@ -10,7 +10,7 @@ On peut s'en servir pour:
  - Exécuter des actions sur un mobile Android
 
 Le test se compose d'un enchaînement d'actions à réaliser.
-L'assistant génère automatiquement le test `unit` ou `suite`. 
+L'assistant génère automatiquement un ``test unit`` ou un ``test suite``. 
 Un test (script) existant peut être mis à jour depuis l'assistant aussi.
 
 Pour ajouter une action dans l'assitant, il faut 
@@ -29,19 +29,15 @@ de sauvegarder ou récupérer des valeurs depuis le cache.
 Onglet Framework
 ------------------
 
-L'onglet **framework** permet d'utiliser les fonctions de base du framework de test.
+L'onglet ``framework`` permet d'utiliser les fonctions de base du framework de test.
 
 Exemple de test réalisé avec l'assistant:
  1. Affiche le message "bonjour" dans le test
- 2. Demande à l'utilisateur durant l'exécution son prénom et l'enregistre dans le cache avec la clé `prenom`
+ 2. Demande à l'utilisateur durant l'exécution son prénom et l'enregistre dans le cache avec la clé ``prenom``
  3. Affiche le prénom dans le log du test
  4. Vérifie depuis le cache si le prénom contient une valeur spécifique.
 
 .. image:: /_static/images/client_assistant/aa_basic_test.png
-
-..
-	Dans l'image ci-dessus ``ASK TO USER`` n'est pas anglais (c'est une traduction mot-pour-mot de "Demander à l'usager")
-	On dit plutôt ``USER INPUT PROMPT`` ou "USER QUESTION", tu vois le genre.
 
 Liste des actions disponibles:
 
@@ -66,7 +62,7 @@ Liste des actions disponibles:
 Onglet Système
 -----------------
 
-L'onglet **système** permet d'exécuter des commandes sur un serveur distant disponible via SSH.
+L'onglet ``système`` permet d'exécuter des commandes sur un serveur distant disponible via SSH.
 
 Exemple de test réalisé avec l'assistant:
  1. Ouverture de la session ssh sur la machine distante 192.186.1.251
@@ -103,7 +99,7 @@ Liste des actions disponibles:
 Onglet Application
 ------------------
 
-L'onglet **application** permet d'automatiser des applications riches en permettant:
+L'onglet ``application`` permet d'automatiser des applications riches en permettant:
  - de simuler le clavier
  - de simuler la souris
  - de rechercher des élements graphiques à l'écran
@@ -194,15 +190,15 @@ Liste des actions disponibles:
 Onglet Navigateur
 ----------------
 
-L'onglet **navigateur** permet d'automatiser des applications web en permettant:
+L'onglet ``navigateur`` permet d'automatiser des applications web en permettant:
  - de piloter les navigateurs (firefox, internet explorer, chrome, edge)
  - de simuler le clavier
 
-.. warning:: un agent **selenium3-server** ou **selenium2-server** est nécessaire pour utiliser les actions.
+.. warning:: un agent ``selenium3-server`` ou ``selenium2-server`` est nécessaire pour utiliser les actions.
 
 .. tip:: 
  Pour cliquer sur un élement HTML, il est conseillé d'utiliser systématiquement 
- la fonction `WAIT VISIBLE AND CLICK ON HTML ELEMENT`.
+ la fonction ``WAIT VISIBLE AND CLICK ON HTML ELEMENT``.
 
 Exemple de test réalisé avec l'assistant:
  1. Récupère depuis le cache le prénom et l'envoie dans l'élément HTML trouvé par le xpath
@@ -213,8 +209,8 @@ Exemple de test réalisé avec l'assistant:
 
 .. note:: 
   Il est possible d'ouvrir plusieurs navigateur en parallèle sur le même poste à définissant une nouvelle session.
-  La nom se la session se définit sur l'action `OPEN BROWSER`.
-  Il faut ensuite utiliser l'action `SWITCH TO SESSION` pour changer de session.
+  La nom se la session se définit sur l'action ``OPEN BROWSER``.
+  Il faut ensuite utiliser l'action ``SWITCH TO SESSION`` pour changer de session.
 
 Liste des actions disponibles:
 
@@ -312,12 +308,12 @@ Liste des actions disponibles:
 Onglet Android
 --------------
 
-L'onglet **android** permet d'automatiser des applications mobiles en permettant:
+L'onglet ``android`` permet d'automatiser des applications mobiles en permettant:
  - de simuler le clavier
  - de simuler l'utilisation du doigts sur l'écran
  - de piloter le système et les applications 
 
-.. warning:: un agent **adb** est nécessaire pour utiliser les actions.
+.. warning:: un agent ``adb`` est nécessaire pour utiliser les actions.
 
 Aperçu de l'agent
 

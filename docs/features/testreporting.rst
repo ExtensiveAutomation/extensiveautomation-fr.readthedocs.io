@@ -83,9 +83,9 @@ Le rapport avancé affiche un certain nombre de paramètres:
 
 Il est possible d'afficher des variables dans le rapport de test en préfixant les variables:
 
-- SUT_		Variables décrivant la version du système à tester ou piloter
-- DATA_		Variables décrivant des données spécifiques
-- USER_		Variables utilisateurs
+- ``SUT_``		Variables décrivant la version du système à tester ou piloter
+- ``DATA_``		Variables décrivant des données spécifiques
+- ``USER_``		Variables utilisateurs
 
 Cette fonctionnalité peut être utile pour augmenter le niveau de traçabilité dans les rapports.
 
