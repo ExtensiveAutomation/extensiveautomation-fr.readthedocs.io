@@ -120,7 +120,7 @@ Code couleur:
   Les messages affichés par le test avec la fonction ``Trace(self).info()`` sont disponibles dans le 
   rapport en cliquant sur le lien ``[logs details]``.
   
-  Les erreurs sont aussi affichées en cliquant sur le lien ``[logs details]``.
+  Les erreurs sont aussi affichées en cliquant sur le lien ``[errors details]``.
 
 
 Accès aux logs complémentaires

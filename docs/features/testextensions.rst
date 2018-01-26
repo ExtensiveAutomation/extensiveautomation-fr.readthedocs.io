@@ -334,13 +334,14 @@ Il peut etre utilisé depuis un etst pour exporter des résultats sans intervent
 
 Exemple d'utilisation:
 
-  HP ALM 
-    |------> Appel REST API ------- ->   ET 
-    |                                    |
-    ^                                    v
+::
+
+    HP ALM ------> Appel REST API -----> ET 
+    ^                                    |
+    |                                    v
     |                             Exécution du test demandé
-    |                                    |
-    |<-------- Push du résultat ---------|
+    |                                    v
+    +<-------- Push du résultat ---------+
     
     
 .. note:: 

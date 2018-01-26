@@ -261,7 +261,7 @@ Liste des actions disponibles:
 +---------------------------+-----------------------------------------------------------------+
 
  
-**Actions javascript **	
+**Actions javascript**	
 
 +------------------------------------+-----------------------------------------------------------------+
 | EXECUTE JAVASCRIPT ON HTML ELEMENT |  Permet d'injecter du javascript script sur un élement html     |

@@ -1,4 +1,4 @@
-Exemples avanc�s
+﻿Exemples avancés
 ===================
 
 Utilisation de l'agent adb
