@@ -52,7 +52,6 @@ Bienvenue sur la documentation ExtensiveTesting!
    features/testlibrary
    features/testreporting
    features/testextensions
-   features/taskmanager
    features/advanced_functions
    features/examples
    

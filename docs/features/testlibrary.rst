@@ -1,5 +1,5 @@
-Les fondamenteaux
-=============
+Les fondamentaux
+================
 
 Le framework de test fournit un cadre permettant de normaliser la création des cas de tests.
 
@@ -51,24 +51,21 @@ La définition des étapes du test doit être faite dans la section ``descriptio
 					)
   
 
-Le résultat d'une étape est à préciser dans la section ``description``
+Le résultat d'une étape est à préciser dans la section ``definition``
 
-Exemple pour mettre le résultat à ``PASS``
+Exemple pour mettre le résultat à ``PASS`` ou ``FAILED``
 
 .. code-block:: python
 
   self.step1.setPassed(actual="step executed as expected")
   
-
-Exemple pour mettre le résultat à ``FAILED``
-
-.. code-block:: python
-
   self.step1.setFailed(actual="error to run the step")
-  
+
 .. warning:: Il ne faut pas oublier de démarrer une étape avec la fonction ``start`` sinon il n'est pas possible de mettre le résultat.
 
 .. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme ``UNDEFINED``.
+
+.. important:: Une étape positionnée à FAILED ne pourra pas devenir PASS par la suite dans un test.
 
 Annulation d'un test
 -------------------
@@ -239,10 +236,10 @@ Exemple demandant le nom de la personne:
 
 .. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument ``default``.
 
-Les variables d'un test
+Paramètres d'un test
 -----------------------
 
-Variables entrantes
+Les entrants
 ~~~~~~~~~~~~~~~~~~
 
 Les paramètres entrants (inputs) sont à utiliser pour ajouter des variables sur un test.
@@ -310,31 +307,13 @@ Les variables sont accessibles depuis un test avec la fonction ``input(...)``
 
   input('DEBUG')
   
+**Le paramètre custom**
 
-.. note:: Le nom d'un paramètre est unique et obligatoirement en majuscule.
-  
-Variable personnalisable
-~~~~~~~~~~~~~~~
+Le type ``custom`` permet de construire des paramètres utilisants d'autre paramètre ou le cache.
+Ils est donc possible d'utiliser des mots clés qui seront interprétés par le framework de test 
+au moment de l'exécution.
 
-Ce type de paramètre ``custom`` permet de construire des valeurs appelant d'autres variables.
-
-Prenons l'exemple d'un test contenant les 2 variables suivantes:
- - DEST_IP avec la valeur 192.168.1.1
- - DEST_PORT avec la valeur 8080
-
-Le type ``custom`` va nous permettre de construire une 3ième variable 
- - DEST_URL avec la valeur 
- 
-   .. code-block:: bash
-     
-       https://[!INPUT:DEST_IP:]:[!INPUT:DEST_PORT]/welcome
-       
-
-Le mot clé ``[!INPUT:<NOM_VARIABLE_ENTRANTE:]`` permet d'appeler une autre variable entrante.
-Le framework remplacera au moment de l'exécution du test les différents mots clés avec la valeur associée.
-On obtiendra comme valeur https://192.168.1.1:8080/welcome pour la variable DEST_URL.
-
-Liste des mots clés disponibles dans la variable ``custom``:
+Liste des mots clés disponibles:
 
 +-------------------+--------------------------------------------------------------------+
 | Mots clés         |   Description                                                      |
@@ -344,13 +323,10 @@ Liste des mots clés disponibles dans la variable ``custom``:
 | ``[!CACHE:   :]`` |  Permet de récupérer une valeur présente dans le cache             |
 +-------------------+--------------------------------------------------------------------+
 
-Variable de type alias
-~~~~~~~~~~~~~~
+.. note:: Le nom d'un paramètre est unique et obligatoirement en majuscule.
 
-Un alias de paramètre peut être utilisé durant la définition d'un test plan.
-La création d'un alias permet de changer le nom d'un paramètre sans changer le nom initial.
 
-Variable agents
+Les agents
 ~~~~~~~~~~~~~~
 
 Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé ``agent()``.
@@ -367,3 +343,5 @@ Il est possible d'accéder à la liste des agents depuis un test en utilisant le
                                             agent=agent('AGENT_SOCKET')
                                            )
   
+Les probes
+~~~~~~~~~~~~~~

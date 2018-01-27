@@ -1,8 +1,8 @@
 La traçabilité
 ===========
 
-Exécution évènementielle
------------------------
+Evènements
+----------
 
 L'exécution évènementielle permet d'avoir des tests robustes grâce à la définition des intervalles d'observations.
 L'approche consiste à écrire les tests avec le formalisme suivant:
@@ -56,8 +56,8 @@ Définition du code couleur:
 |Jaune            |   La valeur attendue n'a pas été vérifiée                        |
 +-----------------+------------------------------------------------------------------+
 
-Génération des rapports
------------------------
+Rapports de tests
+-----------------
 
 Après chaque exécution d'un test, le framework génère automatiquement les rapports de tests associés.
 
@@ -123,8 +123,8 @@ Code couleur:
   Les erreurs sont aussi affichées en cliquant sur le lien ``[errors details]``.
 
 
-Accès aux logs complémentaires
-------------------------------
+Logs
+----
 
 Le framework permet d'enregistrer des logs durants l'exécution d'un test.
 
