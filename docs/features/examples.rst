@@ -12,7 +12,7 @@ La configuration de l'adaptateur consiste à indiquer à minima:
  
 Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_TELNET = SutAdapters.Telnet.Client(
                                             parent=self, 
@@ -25,7 +25,7 @@ Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
    
 Exemple pour se connecter ou se déconnecter du serveur distant
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_TELNET.connect()
   connected = self.ADP_TELNET.isConnected( timeout=input('TIMEOUT') )
@@ -38,7 +38,7 @@ Exemple pour se connecter ou se déconnecter du serveur distant
 
 Exemple montrant comment attendre la réception d'un texte en particulier.
 
-.. code-block: python
+.. code-block:: python
   
   rsp = self.ADP_TELNET.hasReceivedData( 
                                         timeout=input('TIMEOUT'), 
@@ -70,7 +70,7 @@ La configuration de l'adaptateur consiste à indiquer à minima:
  
 Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_MYSQL = SutAdapters.Database.MySQL(
                                         parent=self, 
@@ -86,7 +86,7 @@ Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 Exemple pour se connecter ou se déconnecter du serveur distant:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_MYSQL.connect(dbName=input('MYSQL_DB'), timeout=input('TIMEOUT'))
 
@@ -95,7 +95,7 @@ Exemple pour se connecter ou se déconnecter du serveur distant:
 
 Exemple pour exécuter une requête SQL dans la base de donnée:
 
-.. code-block: python
+.. code-block:: python
   
   query = 'SELECT id FROM `%s-users` WHERE login="admin"' % input('TABLE_PREFIX')
   self.ADP_MYSQL.query(query=query)
@@ -115,7 +115,7 @@ La configuration de l'adaptateur consiste à indiquer à minima:
  
 Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_SNMP = SutAdapters.SNMP.TrapReceiver(
                                                 parent=self, 
@@ -129,7 +129,7 @@ Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 Exemple pour démarrer l'écoute du serveur
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_SNMP.startListening()
   listening = self.ADP_SNMP.udp().isListening( timeout=get('TIMEOUT') )
@@ -138,7 +138,7 @@ Exemple pour démarrer l'écoute du serveur
 
 Exemple pour attendre la réception d'une alarme:
 
-.. code-block: python
+.. code-block:: python
   
   trap = self.UDP_ADP.hasReceivedTrap(
                                         timeout=input('TIMEOUT'), 
@@ -176,7 +176,7 @@ La configuration de l'adaptateur consiste à indiquer à minima:
  
 Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_FTP = SutAdapters.FTP.Client(
                                         parent=self,
@@ -191,7 +191,7 @@ Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 Exemple pour se connecter ou déconnecter du serveur FTP:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_FTP.connect(passiveMode=True)
   if self.ADP_FTP.isConnected(timeout=input('TIMEOUT')) is None:
@@ -203,7 +203,7 @@ Exemple pour se connecter ou déconnecter du serveur FTP:
   Trace(self).info("SFTP connection OK" )
   
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_FTP.disconnect()
   if self.ADP_FTP.isDisconnected(timeout=input('TIMEOUT')) is not None:
@@ -213,7 +213,7 @@ Exemple pour se connecter ou déconnecter du serveur FTP:
 
 Exemple pour lister le contenu d'un répertoire:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_FTP.listingFolder()
   if self.ADP_FTP.hasFolderListing(timeout=input('TIMEOUT')) is not None:
@@ -222,7 +222,7 @@ Exemple pour lister le contenu d'un répertoire:
 
 Exemple pour détecter un fichier dans un répertoire avec une expression régulière:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_FTP.waitForFile(
                             path='/var/log/', 
@@ -258,7 +258,7 @@ La configuration de l'adaptateur consiste à indiquer à minima:
  
 Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_SFTP = SutAdapters.SFTP.Client(
                                             parent=self, 
@@ -273,7 +273,7 @@ Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 Exemple pour se connecter et déconnecter du serveur:
 
-.. code-block: python
+.. code-block:: python
   
   connected = self.ADP_SFTP.doConnect(timeout=input('TIMEOUT'))
   if not connected: Test(self).interrupt("sftp connect failed")
@@ -286,7 +286,7 @@ Exemple pour se connecter et déconnecter du serveur:
 
 Exemple pour lister le contenu d'un répertoire:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_SFTP.listingFolder(
                             path="/var/log/", 
@@ -301,7 +301,7 @@ Exemple pour lister le contenu d'un répertoire:
 
 Exemple pour détecter un fichier dans un répertoire avec une expression régulière:
 
-.. code-block: python
+.. code-block:: python
   
   self.ADP_SFTP.waitForFile(
                             path='/var/log/', 
@@ -330,14 +330,14 @@ L'intérêt principal de cette librairie est de pouvoir intégrer des graphiques
 
 Exemple de configuration de la librairie dans la section ``prepare`` du test.
 
-.. code-block: python
+.. code-block:: python
   
   self.LIB_CHART = SutLibraries.Media.ChartJS(parent=self, name=None, debug=False)
   
 
 Exemple pour générer un graphique de type barre et l'intégrer dans le rapport
 
-.. code-block: python
+.. code-block:: python
   
   # génération de données 
   labelsAxes = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
@@ -369,7 +369,7 @@ Le graphique est inséré automatiquement dans le rapport avancé.
 
   
 Paramètre de tests "custom"
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Le paramètre de test ``custom`` permet de construire des valeurs appelant d'autres variables.
 
@@ -402,17 +402,17 @@ Exemple de résultat après exécution:
 
 
 Paramètre de tests "alias"
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Un alias de paramètre peut être utilisé durant la définition d'un test plan.
 La création d'un alias permet de changer le nom d'un paramètre sans changer le nom initial.
 
 Utilisation d'une sonde
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 todo
 
 Utilisation d'un agent
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 todo

@@ -1,7 +1,7 @@
 Le moteur d'exécutions
 ======================
 
-Ordonnanceur
+L'ordonnanceur
 --------------
 
 Programmation des exécutions
@@ -17,7 +17,7 @@ L'ordonnanceur présent dans le serveur permet de programmer l'exécution des te
 
 .. image:: /_static/images/testlibrary/test_scheduling.png
    
-Gestion des tâches
+La gestion des tâches
 ~~~~~~~~~~~~~~~~~~
 
 Les actions suivantes sont disponibles pour gérer les tâches programmées par les utilisateurs:
@@ -47,57 +47,51 @@ Il est possible de sélectionner les tests et de choisir s'ils seront
 Exécutions synchronisées
 -----------------------
 
-todo
-
 Partage des adaptateurs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The shared mode is a feature used with adapters and libraries. When this mode is enabled, you can share adapters between several tests in a test plan.
+La fonction ``mode partagé`` permet de réutiliser le même adaptateur dans plusieurs cas de test.
+Ce mode est à utiliser dans un scénario (test plan) ou un test suite avec plusieurs cas de tests.
 
-An example, you need to execute a application and inspect the behaviour of logs received on a syslog server during the execution of your test. With a test plan in shared mode:
+Voici un exemple d'utilisation possible:
+ - le test vérifie une application 
+ - en arrière plan le test vérifie aussi en temps réel les logs générés par l'application
+ - Il est donc possible d'influer sur le résultat du test en fonction de ce qui est trouvé dans les logs.
 
-    You can inspect in background the syslog server
-    Make actions to test the application
-    Modify the test in realtime according the logs read from the syslog server.
-    
-Activate the shared mode on a adapter
+Pour activer le mode partagé, il faut mettre à True le paramètre ``shared``:
 
-The shared mode is supported on all adapters, to activate this mode, you must change the shared argument to True When this mode is activated, the adapter continue to run in background.
+.. code-block:: python
+  
+  self.ADP_EXAMPLE = SutAdapters.Dummy.Adapter(
+                                                parent=self, 
+                                                debug=False, 
+                                                name="MY_ADAPTER", 
+                                                shared=True
+                                            )
 
-    Click on the button to create a new test
 
-    Initialize the adapter on the prepare section of your test. Activate the shared mode, define also the name as below:
+.. note:: Il est important de donner un nom à son adaptateur.
 
-    self.ADP_EXAMPLE = SutAdapters.Dummy.Adapter(
-                                                    parent=self, 
-                                                    debug=False, 
-                                                    name="MY_ADAPTER", 
-                                                    shared=True
-                                                )
+Après initilisation de l'adaptateur il est possible de récupérer un adaptateur
+depuis un autre cas de test en le recherchant par son nom.
 
-    Save this test in the remote repository
-
-    Create a test plan and import the previous test.
-
-Retrieve a adapter from a testcase
-
-    Click on the button to create a new test
-
-    Add the following lines in the prepare section
-
-    self.ADP_EXAMPLE = self.findAdapter(name="MY_ADAPTER")
-    if self.ADP_EXAMPLE is None: Test(self).interrupt("unable to find the adapter")
-
-    Import this test in the test plan created before.
-
-    Execute the test, on the second testcase, you will interact with the adapter initialized from the first testcase.
-
+.. code-block:: python
+  
+  self.ADP_EXAMPLE = self.findAdapter(name="MY_ADAPTER")
+  if self.ADP_EXAMPLE is None: Test(self).interrupt("unable to find the adapter")
+  
 
 Partage de donnée
 ~~~~~~~~~~~~~~~~~
 
+Le cache étant unique lorsqu'un test (peu importe le type) est exécuté, il est possible d'échanger des données
+entre plusieurs cas de test.
 
-todo
+Un premier test peut enregistrer une donnée dans le cache et un 2ième test peut récupérer la valeur 
+stockée par le 1er test.
+
+Automate
+~~~~~~~~
 
 Exécutions distribuées
 ----------------------
