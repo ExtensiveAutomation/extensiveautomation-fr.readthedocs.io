@@ -1,5 +1,5 @@
-Framework de test
-================
+Les fondamenteaux
+=============
 
 Le framework de test fournit un cadre permettant de normaliser la création des cas de tests.
 

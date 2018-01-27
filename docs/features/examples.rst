@@ -4,263 +4,251 @@
 Adaptateur Telnet
 --------------
 
-This sample show how to use the TELNET client adapter. This adapter enables to connect to server through the TELNET protocol.
+L'adaptateur ``Telnet`` permet de se connecter sur des machines disposant une interface telnet.
 
-The following explanations are based on the sample available on /Samples/Tests_Adapters/12_Telnet.tsx
-Adapter configuration
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant 
+ - le port du serveur distant (par défaut 23)
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-    Configure your adapter in the prepare section of your test
+.. code-block: python
+  
+  self.ADP_TELNET = SutAdapters.Telnet.Client(
+                                            parent=self, 
+                                            destIp=input('TELNET_IP'), 
+                                            destPort=input('TELNET_PORT'),
+                                            debug=input('DEBUG'),
+                                            agentSupport=input('SUPPORT_AGENT')
+                                            )
+                                                
+Exemple pour se connecter ou se déconnecter du serveur distant
 
-    self.ADP_TELNET = SutAdapters.Telnet.Client(
-                                                parent=self, 
-                                                destIp=input('TELNET_IP'), 
-                                                destPort=input('TELNET_PORT'),
-                                                debug=input('DEBUG'),
-                                                agentSupport=input('SUPPORT_AGENT')
-                                                )
+.. code-block: python
+  
+  self.ADP_TELNET.connect()
+  connected = self.ADP_TELNET.isConnected( timeout=input('TIMEOUT') )
+  if not connected: Test(self).interrupt( 'unable to connect' )
 
-    with the following parameters
-    Input 	Type 	Value
-    DEBUG 	boolean 	False
-    TELNET_IP 	string 	192.168.1.1
-    TELNET_PORT 	integer 	22
-    SUPPORT_AGENT 	boolean 	False
+  self.ADP_TELNET.disconnect()
+  disconnected = self.ADP_TELNET.isDisconnected( timeout=input('TIMEOUT') )
+  if not disconnected: Test(self).interrupt( 'unable to disconnect' )
 
-Make connection and disconnection
+Exemple montrant comment attendre la réception d'un texte en particulier.
 
-    In the definition part, copy/paste the following lines to make connection
-
-    self.ADP_TELNET.connect()
-    connected = self.ADP_TELNET.isConnected( timeout=input('TIMEOUT') )
-    if not connected: Test(self).interrupt( 'unable to connect' )
-
-    Copy/paste the following line to make a disconnection from your machine
-
-    self.ADP_TELNET.disconnect()
-    disconnected = self.ADP_TELNET.isDisconnected( timeout=input('TIMEOUT') )
-    if not disconnected: Test(self).interrupt( 'unable to disconnect' )
-
-Use operators to detect specific data
-
-    Copy/paste the following line to wait specific data
-
-    rsp = self.ADP_TELNET.hasReceivedData( 
-                                            timeout=input('TIMEOUT'), 
-                                            dataExpected=TestOperators.Contains(needle='Password:') )
+.. code-block: python
+  
+  rsp = self.ADP_TELNET.hasReceivedData( 
+                                        timeout=input('TIMEOUT'), 
+                                        dataExpected=TestOperators.Contains(needle='Password:') )
                                         )
-    if rsp is None: Test(self).interrupt( 'Password prompt not found' )
+  if rsp is None: Test(self).interrupt( 'Password prompt not found' )
 
-Notes:
+Exemple pour envoyer des données au serveur distant
 
-    Telnet responses can be splitted in severals events, so you new to retrieve properly all events to create the complete response.
-    Please to use the make your own adapter with a codec if this behaviour is problematic for you.
+<à insérer>
 
+.. warning: les réponses telnet peuvent être splittées en plusieurs évènements, il faut donc faire attention quand on
+recherche un texte en particulier. Pour se prémunir de ce problème, il faut ajouter un buffer intermédiare, il y a un
+exemple complet avec l'adaptateur ``Catalyst``.
+
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Adapters/12_Telnet.tsx``.
     
 Adaptateur MySQL
 --------------
 
-This sample show how to use the MySQL client adapter. The following explanations are based on the sample available on /Samples/Tests_Adapters/15_Database.tsx
-Adapter configuration
+L'adaptateur ``MySQL`` permet de se connecter sur une base donnée distante.
 
-    Configure your adapter in the prepare section of your test
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant 
+ - le port du serveur distant (par défaut xxxx)
+ - le nom d'utilisateur
+ - le mot de passe associé
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-    self.ADP_MYSQL = SutAdapters.Database.MySQL(
-                                            parent=self, 
-                                            host=input('HOST_DST'), 
-                                            user=input('MYSQL_LOGIN'),
-                                            password=input('MYSQL_PWD'), 
-                                            debug=input('DEBUG'), 
-                                            verbose=input('VERBOSE'),
-                                            agent=agent('AGENT_DB'), 
-                                            agentSupport=input('SUPPORT_AGENT')
+.. code-block: python
+  
+  self.ADP_MYSQL = SutAdapters.Database.MySQL(
+                                        parent=self, 
+                                        host=input('HOST_DST'), 
+                                        user=input('MYSQL_LOGIN'),
+                                        password=input('MYSQL_PWD'), 
+                                        debug=input('DEBUG'), 
+                                        verbose=input('VERBOSE'),
+                                        agent=agent('AGENT_DB'), 
+                                        agentSupport=input('SUPPORT_AGENT')
                                         )
 
-    with the following parameters
-    Input 	Type 	Value
-    DEBUG 	boolean 	False
-    VERBOSE 	boolean 	False
-    MYSQL_LOGIN 	string 	admin
-    MYSQL_PWD 	string 	admin
-    HOST_DST 	string 	192.168.1.1
-    SUPPORT_AGENT 	boolean 	False
+Exemple pour se connecter ou se déconnecter du serveur distant:
 
-Make connection and disconnection
+.. code-block: python
+  
+  self.ADP_MYSQL.connect(dbName=input('MYSQL_DB'), timeout=input('TIMEOUT'))
 
-    In the definition part, copy/paste the following lines to make connection. You need to provide the database
+  self.ADP_MYSQL.disconnect()
 
-    self.ADP_MYSQL.connect(dbName=input('MYSQL_DB'), timeout=input('TIMEOUT'))
+  
+Exemple pour exécuter une requête SQL dans la base de donnée:
 
-    Copy/paste the following line to make a disconnection from your machine
-
-    self.ADP_MYSQL.disconnect()
-
-Execute sql query
-
-    Copy/paste the following lines to execute a sql query in the table.
-
-    query = 'SELECT id FROM `%s-users` WHERE login="admin"' % input('TABLE_PREFIX')
-    self.ADP_MYSQL.query(query=query)
-    rsp = self.ADP_MYSQL.hasReceivedRow(timeout=input('TIMEOUT'))
-
-
-    
+.. code-block: python
+  
+  query = 'SELECT id FROM `%s-users` WHERE login="admin"' % input('TABLE_PREFIX')
+  self.ADP_MYSQL.query(query=query)
+  rsp = self.ADP_MYSQL.hasReceivedRow(timeout=input('TIMEOUT'))
+ 
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Adapters/15_Database.tsx``.
+ 
 Adaptateur SNMP
 --------------
 
-This sample show how to use the SNMP client adapter. This adapter enables to receive SNMP trap v1 or v2:
+L'adaptateur ``SNMP`` permet de recevoir des alarmes SNMP v1 ou v2.
 
-The following explanations are based on the sample available on /Samples/Tests_Adapters/18_SNMP.tsx
-Adapter configuration
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse d'écoute
+ - le port d'écoute
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-    Configure your adapter in the prepare section of your test
-
-    self.ADP_SNMP = SutAdapters.SNMP.TrapReceiver(
-                                                    parent=self, 
-                                                    bindIp=get('SRC_IP'), 
-                                                    bindPort=get('SRC_PORT'), 
-                                                    debug=get('DEBUG'),
-                                                    agent=agent('AGENT_SOCKET'), 
-                                                    agentSupport=input('SUPPORT_AGENT')
+.. code-block: python
+  
+  self.ADP_SNMP = SutAdapters.SNMP.TrapReceiver(
+                                                parent=self, 
+                                                bindIp=get('SRC_IP'), 
+                                                bindPort=get('SRC_PORT'), 
+                                                debug=get('DEBUG'),
+                                                agent=agent('AGENT_SOCKET'), 
+                                                agentSupport=input('SUPPORT_AGENT')
                                                 )
 
-    with the following parameters
-    Input 	Type 	Value
-    DEBUG 	boolean 	False
-    SRC_IP 	string 	0.0.0.0
-    SRC_PORT 	integer 	162
-    SUPPORT_AGENT 	boolean 	False
+Exemple pour démarrer l'écoute du serveur
 
-Checking snmp trap
+.. code-block: python
+  
+  self.ADP_SNMP.startListening()
+  listening = self.ADP_SNMP.udp().isListening( timeout=get('TIMEOUT') )
+  if not listening: Test(self).interrupt( 'UDP not listening' )
 
-    In the definition part, copy/paste the following lines to start to listen
+Exemple pour attendre la réception d'une alarme:
 
-    self.ADP_SNMP.startListening()
-    listening = self.ADP_SNMP.udp().isListening( timeout=get('TIMEOUT') )
-    if not listening: Test(self).interrupt( 'UDP not listening' )
+.. code-block: python
+  
+  trap = self.UDP_ADP.hasReceivedTrap(
+                                        timeout=input('TIMEOUT'), 
+                                        version=SutAdapters.SNMP.TRAP_V1, 
+                                        community=None, 
+                                        agentAddr=None, 
+                                        enterprise=None,
+                                        genericTrap=None, 
+                                        specificTrap="17", 
+                                        uptime=None, 
+                                        requestId=None, 
+                                        errorStatus=None, 
+                                        errorIndex=None
+                                      )
+  if trap is None:  Test(self).interrupt("trap expected not received")
 
-    Copy/paste the following line to check the reception of one specific trap
 
-    trap = self.UDP_ADP.hasReceivedTrap(
-                                            timeout=input('TIMEOUT'), 
-                                            version=SutAdapters.SNMP.TRAP_V1, 
-                                            community=None, 
-                                            agentAddr=None, 
-                                            enterprise=None,
-                                            genericTrap=None, 
-                                            specificTrap="17", 
-                                            uptime=None, 
-                                            requestId=None, 
-                                            errorStatus=None, 
-                                            errorIndex=None
-                                        )
-    if trap is None:  Test(self).interrupt("trap expected not received")
-
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Adapters/18_SNMP.tsx``.
 
     
 Adaptateur FTP(s)
 --------------
 
-This sample show how to use the FTP client adapter. This adapter enables to connect to server through the FTP protocol with support of:
+L'adaptateur ``FTP`` permet de se connecter sur des serveurs distants et supporte les fonctions suivantes:
+ - Connection en TLS
+ - Téléchargement ou récupation de fichiers ou répertoires
+ - Ajout/suppression et renommage de fichiers ou répertoires
+ - Lister le contenu d'un répertoires
+ - Détecter l'apparition d'un fichier ou répertoire avec le support des expressions régulières.
 
-    Secure channel with TLS
-    Download/upload files or folders
-    Add/rename/delete files or folders
-    List the content of a folder
-    Detect file or folder with regular expression support
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant
+ - le nom d'utilisateur pour se connecter
+ - le mot de passe
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-The following explanations are based on the sample available on /Samples/Tests_Adapters/21_Ftp.tsx
-Adapter configuration
+.. code-block: python
+  
+  self.ADP_FTP = SutAdapters.FTP.Client(
+                                        parent=self,
+                                        debug=input('DEBUG'),
+                                        destinationIp=input('FTP_HOST'),
+                                        user=input('FTP_USER'), 
+                                        password=input('FTP_PWD') ,
+                                        agentSupport=input('SUPPORT_AGENT')
+                                        )
 
-    Configure your adapter in the prepare section of your test
+ 
+Exemple pour se connecter ou déconnecter du serveur FTP:
 
-    self.ADP_FTP = SutAdapters.FTP.Client(
-                                            parent=self,
-                                            debug=input('DEBUG'),
-                                            destinationIp=input('FTP_HOST'),
-                                            user=input('FTP_USER'), 
-                                            password=input('FTP_PWD') ,
-                                            agentSupport=input('SUPPORT_AGENT')
-                                            )
+.. code-block: python
+  
+  self.ADP_FTP.connect(passiveMode=True)
+  if self.ADP_FTP.isConnected(timeout=input('TIMEOUT')) is None:
+      Test(self).interrupt("unable to connect")
 
-    with the following parameters
-    Input 	Type 	Value
-    DEBUG 	boolean 	False
-    FTP_USER 	string 	admin
-    FTP_PWD 	string 	admin
-    FTP_HOST 	string 	192.168.1.1
-    SUPPORT_AGENT 	boolean 	False
+  self.ADP_FTP.login()
+  if self.ADP_FTP.isLogged(timeout=input('TIMEOUT')) is None:
+      Test(self).interrupt("unable to login")
+  Trace(self).info("SFTP connection OK" )
 
-Make connection and disconnection
+.. code-block: python
+  
+  self.ADP_FTP.disconnect()
+  if self.ADP_FTP.isDisconnected(timeout=input('TIMEOUT')) is not None:
+     Test(self).interrupt("disconnect failed")
+  Trace(self).info("FTP disconnection OK" )
 
-    In the definition part, copy/paste the following lines to make connection with authentification.
+Exemple pour lister le contenu d'un répertoire:
 
-    self.ADP_FTP.connect(passiveMode=True)
-    if self.ADP_FTP.isConnected(timeout=input('TIMEOUT')) is None:
-        Test(self).interrupt("unable to connect")
+.. code-block: python
+  
+  self.ADP_FTP.listingFolder()
+  if self.ADP_FTP.hasFolderListing(timeout=input('TIMEOUT')) is not None:
+      Trace(self).error("unable to get listing folder")
 
+Exemple pour détecter un fichier dans un répertoire avec une expression régulière:
 
-    self.ADP_FTP.login()
-    if self.ADP_FTP.isLogged(timeout=input('TIMEOUT')) is None:
-        Test(self).interrupt("unable to login")
-
-
-    Trace(self).info("SFTP connection OK" )
-
-    Copy/paste the following line to make a disconnection from your machine
-
-    self.ADP_FTP.disconnect()
-    if self.ADP_FTP.isDisconnected(timeout=input('TIMEOUT')) is not None:
-        Test(self).interrupt("disconnect failed")
-
-
-    Trace(self).info("FTP disconnection OK" )
-
-List the content of a specific folder
-
-    In the definition part, copy/paste the following lines
-
-    self.ADP_FTP.listingFolder()
-    if self.ADP_FTP.hasFolderListing(timeout=input('TIMEOUT')) is not None:
-        Trace(self).error("unable to get listing folder")
-
-Detect a file in a specific folder with regular expression
-
-    In the definition part, copy/paste the following lines
-
-    self.ADP_FTP.waitForFile(
+.. code-block: python
+  
+  self.ADP_FTP.waitForFile(
                             path='/var/log/', 
                             filename='^messages-.*$', 
                             timeout=input('TIMEOUT')
                         )
 
 
-    found = self.ADP_FTP.hasDetectedFile(
+  found = self.ADP_FTP.hasDetectedFile(
                                         path=None, 
                                         filename=None, 
                                         timeout=input('TIMEOUT')
                                     )
-    if found is None: Trace(self).error("file not found")
+  if found is None: Trace(self).error("file not found")
 
-
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Adapters/21_Ftp.tsx``.
 
 Adaptateur SFTP
 ---------------
 
-This sample show how to use the SFTP client adapter.
- This adapter enables to manipulate files system in a remote system throught the SFTP procotol 
- (Secure File Transfer Protocol). Features supported:
+L'adaptateur ``SFTP`` permet de se connecter sur des serveurs disposants d'une interface SSH.
+Les fonctionnalités suivantes sont supportées:
+ - Téléchargement ou récupation de fichiers ou répertoires
+ - Ajout/suppression et renommage de fichiers ou répertoires
+ - Lister le contenu d'un répertoires
+ - Détecter l'apparition d'un fichier ou répertoire avec le support des expressions régulières.
+ 
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant
+ - le nom d'utilisateur pour se connecter
+ - le mot de passe
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
-    Download/upload files or folders
-    Add/rename/delete files or folders
-    List the content of a folder
-    Detect file or folder with regular expression support
-
-The following explanations are based on the sample available on /Samples/Tests_Adapters/22_Sftp.tsx
-Adapter configuration
-
-    Configure your adapter in the prepare section of your test
-
-    self.ADP_SFTP = SutAdapters.SFTP.Client(
+.. code-block: python
+  
+  self.ADP_SFTP = SutAdapters.SFTP.Client(
                                             parent=self, 
                                             login=input('LOGIN'), 
                                             password=input('PWD'),
@@ -270,94 +258,82 @@ Adapter configuration
                                             agentSupport=input('SUPPORT_AGENT')
                                         )
 
-    with the following parameters
-    Input 	Type 	Value
-    DEBUG 	boolean 	False
-    LOGIN 	string 	admin
-    PWD 	string 	admin
-    DEST_IP 	string 	192.168.1.1
-    DEST_PORT 	integer 	22
-    SUPPORT_AGENT 	boolean 	False
+Exemple pour se connecter et déconnecter du serveur:
 
-Make connection and disconnection
+.. code-block: python
+  
+  connected = self.ADP_SFTP.doConnect(timeout=input('TIMEOUT'))
+  if not connected: Test(self).interrupt("sftp connect failed")
+  self.info("SFTP connection OK" )
 
-    In the definition part, copy/paste the following lines to make connection with authentification.
+  disconnected = self.ADP_SFTP.doDisconnect(timeout=input('TIMEOUT'))
+  if not disconnected: Test(self).interrupt("disconnect failed")
+  self.info("SFTP disconnection OK" )
 
-    connected = self.ADP_SFTP.doConnect(timeout=input('TIMEOUT'))
-    if not connected: Test(self).interrupt("sftp connect failed")
+Exemple pour lister le contenu d'un répertoire:
 
-
-    self.info("SFTP connection OK" )
-
-    Copy/paste the following line to make a disconnection from your machine
-
-    disconnected = self.ADP_SFTP.doDisconnect(timeout=input('TIMEOUT'))
-    if not disconnected: Test(self).interrupt("disconnect failed")
-
-
-    self.info("SFTP disconnection OK" )
-
-List the content of a specific folder
-
-    In the definition part, copy/paste the following lines
-
-    self.ADP_SFTP.listingFolder(
+.. code-block: python
+  
+  self.ADP_SFTP.listingFolder(
                             path="/var/log/", 
                             extended=False
                             )
 
 
-    rsp = self.ADP_SFTP.hasFolderListing(timeout=input('TIMEOUT'))
-    if rsp is None: Trace(self).error("unable to get listing folder")
+  rsp = self.ADP_SFTP.hasFolderListing(timeout=input('TIMEOUT'))
+  if rsp is None: Trace(self).error("unable to get listing folder")
+  self.warning( rsp.get("SFTP", "result") )
 
 
-    self.warning( rsp.get("SFTP", "result") )
+Exemple pour détecter un fichier dans un répertoire avec une expression régulière:
 
-Detect a file in a specific folder with regular expression
-
-    In the definition part, copy/paste the following lines
-
-    self.ADP_SFTP.waitForFile(
+.. code-block: python
+  
+  self.ADP_SFTP.waitForFile(
                             path='/var/log/', 
                             filename='^messages-.*$', 
                             timeout=input('TIMEOUT')
                         )
 
 
-    found = self.ADP_SFTP.hasDetectedFile(
+  found = self.ADP_SFTP.hasDetectedFile(
                                         path=None, 
                                         filename=None, 
                                         timeout=input('TIMEOUT')
                                     )
-    if found is None: Trace(self).error("file not found")
+  if found is None: Trace(self).error("file not found")
 
 
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Adapters/22_Sftp.tsx``.
 
-Librairie Graphique
+
+Librairie ChartJS
 -------------------
 
-This feature enables to add charts in test report. Collects some data during the run of your test and display them in the test report with charts.
+L'adaptateur ``ChartJs``, basé sur la librairie javascript du même nom, permet de
+générer des graphiques pouvant être intégré dans une page html.
+L'intérêt principal de cette librairie est de pouvoir intégrer des graphiques dans le rapport de test.
 
-Adding a chart in test report
+Exemple de configuration de la librairie dans la section ``prepare`` du test.
 
-Click on the button to create a new test
+.. code-block: python
+  
+  self.LIB_CHART = SutLibraries.Media.ChartJS(parent=self, name=None, debug=False)
 
-Initialize the ChartJS library in the prepare section of your test
+Exemple pour générer un graphique de type barre et l'intégrer dans le rapport
 
-self.LIB_CHART = SutLibraries.Media.ChartJS(parent=self, name=None, debug=False)
+.. code-block: python
+  
+  # génération de données 
+  labelsAxes = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
+  dataA = [12, 19, 3, 5, 2, 3]
+  dataB = [22, 49, 3, 5, 23, 3]
+  legendDatas = ["tets", "test"]
+  backgroundColor = '#4BC0C0'
+  borderColor = '#36A2EB'
 
-Generate some fake data
-
-labelsAxes = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
-dataA = [12, 19, 3, 5, 2, 3]
-dataB = [22, 49, 3, 5, 23, 3]
-legendDatas = ["tets", "test"]
-backgroundColor = '#4BC0C0'
-borderColor = '#36A2EB'
-
-Generate the chart and put-it to the step
-
-myChart = self.LIB_CHART.barChart(
+  # génération du grahique
+  myChart = self.LIB_CHART.barChart(
                                     labelsAxes=labelsAxes, 
                                     datas=[dataA, dataB], 
                                     legendDatas=legendDatas, 
@@ -367,9 +343,10 @@ myChart = self.LIB_CHART.barChart(
                                     borderColors=[borderColor, backgroundColor],
                                     chartTitle="test"
                                 )
-self.step1.setPassed(actual="chart", chart=myChart)
+                                
+  # ajout du graphique dans le résultat de l'étape
+  self.step1.setPassed(actual="chart", chart=myChart)
 
-Go the test archives and load the test report, the chart will appears on the report.
+Le graphique est inséré automatiquement dans le rapport avancé.
 
 .. image:: /_static/images/examples/report_chart.png
-

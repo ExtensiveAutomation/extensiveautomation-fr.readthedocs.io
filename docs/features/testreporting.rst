@@ -1,5 +1,5 @@
-Gestion de la traçabilité
-==========================
+La traçabilité
+===========
 
 Exécution évènementielle
 -----------------------

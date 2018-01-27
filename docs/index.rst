@@ -53,6 +53,7 @@ Bienvenue sur la documentation ExtensiveTesting!
    features/testreporting
    features/testextensions
    features/taskmanager
+   features/advanced_functions
    features/examples
    
 .. _dev-docs:

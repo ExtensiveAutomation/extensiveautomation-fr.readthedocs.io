@@ -1,4 +1,4 @@
-Interopérabilité
+L'interopérabilité
 ===================
 
 Adaptateurs

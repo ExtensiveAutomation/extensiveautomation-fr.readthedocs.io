@@ -1,4 +1,4 @@
-Type de tests
+Les types de tests
 ============
 
 La solution se base sur différents types de tests pour:
