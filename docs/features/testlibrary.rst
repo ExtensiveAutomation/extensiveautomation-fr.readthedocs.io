@@ -65,7 +65,7 @@ Exemple pour mettre le résultat à ``PASS`` ou ``FAILED``
 
 .. note:: Il ne faut pas oublier de préciser le résultat d'une étape, sinon il sera considéré comme ``UNDEFINED``.
 
-.. important:: Une étape positionnée à FAILED ne pourra pas devenir PASS par la suite dans un test.
+.. important:: Une étape positionnée à ``FAILED`` ne pourra pas devenir ``PASS`` par la suite dans un test.
 
 Annulation d'un test
 -------------------
@@ -114,7 +114,7 @@ Les niveaux suivants sont disponibles:
  
 		Trace(self).error(txt="hello world")
 
-.. note:: Si un message de niveau `error` est affiché alors le résultat sera automatiquement mis à FAILED.
+.. note:: Si un message de niveau ``error`` est affiché alors le résultat sera automatiquement mis à ``FAILED``.
 
 .. note:: Les messages apparaissent automatiquement dans le rapport basique.
 

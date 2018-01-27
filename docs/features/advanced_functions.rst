@@ -42,6 +42,21 @@ Il est possible de sélectionner les tests et de choisir s'ils seront
  
 .. image:: /_static/images/client/group_run.png
 
+Depuis l'API, il faut utiliser la fonction ``/rest/tests/schedule/group``.
+
+.. code-block::
+  
+  {
+     "test": [
+                "Common:/Samples/Tests_Unit/02_A.tux",
+                "Common:/Samples/Tests_Unit/03_B.tux"
+             ],
+     "postpone-at": [],
+     "parallel-mode": False,
+     "postpone-mode": False
+  }
+  
+
 .. important: Il n'y a aucune garantie que les tests vont démarrer en même temps.
 
 Exécutions synchronisées

@@ -44,17 +44,41 @@ Exemple d'utilisation
 
 L'api est accessible à travers le port 443 (https) sur serveur de test via l'uri `/rest`.
 
-L'exemple ci-dessous montre comment exécuter un test avec une authentification basique
+L'exemple ci-dessous montre comment exécuter un test avec une authentification basique.
 
 .. code-block:: json
   
-  todo
+  POST /rest/tests/schedule HTTP/1.1
+  [...]
+  Authorization: Basic YWRtaW46N2UwMDExY2I3Y2ZhMGQ1MjM4NGQ1YWYyM2QyODBiMjUyM2EzMTA3ZA==
+  Content-Type: application/json; charset=utf-8 
+  [...]
   
+  {
+    "project-id": 1,
+    "schedule-at": [ 0, 0, 0, 0, 0, 0 ],
+    "schedule-id": -1,
+    "test-definition": "",
+    "test-execution": "",
+    "test-properties": [],
+    "test-extension": "tux",
+    "test-name": "01_Wait",
+    "test-path": "/Snippets/Do/",
+  }
+  
+
 La réponse reçue:
 
 .. code-block:: json
   
-  todo
+  {
+    "cmd": "/tests/schedule",
+    "message": "background"
+    "test-id": "a3f19398-b463-41e8-9e43-af86aac44a59",
+    "task-id": 17,
+    "tab-id": 0
+    "test-name": "01_Wait"
+  }
   
 
 
