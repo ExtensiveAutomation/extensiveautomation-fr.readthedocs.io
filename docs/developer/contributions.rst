@@ -406,19 +406,21 @@ L'échange de donnée entre le plugin et le client s'effectue avec des messages 
         
         class MainPage(QWidget):
            def insertData(self, data):
-  
-Exemple pour ajouter des traces dans la fenêtre graphique dédiée
+           
+Pour faciliter le troubleshooting, il est possible d'ajouter des traces depuis le plugin.
 
-.. code-block:: python
+ 1. Ajouter des traces dans la fenêtre graphique dédiée:
 
+  .. code-block:: python
+    
     self.core().debug().addLogWarning("my warning message")
     self.core().debug().addLogError( "my error message")
     self.core().debug().addLogSuccess("my success message" )
     
 
-Exemple pour ajouter des traces dans les logs:
+ 2. Ajouter des traces dans les fichiers de logs:
 
-.. code-block:: python
+  .. code-block:: python
 
     Logger.instance().debug("my debug message")
     Logger.instance().error("my error message")

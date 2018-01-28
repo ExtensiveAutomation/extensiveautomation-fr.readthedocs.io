@@ -31,7 +31,7 @@ La première utilisation consiste à créer un très simple premier cas de test 
    
    .. image:: /_static/images/client/client_new_trace.png
 
-4. Enregistrer le test dans le dépôt avec le nom "Test_A" dans le répertoire `Sandbox`
+4. Enregistrer le test dans le dépôt avec le nom "Test_A" dans le répertoire ``Sandbox``
    
    .. image:: /_static/images/client/client_new_save.png
 
@@ -65,7 +65,7 @@ Exécution d'un test
 
 .. note:: Ce mini guide part du principe que vous avez suivi les chapitres `Ecriture d'un test script` et `Ecriture d'un scénario`.
 
-L'exécution d'un test peut se faire en cliquant sur le bouton `Execute`.
+L'exécution d'un test peut se faire en cliquant sur le bouton ``Execute``.
 Ouvrir les tests `Test_A` et `Scenario_A` et les exécuter.
 
 .. image:: /_static/images/client/client_execute.png

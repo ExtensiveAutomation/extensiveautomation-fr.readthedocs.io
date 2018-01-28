@@ -16,7 +16,9 @@ L'ordonnanceur présent dans le serveur permet de programmer l'exécution des te
  - Exécuter le test une fois par semaine le ``jour de la semaine`` à une ``heure`` précise
 
 .. image:: /_static/images/testlibrary/test_scheduling.png
-   
+
+.. note:: Une tâche récursive sera automatiquement relancée par le serveur après un redémarrage.
+ 
 La gestion des tâches
 ~~~~~~~~~~~~~~~~~~
 
@@ -42,11 +44,12 @@ Il existe 2 options d'exécutions:
  
 .. image:: /_static/images/client/group_run.png
 
-Depuis l'API, il faut utiliser la fonction ``/rest/tests/schedule/group``.
+.. note:: 
+  Depuis l'API, il faut utiliser la fonction ``/rest/tests/schedule/group``.
 
-.. code-block::
-  
-  {
+  .. code-block:: json
+    
+    {
      "test": [
                 "Common:/Samples/Tests_Unit/02_A.tux",
                 "Common:/Samples/Tests_Unit/03_B.tux"
@@ -54,10 +57,10 @@ Depuis l'API, il faut utiliser la fonction ``/rest/tests/schedule/group``.
      "postpone-at": [],
      "parallel-mode": False,
      "postpone-mode": False
-  }
+    }
   
 
-.. important: Il n'y a aucune garantie que les tests vont démarrer en même temps.
+.. important:: Il n'y a aucune garantie que les tests vont démarrer en même temps avec ce mode d'exécution.
 
 Exécutions synchronisées
 -----------------------
@@ -107,11 +110,21 @@ entre plusieurs cas de test.
 Un premier test peut enregistrer une donnée dans le cache et un 2ième test peut récupérer la valeur 
 stockée par le 1er test.
 
-Automate
-~~~~~~~~
+Synchronisation
+~~~~~~~~~~~~~~~
+
+Une exécution synchronisée de plusieurs cas de test est possible en utilisant un scénario (testplan).
+Ce scénario doit contenir:
+ - un cas de test observateur
+ - un ou plusieurs cas de tests exécutant des actions en arrière plan
+
+Le test observateur doit être utilisé pour faire le lien entre les différents adaptateurs.
+
+.. important:: L'utilisation d'adaptateurs en mode partagé est obligatoire.
+
+.. note:: Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Non_Sequential``.
 
 Exécutions distribuées
 ----------------------
 
-
-todo
+La solution permet de faire des exécutions distribuées en utilisant des agents répartis à travers le réseaux.

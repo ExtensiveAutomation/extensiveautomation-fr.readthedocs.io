@@ -4,7 +4,7 @@ La traçabilité
 Les évènements
 ----------
 
-L'exécution d'un test se découpe en évènements, l'ensemble de ces évènements sont stockés et peuvent être visualisé après coup.
+L'exécution d'un test se découpe en évènements, l'ensemble de ces évènements sont stockés et peuvent être visualisés après coup.
 Un évènement peut représenter: 
  - une action effectuée par le framework de test
  - une action effectuée par le test
@@ -22,13 +22,13 @@ L'approche consiste à écrire les tests avec le formalisme suivant:
 Durant l'exécution d'un test, le framework capture tous les évènements générés par le système testé ou piloté.
 Les évènements sont ensuite convertis et stockés dans un message appelé ``modèle``.
 
-Un ``modèle`` se découpe en un ou plusieurs ``couche``.
-Un ``couche`` se définit par un ensemble de clé/valeur. La valeur d'une couche
+Un ``modèle`` se découpe en une ou plusieurs ``couches``.
+Une ``couche`` se définit par un ensemble de clé/valeur. La valeur d'une couche
 peut être une autre couche aussi.
  
 .. image:: /_static/images/testlibrary/template_message.png
   
-Des opérateurs sont disponibles pour faciliter la comparaison des messages reçus.
+Des opérateurs sont disponibles pour faciliter la comparaison des modèles reçus.
 
 +-----------------+-------------------------------------------------------------------+
 |Nom              |   Description                                                     |
