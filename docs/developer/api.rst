@@ -6,7 +6,7 @@ Authentification
 
 Il y a 2 méthodes pour s'authentifier sur l'API REST:
  - En utilisant un cookie de session
- - En réalisant une authentification basic
+ - En réalisant une authentification basique
  
 Basique
 ~~~~~~~~
@@ -21,19 +21,19 @@ Cette clé API peut être générée depuis le serveur de test en appelant le sc
   API Key Secret: c025e7a501f144a2e1b40f9f3a91c10a47c8b1d3
   API Key: YWRtaW46YzAyNWU3YTUwMWYxNDRhMmUxYjQwZjlmM2E5MWMxMGE0N2M4YjFkMw==
 
-Il faut ensuite ajouter l'header `Authorization` dans l'ensemble des requêtes.
+Il faut ensuite ajouter l'header ``Authorization`` dans l'ensemble des requêtes.
 
 .. code-block:: bash
 
   Authorization: Basic <mon_api_key>
 
-.. note:: Avec le mode Basic Auth, il n'est pas nécessaire d'appeler la fonction login.
+.. note:: Avec l'authentification basique, il n'est pas nécessaire d'appeler la fonction login.
 
 Cookie de session
 ~~~~~~~~~~~~~~~~~
 
-L'authentification par cookie nécessite d'appeler en prérequis la fonction `login` pour générer un cookie de session.
-Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `Cookie`.
+L'authentification par cookie nécessite d'appeler en prérequis la fonction ``login`` pour générer un cookie de session.
+Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header ``Cookie``.
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `
 Exemple d'utilisation
 ----------------
 
-L'api est accessible à travers le port 443 (https) sur serveur de test via l'uri `/rest`.
+L'api est accessible à travers le ``port 443`` (https) sur serveur de test via l'uri ``/rest``.
 
 L'exemple ci-dessous montre comment exécuter un test avec une authentification basique.
 
@@ -56,14 +56,10 @@ L'exemple ci-dessous montre comment exécuter un test avec une authentification 
   
   {
     "project-id": 1,
-    "schedule-at": [ 0, 0, 0, 0, 0, 0 ],
-    "schedule-id": -1,
-    "test-definition": "",
-    "test-execution": "",
-    "test-properties": [],
     "test-extension": "tux",
     "test-name": "01_Wait",
     "test-path": "/Snippets/Do/",
+    "test-inputs": [ {"name": "DURATION", "type": "int", "value": 5} ]
   }
   
 

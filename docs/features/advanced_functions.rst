@@ -33,12 +33,12 @@ L'ensemble de ses actions est réalisable depuis le client lourd ou bien depuis 
 Exécutions parallélisées
 ----------------------
 
-Ils est possible d'exécuter plusieurs tests en parallèle en utilisant la fonction ``Grouped``
+Il est possible d'exécuter plusieurs tests en parallèles en utilisant la fonction ``Grouped``
 Cette fonction est disponible à partir du client lourd ou bien depuis l'API.
 
-Il est possible de sélectionner les tests et de choisir s'ils seront 
- - exécutés l'un après l'autre (sans lien)
- - ou exécutés en parallèle
+Il existe 2 options d'exécutions:
+ - exécution des tests l'un après l'autre (sans lien)
+ - ou exécution en parallèle
  
 .. image:: /_static/images/client/group_run.png
 
@@ -69,11 +69,11 @@ La fonction ``mode partagé`` permet de réutiliser le même adaptateur dans plu
 Ce mode est à utiliser dans un scénario (test plan) ou un test suite avec plusieurs cas de tests.
 
 Voici un exemple d'utilisation possible:
- - le test vérifie une application 
- - en arrière plan le test vérifie aussi en temps réel les logs générés par l'application
+ - le scénario teste une application 
+ - en arrière plan le scénario vérifie aussi les logs générés par l'application
  - Il est donc possible d'influer sur le résultat du test en fonction de ce qui est trouvé dans les logs.
 
-Pour activer le mode partagé, il faut mettre à True le paramètre ``shared``:
+Pour activer le mode partagé, il faut mettre à True le paramètre ``shared`` et donner un nom à l'adaptateur:
 
 .. code-block:: python
   
@@ -85,7 +85,9 @@ Pour activer le mode partagé, il faut mettre à True le paramètre ``shared``:
                                             )
 
 
-.. note:: Il est important de donner un nom à son adaptateur.
+.. note:: 
+ Il est important de donner un nom à son adaptateur car ça permet de le retrouver plus facilement.
+ Si aucun nom n'est donné, le framework configure l'adaptateur avec un nom aléatoire.
 
 Après initilisation de l'adaptateur il est possible de récupérer un adaptateur
 depuis un autre cas de test en le recherchant par son nom.

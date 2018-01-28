@@ -118,7 +118,7 @@ Les niveaux suivants sont disponibles:
 
 .. note:: Les messages apparaissent automatiquement dans le rapport basique.
 
-Stockage des données
+Données
 --------------------
 
 Public
@@ -169,10 +169,8 @@ Exemple pour ajouter du texte dans un fichier de log déjà existant
 En cache
 ~~~~~
 
-Le framework de test permet de partager des données entre les cas de tests.
-Cette fonction peut être nécessaire lors de l'écriture d'un scénario de test avec un test plan.
-
-Le cache est de type clé/valeur.
+Le framework de test permet de stocker en cache des données sous la forme clé/valeur.
+Cette fonction peut être nécessaire pour partager des données entre tests lors de l'écriture d'un scénario par exemple.
 
 .. image:: /_static/images/testlibrary/client_cache.png
 
@@ -191,7 +189,7 @@ Lire une valeur depuis le cache
   Trace(self).warning(my_data)
   
 
-Exemple pour capturer une donnée avec une expression régulière et l'enregistrer dans le cache
+Exemple pour capturer une donnée avec une expression régulière et avec enregistrement dans le cache
 
 .. code-block:: python
  
@@ -201,6 +199,7 @@ Exemple pour capturer une donnée avec une expression régulière et l'enregistr
   
   Trace(self).info( txt=Cache().get(name="TIME") )
   
+.. important:: Le cache n'existe que durant l'exécution d'un test.
 
 Mettre en attente
 -----------------

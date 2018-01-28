@@ -1,8 +1,15 @@
 La traçabilité
 ===========
 
-Evènements
+Les évènements
 ----------
+
+L'exécution d'un test se découpe en évènements, l'ensemble de ces évènements sont stockés et peuvent être visualisé après coup.
+Un évènement peut représenter: 
+ - une action effectuée par le framework de test
+ - une action effectuée par le test
+ - une donnée reçue par le système à tester ou contrôler.
+ - une donnée à envoyer au système à tester ou contrôler.
 
 L'exécution évènementielle permet d'avoir des tests robustes grâce à la définition des intervalles d'observations.
 L'approche consiste à écrire les tests avec le formalisme suivant:
@@ -13,8 +20,12 @@ L'approche consiste à écrire les tests avec le formalisme suivant:
     * ou bien quand l'intervalle d'observation est terminé.
 
 Durant l'exécution d'un test, le framework capture tous les évènements générés par le système testé ou piloté.
-Les évènements sont ensuite convertis et stockés dans un message.
+Les évènements sont ensuite convertis et stockés dans un message appelé ``modèle``.
 
+Un ``modèle`` se découpe en un ou plusieurs ``couche``.
+Un ``couche`` se définit par un ensemble de clé/valeur. La valeur d'une couche
+peut être une autre couche aussi.
+ 
 .. image:: /_static/images/testlibrary/template_message.png
   
 Des opérateurs sont disponibles pour faciliter la comparaison des messages reçus.
@@ -56,7 +67,7 @@ Définition du code couleur:
 |Jaune            |   La valeur attendue n'a pas été vérifiée                        |
 +-----------------+------------------------------------------------------------------+
 
-Rapports de tests
+Les rapports de tests
 -----------------
 
 Après chaque exécution d'un test, le framework génère automatiquement les rapports de tests associés.
@@ -123,7 +134,7 @@ Code couleur:
   Les erreurs sont aussi affichées en cliquant sur le lien ``[errors details]``.
 
 
-Logs
+Les logs
 ----
 
 Le framework permet d'enregistrer des logs durants l'exécution d'un test.

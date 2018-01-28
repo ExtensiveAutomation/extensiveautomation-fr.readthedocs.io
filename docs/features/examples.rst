@@ -382,23 +382,23 @@ Prenons l'exemple d'un test contenant les 2 variables suivantes:
 Le type ``custom`` va nous permettre de construire une 3ième variable 
  - DEST_URL avec la valeur 
  
-   .. image:: /_static/images/testlibrary/custom_config.png
+   .. image:: /_static/images/examples/custom_config.png
 
 Le mot clé ``[!INPUT:<NOM_VARIABLE_ENTRANTE:]`` permet d'appeler une autre variable entrante.
 Le framework remplacera au moment de l'exécution du test les différents mots clés avec la valeur associée.
 On obtiendra comme valeur https://192.168.1.1:8080/welcome pour la variable DEST_URL.
 
-.. image:: /_static/images/testlibrary/custom_example.png
+.. image:: /_static/images/examples/custom_example.png
 
 Pour aller plus loin, il est aussi possible d'ajouter une valeur disponible depuis le cache.
 Partant du principe que la valeur "welcome?user=hello" est dans le cache et accessible via la clé "url_params".
 Il est possible de l'intégration dans le paramètre comme ci-dessous
 
-.. image:: /_static/images/testlibrary/custom_config_cache.png
+.. image:: /_static/images/examples/custom_config_cache.png
 
 Exemple de résultat après exécution:
 
-.. image:: /_static/images/testlibrary/custom_example_cache.png
+.. image:: /_static/images/examples/custom_example_cache.png
 
 
 Paramètre de tests "alias"
