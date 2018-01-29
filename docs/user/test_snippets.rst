@@ -421,6 +421,8 @@ Paramètre(s) pour configurer la requête HTTP à envoyer:
 | HTTP_REQ_URI    | URI appeler                     |
 +-----------------+---------------------------------+
 
+.. image:: /_static/images/examples/snippets_http_req.png
+
 Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
 
 +-------------------+----------------------------------------------------+
@@ -436,6 +438,8 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 +-------------------+----------------------------------------------------+
 | HTTP_RSP_VERSION  | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
 +-------------------+----------------------------------------------------+
+
+.. image:: /_static/images/examples/snippets_http_rsp.png
 
 .. note:: L'utilisation des expressions régulières est possible pour vérifier ou enregistrer une valeur dans le corps de la réponse ou bien dans les entêtes.
 

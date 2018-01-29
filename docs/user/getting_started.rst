@@ -30,7 +30,11 @@ La première utilisation consiste à créer un très simple premier cas de test 
 3. Modifier le test au niveau de la section ``definition`` pour afficher la valeur du paramètre.
    
    .. image:: /_static/images/client/client_new_trace.png
-
+   
+   Il est possible de vérifier la syntaxe du test avant exécution en cliquant sur le bouton suivant:
+   
+   .. image:: /_static/images/client/check_syntax.png
+   
 4. Enregistrer le test dans le dépôt avec le nom "Test_A" dans le répertoire ``Sandbox``
    
    .. image:: /_static/images/client/client_new_save.png
@@ -58,7 +62,10 @@ L'exemple suivant explique comment créer son premier scénario avec une surchar
 
 5. Ajouter le paramètre MON_PARAMETRE avec la valeur "au revoir" au niveau du scénario.
 
-.. tip:: Ne pas hésitez à définir un alias pour le nom du test pour rendre le scénario plus lisible.
+.. tip:: 
+  Ne pas hésitez à définir un alias pour le nom du test pour rendre le scénario plus lisible.
+
+  .. image:: /_static/images/client/snippets_alias.png
 
 Exécution d'un test
 -------------------
@@ -85,3 +92,25 @@ La 2ième fenêtre d'analyse montre l'exécution du test "Scenario_A" et notamme
 .. image:: /_static/images/client/test_result_surcharge.png
 
 Ce premier usage montre comment exécuter un test et un scénario ansi que la surcharge des variables de tests.
+
+
+Les bonnes pratiques
+---------------------
+
+.. tip::
+
+  Pour garder une bonne lisibilité dans les tests de type scripts, il ne faut pas utiliser de `try/except`.
+  Le framework intercepte toutes les exceptions à sont niveau.
+  
+.. tip::
+  
+  Il faut absolument prendre le temps de déclarer les étapes de tests car ils permettent 
+   - de comprendre rapidement le test sans le script.
+   - d'avoir des rapports de test pertinants et compréhensible.
+   
+.. tip::
+
+   Pour faciliter la maintenance de vos tests et les rendres réutilisables, 
+   il ne faut pas avoir de valeur en dur dans votre test.
+   Il faut systématiquement les mettres en paramètres de tests, c'est fait pour.
+   

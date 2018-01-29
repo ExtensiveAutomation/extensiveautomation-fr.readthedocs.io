@@ -232,6 +232,7 @@ Exemple demandant le nom de la personne:
 
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
+.. image:: /_static/images/testlibrary/client_interact.png
 
 .. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument ``default``.
 
@@ -343,4 +344,20 @@ Il est possible d'accéder à la liste des agents depuis un test en utilisant le
                                            )
   
 Les probes
-~~~~~~~~~~~~~~
+~~~~~~~~~~
+
+<TODO>
+
+Import/export des paramètres
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Les paramètres de tests peuvent être exportés dans un type de fichier dédié ``testconfig`` (tcx).
+Il est donc possible de travailler/préparer les paramètres sans avoir le test.
+
+.. image:: /_static/images/client/client_testconfig_export.png
+
+A l'inverse il est possible d'importer un fichier de configuration dans un test.
+L'import écrasera l'ensemble des paramètres si le nom est identique.
+
+.. image:: /_static/images/client/client_testconfig_import.png
+
