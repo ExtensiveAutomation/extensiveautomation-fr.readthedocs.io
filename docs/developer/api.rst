@@ -11,8 +11,8 @@ Il y a 2 méthodes pour s'authentifier sur l'API REST:
 Basique
 ~~~~~~~~
 
-L'authentification basique nécessite d'utiliser une clé API.
-Cette clé API peut être générée depuis le serveur de test en appelant le script ``/opt/xtc/current/Scripts/generate-apikey.py``
+L'authentification basique nécessite d'utiliser une clé API disponible depuis l'interface web.
+Il est possible de générer une nouvelle clé API en appelant le script ``/opt/xtc/current/Scripts/generate-apikey.py``
 
 .. code-block:: bash
   
