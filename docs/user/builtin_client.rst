@@ -76,9 +76,9 @@ Les tests peuvent être enrichis avec un certain nombre de propriétés.
 Les propriétés disponibles sont: 
  - la description du test (auteur, date de création, etc...)
  - les variables entrantes et sortantes
- - la définition des agents et sondes utilisés par le test
+ - la définition des agents et sondes utilisées par le test
  
-La fenêtre ``Test properties > Test Data > Inputs`` contient la liste des variables accessible depuis le test.
+La fenêtre ``Test properties > Test Data > Inputs`` contient la liste des variables accessibles depuis le test.
 L'ajout de variable peut se faire en faisant un clic droit 'Add parameter'.
 
 .. image:: /_static/images/client/workspace_tests_properties_inputs.png
@@ -106,7 +106,7 @@ Un clic droit sur la zone de dessin permet de choisir l'élement à ajouter.
 Conception textuelle
 ~~~~~~~~~~~~~~~~~~~~
 
-La conception d'un test en mode ``scripting`` est possible avec le test de type ``unit`` et ``suite``. 
+La conception d'un test en mode ``scripting`` est possible avec led testd de type ``unit`` et ``suite``. 
 Ce mode de conception nécessite des connaissances en développement, i.e. python.
 
 .. image:: /_static/images/client/workspace_new_test_unit_suite.png
@@ -126,7 +126,7 @@ Conception assistée
 ~~~~~~~~~~~~~~~~~~~
 
 L'assistant de conception permet d'écrire des tests sans connaissances en développement.
-Il couvre les différentes actions possibles:
+Il couvre les différentes actions suivantes:
  - Appel aux fonctions de base du framework de test
  - Test SSH
  - Test d'application avec capture d'écran (basé sur le projet Sikuli)

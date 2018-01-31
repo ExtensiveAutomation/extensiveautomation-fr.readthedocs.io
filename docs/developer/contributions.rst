@@ -269,38 +269,123 @@ Serveur
 
 Préparation de son environnement de développement sur un système Linux CentOS 6.5 et plus.
 
-
 Installation des paquets systèmes
 
 .. code-block:: bash
   
-  vim net-snmp-utils unzip zip gmp wget curl ntp nmap bind-utils
-  postfix dos2unix openssl openssl-devel tcpdump mlocate
-  mariadb-server mariadb mariadb-devel
-  httpd mod_ssl php php-mysql php-gd php-pear
-  python-lxml MySQL-python policycoreutils-python python-setuptools python-ldap
-  gcc python-devel Cython
-  java git libffi-devel
-  libpng-devel libjpeg-devel zlib-devel freetype-devel lcms-devel tk-devel tkinter
-  postgresql postgresql-libs postgresql-devel
+  vim 
+  net-snmp-utils
+  unzip
+  zip
+  gmp
+  wget
+  curl
+  ntp
+  nmap
+  bind-utils
+  postfix
+  dos2unix
+  openssl
+  openssl-devel
+  tcpdump
+  mlocate
+  mariadb-server
+  mariadb
+  mariadb-devel
+  httpd
+  mod_ssl
+  php
+  php-mysql
+  php-gd
+  php-pear
+  python-lxml
+  MySQL-python
+  policycoreutils-python
+  python-setuptools
+  python-ldap
+  gcc
+  python-devel
+  Cython
+  java
+  git
+  libffi-devel
+  libpng-devel
+  libjpeg-devel
+  zlib-devel
+  freetype-devel
+  lcms-devel
+  tk-devel
+  tkinter
+  postgresql
+  postgresql-libs
+  postgresql-devel
   
 
-Installation des libraries python supplémentaires
+Installation des libraries python
 
-six
-appdirs
-pyparsing
-packaging
-setuptools
-httplib2
-uuidlib
-pycrypto
-pyasn
-ply
-pysmi
-pysnmp
-freetds
-setuptools_git
+.. code-block:: bash
+  
+  six
+  appdirs
+  pyparsing
+  packaging
+  setuptools
+  httplib2
+  uuidlib
+  pycrypto
+  pyasn
+  ply
+  pysmi
+  pysnmp
+  freetds
+  setuptools_git
+  pymssql
+  ecdsa
+  pil
+  selenium
+  suds
+  requests
+  ntlm
+  kerberos
+  postgresql
+  xlrd
+  etxmlfile
+  jdcal
+  openxl
+  libpqxx
+  scandir
+  pycnic
+  xlwt
+  isodate
+  xml2dict
+  setuptools_scm
+  pytest
+  wcwidth
+  pyte
+  pysphere
+  pychef
+  idna
+  enum34
+  ipaddress
+  pycparser
+  cffi
+  orderddict
+  ntlm_auth
+  requests_ntlm
+  py_ntlm3
+  pywinrm
+  asn1crypto
+  cryptography
+  paramiko
+  jsonpath
+  wrapt
+  pbr
+  pytz
+  pyjenkins
+  snmap2
+  gitdb2
+  pygit
+  
 
 Développement plugins
 ----------------------

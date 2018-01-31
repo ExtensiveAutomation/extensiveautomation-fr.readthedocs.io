@@ -36,3 +36,9 @@ La boite à outils peut être enrichie avec de nouveaux plugins.
 
 Pour ce faire il faut suivre la procédure décrite dans le chapitre :doc:`developer\contributions` `Contributions > Développement plugins > Boites à outils`.
 Les plugins sont à déposer dans le répertoire ``Plugins``.
+
+.. image:: /_static/images/toolbox/toolbox_plugins_install.png
+
+Après redémarrage de la boite à outils, le complément apparait dans la liste des agents ``external``
+
+.. image:: /_static/images/toolbox/toolbox_plugins.png

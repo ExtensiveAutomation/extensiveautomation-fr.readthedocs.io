@@ -128,7 +128,7 @@ Un espace public est disponible sur le serveur de test. Cet espace permet de met
 
    .. image:: /_static/images/testlibrary/espace_public.png
 
-Les fichiers sont stockés dans le répertoire `/opt/xtc/current/Var/Public/` sur le serveur.
+Les fichiers sont stockés dans le répertoire ``/opt/xtc/current/Var/Public/`` sur le serveur.
 
 .. warning:: Cet espace est commun à l'ensemble des projets configurés sur le serveur.
 
@@ -232,6 +232,10 @@ Exemple demandant le nom de la personne:
 
   user_rsp = Interact(self).interact(ask="Your name?", timeout=30.0, default=None)
 	
+Depuis le client, l'onglet ``Interact`` apparait automatiquement pour répondre à la question posée durant
+l'exécution du test.
+Cette fenêtre est disponible depuis le fenêtre d'analyse.
+
 .. image:: /_static/images/testlibrary/client_interact.png
 
 .. note::  Si aucune réponse n'est fournie dans le temps imparti, il est possible de fournir une valeur par défaut avec l'argument ``default``.
@@ -329,6 +333,12 @@ Liste des mots clés disponibles:
 Les agents
 ~~~~~~~~~~~~~~
 
+
+.. image:: /_static/images/examples/client_properties_agent.png
+
+.. image:: /_static/images/examples/client_agent_support.png
+
+
 Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé ``agent()``.
 
 .. code-block:: python
@@ -346,7 +356,9 @@ Il est possible d'accéder à la liste des agents depuis un test en utilisant le
 Les probes
 ~~~~~~~~~~
 
-<TODO>
+
+.. image:: /_static/images/examples/probe_tab.png
+
 
 Import/export des paramètres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

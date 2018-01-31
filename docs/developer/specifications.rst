@@ -246,19 +246,32 @@ Organisation des résultats:
     Répertoire: <project_id>
         - Répertoire: <yyyy-mm-dd>
             - Répertoire: <yyyy-mm-dd_hh:mm:ss.testid.testname.username>
-                - Fichier: TESTPATH                                        # the real path of the test
-                - Fichier: test.out                                        # internal logs
-                - Fichier: test.ini                                        # internal settings for the test
-                - Fichier: <testname>_<replayid>.hdr                       # header of the result
-                - Fichier: <testname>_<replayid>_<result>_<nbcomments>.trv # all events occured during the test
-                - Fichier: <testname>_<replayid>.tbrp                      # basic report in html
+                - Fichier: TESTPATH 
+                - Fichier: test.out
+                - Fichier: test.ini
+                - Fichier: <testname>_<replayid>.hdr
+                - Fichier: <testname>_<replayid>_<result>_<nbcomments>.trv
+                - Fichier: <testname>_<replayid>.tbrp
                 - Fichier: <testname>_<replayid>.tdsx
                 - Fichier: <testname>_<replayid>.trd
-                - Fichier: <testname>_<replayid>.trp                       # report in html
+                - Fichier: <testname>_<replayid>.trp
                 - Fichier: <testname>_<replayid>.trpx
-                - Fichier: <testname>_<replayid>.trv                       # report in csv
+                - Fichier: <testname>_<replayid>.trv
                 - Fichier: <testname>_<replayid>.trvx
     
+
+Description des fichiers:
+
+ - ``TESTPATH`` contient le chemin d'accès complet pour le résultat de test
+ - ``test.out`` contient les logs interne du test, à utiliser pour débugger le framework de test
+ - ``test.ini`` contient des paramètres spécifiques au test
+ - ``<testname>_<replayid>.hdr`` réprésente l'entête du résultat de test
+ - ``<testname>_<replayid>_<result>_<nbcomments>.trv`` contient l'ensemble des évènements générés pendant l'exécution du tests
+ - ``<testname>_<replayid>.tbrp`` contient le rapport basique au format html
+ - ``<testname>_<replayid>.trp`` contient le rapport complet au format html
+ - ``<testname>_<replayid>.trv`` contient le rapport des résultats au format csv
+
+
 Contrôle Agents
 ---------------
 
@@ -277,37 +290,69 @@ Sens de communications disponibles:
  - Agent -> serveur -> adaptateur -> test
  - Test -> adaptateur -> serveur -> agent
  
-+------------------------------+--------------------------------------------+-------------------------------------------------------+
-|  Actions                     |               Agent                        |             Adaptateur                                |
-|  Possibles                   +----------------------+---------------------+------------------------+------------------------------+
-|                              |    Fonction          |   Callback          |    Fonction            |   Callback                   |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envoie d'un message "error"  | def sendError        |                     |                        |   def receivedErrorFromAgent |
-| depuis l'agent vers le test  |    * request         |                     |                        |        * data                |
-|                              |    * data            |                     |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envoie d'un message "notify" | def sendNotify       |                     |                        |  def receivedNotifyFromAgent |
-| depuis l'agent vers le test  |    * request         |                     |                        |        * data                |
-|                              |    * data            |                     |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envoie d'un message "data"   | def sendData         |                     |                        |  def receivedDataFromAgent   |
-| depuis l'agent vers le test  |    * request         |                     |                        |         * data               |
-|                              |    * data            |                     |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envoie d'un message "init"   |                      |  def onAgentInit    |  def initAgent         |                              |
-| depuis le test vers l'agent  |                      |    * client         |     * data             |                              |
-|                              |                      |    * tid            |                        |                              |
-|                              |                      |    * request        |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envoie d'un message "reset"  |                      |  def onAgentNotify  |  def resetAgent        |                              |
-| depuis le test vers l'agent  |                      |    * client         |                        |                              |
-|                              |                      |    * tid            |                        |                              |
-|                              |                      |    * request        |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
-| Envooit d'un message "notify"|                      |  def onAgentReset   | def sendNotifyToAgent  |                              |
-| depuis le test vers l'agent  |                      |    * client         |     * data             |                              |
-|                              |                      |    * tid            |                        |                              |
-|                              |                      |    * request        |                        |                              |
-+------------------------------+----------------------+---------------------+------------------------+------------------------------+
++------------------------------+--------------------------------------------+
+|  Actions                     |               Agent                        |
+|  Possibles                   +----------------------+---------------------+
+|                              |    Fonction          |   Callback          |
++------------------------------+----------------------+---------------------+
+| Envoie d'un message "error"  | def sendError        |                     |
+| depuis l'agent vers le test  |    * request         |                     |
+|                              |    * data            |                     |
++------------------------------+----------------------+---------------------+
+| Envoie d'un message "notify" | def sendNotify       |                     |
+| depuis l'agent vers le test  |    * request         |                     |
+|                              |    * data            |                     |
++------------------------------+----------------------+---------------------+
+| Envoie d'un message "data"   | def sendData         |                     |
+| depuis l'agent vers le test  |    * request         |                     |
+|                              |    * data            |                     |
++------------------------------+----------------------+---------------------+
+| Envoie d'un message "init"   |                      |  def onAgentInit    |
+| depuis le test vers l'agent  |                      |    * client         |
+|                              |                      |    * tid            |
+|                              |                      |    * request        |
++------------------------------+----------------------+---------------------+
+| Envoie d'un message "reset"  |                      |  def onAgentNotify  |
+| depuis le test vers l'agent  |                      |    * client         |
+|                              |                      |    * tid            |
+|                              |                      |    * request        |
++------------------------------+----------------------+---------------------+
+| Envooit d'un message "notify"|                      |  def onAgentReset   |
+| depuis le test vers l'agent  |                      |    * client         |
+|                              |                      |    * tid            |
+|                              |                      |    * request        |
++------------------------------+----------------------+---------------------+
 
 
++------------------------------+-------------------------------------------------------+
+|  Actions                     |             Adaptateur                                |
+|  Possibles                   +------------------------+------------------------------+
+|                              |    Fonction            |   Callback                   |
++------------------------------+------------------------+------------------------------+
+| Envoie d'un message "error"  |                        |   def receivedErrorFromAgent |
+| depuis l'agent vers le test  |                        |        * data                |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+
+| Envoie d'un message "notify" |                        |  def receivedNotifyFromAgent |
+| depuis l'agent vers le test  |                        |        * data                |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+
+| Envoie d'un message "data"   |                        |  def receivedDataFromAgent   |
+| depuis l'agent vers le test  |                        |         * data               |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+
+| Envoie d'un message "init"   |  def initAgent         |                              |
+| depuis le test vers l'agent  |     * data             |                              |
+|                              |                        |                              |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+
+| Envoie d'un message "reset"  |  def resetAgent        |                              |
+| depuis le test vers l'agent  |                        |                              |
+|                              |                        |                              |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+
+| Envooit d'un message "notify"| def sendNotifyToAgent  |                              |
+| depuis le test vers l'agent  |     * data             |                              |
+|                              |                        |                              |
+|                              |                        |                              |
++------------------------------+------------------------+------------------------------+

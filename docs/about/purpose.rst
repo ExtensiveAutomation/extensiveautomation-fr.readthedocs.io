@@ -28,7 +28,9 @@ La solution couvre plusieurs usages et peut être utilisée pour les cas suivant
  - automatiser le déploiement de serveurs
  - automatiser le déploiement d'applications
 
-.. note:: La solution est développée en ``Python`` donc l'ensemble de vos scripts sont intégrables ou exécutables par la solution.
+.. note:: La solution est développée en ``Python`` ainsi que l'ensemble des tests.
+
+.. note:: Il est possible d'intégrer facilement vos scripts existants en python (ou autre) dans la solution.
 
 Licence
 -------

@@ -73,3 +73,7 @@ Déclaration de l'environnement ``SAMPLE_ENVIRONMENT``:
 
 Import/export des variables
 ---------------------------
+
+Il est possible d'exporter ou d'importer en masse l'ensemble des variables depuis l'interface web au format CSV.
+
+.. warning:: Les différentes variables sont encodées en base64.

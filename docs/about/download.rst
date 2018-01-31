@@ -2,7 +2,7 @@ Téléchargement
 ==============
 
 Une version complète de la solution est générée tous les 2 à 3 mois environ. 
-Elle contient l'ensemble des composants nécessaire au bon fonctionnement du serveur.
+Elle contient l'ensemble des composants nécessaires au bon fonctionnement du serveur.
 La solution est faite de plusieurs composants pouvant être téléchargés séparément ou de manière intégrée.
 
 La solution peut être téléchargée depuis le site internet https://www.extensivetesting.org

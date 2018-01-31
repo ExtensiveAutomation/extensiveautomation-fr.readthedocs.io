@@ -137,8 +137,9 @@ Code couleur:
 Les logs
 ----
 
-Le framework permet d'enregistrer des logs durants l'exécution d'un test.
+Le framework permet d'enregistrer des logs durants l'exécution d'un test
+et de les mettre à disposition rapidement auprès de l'utilisations. L'ensemble des logs supplémentaires sont zippés et accessibles depuis le client lourd ou bien l'API.
 
-Ils sont ensuite accessibles depuis le client lourd ou bien l'API.
+.. image:: /_static/images/testlibrary/private_storage.png
 
-<insérer image du client>
+.. note:: Pour plus de détaills, il faut lire le chapitre `Les fondamentaux >> Données`.

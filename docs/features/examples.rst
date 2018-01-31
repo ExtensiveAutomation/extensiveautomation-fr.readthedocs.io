@@ -49,6 +49,11 @@ Exemple montrant comment attendre la réception d'un texte en particulier.
 
 Exemple pour envoyer des données au serveur distant
 
+.. code-block:: python
+  
+  todo
+  
+
 <à insérer>
 
 .. warning: les réponses telnet peuvent être splittées en plusieurs évènements, il faut donc faire attention quand on
@@ -371,7 +376,7 @@ Le graphique est inséré automatiquement dans le rapport avancé.
 Paramètre de tests "custom"
 -------------------
 
-Le paramètre de test ``custom`` permet de construire des valeurs appelant d'autres variables.
+Le paramètre de type ``custom`` permet de construire des valeurs appelant d'autres variables.
 
 Prenons l'exemple d'un test contenant les 2 variables suivantes:
  - DEST_IP avec la valeur 192.168.1.1
@@ -404,15 +409,144 @@ Exemple de résultat après exécution:
 Paramètre de tests "alias"
 -------------------
 
-Un alias de paramètre peut être utilisé durant la définition d'un test plan.
-La création d'un alias permet de changer le nom d'un paramètre sans changer le nom initial.
+Le paramètre de type ``alias`` peut être utilisé pour définir un nouveau nom pour un paramètre déjà existant.
+Ce mécanisme peut être utilisé dans les ``test plan` pour éviter de surcharger tout les paramètres ayant le même nom.
+
+Exemple d'utilisation
+
+ 1. Avant exécution
+   ::
+    
+    Scénario (TIMEOUT_A(int)=2 secondes)
+     ---> Test 1 (TIMEOUT_A(int)=10 secondes)
+     ---> Test 2 (TIMEOUT_A(int)=30 secondes)
+     ---> Test 3 (TIMEOUT_A(int)=20 secondes)
+ 
+ 2. Après exécution du test
+   
+   ::
+     
+     Scénario (TIMEOUT_A(int)=2 secondes)
+       ---> Test 1 (TIMEOUT_A(int)=2 secondes)
+       ---> Test 2 (TIMEOUT_A(int)=2 secondes)
+       ---> Test 3 (TIMEOUT_A(int)=2 secondes)
+     
+     
+Quand on exécute le scénario ci-dessus, le test 1, 2 et 3 ont automatiquement la valeur 2 secondes pour le paramètre TIMEOUT_A.
+C'est le comportement apporté par le framework de test.
+
+**Comment faire si on souhaite que le test 2 garde la valeur 30 secondes par contre le test 1 et 2 hérite de la valeur du scénario ?**
+
+Il faut utiliser un paramètre de type ``alias``, ils ne sont pas surchargés par le framework.
+
+ 1. Avant exécution
+   ::
+    
+    Scénario (TIMEOUT_A(int)=2 secondes et TIMEOUT_B(int)=30 secondes)
+     ---> Test 1 (TIMEOUT_A(int)=10 secondes)
+     ---> Test 2 (TIMEOUT_A(alias)=TIMEOUT_B et TIMEOUT_B(int) = 0 secondes)
+     ---> Test 3 (TIMEOUT_A(int)=20 secondes)
+ 
+ 2. Après exécution du test
+   
+   ::
+     
+    Scénario (TIMEOUT_A(int)=2 secondes et TIMEOUT_B(int)=30 secondes)
+     ---> Test 1 (TIMEOUT_A(int)=2 secondes)
+     ---> Test 2 (TIMEOUT_A(alias)=TIMEOUT_B et TIMEOUT_B(int)= 30 secondes)
+     ---> Test 3 (TIMEOUT_A(int)=2 secondes)
+     
+
+
+Paramètre de tests "dataset"
+-------------------
+
+Le paramètre de type ``dataset`` permet d'importer des fichiers ``tdx``.
+Un fichier ``dataset`` est juste un fichier texte, il est possible de le créer à partir du client graphique .. image:: /_static/images/client/client_new_tdx.png et de le sauvegarder dans le dépôt des tests distants.
+
+
+Exemple de contenu d'un fichier dataset avec le format csv
+
+.. code-block:: python
+  
+  a;1;administrator
+  b;2;tester
+    
+
+Ce fichier peut être utilisé dans un test l'important dans les paramètres.
+
+.. image:: /_static/images/examples/client_testdata.png
+
+
+Exemple pour lire la variable:
+
+.. code-block:: python
+  
+  for d in input('DATA').splitlines():
+      Trace(self).info( d ) 
+  
 
 Utilisation d'une sonde
 -------------------
 
-todo
+
+Pour utiliser une sonde, il faut 2 choses:
+ - Déployer la boite à outils et démarrer la sonde souhaitée.
+ - Déclarer la sonde dans le test.
+ 
+Pour sélectionner la sonde dans le test, il faut l'activer et la configurer dans le test (onglet ``Miscellaneous > Probes``)
+.. image:: /_static/images/examples/probe_tab.png
+
+Lors qu'une sonde est activée sur un test, l'exécution du test intialise automatiquement la sonde.
+
+.. image:: /_static/images/examples/probe_starting.png
+
+Après exécution, l'ensemble des fichiers collectés par la sonde sont téléchargés dans le serveur et accessible depuis le client graphique.
+
+.. image:: /_static/images/examples/probe_test_archives.png
+
+.. note:: Il est possible d'utiliser plusieurs sondes dans un test.
 
 Utilisation d'un agent
 -------------------
 
-todo
+Pour utiliser un agent, il faut deux choses:
+ - Déployer la boite à outils et sélectionner l'agent souhaité.
+ - Déclarer l'agent dans le test
+ - Configurer l'adaptateur pour utiliser l'agent.
+
+Les agents sont à déclarer depuis le client dans l'onglet ``Miscellaneous > Agents`` 
+
+.. image:: /_static/images/examples/client_properties_agent.png
+
+
+L'activation du mode agent sur les adaptateurs se fait avec les arguments ``agentSupport`` et ``agent``.
+
+.. code-block:: python
+  
+  agentSupport=input('SUPPORT_AGENT'), 
+  agent=agent('AGENT_SOCKET')
+  
+
+.. code-block:: python
+  
+   self.ADP_REST= SutAdapters.REST.Client(
+                                        parent=self,
+                                        destinationIp=input('HOST'),
+                                        destinationPort=input('PORT'),
+                                        debug=input('DEBUG'),
+                                        sslSupport=input('USE_SSL'),
+                                        agentSupport=input('SUPPORT_AGENT'), 
+                                        agent=agent('AGENT_SOCKET')
+                                        )
+   
+   
+
+Dans la fenêtre d'analyse, il est possible de voir l'agent utilisé pour chaque évènement:
+
+.. image:: /_static/images/examples/client_events_logger_agent.png
+
+.. note:: 
+  Il est conseillé de mettre en paramètre de test l'usage du mode agent.
+  
+  .. image:: /_static/images/examples/client_agent_support.png

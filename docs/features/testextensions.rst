@@ -449,44 +449,6 @@ Outils tiers
 
 EXPLIQUER POURQUOI ET COMMENT UTILISER CHAQUE AGENT ET SONDE, AVEC EXEMPLES, REQUIS, WARNINGS, ETC.
 
-Agents:
-
- - dummy
-	pour tester le déroulement basique d'un test, ne retourne rien
-
- - socket
-    
- - ftp
-
- - sikulix-server
-
- - selenium3-server
-
- - selenium2-server
-
- - soapui
-
- - command
-
- - file
-
- - adb
-
- - gateway-sms
-
- - database
-
- - ssh
-
-Sondes:
-
- - dummy
- 
- - textual
- 
- - network
- 
- - file
  
 
 EXPLIQUER COMMENT FAIRE DES TESTS SUR PLUSIEURS MACHINES EN PARALLÈLE ROULANT LE MEME TYPE D'AGENT

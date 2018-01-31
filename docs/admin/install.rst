@@ -129,9 +129,9 @@ Exemple pour vérifier si le serveur fonctionne correctement.
 
 Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
 Il est possible d'utiliser les comptes par défaut pour se connecter:
- - utilisateur `admin`
- - utilisateur `tester`
- - utilisateur `monitor`
+ - utilisateur ``admin``
+ - utilisateur ``tester``
+ - utilisateur ``monitor``
  
 .. note:: Les comptes par défaut n'ont pas de mot de passe.
 
@@ -142,7 +142,32 @@ Installation depuis les sources
 
 .. warning:: Ce mode d'installation n'est recommandé que pour les utilisateurs avancés.
 
-<décrire les packages python à installer>
+Il faut dans un premier temps installer les libraries systèmes et python nécessaire au bon fonctionnement 
+du programme, la liste complète est disponible dans la chapitre contribution.
+
+Après voir récupérer les sources depuis github il faut recomposer les différents répertoire
+
++------------------+-------------------------------+
+| core-server      | /opt/xtc/vXXX                 |
++------------------+-------------------------------+
+| plugins-adapters | </opt..>/SutAdapters/vXXX     |
++------------------+-------------------------------+
+| plugins-libraries| </opt..>/SutLibraries/vXXX    |
++------------------+-------------------------------+
+| test-interop     | </opt..>/TestInterop/         |
++------------------+-------------------------------+
+| test-library     | </opt..>/TestExecutorLib/     |                              
++------------------+-------------------------------+
+| web-client       | </opt..>/Web                  |
++------------------+-------------------------------+
+
+**Préparation de la base de donnée**
+
+Pour initialiser la base de donnée, il faut exécuter le scripts "add-bdd.py" disponible dans le répertoire ``Scripts/database``.
+
+**Démarrage du serveur**
+
+Il faut exécuter le scripts ``python run`` disponible à la racine du répertoire ``/opt/xtc/vXXX/``.
 
 Mise à jour
 ~~~~~~~~~~~
@@ -305,8 +330,13 @@ Il existe 2 modes d'installation:
  - mode installation
 
 Le client peut être récupéré depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+
+.. image:: /_static/images/webinterface/web_overview_pkgs2.png
+
 Ensuite il faut le décompresser et exécuter le fichier `ExtensiveTestingClient.exe`
 	
+.. image:: /_static/images/client/client_portable.png
+    
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
@@ -338,8 +368,13 @@ Il existe 2 modes d'installation:
  - mode installation
 
 La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+
+.. image:: /_static/images/webinterface/web_overview_pkgs3.png
+
 Ensuite il faut le décompresser et exécuter le fichier ``ExtensiveTestingToolbox.exe``
 	
+.. image:: /_static/images/toolbox/toolbox_portable.png
+    
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
