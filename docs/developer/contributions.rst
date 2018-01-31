@@ -269,7 +269,38 @@ Serveur
 
 Préparation de son environnement de développement sur un système Linux CentOS 6.5 et plus.
 
-<ajouter les libraries python à installer>
+
+Installation des paquets systèmes
+
+.. code-block:: bash
+  
+  vim net-snmp-utils unzip zip gmp wget curl ntp nmap bind-utils
+  postfix dos2unix openssl openssl-devel tcpdump mlocate
+  mariadb-server mariadb mariadb-devel
+  httpd mod_ssl php php-mysql php-gd php-pear
+  python-lxml MySQL-python policycoreutils-python python-setuptools python-ldap
+  gcc python-devel Cython
+  java git libffi-devel
+  libpng-devel libjpeg-devel zlib-devel freetype-devel lcms-devel tk-devel tkinter
+  postgresql postgresql-libs postgresql-devel
+  
+
+Installation des libraries python supplémentaires
+
+six
+appdirs
+pyparsing
+packaging
+setuptools
+httplib2
+uuidlib
+pycrypto
+pyasn
+ply
+pysmi
+pysnmp
+freetds
+setuptools_git
 
 Développement plugins
 ----------------------
