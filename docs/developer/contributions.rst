@@ -396,6 +396,8 @@ Adaptateur
 L'ajout d'une adaptateur s'effectue en utilisant le client graphique.
 Il faut aller dans le dépôt ``Modules Listing > Adapters`` et faire un clic droit sur l'arborescence pour ajouter un adaptateur.
 
+.. image:: /_static/images/client/client_adapters.png
+
 .. tip:: L'adaptateur ``Dummy`` est à utiliser comme base de développement.
 
 Librairie
@@ -403,6 +405,8 @@ Librairie
 
 L'ajout d'une librairie s'effectue en utilisant le client graphique.
 Il faut aller dans le dépôt `Modules Listing > Libraries` et faire un clic droit sur l'arborescence pour ajouter une librairie.
+
+.. image:: /_static/images/client/client_libraries.png
 
 .. tip:: La librairie ``Dummy`` est à utiliser comme base de développement.
 

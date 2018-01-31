@@ -410,7 +410,7 @@ Paramètre de tests "alias"
 -------------------
 
 Le paramètre de type ``alias`` peut être utilisé pour définir un nouveau nom pour un paramètre déjà existant.
-Ce mécanisme peut être utilisé dans les ``test plan` pour éviter de surcharger tout les paramètres ayant le même nom.
+Ce mécanisme peut être utilisé dans les ``test plan`` pour éviter de surcharger tout les paramètres ayant le même nom.
 
 Exemple d'utilisation
 
@@ -462,8 +462,9 @@ Paramètre de tests "dataset"
 -------------------
 
 Le paramètre de type ``dataset`` permet d'importer des fichiers ``tdx``.
-Un fichier ``dataset`` est juste un fichier texte, il est possible de le créer à partir du client graphique .. image:: /_static/images/client/client_new_tdx.png et de le sauvegarder dans le dépôt des tests distants.
+Un fichier ``dataset`` est juste un fichier texte, il est possible de le créer à partir du client graphique et de le sauvegarder dans le dépôt des tests distants.
 
+.. image:: /_static/images/client/client_new_tdx.png 
 
 Exemple de contenu d'un fichier dataset avec le format csv
 
@@ -495,6 +496,7 @@ Pour utiliser une sonde, il faut 2 choses:
  - Déclarer la sonde dans le test.
  
 Pour sélectionner la sonde dans le test, il faut l'activer et la configurer dans le test (onglet ``Miscellaneous > Probes``)
+
 .. image:: /_static/images/examples/probe_tab.png
 
 Lors qu'une sonde est activée sur un test, l'exécution du test intialise automatiquement la sonde.

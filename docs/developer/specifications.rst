@@ -290,69 +290,59 @@ Sens de communications disponibles:
  - Agent -> serveur -> adaptateur -> test
  - Test -> adaptateur -> serveur -> agent
  
-+------------------------------+--------------------------------------------+
-|  Actions                     |               Agent                        |
-|  Possibles                   +----------------------+---------------------+
-|                              |    Fonction          |   Callback          |
-+------------------------------+----------------------+---------------------+
-| Envoie d'un message "error"  | def sendError        |                     |
-| depuis l'agent vers le test  |    * request         |                     |
-|                              |    * data            |                     |
-+------------------------------+----------------------+---------------------+
-| Envoie d'un message "notify" | def sendNotify       |                     |
-| depuis l'agent vers le test  |    * request         |                     |
-|                              |    * data            |                     |
-+------------------------------+----------------------+---------------------+
-| Envoie d'un message "data"   | def sendData         |                     |
-| depuis l'agent vers le test  |    * request         |                     |
-|                              |    * data            |                     |
-+------------------------------+----------------------+---------------------+
-| Envoie d'un message "init"   |                      |  def onAgentInit    |
-| depuis le test vers l'agent  |                      |    * client         |
-|                              |                      |    * tid            |
-|                              |                      |    * request        |
-+------------------------------+----------------------+---------------------+
-| Envoie d'un message "reset"  |                      |  def onAgentNotify  |
-| depuis le test vers l'agent  |                      |    * client         |
-|                              |                      |    * tid            |
-|                              |                      |    * request        |
-+------------------------------+----------------------+---------------------+
-| Envooit d'un message "notify"|                      |  def onAgentReset   |
-| depuis le test vers l'agent  |                      |    * client         |
-|                              |                      |    * tid            |
-|                              |                      |    * request        |
-+------------------------------+----------------------+---------------------+
++---------------------------------+--------------------------------------------+
+|                                 |               Agent                        |
+|                                 +----------------------+---------------------+
+|                                 |    Fonction          |   Callback          |
++---------------------------------+----------------------+---------------------+
+| Envoie d'un message "error"     | def sendError        |                     |
+|                                 |    * request         |                     |
+|                                 |    * data            |                     |
++---------------------------------+----------------------+---------------------+
+| Envoie d'un message "notify"    | def sendNotify       |                     |
+|                                 |    * request         |                     |
+|                                 |    * data            |                     |
++---------------------------------+----------------------+---------------------+
+| Envoie d'un message "data"      | def sendData         |                     |
+|                                 |    * request         |                     |
+|                                 |    * data            |                     |
++---------------------------------+----------------------+---------------------+
+| Réception d'un message "init"   |                      |  def onAgentInit    |
+|                                 |                      |    * client         |
+|                                 |                      |    * tid            |
+|                                 |                      |    * request        |
++---------------------------------+----------------------+---------------------+
+| Réception d'un message "reset"  |                      |  def onAgentNotify  |
+|                                 |                      |    * client         |
+|                                 |                      |    * tid            |
+|                                 |                      |    * request        |
++---------------------------------+----------------------+---------------------+
+| Réception d'un message "notify" |                      |  def onAgentReset   |
+|                                 |                      |    * client         |
+|                                 |                      |    * tid            |
+|                                 |                      |    * request        |
++---------------------------------+----------------------+---------------------+
 
 
-+------------------------------+-------------------------------------------------------+
-|  Actions                     |             Adaptateur                                |
-|  Possibles                   +------------------------+------------------------------+
-|                              |    Fonction            |   Callback                   |
-+------------------------------+------------------------+------------------------------+
-| Envoie d'un message "error"  |                        |   def receivedErrorFromAgent |
-| depuis l'agent vers le test  |                        |        * data                |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
-| Envoie d'un message "notify" |                        |  def receivedNotifyFromAgent |
-| depuis l'agent vers le test  |                        |        * data                |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
-| Envoie d'un message "data"   |                        |  def receivedDataFromAgent   |
-| depuis l'agent vers le test  |                        |         * data               |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
-| Envoie d'un message "init"   |  def initAgent         |                              |
-| depuis le test vers l'agent  |     * data             |                              |
-|                              |                        |                              |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
-| Envoie d'un message "reset"  |  def resetAgent        |                              |
-| depuis le test vers l'agent  |                        |                              |
-|                              |                        |                              |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
-| Envooit d'un message "notify"| def sendNotifyToAgent  |                              |
-| depuis le test vers l'agent  |     * data             |                              |
-|                              |                        |                              |
-|                              |                        |                              |
-+------------------------------+------------------------+------------------------------+
++---------------------------------+-------------------------------------------------------+
+|                                 |             Adaptateur                                |
+|                                 +------------------------+------------------------------+
+|                                 |    Fonction            |   Callback                   |
++---------------------------------+------------------------+------------------------------+
+| Réception d'un message "error"  |                        |  def receivedErrorFromAgent  |
+|                                 |                        |        * data                |
++---------------------------------+------------------------+------------------------------+
+| Réception d'un message "notify" |                        |  def receivedNotifyFromAgent |
+|                                 |                        |        * data                |
++---------------------------------+------------------------+------------------------------+
+| Réception d'un message "data"   |                        |  def receivedDataFromAgent   |
+|                                 |                        |         * data               |
++---------------------------------+------------------------+------------------------------+
+| Envoie d'un message "init"      |  def initAgent         |                              |
+|                                 |     * data             |                              |
++---------------------------------+------------------------+------------------------------+
+| Envoie d'un message "reset"     |  def resetAgent        |                              |
++---------------------------------+------------------------+------------------------------+
+| Envoie d'un message "notify"    | def sendNotifyToAgent  |                              |
+|                                 |     * data             |                              |
++---------------------------------+------------------------+------------------------------+

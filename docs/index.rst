@@ -38,6 +38,7 @@ Bienvenue sur la documentation ExtensiveTesting!
    :caption: Guide administrateur
 
    admin/install
+   admin/admin
    admin/projects
    admin/users
    admin/troubleshooting

@@ -284,40 +284,6 @@ La désinstallation du produit peut se faire en utilisant le script ``./uninstal
 
 .. note:: Il est possible d'utiliser le mode ``force`` en cas d'erreur durant la désinstallation. 
 	
-Déploiement
-~~~~~~~~~~~
-
-La solution permet de mettre à disposition auprès des utilisateurs les paquets suivants pour faciliter la diffusion:
- - le client lourd
- - la boîte à outils
- - les différents plugins.
-
-Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
-notifier les utilisateurs de la mise à jour.
-
-Les paquets sont à déposer dans le répertoire ``<INSTALL_PATH>/current/Packages/``
-
-+-----------------+-------------------------------------------------+
-|Client           | Contients la version portable et installation   |
-+-----------------+-------------------------------------------------+
-|ClientPlugins    |  Contients les plugins                          |
-+-----------------+-------------------------------------------------+
-|Toolbox          |  Contients la version portable et installation  |
-+-----------------+-------------------------------------------------+
-|ToolboxPlugins   |  Contients les plugins                          |
-+-----------------+-------------------------------------------------+
-
-Après dépôt, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
-Pour la mise à jour en mode automatique du client, il faut exécuter la commande ``xtctl deploy`` sur le serveur
-pour prendre en compte le nouveau client déployé.
-
-.. code-block:: bash
-
-	./xtctl deploy
-	Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
-	Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
-	Deploying portable clients... (No client)
-	Deploying portable tools... (No client)
 
 Client
 ------

@@ -19,7 +19,7 @@ La boîte à outils est disponible sous trois formes:
  
 .. note:: Le client et la boîte à outils sont compatibles Windows et Linux, en mode 64bits seulement.
 
-.. warning:: Le serveur ne peut être exécuté que sur un serveur Linux (CentOS7 ou RedHat7)
+.. warning:: Le serveur doit être exécuté sur un serveur Linux (CentOS7 ou RedHat7).
  
-.. warning:: Le client ou la boîte à outils en mode installation peuvent nécessiter des droits d'administration
+.. warning:: Le client ou la boîte à outils en mode installation peuvent nécessiter des droits d'administration.
  
