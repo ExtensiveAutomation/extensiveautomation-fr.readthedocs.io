@@ -1,17 +1,17 @@
-Administration
+ï»¿Administration
 =============
 
-Arrêt/relance du serveur
+ArrÃªt/relance du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Le serveur peut être contrôlé en utilisant la commande ``xtctl``.
+Le serveur peut Ãªtre contrÃ´lÃ© en utilisant la commande ``xtctl``.
 Cette commande permet 
- - de démarrer ou arrêter le serveur
- - de vérifier le status du serveur
- - de mettre à disposition un nouveau client graphique ou la boite à outils
+ - de dÃ©marrer ou arrÃªter le serveur
+ - de vÃ©rifier le status du serveur
+ - de mettre Ã  disposition un nouveau client graphique ou la boite Ã  outils
  - d'afficher la version du serveur.
 
-Pour démarrer le serveur il faut utiliser la commande ``xtctl start``.
+Pour dÃ©marrer le serveur il faut utiliser la commande ``xtctl start``.
  
 .. code-block:: bash
   
@@ -22,7 +22,7 @@ Pour démarrer le serveur il faut utiliser la commande ``xtctl start``.
   Starting Extensive Testing                                 [  OK  ]
   
   
-Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
+Pour arrÃªter le serveur il faut utiliser la commande ``xtctl stop``.
 
 .. code-block:: bash
   
@@ -34,40 +34,40 @@ Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
 
 .. tip::
 
-   Il est possible de vérifier dans les logs si le serveur est correctement démarré ou arrêté.
+   Il est possible de vÃ©rifier dans les logs si le serveur est correctement dÃ©marrÃ© ou arrÃªtÃ©.
    
   .. code-block:: bash
     
     # tailf /opt/xtc/current/Var/Log/output.log
-    2014-12-06 11:00:54,092 - INFO – Extensive Testing successfully started (in 14 sec.)
+    2014-12-06 11:00:54,092 - INFO - Extensive Testing successfully started (in 14 sec.)
     ...
     2014-12-06 10:58:51,810 - INFO - Stopping server
-    2014-12-06 10:58:51,911 - INFO – Extensive Testing successfully stopped!
+    2014-12-06 10:58:51,911 - INFO - Extensive Testing successfully stopped!
   
 
 Status du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-La commande permet de vérifier le status du serveur, il y a 3 status possible
- - ``starting``: le serveur est en cours de démarrage
- - ``running``: le serveur est en cours d'exécution
- - ``stopped``: le serveur est arrêté.
+La commande permet de vÃ©rifier le status du serveur, il y a 3 status possible
+ - ``starting``: le serveur est en cours de dÃ©marrage
+ - ``running``: le serveur est en cours d'exÃ©cution
+ - ``stopped``: le serveur est arrÃªtÃ©.
 
 .. tip:: 
-  Vérifier aussi le status du serveur ``httpd`` et la base de donnée ``mysql``.
+  VÃ©rifier aussi le status du serveur ``httpd`` et la base de donnÃ©e ``mysql``.
   
-Déploiement nouveaux paquets
+DÃ©ploiement nouveaux paquets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-La solution permet de mettre à disposition auprès des utilisateurs les paquets suivants pour faciliter la diffusion:
+La solution permet de mettre Ã  disposition des utilisateurs les paquets suivants pour faciliter la diffusion:
  - le client lourd
- - la boîte à outils
- - les différents plugins.
+ - la boÃ®te Ã  outils
+ - les diffÃ©rents plugins.
 
-Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
-notifier les utilisateurs de la mise à jour.
+Lorsqu'un nouveau client est disponible, il est possible de le dÃ©poser sur le serveur pour automatiquement 
+notifier les utilisateurs de la mise Ã  jour.
 
-Les paquets sont à déposer dans le répertoire ``<INSTALL_PATH>/current/Packages/``
+Les paquets sont Ã  dÃ©poser dans le rÃ©pertoire ``<INSTALL_PATH>/current/Packages/``
 
 +-----------------+-------------------------------------------------+
 |Client           | Contients la version portable et installation   |
@@ -79,9 +79,9 @@ Les paquets sont à déposer dans le répertoire ``<INSTALL_PATH>/current/Packages/
 |ToolboxPlugins   |  Contients les plugins                          |
 +-----------------+-------------------------------------------------+
 
-Après dépôt, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
-Pour la mise à jour en mode automatique du client, il faut exécuter la commande ``xtctl deploy`` sur le serveur
-pour prendre en compte le nouveau client déployé.
+AprÃ¨s dÃ©pÃ´t, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
+Pour la mise Ã  jour en mode automatique du client, il faut exÃ©cuter la commande ``xtctl deploy`` sur le serveur
+pour prendre en compte le nouveau client dÃ©ployÃ©.
 
 .. code-block:: bash
   
@@ -94,4 +94,4 @@ pour prendre en compte le nouveau client déployé.
 Configuration du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Le fichier ``settings.ini`` contient l'ensemble des paramètres de configuration du serveur.
+Le fichier ``settings.ini`` contient l'ensemble des paramÃ¨tres de configuration du serveur.
