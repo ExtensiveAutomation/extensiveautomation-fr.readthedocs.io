@@ -27,7 +27,28 @@ Une ``couche`` se définit par un ensemble de clé/valeur. La valeur d'une couch
 peut être une autre couche aussi.
  
 .. image:: /_static/images/testlibrary/template_message.png
+
+Création d'un modèle
+~~~~~~~~~~~~~
+
+La création d'un modèle peut se faire en utilisant le framework de test ``TestTemplates``.
+
+.. code-block:: python
   
+  tpl = TestTemplates.TemplateMessage()
+  layer = TestTemplates.TemplateLayer(name='response')
+  layer.addKey(name='code', data='200')
+  layer.addKey(name='msg', data='hello world')
+  tpl.addLayer(layer=layer) 
+  
+  
+Exemple d'un message attendu visible depuis le client graphique:
+
+.. image:: /_static/images/testlibrary/template_expected.png
+
+Les opérateurs
+~~~~~~~~~~~~~
+
 Des opérateurs sont disponibles pour faciliter la comparaison des modèles reçus.
 
 +-----------------+-------------------------------------------------------------------+
@@ -48,25 +69,18 @@ Des opérateurs sont disponibles pour faciliter la comparaison des modèles reç
 | RegEx           | Vérifie si la chaîne de caractères répond à l'expression régulière|
 +-----------------+-------------------------------------------------------------------+
 
-Création d'un modèle
-~~~~~~~~~~~~~
-
-La création d'un modèle peut se faire en utilisant le framework de test ``TestTemplates``.
+Exemple de modèle utilisant les opérateurs de comparaison:
 
 .. code-block:: python
   
   tpl = TestTemplates.TemplateMessage()
   layer = TestTemplates.TemplateLayer(name='response')
-  layer.addKey(name='code', data='200')
-  layer.addKey(name='msg', data='hello world')
+  layer.addKey(name='code', data=TestOperators.LowerThan(x=500)))
+  layer.addKey(name='msg', data=TestOperators.Contains(x="hello"))
   tpl.addLayer(layer=layer) 
   
-  
-Exemple d'un message attendu visible depuis le client graphique:
 
-.. image:: /_static/images/testlibrary/template_expected.png
-
-Visualisation
+La visualisation
 ~~~~~~~~~~~~~
 
 Le client permet de visualiser graphiquement la comparaison effectuée par le framework.
