@@ -29,6 +29,10 @@ La liste complète des agents et sondes disponibles sont décrits dans le chapit
     Exemple:
         agent.win.denis.socket01
 
+Exemple d'un agent déployé et en cours d'exécution:
+
+.. image:: /_static/images/toolbox/agent_deployed.png
+
 Compléments
 -----------
 

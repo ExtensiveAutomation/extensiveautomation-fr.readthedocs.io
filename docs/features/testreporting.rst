@@ -48,10 +48,26 @@ Des opérateurs sont disponibles pour faciliter la comparaison des modèles reç
 | RegEx           | Vérifie si la chaîne de caractères répond à l'expression régulière|
 +-----------------+-------------------------------------------------------------------+
 
-Exemple d'un message attendu:
+Création d'un modèle
+~~~~~~~~~~~~~
+
+La création d'un modèle peut se faire en utilisant le framework de test ``TestTemplates``.
+
+.. code-block:: python
+  
+  tpl = TestTemplates.TemplateMessage()
+  layer = TestTemplates.TemplateLayer(name='response')
+  layer.addKey(name='code', data='200')
+  layer.addKey(name='msg', data='hello world')
+  tpl.addLayer(layer=layer) 
+  
+  
+Exemple d'un message attendu visible depuis le client graphique:
 
 .. image:: /_static/images/testlibrary/template_expected.png
- 
+
+Visualisation
+~~~~~~~~~~~~~
 
 Le client permet de visualiser graphiquement la comparaison effectuée par le framework.
 

@@ -165,6 +165,8 @@ Exemple pour ajouter du texte dans un fichier de log déjà existant
 .. note:: 
   Il est aussi possible de sauvegarder des fichiers depuis un adaptateur.
   Ils seront automatiquement stockés dans un répertoire portant le nom de l'adaptateur.
+  
+  .. image:: /_static/images/testlibrary/adapter_private.png
 	
 En cache
 ~~~~~
@@ -199,6 +201,8 @@ Exemple pour capturer une donnée avec une expression régulière et avec enregi
   
   Trace(self).info( txt=Cache().get(name="TIME") )
   
+.. image:: /_static/images/testlibrary/client_cache_capture.png
+
 .. important:: Le cache n'existe que durant l'exécution d'un test.
 
 Mettre en attente

@@ -109,7 +109,7 @@ Il faut récupérer les sources depuis https://github.com/antirez/hping et les c
   make
   make install
   
-Comment isntaller le serveur dans un répertoire spécifique?
+Comment installer le serveur dans un répertoire spécifique?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Par défaut, le serveur s'installe dans le répertoire ``/opt/xtc/``, il est possible de changer ce répertoire
@@ -119,3 +119,36 @@ au moment de l'installation en modifiant la clé ``INSTALL`` dans le fichier ``d
   
   INSTALL=/opt/xtc/
   
+Erreur pour générer le désigne d'un test, quoi faire ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+L'impossibilité de générer un désigne pour un test peut venir de plusiers choses:
+ - la version des adaptateurs ou librairies utilisés dans le test n'est pas bon
+ - une erreur de syntaxe existe dans un test
+ - un appel au cache est utilisé dans la définition des étapes de tests
+ 
+L'installation du serveur reste bloquée sur l'ajout des librairies externes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Avant de lancer l'installation du serveur, il faut vérifier que le service yum n'est pas déjà en cours d'exécution.
+Si oui alors, le script d'installation restera bloqué tant que ``yum`` n'est pas disponible. Ce problème 
+arrive généralement lorsque le serveur est installé en mode graphique.
+
+Dans les logs , on peut observer l'erreur suivante:
+
+.. code-block:: bash
+  
+  Existing lock /var/run/yum.pid: another copy is running as pid 3293.
+  Another app is currently holding the yum lock; waiting for it to exit...
+    The other application is: PackageKit
+      Memory :  26 M RSS (429 MB VSZ)
+      Started: Tue Nov  1 11:09:25 2016 - 00:42 ago
+      State  : Sleeping, pid: 3293
+
+Pour résoudre ce problème, il faut arrêter le programme qui utilise déjà ``yum``.
+
+Impossible de naviguer dans l'interface web
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Si vous arrivez à vous connecter sur l'interface web mais qu'il est impossible de naviguer dans les menus.
+Le cookie généré par le serveur peut être expiré, il faut vérifier que le serveur est bien à l'heure.

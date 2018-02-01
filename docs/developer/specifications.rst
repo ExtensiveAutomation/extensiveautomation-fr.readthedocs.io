@@ -350,22 +350,20 @@ Sens de communications disponibles:
 Les logs serveurs
 ----------------
 
-les logs du serveurs sont tous localisés au même endroit sur le serveur dans ``/opt/xtc/current/Var/logs/``.
+les logs du serveurs sont localisés au même endroit sur le serveur, dans le répertoire ``/opt/xtc/current/Var/logs/``.
 
 +--------------------+---------------------------------------------------------+
-| access_rp.log	     | log apache du reverse proxy                             |
+| access_rp.log      | logs apache pour l'accès reverse                        |
 +--------------------+---------------------------------------------------------+
-| access_ssl_rp.log	 | log apache du reverse proxy pour le ssl                 |
+| access_ssl_rp.log  | logs apache pour l'accès reverse ssl                    |
 +--------------------+---------------------------------------------------------+
-| access_web.log	 | log apache pour l'accès web interface                   |
+| access_web.log     | logs apache pour l'accès web interface                  |
 +--------------------+---------------------------------------------------------+
-| error_rp.log	     | apache error log of the reverse proxy                   |
+| error_rp.log       | logs erreurs apache pour l'accès reverse                |
 +--------------------+---------------------------------------------------------+
-| error_ssl_rp.log	 | apache error log of the reverse proxy for the ssl part  |
+| error_ssl_rp.log   | logs erreurs apache pour l'accès reverse ssl            |
 +--------------------+---------------------------------------------------------+
-| error_web.log	     | apache error log for the web interface                  |
+| error_web.log      | logs erreurs apache pour l'accès web interface          |
 +--------------------+---------------------------------------------------------+
-| output.log	     | server automation logs                                  |
-+--------------------+---------------------------------------------------------+
-| tests.out	         | test logs for development only                          |
+| output.log         | logs serveurs                                           |
 +--------------------+---------------------------------------------------------+

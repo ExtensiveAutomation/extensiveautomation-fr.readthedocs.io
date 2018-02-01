@@ -266,6 +266,8 @@ La configuration du plugin se fait dans la page ``Settings``, il faut configurer
 
 Pour exporter un test, il faut générer le design d'un test depuis le client et cliquer sur le plugin HP ALM disponible dans la barre d'outils.
 
+.. image:: /_static/images/client/qc_plugin.png
+
 L'export des résultats peut se faire depuis la fenêtre exploration des archives,
 Le plugin doit être disponible dans la barre d'outil lors qu'un rapport de test est chargé.
  

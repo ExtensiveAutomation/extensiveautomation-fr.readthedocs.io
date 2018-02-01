@@ -15,7 +15,9 @@ Please use ssh snippets for more efficiency
 Adapter configuration
 Configure your adapter in the prepare section of your test
 
-self.ADP_SSH = SutAdapters.SSH.Client(
+.. code-block:: python
+  
+  self.ADP_SSH = SutAdapters.SSH.Client(
                                         parent=self, 
                                         login=input('LOGIN'), 
                                         password=input('PWD'),
@@ -24,46 +26,38 @@ self.ADP_SSH = SutAdapters.SSH.Client(
                                         debug=input('DEBUG'),
                                         agentSupport=input('SUPPORT_AGENT')
                                     )
-with the following parameters
 
-Input	Type	Value
-DEBUG	boolean	False
-LOGIN	string	admin
-PWD	string	admin
-DEST_IP	string	192.168.1.1
-DEST_PORT	integer	22
-SUPPORT_AGENT	boolean	False
 Make connection and disconnection
 In the definition part, copy/paste the following lines to make connection with authentification. You need to provide the prompt of your remote machine, the default prompt expected is ~]#
 
-connected = self.ADP_SSH.doConnect(
+.. code-block:: python
+  
+  connected = self.ADP_SSH.doConnect(
                                     timeout=input('TIMEOUT'), 
                                     prompt='~]#'
                                   )
-if not connected: self.abort("ssh connect failed")
-
-
-self.info("SSH connection OK" )
-Copy/paste the following line to make a disconnection from your machine
-
-disconnected = self.ADP.doDisconnect(timeout=input('TIMEOUT'))
-if not disconnected: self.abort("disconnect failed")
-
-
-self.info("SSH disconnection OK" )
+  if not connected: self.abort("ssh connect failed")
+  self.info("SSH connection OK" )
+  
+  disconnected = self.ADP.doDisconnect(timeout=input('TIMEOUT'))
+  if not disconnected: self.abort("disconnect failed")
+  self.info("SSH disconnection OK" )
+  
 Execute basic commands
 Copy/paste the following lines to execute a command in your system. The example below shows how to execute the command date on the remote machine and retrieve the value.
 
-rsp = self.ADP_SSH. doSendCommand(
+.. code-block:: python
+  
+  rsp = self.ADP_SSH. doSendCommand(
                                     command='date', 
                                     timeout=input('TIMEOUT'), 
                                     expectedData=None, 
                                     prompt='~]#'
                                 )
-if rsp is None: self.abort("run command failed")
-
-
-self.warning( rsp )
+  if rsp is None: self.abort("run command failed")
+  self.warning( rsp )
+  
+  
 Notes:
 
 Ssh responses can be splitted in severals events, so you new to retrieve properly all events to create the complete response.
@@ -84,7 +78,9 @@ The following explanations are based on the sample available on /Samples/Tests_A
 Adapter configuration
 Configure your adapter in the prepare section of your test
 
-self.ADP_HTTP = SutAdapters.HTTP.Client(
+.. code-block:: python
+  
+  self.ADP_HTTP = SutAdapters.HTTP.Client(
                                             parent=self, 
                                             debug=input('TRACE'), 
                                             destinationIp=input('DST_IP'), 
@@ -93,34 +89,32 @@ self.ADP_HTTP = SutAdapters.HTTP.Client(
                                             agent=agent('AGENT_SOCKET'), 
                                             agentSupport=input('SUPPORT_AGENT')
                                         )
-with the following parameters
 
-Input	Type	Value
-TRACE	boolean	False
-DST_IP	string	www.google.fr
-DST_PORT	integer	443
-SSL_SUPPORT	boolean	True
-SUPPORT_AGENT	boolean	False
-Make a basic GET request
 Make a GET request and set the expected response code as below
 
-rsp = self.ADP_HTTP.GET( 
+.. code-block:: python
+  
+  rsp = self.ADP_HTTP.GET( 
                             uri="/", 
                             host=input('HOST'), 
                             timeout=input('TIMEOUT'),
                             codeExpected=200
                         )
-if rsp is None:
+  if rsp is None:
     self.step1.setFailed(actual="bad response received")    
-else:
+  else:
     self.step1.setPassed(actual="http response OK") 
+  
+
 Use operators to describe the expected response
 Make a GET request use operators as below to describe the expected response. Go the operators guide to have the list of available operators.
 
 headersExpected = { TestOperators.Contains(needle='server'): TestOperators.Any() }
 
 
-rsp = self.ADP_HTTP.GET( 
+.. code-block:: python
+  
+  rsp = self.ADP_HTTP.GET( 
                         uri="/", 
                         host=input('HOST'), 
                         timeout=input('TIMEOUT'),
@@ -130,10 +124,11 @@ rsp = self.ADP_HTTP.GET(
                         bodyExpected=TestOperators.Contains(needle='google') )                                    
                         headersExpected=headersExpected
                         )
-if rsp is None:
+  if rsp is None:
     self.step1.setFailed(actual="bad response received")    
-else:
+  else:
     self.step1.setPassed(actual="http response OK") 
+    
 As described above, the response must be in accord with the following statements:
 
 - the version must ends with the value 1.1
@@ -627,6 +622,23 @@ Exemple pour lire la variable:
   for d in input('DATA').splitlines():
       Trace(self).info( d ) 
   
+Paramètre de tests "shared"
+-------------------
+
+Les paramètres de type ``shared`` s'ajoutent depuis l'interface web ou depuis l'api REST.
+Ils sont partagés et accessibles par l'ensemble des tests d'un même projet. La valeur attendue 
+pour ce paramètre est de type ``JSON``.
+
+Une fenêtre de sélection dans le client graphique permet de sélectionner le paramètre à utiliser dans le test.
+
+.. image:: /_static/images/examples/client_params_shared.png
+
+Dans l'exemple ci-dessous, le paramètre de test ``MY_SERVER`` contient la valeur de la clé ``IP`` présente dans la variable 
+partagée ``MY_SERVER`` qui est elle-même présente dans le projet ``Common``.
+
+.. image:: /_static/images/examples/client_param_shared.png
+
+.. tip:: Pour avoir un paramètre de test qui contient une liste d'éléments, il faut utiliser le type ``list-shared``.
 
 Utilisation d'une sonde
 -------------------

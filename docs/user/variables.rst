@@ -2,6 +2,7 @@ Variables réutilisables
 =======================
 
 Les variables réutilisables sont principalement utilisées pour décrire son environnement de tests.
+Elles sont accessibles depuis un test en utilisant le paramètre de test de type ``shared`` ou ``shared-list``.
 
 Ajout/suppression d'une variable
 -----------------
