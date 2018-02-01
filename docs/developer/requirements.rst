@@ -52,6 +52,8 @@ Le client peut être exécuté sur un environnement Windows ou Linux.
  L'architecture 32-bit n'est plus supportée depuis la version 17.0.0.  
  Cependant il est toujours possible de compiler les sources sur un environnement 32bits. 
 
+.. important:: Les plugins pour le client ne sont disponibles que pour l'environnement Windows.
+ 
 Boite à outils
 ------------
 
@@ -74,3 +76,5 @@ La boite à outils peut être exécutée sur un environnement Windows ou Linux.
 
  L'architecture 32-bit n'est plus supportée depuis la version 17.0.0. 
  Cependant il est toujours possible de compiler les sources sur un environnement 32bits. 
+
+.. important:: Les plugins pour le client ne sont disponibles que pour l'environnement Windows.

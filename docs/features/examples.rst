@@ -1,6 +1,147 @@
 ﻿Exemples avancés
 ===================
 
+Adaptateur SSH
+--------------
+
+his sample show how to use the SSH client adapter. This adapter enables to connect to server through the SSH v2 protocol with support of:
+
+authentication by login/password
+authentication key
+The following explanations are based on the sample available on /Samples/Tests_Adapters/05_SSH.tsx
+
+Please use ssh snippets for more efficiency
+
+Adapter configuration
+Configure your adapter in the prepare section of your test
+
+self.ADP_SSH = SutAdapters.SSH.Client(
+                                        parent=self, 
+                                        login=input('LOGIN'), 
+                                        password=input('PWD'),
+                                        destIp=input('DEST_IP'), 
+                                        destPort=input('DEST_PORT'), 
+                                        debug=input('DEBUG'),
+                                        agentSupport=input('SUPPORT_AGENT')
+                                    )
+with the following parameters
+
+Input	Type	Value
+DEBUG	boolean	False
+LOGIN	string	admin
+PWD	string	admin
+DEST_IP	string	192.168.1.1
+DEST_PORT	integer	22
+SUPPORT_AGENT	boolean	False
+Make connection and disconnection
+In the definition part, copy/paste the following lines to make connection with authentification. You need to provide the prompt of your remote machine, the default prompt expected is ~]#
+
+connected = self.ADP_SSH.doConnect(
+                                    timeout=input('TIMEOUT'), 
+                                    prompt='~]#'
+                                  )
+if not connected: self.abort("ssh connect failed")
+
+
+self.info("SSH connection OK" )
+Copy/paste the following line to make a disconnection from your machine
+
+disconnected = self.ADP.doDisconnect(timeout=input('TIMEOUT'))
+if not disconnected: self.abort("disconnect failed")
+
+
+self.info("SSH disconnection OK" )
+Execute basic commands
+Copy/paste the following lines to execute a command in your system. The example below shows how to execute the command date on the remote machine and retrieve the value.
+
+rsp = self.ADP_SSH. doSendCommand(
+                                    command='date', 
+                                    timeout=input('TIMEOUT'), 
+                                    expectedData=None, 
+                                    prompt='~]#'
+                                )
+if rsp is None: self.abort("run command failed")
+
+
+self.warning( rsp )
+Notes:
+
+Ssh responses can be splitted in severals events, so you new to retrieve properly all events to create the complete response.
+Please to use the Console adapter if this behaviour is problematic for you or prefer to use the Terminal adapter
+
+Adaptateur HTTP
+--------------
+
+This sample show how to use the HTTP client adapter.
+
+This adapter enables to send or receive HTTP requests and response with:
+
+SSL and proxy (socks 4, 5 and http) support
+Chunked or content-length data support
+Basic, digest authentication support
+The following explanations are based on the sample available on /Samples/Tests_Adapters/02_HTTP.tsx
+
+Adapter configuration
+Configure your adapter in the prepare section of your test
+
+self.ADP_HTTP = SutAdapters.HTTP.Client(
+                                            parent=self, 
+                                            debug=input('TRACE'), 
+                                            destinationIp=input('DST_IP'), 
+                                            destinationPort=input('DST_PORT'),
+                                            sslSupport = input('SSL_SUPPORT'), 
+                                            agent=agent('AGENT_SOCKET'), 
+                                            agentSupport=input('SUPPORT_AGENT')
+                                        )
+with the following parameters
+
+Input	Type	Value
+TRACE	boolean	False
+DST_IP	string	www.google.fr
+DST_PORT	integer	443
+SSL_SUPPORT	boolean	True
+SUPPORT_AGENT	boolean	False
+Make a basic GET request
+Make a GET request and set the expected response code as below
+
+rsp = self.ADP_HTTP.GET( 
+                            uri="/", 
+                            host=input('HOST'), 
+                            timeout=input('TIMEOUT'),
+                            codeExpected=200
+                        )
+if rsp is None:
+    self.step1.setFailed(actual="bad response received")    
+else:
+    self.step1.setPassed(actual="http response OK") 
+Use operators to describe the expected response
+Make a GET request use operators as below to describe the expected response. Go the operators guide to have the list of available operators.
+
+headersExpected = { TestOperators.Contains(needle='server'): TestOperators.Any() }
+
+
+rsp = self.ADP_HTTP.GET( 
+                        uri="/", 
+                        host=input('HOST'), 
+                        timeout=input('TIMEOUT'),
+                        versionExpected=TestOperators.Endswith(needle='1.1') ,
+                        codeExpected=TestOperators.NotContains(needle='200') ,
+                        phraseExpected=TestOperators.NotContains(needle='Testing') ,
+                        bodyExpected=TestOperators.Contains(needle='google') )                                    
+                        headersExpected=headersExpected
+                        )
+if rsp is None:
+    self.step1.setFailed(actual="bad response received")    
+else:
+    self.step1.setPassed(actual="http response OK") 
+As described above, the response must be in accord with the following statements:
+
+- the version must ends with the value 1.1
+- the code must no contains the value 200
+- the phrase must not contains the value Testing
+- the body must contains the value google.
+- And finally, the http response must contains a header named server with any value
+
 Adaptateur Telnet
 --------------
 

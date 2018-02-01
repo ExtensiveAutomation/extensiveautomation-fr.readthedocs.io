@@ -90,8 +90,56 @@ pour prendre en compte le nouveau client déployé.
   Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
   Deploying portable clients... (No client)
   Deploying portable tools... (No client)
-  
+
 Configuration du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Le fichier ``settings.ini`` contient l'ensemble des paramètres de configuration du serveur.
+Les paramètres de configuration sont découpés en plusieurs sections:
+ - Boot
+ - Notifications
+ - Client_Channel
+ - Agent_Channel
+ - Probe_Channel
+ - WebServices
+ - TaskManager
+ - Network
+ - Paths
+ - Bin
+ - Server
+ - Web
+ - Bind
+ - Misc
+ - MySql
+ - Trace
+ - Backups
+ - Default
+ - Csv_Test_Results:
+ - Tests_Framework
+ - Events_Colors
+ - Supervision
+ - Users_Session
+  
+Sauvegardes automatiques
+~~~~~~~~~~~~~~~~~~~~~~
+  
+Par défaut la solution sauvegarder l'ensemble des tests, adaptateurs et libraries chaques jours.
+Les sauvegardes sont disponibles dans ``opt/xtc/current/Var/Backups``.
+
+La périodicité peut être configuré dans la section ``Backups`` du fichier ``settings.ini``.
+
+.. code-block:: bash
+  
+  [Backups]
+  ; tests repository
+  ; 0=disable 1=enable
+  tests=1
+  ; backup zip name
+  tests-name=tests-automatic-backup
+  ; backup weekly on sunday at 23:40:00
+  tests-at=5|23,40,00
+  
+Rythme de sauvegarde disponible:
+ - 6: une fois par semaine
+ - 5: une fois par jour
+ - 4: une fois par heure

@@ -346,3 +346,26 @@ Sens de communications disponibles:
 | Envoie d'un message "notify"    | def sendNotifyToAgent  |                              |
 |                                 |     * data             |                              |
 +---------------------------------+------------------------+------------------------------+
+
+Les logs serveurs
+----------------
+
+les logs du serveurs sont tous localisés au même endroit sur le serveur dans ``/opt/xtc/current/Var/logs/``.
+
++--------------------+---------------------------------------------------------+
+| access_rp.log	     | log apache du reverse proxy                             |
++--------------------+---------------------------------------------------------+
+| access_ssl_rp.log	 | log apache du reverse proxy pour le ssl                 |
++--------------------+---------------------------------------------------------+
+| access_web.log	 | log apache pour l'accès web interface                   |
++--------------------+---------------------------------------------------------+
+| error_rp.log	     | apache error log of the reverse proxy                   |
++--------------------+---------------------------------------------------------+
+| error_ssl_rp.log	 | apache error log of the reverse proxy for the ssl part  |
++--------------------+---------------------------------------------------------+
+| error_web.log	     | apache error log for the web interface                  |
++--------------------+---------------------------------------------------------+
+| output.log	     | server automation logs                                  |
++--------------------+---------------------------------------------------------+
+| tests.out	         | test logs for development only                          |
++--------------------+---------------------------------------------------------+

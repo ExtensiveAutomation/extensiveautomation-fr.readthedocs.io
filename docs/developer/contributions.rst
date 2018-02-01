@@ -398,6 +398,27 @@ Il faut aller dans le dépôt ``Modules Listing > Adapters`` et faire un clic dr
 
 .. image:: /_static/images/client/client_adapters.png
 
+Pour mettre à disposition l'adaptateur pour les tests, il faut éditer le fichier ``__init__.py`` et ajouter les lignes 
+suivantes:
+
+.. code-block:: python
+  
+  import Example
+  __HELPER__.append("Example") 
+  
+Pour faire apparaitre l'adaptateur dans la documentation accessible depuis le client graphique, il faut 
+utiliser le décorateur ``@doc_public`` devant chaque fonction qu'on souhaite documenter.
+
+.. code-block:: python
+  
+  class Example(TestAdapterLib.Adapter):
+    @doc_public
+	def __init__(self, parent)
+    
+    @doc_public
+    def connect(self, timeout=5.0):
+  
+
 .. tip:: L'adaptateur ``Dummy`` est à utiliser comme base de développement.
 
 Librairie
@@ -407,6 +428,27 @@ L'ajout d'une librairie s'effectue en utilisant le client graphique.
 Il faut aller dans le dépôt `Modules Listing > Libraries` et faire un clic droit sur l'arborescence pour ajouter une librairie.
 
 .. image:: /_static/images/client/client_libraries.png
+
+Pour mettre à disposition la librairie pour les tests, il faut éditer le fichier ``__init__.py`` et ajouter les lignes 
+suivantes:
+
+.. code-block:: python
+  
+  import Example
+  __HELPER__.append("Example") 
+  
+Pour faire apparaitre la librairie dans la documentation accessible depuis le client graphique, il faut 
+utiliser le décorateur ``@doc_public`` devant chaque fonction qu'on souhaite documenter.
+
+.. code-block:: python
+  
+  class Example(TestLibraryLib.Library):
+    @doc_public
+	def __init__(self, parent)
+    
+    @doc_public
+    def connect(self, timeout=5.0):
+  
 
 .. tip:: La librairie ``Dummy`` est à utiliser comme base de développement.
 
