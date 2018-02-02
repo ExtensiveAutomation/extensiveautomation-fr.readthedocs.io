@@ -1,50 +1,49 @@
-Dépannage
+ï»¿DÃ©pannage
 ================
 
 Code erreurs
 ------------
 
-**Erreurs liés au moteur d'exécution**
+**Erreurs liÃ©s au moteur d'exÃ©cution**
 
 +----------------------+-------------------------------------------------------------+
 | Code erreur          | Description                                                 |
 +----------------------+-------------------------------------------------------------+
-| ERR_TE_000           | Erreur générique au niveau de l'exécution du test           |
+| ERR_TE_000           | Erreur gÃ©nÃ©rique au niveau de l'exÃ©cution du test           |
 +----------------------+-------------------------------------------------------------+
-| ERR_TE_001           | Erreur générique au niveau de l'exécution du cas de test    |
+| ERR_TE_001           | Erreur gÃ©nÃ©rique au niveau de l'exÃ©cution du cas de test    |
 +----------------------+-------------------------------------------------------------+
-| ERR_TE_500           | Erreur générique au niveau de l'exécution du script         |
+| ERR_TE_500           | Erreur gÃ©nÃ©rique au niveau de l'exÃ©cution du script         |
 +----------------------+-------------------------------------------------------------+
 
-**Erreurs liés aux étapes de tests**
+**Erreurs liÃ©s aux Ã©tapes de tests**
 
 +----------------------+-------------------------------------------------------------+
 | Code erreur          | Description                                                 |
 +----------------------+-------------------------------------------------------------+
-| ERR_STP_001          | L'étape est déjà démarrée, la fonction `start()`            |
-|                      | est appelé plusieurs fois dans le test pour une même étape. |
+| ERR_STP_001          | L'Ã©tape est dÃ©jÃ  dÃ©marrÃ©e, la fonction `start()`            |
+|                      | est appelÃ© plusieurs fois dans le test pour une mÃªme Ã©tape. |
 +----------------------+-------------------------------------------------------------+
-| ERR_STP_005          | Le testeur essaye de positionner un résultat sur l'étape    |
-|                      | alors que la fonction `start()` n'a pas été utilisé en amont|
+| ERR_STP_005          | Le testeur essaye de positionner un rÃ©sultat sur l'Ã©tape    |
+|                      | alors que la fonction `start()` n'a pas Ã©tÃ© utilisÃ© en amont|
 +----------------------+-------------------------------------------------------------+
 
-**Erreurs liés à l'accès aux paramètres de test**
+**Erreurs liÃ©s Ã  l'accÃ¨s aux paramÃ¨tres de test**
 
 +----------------------+--------------------------------------------------------------------------+
 | Code erreur          | Description                                                              |
 +----------------------+--------------------------------------------------------------------------+
-| ERR_PRO_004          | Le paramètre demandé dans la fonction `input` n'existe pas dans le test  |
+| ERR_PRO_004          | Le paramÃ¨tre demandÃ© dans la fonction `input` n'existe pas dans le test  |
 +----------------------+--------------------------------------------------------------------------+
 
 
 FAQ
 ---
 
-Impossible de générer la description HTML d'un test
+Impossible de gÃ©nÃ©rer la description HTML d'un test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-L'impossibilité de générer un désigne pour un test peut venir de plusiers choses:
- - la version des adaptateurs ou librairies utilisés dans le test n'est pas bon
+L'impossibilitÃ© de gÃ©nÃ©rer un dÃ©signe pour un test peut venir de plusiers choses:
+ - la version des adaptateurs ou librairies utilisÃ©es dans le test n'est pas bon
  - une erreur de syntaxe existe dans un test
- - un appel au cache est utilisé dans la définition des étapes de tests
- 
+ - un appel au cache est utilisÃ© dans la dÃ©finition des Ã©tapes de tests
