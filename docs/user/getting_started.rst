@@ -31,10 +31,11 @@ La première utilisation consiste à créer un très simple premier cas de test 
    
    .. image:: /_static/images/client/client_new_trace.png
    
+   
    .. note:: 
    
      Il est possible de vérifier la syntaxe du test avant exécution en cliquant sur le bouton ``Syntax``.
-   
+       
      .. image:: /_static/images/client/check_syntax.png
    
 4. Enregistrer le test dans le dépôt avec le nom "Test_A" dans le répertoire ``Sandbox``

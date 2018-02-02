@@ -443,22 +443,9 @@ Outils tiers
 | gateway-sms      |  Permet d'envoyer ou recevoir des SMS                                                |
 +------------------+--------------------------------------------------------------------------------------+
 
-
 .. note:: L'utilisation de l'agent ``Selenium3-Server`` nécessiste au minimum d'avoir ``Java 8`` sur le poste.
 
 
-EXPLIQUER POURQUOI ET COMMENT UTILISER CHAQUE AGENT ET SONDE, AVEC EXEMPLES, REQUIS, WARNINGS, ETC.
-
- 
-
-EXPLIQUER COMMENT FAIRE DES TESTS SUR PLUSIEURS MACHINES EN PARALLÈLE ROULANT LE MEME TYPE D'AGENT
- - MEME TEST SUR PLUSIEURS MACHINES (comment configurer un test pour ça)
- - MEME SETUP DE COLLECTION DE DONNÉES ET AGENT SUR PLUSIEURS MACHINES, À PARTIR DE TEMPLATE AUTO-INCRÉMENTÉ
- - DÉFINITION DE POOLS DE MACHINES CONTENANT DES AGENTS IDENTIQUES, POUR TESTS DE ROBUSTESSE/STRESS (comment définir et utiliser dans un test)
- - COMMENT ROULER LE MÊME TEST SELENIUM SUR PLUSIEURS BROWSERS DIFFÉRENTS (expliquer le setup des agents/adaptateurs, et la config du test)
-
- 
- 
 Sondes
 ------
 

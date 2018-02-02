@@ -210,4 +210,4 @@ Pour écrire le test d'une application mobile, il faut:
 L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes
 et de générer le test unit équivalent.
 
-.. important:: Il faut activer le mode ``debogage USB`` sur le téléphone et accepter la connection de l'agent.
+.. important:: L'activation du mode ``debogage USB`` est obligatoire sur le téléphone et accepter la connection de l'agent.

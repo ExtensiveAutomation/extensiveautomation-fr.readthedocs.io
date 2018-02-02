@@ -22,7 +22,7 @@ Arborescence du serveur
 
 L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``/opt/xtc/current/``.
 
-..
+::
   
   Core/
   Libs/
@@ -39,6 +39,7 @@ L'ensemble des fichiers manipulés par le serveur sont stockés dans le réperto
     Backups/
   Web/
   
+
 Les tests sont stockés dans le répertoire ``/opt/xtc/current/Var/Tests/``, ils sont organisés par identifiant de projet.
 
 Modèle de données

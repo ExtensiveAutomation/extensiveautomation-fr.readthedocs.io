@@ -22,7 +22,7 @@ Code erreurs
 | Code erreur          | Description                                                 |
 +----------------------+-------------------------------------------------------------+
 | ERR_STP_001          | L'étape est déjà démarrée, la fonction `start()`            |
-|                      | est appelé plusieurs fois dans le test pour une même étape. |
+|                      | est appelée plusieurs fois dans le test pour une même étape.|
 +----------------------+-------------------------------------------------------------+
 | ERR_STP_005          | Le testeur essaye de positionner un résultat sur l'étape    |
 |                      | alors que la fonction `start()` n'a pas été utilisé en amont|

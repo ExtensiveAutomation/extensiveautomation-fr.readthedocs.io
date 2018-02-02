@@ -59,7 +59,7 @@ Exemple pour envoyer une commande sur une machine distante:
   self.warning( rsp )
   
 .. warning:: 
-  Les réponses SSH peuvent être découpées en plusieurs évènements (dépendant du réseau). 
+  Les réponses SSH peuvent être découpées en plusieurs évènements (celà dépend du réseau). 
   Il faut donc faire attention quand on attend une réponse spécifique, l'utilisation d'un buffer peut être nécessaire dans ce cas là.
 
 .. note:: Des exemples sont disponibles dans l'échantillon ``/Samples/Tests_Adapters/05_SSH.tsx``.
