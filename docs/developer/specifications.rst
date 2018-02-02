@@ -17,6 +17,30 @@ La version se découpe en 3 chiffres (A.B.C)
  - C: le 3ième chiffre indique une version de maintenance. L'incrémentation de ce chiffre indique
     - la correction de bug
 
+Arborescence du serveur
+-------------------
+
+L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``/opt/xtc/current/``.
+
+..
+  
+  Core/
+  Libs/
+  Scripts/
+  Packages/
+  TestExecutorLib/
+  TestInterop/
+  SutAdapters/
+  SutLibraries/
+  Var/
+    Tests/
+    TestsResults/
+    Logs/
+    Backups/
+  Web/
+  
+Les tests sont stockés dans le répertoire ``/opt/xtc/current/Var/Tests/``, ils sont organisés par identifiant de projet.
+
 Modèle de données
 -------------------
 

@@ -118,15 +118,7 @@ au moment de l'installation en modifiant la clé ``INSTALL`` dans le fichier ``d
 .. code-block:: bash
   
   INSTALL=/opt/xtc/
-  
-Erreur pour générer le désigne d'un test, quoi faire ?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-L'impossibilité de générer un désigne pour un test peut venir de plusiers choses:
- - la version des adaptateurs ou librairies utilisés dans le test n'est pas bon
- - une erreur de syntaxe existe dans un test
- - un appel au cache est utilisé dans la définition des étapes de tests
- 
 L'installation du serveur reste bloquée sur l'ajout des librairies externes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

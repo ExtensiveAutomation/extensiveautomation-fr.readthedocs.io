@@ -203,6 +203,19 @@ Exemple pour capturer une donnée avec une expression régulière et avec enregi
   
 .. image:: /_static/images/testlibrary/client_cache_capture.png
 
+Il est aussi possible de s'appuyer sur un paramètre de type ``custom`` pour fournir l'expression régulière.
+
+.. code-block::
+  
+  .*session_id=[!CAPTURE:SESSIONID:];expires.*
+
+ou en mode ``greedy``
+
+.. code-block::
+  
+  .*session_id=[!CAPTURE:SESSIONID:.*?];.*
+
+  
 .. important:: Le cache n'existe que durant l'exécution d'un test.
 
 Mettre en attente

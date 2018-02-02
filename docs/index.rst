@@ -30,6 +30,7 @@ Bienvenue sur la documentation ExtensiveTesting!
    user/test_snippets
    user/variables
    user/assisted_design
+   user/troubleshooting
    
 .. _admin-docs:
 

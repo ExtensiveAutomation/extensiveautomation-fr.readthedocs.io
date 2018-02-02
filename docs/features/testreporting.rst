@@ -41,7 +41,11 @@ La création d'un modèle peut se faire en utilisant le framework de test ``Test
   layer.addKey(name='msg', data='hello world')
   tpl.addLayer(layer=layer) 
   
-  
+Ce modèle indique que l'évènement devra contenir:
+ - une couche s'appelant `response` et contenant la clé `code` et `msg`
+ - la clé code devra être strictement égale à la valeur 500
+ - la clé msg devra être strictement égale au texte hello world.
+ 
 Exemple d'un message attendu visible depuis le client graphique:
 
 .. image:: /_static/images/testlibrary/template_expected.png
@@ -79,7 +83,11 @@ Exemple de modèle utilisant les opérateurs de comparaison:
   layer.addKey(name='msg', data=TestOperators.Contains(x="hello"))
   tpl.addLayer(layer=layer) 
   
-
+Ce modèle indique que l'évènement devra contenir:
+ - une couche s'appelant `response` et contenant la clé `code` et `msg`
+ - la clé code devra être inférieur à la valeur 500
+ - la clé msg devra contenir le texte hello.
+ 
 La visualisation
 ~~~~~~~~~~~~~
 

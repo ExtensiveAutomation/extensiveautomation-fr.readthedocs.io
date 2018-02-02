@@ -4,16 +4,18 @@
 Adaptateur SSH
 --------------
 
-his sample show how to use the SSH client adapter. This adapter enables to connect to server through the SSH v2 protocol with support of:
+L'adaptateur ``SSH`` permet de se connecter sur des serveurs distants en utilisant le protocole SSH.
 
-authentication by login/password
-authentication key
-The following explanations are based on the sample available on /Samples/Tests_Adapters/05_SSH.tsx
-
-Please use ssh snippets for more efficiency
-
-Adapter configuration
-Configure your adapter in the prepare section of your test
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant 
+ - le port du serveur distant (par défaut 22)
+ - le compte utilisateur
+ 
+L'adaptateur supporte les fonctionnalités suivantes:
+ - authentification par nom d'utilisateur et mot de passe
+ - authentification par échange de clé
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 .. code-block:: python
   
@@ -27,8 +29,7 @@ Configure your adapter in the prepare section of your test
                                         agentSupport=input('SUPPORT_AGENT')
                                     )
 
-Make connection and disconnection
-In the definition part, copy/paste the following lines to make connection with authentification. You need to provide the prompt of your remote machine, the default prompt expected is ~]#
+Exemple pour se connecter, s'authentifier sur un serveur distant et se déconnecter:
 
 .. code-block:: python
   
@@ -43,8 +44,8 @@ In the definition part, copy/paste the following lines to make connection with a
   if not disconnected: self.abort("disconnect failed")
   self.info("SSH disconnection OK" )
   
-Execute basic commands
-Copy/paste the following lines to execute a command in your system. The example below shows how to execute the command date on the remote machine and retrieve the value.
+  
+Exemple pour envoyer une commande sur une machine distante:
 
 .. code-block:: python
   
@@ -57,26 +58,28 @@ Copy/paste the following lines to execute a command in your system. The example 
   if rsp is None: self.abort("run command failed")
   self.warning( rsp )
   
-  
-Notes:
+.. warning:: 
+  Les réponses SSH peuvent être découpées en plusieurs évènements (dépendant du réseau). 
+  Il faut donc faire attention quand on attend une réponse spécifique, l'utilisation d'un buffer peut être nécessaire dans ce cas là.
 
-Ssh responses can be splitted in severals events, so you new to retrieve properly all events to create the complete response.
-Please to use the Console adapter if this behaviour is problematic for you or prefer to use the Terminal adapter
+.. note:: Des exemples sont disponibles dans l'échantillon ``/Samples/Tests_Adapters/05_SSH.tsx``.
 
 Adaptateur HTTP
 --------------
 
-This sample show how to use the HTTP client adapter.
+L'adaptateur ``HTTP`` permet d'envoyer des requêtes et d'inspecter les réponses associés vers un serveur Web.
 
-This adapter enables to send or receive HTTP requests and response with:
-
-SSL and proxy (socks 4, 5 and http) support
-Chunked or content-length data support
-Basic, digest authentication support
-The following explanations are based on the sample available on /Samples/Tests_Adapters/02_HTTP.tsx
-
-Adapter configuration
-Configure your adapter in the prepare section of your test
+La configuration de l'adaptateur consiste à indiquer à minima:
+ - l'adresse ip du serveur distant 
+ - le port du serveur distant (par défaut 80)
+ 
+L'adaptateur supporte les fonctionnalités suivantes:
+ - le chiffrement ``tls`` de la communication
+ - l'utilisation de proxy ``socks4, 5`` et http
+ - l'authentification ``digest`` ou ``basic``
+ - le réassemblage des réponses ``chunked`` 
+ 
+Exemple de configuration de l'adaptateur dans la section ``prepare`` du test.
 
 .. code-block:: python
   
@@ -90,7 +93,7 @@ Configure your adapter in the prepare section of your test
                                             agentSupport=input('SUPPORT_AGENT')
                                         )
 
-Make a GET request and set the expected response code as below
+Exemple pour envoyer une réquête de type ``GET`` et d'une réponse avec le code ``200``.
 
 .. code-block:: python
   
@@ -105,14 +108,16 @@ Make a GET request and set the expected response code as below
   else:
     self.step1.setPassed(actual="http response OK") 
   
-
-Use operators to describe the expected response
-Make a GET request use operators as below to describe the expected response. Go the operators guide to have the list of available operators.
-
-headersExpected = { TestOperators.Contains(needle='server'): TestOperators.Any() }
-
+Exemple pour envoyer une réquête de type ``GET`` et attendre une réponse répondant aux critères suivants:
+ - la version doit se terminer par 1.1
+ - le code ne doit pas contenir la valeur 200
+ - la phrase ne doit pas contenir le texte `Testing`
+ - le corps de la réponse doit contenir le texte `google`
+ - la réponse doit contenir une entête contenant le texte `server`, peut importe la valeur
 
 .. code-block:: python
+  
+  headersExpected = { TestOperators.Contains(needle='server'): TestOperators.Any() }
   
   rsp = self.ADP_HTTP.GET( 
                         uri="/", 
@@ -128,14 +133,6 @@ headersExpected = { TestOperators.Contains(needle='server'): TestOperators.Any()
     self.step1.setFailed(actual="bad response received")    
   else:
     self.step1.setPassed(actual="http response OK") 
-    
-As described above, the response must be in accord with the following statements:
-
-- the version must ends with the value 1.1
-- the code must no contains the value 200
-- the phrase must not contains the value Testing
-- the body must contains the value google.
-- And finally, the http response must contains a header named server with any value
 
 Adaptateur Telnet
 --------------

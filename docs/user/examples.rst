@@ -154,26 +154,60 @@ L'approche préconisée pour écrire les tests web est la suivante:
  - identifier les différents enchainements de pages pour créer les scénarios
  - identifier les parcours utilisateurs 
 
+Pour exécuter ce type de test, il faut absolument déclarer l'agent qui sera utilisé
+
+.. image:: /_static/images/examples/selenium_agent.png
+
 L'écriture des tests se réalise à travers l'assistant, il permet de décrire les différentes étapes
 et de générer le test unit équivalent. Les enchainements de pages sont à décrire dans les tests plans
 Le parcours utilisateur est à définir dans un test global
-
-.. image:: /_static/images/examples/web.png
 
 La solution préconise aussi de n'utiliser que des xpath pour identifier des élements HTML.
 
 .. image:: /_static/images/examples/web_xpath.png
 
-.. tip:: Il est possible d'utiliser les outils de développement des navigateurs pour valider les xpaths.
+L'exemple ci-dessous montre comment créer un compte Google en utilisant un nom et prénom aléatoire.
 
+.. image:: /_static/images/examples/web.png
+
+Exemple de résultat:
+
+.. image:: /_static/images/examples/selenium_random_data.png
+
+.. tip:: 
+  
+  Il est possible d'utiliser les outils de développement des navigateurs pour valider les xpaths.
+  
+  .. image:: /_static/images/examples/firefox_console_xpath.png
+  
 .. note:: L'exemple présenté ci-dessous est disponible en totalité dans les échantillons de test ``/Samples/Tests_Gui/Selenium/``.
+
+.. note::
+  
+  Selenium3  nécessite au minimum Java 8 sur le poste client.
+  
+  +--------------+---------------------+-----------+
+  | Navigateurs  |   Version Selenium  |   Gecko   |
+  +--------------+---------------------+-----------+
+  | Firefox <47  |   Selenium  2       |   Non     |
+  +--------------+---------------------+-----------+
+  | Firefox > 47 |   Selenium  3       |   Oui     |
+  +--------------+---------------------+-----------+
+  | IE           |   Selenium  3       |   N/A     |
+  +--------------+---------------------+-----------+
+  | Chrome       |   Selenium  3       |   N/A     |
+  +--------------+---------------------+-----------+
+
 
 Mobile Android
 --------------
 
 Pour écrire le test d'une application mobile, il faut:
- - déployer un agent ``adb`` sur un poste avec un mobile android connecté dessus.
- - avoir accès à la description xml des applications depuis l'agent
+ - Avoir un téléphone mobile Android connecté en USB sur un PC
+ - Déployer un agent ``adb`` sur un poste avec un mobile android connecté dessus.
+ - Avoir accès à la description xml des applications depuis l'agent
 
 L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes
 et de générer le test unit équivalent.
+
+.. important:: Il faut activer le mode ``debogage USB`` sur le téléphone et accepter la connection de l'agent.

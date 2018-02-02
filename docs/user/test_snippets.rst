@@ -180,58 +180,114 @@ Un message expliquant l'arrêt peut être spécifié avec le paramètre ``STOP_T
 
 .. note:: Il est possible de personaliser le message d'arrêt en configurant la variable ``STOP_TEST_MSG``.
 
-Chargement de l'environnement de test
+Chargement d'un environnement de test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/03_Initilize.tux``
 
-Ce test réutilisable permet de charger dans le cache les données de son environnement de tests.
-Par contre les adresses, compte d'accès des serveurs, etc.
+Ce test réutilisable permet de charger dans le cache les données de son environnement de tests 
+(les adresses ip, compte d'accès des serveurs, etc.).
+
+Un environnement se décrit avec 4 niveaux:
+ - ``environnement``
+ - ``clusteur``
+ - ``noeud``
+ - ``instance``
+ 
+Un ``environnement`` peut être constitué de un ou plusieurs clusteurs.
+
+.. code-block:: json
+  
+  {
+    "PLATFORM": {
+                   "NOM_CLUSTER_1": [ .. ],
+                   "NOM_CLUSTER_2": [ .. ]
+        }
+  }
+  
+
+Un ``clusteur`` est constitué d'une liste de noeuds.
+
+.. code-block:: json
+  
+  {
+    "NOM_CLUSTER_1": [
+                  { "NOM_NOEUD_1": { .. },
+                  { "NOM_NOEUD_2": { .. }
+        ]
+  }
+  
+
+Un ``noeud`` est constitué de une ou plusieurs instances.
+
+.. code-block:: json
+  
+  {
+    "NOM_NOEUD_1": {
+                  "COMMON": { ... },
+                  "INSTANCES": {....}
+        }
+  }
+  
+
+Une ``instance`` se constitue de plusieurs clés/valeurs.
+
+
+.. code-block:: json
+  
+  {
+    "INSTANCES": {
+                  "TYPE_INSTANCE_1": {
+                                        "NOM_INSTANCE_1": { ...},
+                                        "NOM_INSTANCE_2": { ...}
+                                    },
+                  "TYPE_INSTANCE_2": { ... }
+        }
+  }
+  
 
 Paramètre(s) à configurer:
 
-+-----------------+----------------+
-|Paramètres       |   Description  |
-+-----------------+----------------+
-| ENVIRONMENT     |                |
-+-----------------+----------------+
++-----------------+-----------------------------------------------------------------------------------------+
+|Paramètres       |   Description                                                                           |
++-----------------+-----------------------------------------------------------------------------------------+
+| ENVIRONMENT     |  Lien vers une variable partagée ou bien contient directement du ``JSON``.              |
++-----------------+-----------------------------------------------------------------------------------------+
+       
+Exemple d'un environnement de test contenant un serveur http avec une instance de type rest.
+Après chargement dans le cache, l'instance REST est accessible en utilisant la clé ``NODE_HTTP_REST``.
+L'ensemble des clés présentes dans ``COMMON`` sont automatiquement copiés dans chaques instances.
 
-L'environnement doit être spécifié en sélectionnant d'une variable réutilisable.
+.. code-block:: python
 
-.. note:: 
- L'environnement peut être directement précisé au format ``JSON``.
- Un exemple: 
- 
- .. code-block:: python
- 
-   {
-    "PLATFORM": {
-        "CLUSTER": [
-            { "NODE": {
-                        "COMMON": {
-                            "HOSTNAME": "httpbin"
-                        },
-                        "INSTANCES": {
-                            "HTTP": {
-                                "REST": {
-                                    "HTTP_DEST_HOST": "httpbin.org",
-                                    "HTTP_DEST_PORT": 443,
-                                    "HTTP_DEST_SSL": true,
-                                    "HTTP_HOSTNAME": "httpbin.org",
-                                    "HTTP_AGENT_SUPPORT": false,
-                                    "HTTP_AGENT": null
-                                }
+{
+"PLATFORM": {
+    "CLUSTER": [
+        { "NODE": {
+                    "COMMON": {
+                        "HOSTNAME": "httpbin"
+                    },
+                    "INSTANCES": {
+                        "HTTP": {
+                            "REST": {
+                                "HTTP_DEST_HOST": "httpbin.org",
+                                "HTTP_DEST_PORT": 443,
+                                "HTTP_DEST_SSL": true,
+                                "HTTP_HOSTNAME": "httpbin.org",
+                                "HTTP_AGENT_SUPPORT": false,
+                                "HTTP_AGENT": null
                             }
                         }
-                     }
-                }
-        ]
-    },
-    "DATASET": [    ]
-   }
-  
-  Après chargement dans le cache, le serveur est accessible avec la clé ``NODE_HTTP_REST``.
-  
+                    }
+                 }
+            }
+    ]
+},
+"DATASET": [    ]
+}
+ 
+La clé ``DATASET`` peut contenir des jeux de données.
+
 Générateurs
 -----------
 
@@ -441,7 +497,10 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 
 .. image:: /_static/images/examples/snippets_http_rsp.png
 
-.. note:: L'utilisation des expressions régulières est possible pour vérifier ou enregistrer une valeur dans le corps de la réponse ou bien dans les entêtes.
+.. note:: 
+  L'utilisation des expressions régulières est possible pour vérifier ou enregistrer une valeur dans le corps de la réponse ou bien dans les entêtes.
+  
+  .. image:: /_static/images/examples/snippets_http_capture.png
 
 .. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
 
@@ -605,9 +664,18 @@ Paramètre(s) à configurer:
 | LOADING_URL     |  Url du site à charger               |
 +-----------------+--------------------------------------+
 
+Il est possible de sélectionner le navigateur à ouvrir, les navigateurs suivants sont supportés:
+ - Firefox
+ - Chrome
+ - Internet Explorer
+ - Opera
+ - Edge
+
+.. image:: /_static/images/examples/selenium_browser.png
+ 
 .. note:: L'url doit obligatoirement commencer par ``http://`` ou ``https://``
 
-.. warning: un agent de type ``selenium-server`` est obligatoire.
+.. warning: un agent de type ``selenium(2|3)-server`` est obligatoire.
 
 
 Fermeture navigateur
