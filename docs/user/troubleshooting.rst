@@ -4,7 +4,7 @@ Dépannage
 Code erreurs
 ------------
 
-**Erreurs liés au moteur d'exécution**
+**Erreurs liées au moteur d'exécution**
 
 +----------------------+-------------------------------------------------------------+
 | Code erreur          | Description                                                 |
@@ -16,7 +16,7 @@ Code erreurs
 | ERR_TE_500           | Erreur générique au niveau de l'exécution du script         |
 +----------------------+-------------------------------------------------------------+
 
-**Erreurs liés aux étapes de tests**
+**Erreurs liées aux étapes de tests**
 
 +----------------------+-------------------------------------------------------------+
 | Code erreur          | Description                                                 |
@@ -28,7 +28,7 @@ Code erreurs
 |                      | alors que la fonction `start()` n'a pas été utilisé en amont|
 +----------------------+-------------------------------------------------------------+
 
-**Erreurs liés à l'accès aux paramètres de test**
+**Erreurs liées à l'accès aux paramètres de test**
 
 +----------------------+--------------------------------------------------------------------------+
 | Code erreur          | Description                                                              |
@@ -42,7 +42,7 @@ FAQ
 Impossible de générer la description HTML d'un test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-L'impossibilité de générer un désigne pour un test peut venir de plusiers choses:
+L'impossibilité de générer la description d'un test peut venir de plusiers choses:
  - la version des adaptateurs ou librairies utilisées dans le test n'est pas bon
  - une erreur de syntaxe existe dans un test
  - un appel au cache est utilisé dans la définition des étapes de tests

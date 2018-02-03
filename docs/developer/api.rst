@@ -42,7 +42,7 @@ Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header `
 Exemple d'utilisation
 ----------------
 
-L'api est accessible à travers le ``port 443`` (https) sur serveur de test via l'uri ``/rest``.
+L'api est accessible à travers le ``port 443`` (https) du serveur de test via l'uri ``/rest``.
 
 L'exemple ci-dessous montre comment exécuter un test avec une authentification basique.
 
@@ -91,7 +91,7 @@ Description des fonctions les plus importantes:
 |/rest/session/logout     | `Détails <https://demo.extensivetesting.org/web/common-api-rest/index.html#api-Session-sessionLogout>`_         |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
-.. note:: la fonction ``login`` ne nécessite aucune authentification.
+.. note:: La fonction ``login`` ne nécessite aucune authentification.
 
 **Exécution d'un test**
 

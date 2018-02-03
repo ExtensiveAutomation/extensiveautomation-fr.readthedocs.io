@@ -403,8 +403,8 @@ Mise à jour
 La mise à jour de la boîte à outils est à faire manuellement.
 Il faut récupérer le paquet depuis le site internet ou bien depuis le serveur de test.
 
-La mise à jour nécessite
- - supprimer la version courante
- - ajouter la nouvelle version et reconfigurer les agents ou sondes à redémarrer.
+La mise à jour nécessite:
+ - de supprimer la version courante
+ - d'ajouter la nouvelle version et reconfigurer les agents ou sondes à redémarrer.
  
 .. note:: La mise à jour automatique n'est pas encore supportée.

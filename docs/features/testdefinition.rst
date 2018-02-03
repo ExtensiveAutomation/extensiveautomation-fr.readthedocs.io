@@ -52,7 +52,7 @@ La préparation des campagnes se réalise en important les tests `plans`.
 
 .. image:: /_static/images/testlibrary/tgx.png
 
-.. note:: il est aussi possible d'importer les autres types de tests.
+.. note:: Il est aussi possible d'importer les autres types de tests.
 
 	
 	

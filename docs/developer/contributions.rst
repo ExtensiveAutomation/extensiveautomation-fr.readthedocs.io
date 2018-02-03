@@ -321,7 +321,7 @@ Installation des paquets systèmes
   postgresql-devel
   
 
-Installation des libraries python
+Installation des librairies python
 
 .. code-block:: bash
   
@@ -407,7 +407,7 @@ suivantes:
   __HELPER__.append("Example") 
   
 Pour faire apparaitre l'adaptateur dans la documentation accessible depuis le client graphique, il faut 
-utiliser le décorateur ``@doc_public`` devant chaque fonction qu'on souhaite documenter.
+utiliser le décorateur ``@doc_public`` devant les fonctions que l'on souhaite documenter.
 
 .. code-block:: python
   
@@ -438,7 +438,7 @@ suivantes:
   __HELPER__.append("Example") 
   
 Pour faire apparaitre la librairie dans la documentation accessible depuis le client graphique, il faut 
-utiliser le décorateur ``@doc_public`` devant chaque fonction qu'on souhaite documenter.
+utiliser le décorateur ``@doc_public`` devant les fonctions que l'on souhaite documenter.
 
 .. code-block:: python
   

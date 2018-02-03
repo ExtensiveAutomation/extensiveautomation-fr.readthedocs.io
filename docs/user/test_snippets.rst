@@ -258,11 +258,11 @@ Exemple d'un environnement de test contenant un serveur http avec une instance d
 Après chargement dans le cache, l'instance REST est accessible en utilisant la clé ``NODE_HTTP_REST``.
 L'ensemble des clés présentes dans ``COMMON`` sont automatiquement copiés dans chaques instances.
 
-.. code-block:: python
-
-{
-"PLATFORM": {
-    "CLUSTER": [
+.. code-block:: json
+  
+  {
+    "PLATFORM": {
+      "CLUSTER": [
         { "NODE": {
                     "COMMON": {
                         "HOSTNAME": "httpbin"
@@ -282,10 +282,11 @@ L'ensemble des clés présentes dans ``COMMON`` sont automatiquement copiés dan
                  }
             }
     ]
-},
-"DATASET": [    ]
-}
- 
+  },
+  "DATASET": [    ]
+  }
+  
+
 La clé ``DATASET`` peut contenir des jeux de données.
 
 Générateurs
@@ -412,17 +413,16 @@ Paramètre(s) à configurer:
 
 Le paramètre `COMMANDS` attends un ou plusieurs blocs de 4 lignes.
 Chaque bloc doit respecter le formalisme suivant:
- 1. Commentaire expliquant l'action, cette information est utilisé pour initialiser l'étape de test
- 2. La commande a exécuter
- 3. La chaine de caractère attendue à l'écran, si la valeur attendue n'est pas trouvée alors l'étape par en erreur. (ligne optionnel)
+ 1. Un commentaire expliquant l'action, cette information est utilisée pour initialiser l'étape de test
+ 2. La commande à exécuter
+ 3. La chaine de caractère attendue à l'écran, si la valeur attendue n'est pas trouvée alors l'étape sera en erreur. (ligne optionnel)
  4. vide
  
 .. warning:: Chaque bloc sera exécuté même si le précèdent est en erreur. 
     
 L'exemple suivant effectue les actions suivantes:
- 1. envoie de 3 ping sur la machine distante dont l'ip est stockée dans le cache ``DEST_HOST``
- 2. Vérification d'avoir le message à l'écran indiquant que les 3 paquets ont été envoyés.
- Ensuite la valeur mddev est stockée dans le cache avec la clé ``STATS` 
+ 1. Envoie de 3 pings sur la machine distante dont l'ip est stockée dans le cache ``DEST_HOST``
+ 2. Vérification d'avoir le message à l'écran indiquant que les 3 paquets ont été envoyés. Ensuite la valeur mddev est stockée dans le cache avec la clé ``STATS` 
  3. Le deuxième bloc efface l'écran en envoyant la commande clear.
  4. Enfin te test attend de trouver le prompt à l'écran
  
@@ -453,7 +453,7 @@ HTTP
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_HTTP.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -509,8 +509,9 @@ XML
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_XML.tsx``
 
-Ce test réutilisable permet d'envoyer une requête HTTP avec du ``XML`` en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
+Ce test réutilisable permet d'envoyer une requête HTTP avec du ``XML`` dans le corps de la requête.
+Il permet aussi de vérifier la réponse reçue avec plusieurs critères.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
