@@ -121,11 +121,11 @@ Les rapports sont accessibles depuis le client, l'interface web ou bien depuis l
 Rapport avancé
 ~~~~~~~~~~~~~~
 
-Le rapport avancé affiche un certain nombre de paramètres:
+Le rapport avancé affiche les informations comme:
  - la durée d'exécution de chaque cas de test
  - la description complète des étapes de test.
  - des statistiques sur l'exécution.
- - des paramètres de tests.
+ - les paramètres de tests.
  
 .. image:: /_static/images/testlibrary/advanced_report.png
 

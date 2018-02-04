@@ -375,7 +375,7 @@ Sens de communications disponibles:
 Les logs serveurs
 ----------------
 
-les logs du serveurs sont localisés au même endroit sur le serveur, dans le répertoire ``/opt/xtc/current/Var/logs/``.
+Les logs du serveur sont localisés dans le répertoire ``/opt/xtc/current/Var/logs/``.
 
 +--------------------+---------------------------------------------------------+
 | access_rp.log      | logs apache pour l'accès reverse                        |

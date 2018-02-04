@@ -184,10 +184,8 @@ Exemple pour envoyer des données au serveur distant
 
 .. code-block:: python
   
-  todo
+  tpl = self.ADP_TELNET.sendData(dataRaw="exemple")
   
-
-<à insérer>
 
 .. warning: les réponses telnet peuvent être splittées en plusieurs évènements, il faut donc faire attention quand on
 recherche un texte en particulier. Pour se prémunir de ce problème, il faut ajouter un buffer intermédiare, il y a un
@@ -202,7 +200,7 @@ L'adaptateur ``MySQL`` permet de se connecter sur une base donnée distante.
 
 La configuration de l'adaptateur consiste à indiquer à minima:
  - l'adresse ip du serveur distant 
- - le port du serveur distant (par défaut xxxx)
+ - le port du serveur distant (par défaut 3306)
  - le nom d'utilisateur
  - le mot de passe associé
  

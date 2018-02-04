@@ -7,6 +7,9 @@ La solution est faite de plusieurs composants pouvant être téléchargés sépa
 
 La solution peut être téléchargée depuis le site internet https://www.extensivetesting.org
 
+Le serveur est disponible sour la forme d'un fichier ``tar.gz``, il intègre:
+ - le client graphique portable
+ - les adaptateurs et librairies
 
 Le client lourd est disponible sous deux formes:
  - version portable
