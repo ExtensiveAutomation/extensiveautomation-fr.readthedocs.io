@@ -410,6 +410,8 @@ Paramètre(s) à configurer:
 +-----------------+----------------------------------------------------------+
 | COMMANDS        |  Listes des commandes à exécuter sur la machine distante |
 +-----------------+----------------------------------------------------------+
+| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
++-----------------+----------------------------------------------------------+
 
 Le paramètre `COMMANDS` attends un ou plusieurs blocs de 4 lignes.
 Chaque bloc doit respecter le formalisme suivant:
@@ -457,11 +459,13 @@ Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_In
 
 Paramètre(s) à configurer pour définir la destination:
 
-+-----------------+---------------------------------+
-|Paramètres       |   Description                   |
-+-----------------+---------------------------------+
-| SERVERS         |  Liste des serveurs à contacter |
-+-----------------+---------------------------------+
++-----------------+----------------------------------------------------------+
+|Paramètres       |   Description                                            |
++-----------------+----------------------------------------------------------+
+| SERVERS         |  Liste des serveurs à contacter                          |
++-----------------+----------------------------------------------------------+
+| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
++-----------------+----------------------------------------------------------+
 
 Paramètre(s) pour configurer la requête HTTP à envoyer:
 
@@ -515,11 +519,13 @@ Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_In
 
 Paramètre(s) à configurer pour définir la destination:
 
-+-----------------+---------------------------------+
-|Paramètres       |   Description                   |
-+-----------------+---------------------------------+
-| SERVERS         |  Liste des serveurs à contacter |
-+-----------------+---------------------------------+
++-----------------+----------------------------------------------------------+
+|Paramètres       |   Description                                            |
++-----------------+----------------------------------------------------------+
+| SERVERS         |  Liste des serveurs à contacter                          |
++-----------------+----------------------------------------------------------+
+| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
++-----------------+----------------------------------------------------------+
 
 Paramètre(s) pour configurer la requête HTTP à envoyer:
 
@@ -568,11 +574,13 @@ Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_In
 
 Paramètre(s) à configurer pour définir la destination:
 
-+-----------------+---------------------------------+
-|Paramètres       |   Description                   |
-+-----------------+---------------------------------+
-| SERVERS         |  Liste des serveurs à contacter |
-+-----------------+---------------------------------+
++-----------------+----------------------------------------------------------+
+|Paramètres       |   Description                                            |
++-----------------+----------------------------------------------------------+
+| SERVERS         |  Liste des serveurs à contacter                          |
++-----------------+----------------------------------------------------------+
+| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
++-----------------+----------------------------------------------------------+
 
 Paramètre(s) pour configurer la requête HTTP à envoyer:
 

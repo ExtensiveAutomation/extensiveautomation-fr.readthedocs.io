@@ -297,7 +297,7 @@ Si le prompt n'est pas détecté, il est possible de le modifier manuellement.
 Plugin SeleniumIDE
 ~~~~~~~~~~~~~~~~~~
 
-L'utilisation du plugin ``SeleniumIDE`` implique une utilisation basique. Il permet de convertire un fichier enregistré avec le plugin SeleniumIDE de firefox 
+L'utilisation du plugin ``SeleniumIDE`` implique une utilisation basique. Il permet de convertir un fichier enregistré avec le plugin SeleniumIDE de firefox 
 dans l'assistant de conception.
 
 .. tip:: Il est plus efficace d'utiliser l'assistant en direct pour être en phase avec la philosophie de la solution.

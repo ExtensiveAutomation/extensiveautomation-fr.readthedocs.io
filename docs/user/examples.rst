@@ -207,7 +207,21 @@ Pour écrire le test d'une application mobile, il faut:
  - Déployer un agent ``adb`` sur un poste avec un mobile android connecté dessus.
  - Avoir accès à la description xml des applications depuis l'agent
 
-L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes
-et de générer le test unit équivalent.
+La connexion de l'agent ``adb`` sur le mobile android nécessite d'accepter la clé RSA.
 
-.. important:: L'activation du mode ``debogage USB`` est obligatoire sur le téléphone et accepter la connection de l'agent.
+.. image:: /_static/images/examples/mobile_rsa.png
+
+Après connexion, l'agent affiche un aperçu de l'écran sur le pc, il est possible de parcourir 
+l'interface depuis l'agent et d'avoir les élements XML disponible dans la page.
+
+.. image:: /_static/images/toolbox/toolbox_mobile.png
+ 
+L'écriture des tests se réalise avec l'assistant, il permet de décrire les différentes étapes
+et de générer le test unit équivalent. Il est indispensable de se baser sur l'agent ``adb`` pour 
+avoir la liste des  élements et attributs XML disponibles.
+
+.. image:: /_static/images/examples/assistant_android.png
+
+.. note:: L'exemple complet est disponible dans les échantillons de tests ``/Samples/Tests_Mobiles/03_PlayStore.tux``.
+
+.. important:: L'activation du mode ``debogage USB`` est obligatoire sur le téléphone.

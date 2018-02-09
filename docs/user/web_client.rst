@@ -19,7 +19,7 @@ Utilisateurs
 ~~~~~~~~~~~~
 
 La solution nécessite de créer des comptes utilisateurs.
-La création peut se faire à travers l'interface Web ou bien depuis directement depuis l'API.
+La création peut se faire à travers l'interface Web ou bien directement depuis l'API.
 
 La création d'un utilisateur nécessite à minima de préciser: 
  - un nom d'utilisateur
@@ -37,9 +37,9 @@ Projets
 Les tests peuvent être organisés par projet.
 L'ajout ou la suppression de projet peut se faire depuis l'interface web ou directement depuis l'api REST.
 
-.. note:: Le projet ``Common`` existe par défaut et accessible par l'ensemble des utilisateurs, il ne peut pas être supprimé.
+.. note:: Le projet ``Common`` existe par défaut et est accessible par l'ensemble des utilisateurs, il ne peut pas être supprimé.
 
 Partie système
 --------------
 
-La partie système système permet de voir le status du serveur.
+La partie système permet de voir le statut du serveur.

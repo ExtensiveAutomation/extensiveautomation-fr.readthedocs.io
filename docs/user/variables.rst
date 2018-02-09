@@ -8,7 +8,7 @@ Ajout/suppression d'une variable
 -----------------
 
 L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
-Le format attendu est de type ``JSON``.
+Le format attendu est de type ``JSON``. Elles sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
 
 .. image:: /_static/images/webinterface/read_variable.png
 

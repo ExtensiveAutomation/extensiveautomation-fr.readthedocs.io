@@ -15,14 +15,14 @@ Cette fenêtre permet de choisir l'agent ou la sonde à démarrer. Le type d'age
 dans la liste déroulante. Enfin un agent ou sonde nécessite d'être enregistré auprès du serveur de test pour pouvoir l'utiliser.
 
 Un agent va permettre de faire une exécution distribuée de vos tests. 
-Par exemple, un agent déployé sur plusieurs machines va permettent d'exécuter le même test sur différent environnement à tester ou piloter.
+Par exemple, un agent déployé sur plusieurs machines va permettre d'exécuter le même test sur différent environnement à tester ou piloter.
 
 La liste complète des agents et sondes disponibles sont décrits dans le chapitre `Compléments Serveur > Agents ou Sondes`.
 
 .. note:: Le nom de l'agent ou la sonde doit être unique pour réussir l'enregistrement.
 
 .. tip:: 
-  Pour une meilleur visibilité des agents ou sondes disponibles, il est conseillé de respecter le formalisme suivant
+  Pour une meilleure visibilité des agents ou sondes disponibles, il est conseillé de respecter le formalisme suivant
   pour les noms:
     [agent|sonde].[environnement].[prénom_testeur].[nom][numéro_instance]
     
@@ -38,7 +38,7 @@ Compléments
 
 La boite à outils peut être enrichie avec de nouveaux plugins.
 
-Pour ce faire il faut suivre la procédure décrite dans le chapitre :doc:`developer\contributions` `Contributions > Développement plugins > Boites à outils`.
+Pour ce faire il faut suivre la procédure décrite dans le chapitre `Contributions > Développement plugins > Boites à outils`.
 Les plugins sont à déposer dans le répertoire ``Plugins``.
 
 .. image:: /_static/images/toolbox/toolbox_plugins_install.png
