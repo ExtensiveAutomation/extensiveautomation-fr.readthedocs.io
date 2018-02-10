@@ -12,6 +12,7 @@ Installation automatique
     - l'interface réseau est correctement configurée sur le serveur
     - l'accès aux dépôts officiels est disponible
     - utilisation d'un système Linux CentOS 6/7 ou RedHat
+    - ``perl`` installé sur le système
 
 L'installation de la solution peut se faire en utilisant le script ``install.sh`` présent dans le tar.gz.
 Si les prérequis sont respectés alors l'installation se fera en mode automatique, c'est à dire que les paquets manquants 

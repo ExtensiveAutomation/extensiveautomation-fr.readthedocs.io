@@ -6,18 +6,32 @@ Version courante
 
 .. note::
 
- **Version 17.1.0 disponible depuis le 22/10/2017**
+ **Version 18.0.0 disponible depuis le 11/02/2018**
+ 
+ - Suppression de l'API XmlRPC sur le serveur
+ - Refonte complète de l'API REST
+ - Nouveau client majeur utilisant l'api rest exclusivement
+ - Support de Qt5.9 pour le client et la boite à outils
+ - Support de python 3.6 pour le client et la boite à outils
+ - Nettoyage important de l'ensemble du code source
+ - Corrections de bugs divers
+ - Mise à jour de selenium en 3.9.0 dans la boite à outils
+ - La boite à outils n'est plus embarquée par défaut sur le serveur
+
+La release notes détaillée est disponible dans le paquet d'installation.
+
+Versions précédentes
+-------------------
+
+..
+
+ **Version 17.1.0 sortie le 22/10/2017**
  
  - Amélioration de l'API REST
  - Ajout de fonctionnalités majeures dans le framework de test
  - Apport de corrections
  - Amélioration de l'interface graphique sur le client
  - Support expérimental du client sur Ubuntu
-
-La release notes détaillée est disponible dans le paquet d'installation.
-
-Versions précédentes
--------------------
 
 ..
 
