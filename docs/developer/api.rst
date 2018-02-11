@@ -33,7 +33,7 @@ Cookie de session
 ~~~~~~~~~~~~~~~~~
 
 L'authentification par cookie nécessite d'appeler en prérequis la fonction ``login`` pour générer un cookie de session.
-Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'header ``Cookie``.
+Ce cookie doit être ensuite fournit à l'ensemble des requêtes dans l'entête ``Cookie``.
 
 .. code-block:: bash
 

@@ -123,7 +123,7 @@ Les paramètres de configuration sont découpés en plusieurs sections:
 Sauvegardes automatiques
 ~~~~~~~~~~~~~~~~~~~~~~
   
-Par défaut la solution sauvegarder l'ensemble des tests, adaptateurs et libraries chaques jours.
+Par défaut la solution sauvegarde l'ensemble des tests, adaptateurs et librairies chaques jours.
 Les sauvegardes sont disponibles dans ``opt/xtc/current/Var/Backups``.
 
 La périodicité peut être configuré dans la section ``Backups`` du fichier ``settings.ini``.
@@ -137,9 +137,9 @@ La périodicité peut être configuré dans la section ``Backups`` du fichier ``
   ; backup zip name
   tests-name=tests-automatic-backup
   ; backup weekly on sunday at 23:40:00
-  tests-at=5|23,40,00
+  tests-at=6|23,40,00
   
 Rythme de sauvegarde disponible:
- - 6: une fois par semaine
- - 5: une fois par jour
- - 4: une fois par heure
+ - 7: une fois par semaine
+ - 6: une fois par jour
+ - 5: une fois par heure
