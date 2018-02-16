@@ -23,3 +23,11 @@ Cette action peut se faire à travers l'interface web ou bien l'API.
 .. image:: /_static/images/webinterface/delete_project.png
 
 .. note:: Si le projet est associé à un utilisateur, la suppression n'est pas autorisée.
+
+Associé un projet à un utilisateur
+------------------------------------
+
+Un utilisateur peut accéder à plusieurs projets, en fonction des autorisations accordées.
+L'autorisation s'effectue depuis le profil d'un utilisateur avec un compte administrateur.
+Un administrateur peut sélectionner les projets autorisés, il est aussi possible 
+de configurer le projet par défaut, ie. celui qui sera affiché par défaut à la connexion.
