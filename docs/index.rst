@@ -42,6 +42,7 @@ Bienvenue sur la documentation ExtensiveTesting!
    admin/admin
    admin/projects
    admin/users
+   admin/adapters_libraries
    admin/troubleshooting
 
 .. _feature-docs:

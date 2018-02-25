@@ -24,7 +24,7 @@ Cette action peut se faire à travers l'interface web ou bien l'API.
 
 .. note:: Si le projet est associé à un utilisateur, la suppression n'est pas autorisée.
 
-Associé un projet à un utilisateur
+Associer un projet à un utilisateur
 ------------------------------------
 
 Un utilisateur peut accéder à plusieurs projets, en fonction des autorisations accordées.

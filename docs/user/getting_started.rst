@@ -1,5 +1,5 @@
-Première utilisation (script)
-=============================
+Première utilisation
+====================
 
 Connexion du client au serveur
 ------------------------------
@@ -14,7 +14,7 @@ Une fois la connexion réussie, l'utilisateur peut accéder à l'ensemble des te
 
 .. note:: L'utilisateur ``admin`` peut être utilisé dans le cadre de la découverte de la solution.
 
-Écriture d'un test script
+Écriture d'un test (script)
 ---------------------------------
 
 La première utilisation consiste à créer un très simple premier cas de test en affichant la valeur d'un paramètre du test.
@@ -42,7 +42,7 @@ La première utilisation consiste à créer un très simple premier cas de test 
    
    .. image:: /_static/images/client/client_new_save.png
 
-Ecriture d'un scénario
+Ecriture d'un scénario (conditionnel)
 ----------------------
 
 .. note:: Ce mini guide part du principe que vous avez suivi le chapitre ``Ecriture d'un test script``.
