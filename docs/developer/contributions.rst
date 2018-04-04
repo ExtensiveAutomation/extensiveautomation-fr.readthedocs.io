@@ -12,7 +12,7 @@ Client graphique
 .. tip:: Environnement recommandé.
 
 Pour préparer son environnement de développement, il est nécessaire de récupérer et d'installer les logiciels suivants:
- - Python 3.6.3 64bits
+ - Python 3.6.5 64bits
  - Git-2.15.0-64-bit.exe
  - TortoiseGit-2.5.0.0-64bit.msi
  - InnoSetup 5.5.9 – http://www.jrsoftware.org/isdl.php
@@ -25,7 +25,13 @@ D'ajouter les paquets Python supplémentaires avec la commande ``pip``
 	> py -m pip install pyqt5
 	> py -m pip install qscintilla
 	
-Et de récupérer les sources du client depuis le dépôt sur github.
+Version utilisée à ce jour:
+ - pylint-1.8.3 
+ - pyqt5-5.10.1 (Qt 5.10.1)
+ - sip-4.19.8
+ - qscintilla-2.10.3 (QScintilla-2.10.1)
+ 
+Et de récupérer les sources du client depuis le dépôt sur github https://github.com/ExtensiveTesting/extensivetesting
 	
 .. code-block:: bash
 
@@ -130,7 +136,7 @@ Boite à outils
 **Environnement x64 win py3.6 qt5 (recommandé)**
 
 Pour préparer son environnement de développement, il est nécessaire de récupérer et installer les logiciels suivants:
- - Python 3.6.3 64bits
+ - Python 3.6.5 64bits
  - Git-2.15.0-64-bit.exe
  - TortoiseGit-2.5.0.0-64bit.msi
  - InnoSetup 5.5.9 – http://www.jrsoftware.org/isdl.php
@@ -140,17 +146,27 @@ Pour préparer son environnement de développement, il est nécessaire de récup
 	> py -m pip install pyinstaller pylint
 	> py -m pip install pyqt5
 	> py -m pip install qscintilla
-    
+	
+Version utilisée à ce jour:
+ - pylint-1.8.3 
+ - pyqt5-5.10.1 (Qt 5.10.1)
+ - sip-4.19.8
+ - qscintilla-2.10.3 (QScintilla-2.10.1)
+ 
 Installer les librairies utilisées par les différents agents:
 
 .. code-block:: bash
 
-	> py -3.6 -m pip install Cx_Freeze py2exe pyinstaller pylint
+	> py -3.6 -m pip install Cx_Freeze py2exe
 	> py -3.6 -m pip install requests PyMySQL psycopg2 paramiko 
 	> py -3.6 -m pip install pymssql-2.1.3-cp36-cp36m-win_amd64.whl
     
-
-Installer la librairie selenium dédié pour la solution:
+Version utilisée à ce jour: 
+ - psycopg2-2.7.4
+ - paramiko-2.4.1
+ - cryptography-2.2.2
+ 
+Installer la librairie selenium dédiée pour la solution:
 
 .. code-block:: bash
 

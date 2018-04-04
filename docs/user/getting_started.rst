@@ -66,7 +66,7 @@ L'exemple suivant explique comment créer son premier scénario avec une surchar
 5. Ajouter le paramètre MON_PARAMETRE avec la valeur "au revoir" au niveau du scénario.
 
 .. tip:: 
-  Ne pas hésitez à définir un alias pour le nom du test pour rendre le scénario plus lisible.
+  Ne pas hésiter à définir un alias pour le nom du test pour rendre le scénario plus lisible.
 
   .. image:: /_static/images/client/snippets_alias.png
 
@@ -103,17 +103,17 @@ Les bonnes pratiques
 .. tip::
 
   Pour garder une bonne lisibilité dans les tests de type scripts, il ne faut pas utiliser de `try/except`.
-  Le framework intercepte toutes les exceptions à sont niveau.
+  Le framework intercepte toutes les exceptions à son niveau.
   
 .. tip::
   
-  Il faut absolument prendre le temps de déclarer les étapes de tests car ils permettent 
+  Il faut absolument prendre le temps de déclarer les étapes de test car elles permettent 
    - de comprendre rapidement le test sans le script.
-   - d'avoir des rapports de test pertinants et compréhensible.
+   - d'avoir des rapports de test pertinents et compréhensibles.
    
 .. tip::
 
-   Pour faciliter la maintenance de vos tests et les rendres réutilisables, 
+   Pour faciliter la maintenance de vos tests et les rendre réutilisables, 
    il ne faut pas avoir de valeur en dur dans votre test.
-   Il faut systématiquement les mettres en paramètres de tests, c'est fait pour.
+   Il faut systématiquement les mettre en paramètres de test, c'est fait pour.
    
