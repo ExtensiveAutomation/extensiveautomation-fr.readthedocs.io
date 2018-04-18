@@ -4,7 +4,7 @@ Exemples de tests
 Cas de test (unit)
 -----------
 
-Cette exemple montre comment utiliser un cas de test simple.
+Cet exemple montre comment utiliser un cas de test simple.
 Un cas de test se compose de 4 sections exécutées automatiquement par le framework de test ainsi que les paramètres de tests associés.
 
 .. image:: /_static/images/client/exemple_testunit.png
@@ -12,20 +12,20 @@ Un cas de test se compose de 4 sections exécutées automatiquement par le frame
 Cas de test (suite)
 -----------
 
-Une suite de test permet d'éxécuter à la suite plusieurs cas de test.
+Une suite de tests permet d'éxécuter à la suite plusieurs cas de test.
 L'exemple montre comment boucler sur un cas de test tout en modifiant les données entrantes.
 
 .. image:: /_static/images/client/exemple_testsuite.png
 
-Il est donc possible d'ajouter autant d'argument que nécessaire au niveau de la fonction ``execute()``
-et de les ajouter à l'identiquer au niveau des 4 sections.
+Il est donc possible d'ajouter autant d'arguments que nécessaire au niveau de la fonction ``execute()``
+et de les ajouter à l'identique au niveau des 4 sections.
 
 .. note:: Il est possible d'ajouter un préfixe au niveau du cas du test en utilisant l'argument ``prefix``.
 
 Variables de test
 ----------------
 
-Les variables sont utilisables depuis un test, il en existe plusieurs types.
+Les variables sont utilisables depuis un test. Il en existe plusieurs types.
 L'exemple ci-dessous montre comment récupèrer un paramètre depuis son test.
 
 Un paramètre de test peut être récupéré au niveau du test en utilisant la fonction `input`.
@@ -39,11 +39,12 @@ Scénario
 --------
 
 Un scénario permet d'exécuter plusieurs cas de tests à la suite avec des conditions de résultats entre eux.
+Il est ainsi possible de lancer ou non un test selon que le test précédent soit OK ou non.
 Il est possible de surcharger les paramètres de tests au niveau du scénario.
 
 .. image:: /_static/images/client/exemple_testplan.png
 
-Campagne de test
+Campagne de tests
 ----------------
 
 Une campagne permet d'exécuter plusieurs scénarios. Il est possible de surcharger les paramètres de tests
@@ -61,7 +62,7 @@ Pour écrire un test d'api REST, il est conseillé:
 
 Exemple:
  
-Le test appelle le service ``httpbin.org`` en https et appelle le service ``ip`` qui permet d'obtenir l'ip réel du client en json.
+Le test appelle le service ``httpbin.org`` en https et appelle le service ``ip`` qui permet d'obtenir l'ip réelle du client en json.
 
 .. image:: /_static/images/examples/rest_api.png
 
@@ -95,10 +96,10 @@ Le scénario se décompose en plusieurs étapes:
         },
         "DATASET": [    ]
         }
- 2. Si la préparation de l'environnement ne fonction pas alors le scénario est arrété en appelant le test
+ 2. Si la préparation de l'environnement ne fonctionne pas, alors le scénario est arrété en appelant le test
  réutilisable ``Snippets/Do/02_Terminate`` (Id=16)
 
- 3. On envoit une requête REST et on décrit la réponse attendue en utilisant le test réutilisable ``/Snippets/Protocols/04_Send_JSON`` (Id=30). 
+ 3. On envoie une requête REST et on décrit la réponse attendue en utilisant le test réutilisable ``/Snippets/Protocols/04_Send_JSON`` (Id=30). 
  Si cette étape ne fonctionne pas alors on annule le test (Id=31)
  
  La réponse reçue est vérifiée par le framework et ce qui a été décrit par le testeur dans le paramètre ``HTTP_RSP_BODY``
@@ -126,7 +127,7 @@ Pour écrire un test SSH, il est conseillé:
 Le test se décompose en plusieurs étapes:
  1. Chargement de la description (ip, compte, mot de passe) de la machine cible dans le cache
  2. Appel au test générique ``/Snippets/Protocols/01_Send_SSH`` pour récupérer la version du serveur
-    La version (si trouvé à l'écran) est sauvegardée dans le cache avec la clé `SERVER_VERSION`
+    La version (si trouvée à l'écran) est sauvegardée dans le cache avec la clé `SERVER_VERSION`
     Si la version n'est pas trouvée, le test part en erreur.
     
    .. code-block:: bash
@@ -136,37 +137,37 @@ Le test se décompose en plusieurs étapes:
      .*Server version: [!CAPTURE:SERVER_VERSION:]\n.*
      
    
- 3. Affiche de la version depuis le cache.
+ 3. Affichage de la version depuis le cache.
 
 .. note:: L'exemple complet est disponible dans les échantillons de tests ``/Self Testing/SYSTEM/000_System.tpx``.
 
 Navigateurs Internet
 --------------------
 
-Pour écrire un test d'une application web, il faut:
+Pour écrire le test d'une application web, il faut:
  - obligatoirement déployer un agent ``selenium`` sur un poste disposant d'un navigateur firefox, chrome, internet explorer ou edge
  - avoir accès au code source de la page web depuis son navigateur
  - avoir des connaissances en xpath
- - connaitre les bases du code HTML
+ - connaître les bases du code HTML
 
 L'approche préconisée pour écrire les tests web est la suivante:
- - identifier le nombre de page affichée à scripter (et la réutilisation possible de ces pages)
- - identifier les différents enchainements de pages pour créer les scénarios
- - identifier les parcours utilisateurs 
+ - identifier le nombre de pages affichées à scripter (et la réutilisation possible de ces pages)
+ - identifier les différents enchaînements de pages pour créer les scénarios
+ - identifier les parcours utilisateur 
 
-Pour exécuter ce type de test, il faut absolument déclarer l'agent qui sera utilisé
+Pour exécuter ce type de tests, il faut absolument déclarer l'agent qui sera utilisé
 
 .. image:: /_static/images/examples/selenium_agent.png
 
-L'écriture des tests se réalise à travers l'assistant, il permet de décrire les différentes étapes
-et de générer le test unit équivalent. Les enchainements de pages sont à décrire dans les tests plans
-Le parcours utilisateur est à définir dans un test global
+L'écriture des tests se réalise à travers l'assistant. Il permet de décrire les différentes étapes
+et de générer le test unit équivalent. Les enchaînements de pages sont à décrire dans les tests plans.
+Le parcours utilisateur est à définir dans un test global.
 
-La solution préconise aussi de n'utiliser que des xpath pour identifier des élements HTML.
+La solution préconise aussi de n'utiliser que le xpath pour identifier des élements HTML.
 
 .. image:: /_static/images/examples/web_xpath.png
 
-L'exemple ci-dessous montre comment créer un compte Google en utilisant un nom et prénom aléatoire.
+L'exemple ci-dessous montre comment créer un compte Google en utilisant un nom et prénom aléatoires.
 
 .. image:: /_static/images/examples/web.png
 
@@ -211,8 +212,8 @@ La connexion de l'agent ``adb`` sur le mobile android nécessite d'accepter la c
 
 .. image:: /_static/images/examples/mobile_rsa.png
 
-Après connexion, l'agent affiche un aperçu de l'écran sur le pc, il est possible de parcourir 
-l'interface depuis l'agent et d'avoir les élements XML disponible dans la page.
+Après connexion, l'agent affiche un aperçu de l'écran sur le pc. Il est possible de parcourir 
+l'interface depuis l'agent et d'avoir les élements XML disponibles dans la page.
 
 .. image:: /_static/images/toolbox/toolbox_mobile.png
  
