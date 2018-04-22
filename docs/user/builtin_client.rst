@@ -11,7 +11,8 @@ permettant de communiquer avec le système à tester ou piloter.
 Enfin l'interface graphique change en fonction du niveau d'accès:
  - niveau testeur: écriture/exécution de tests, et analyse des résultats
  - niveau admin: accès à l'ensemble des fonctionnalités
-
+ - niveau monitor: accès en lecture seule
+ 
 L'interface se divise en 3 parties principales:
  - l'espace de travail
  - l'analyseur
