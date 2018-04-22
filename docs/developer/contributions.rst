@@ -616,7 +616,7 @@ Pour faciliter le troubleshooting, il est possible d'ajouter des traces depuis l
 Documentations
 --------------
 
-La documentation est stockée sur github dans le `dépôt <https://github.com/ExtensiveTesting/extensivetesting-fr.readthedocs.io>`_.
+La documentation est stockée sur github dans le `dépôt <https://github.com/ExtensiveAutomation/extensiveautomation-fr.readthedocs.io>`_.
 Il est possible de contribuer en faisant une demande de participation au dépôt.
 
 La documentation est générée par le service `readthedocs <https://readthedocs.org/>`_.

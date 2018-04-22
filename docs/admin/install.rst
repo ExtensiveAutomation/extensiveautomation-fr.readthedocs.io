@@ -296,7 +296,7 @@ Il existe 2 modes d'installation:
  - mode portable (version recommandée)
  - mode installation
 
-Le client peut être récupéré depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+Le client peut être récupéré depuis le site internet https://www.extensiveautomation.org ou bien depuis le serveur de test.
 
 .. image:: /_static/images/webinterface/web_overview_pkgs2.png
 
@@ -334,7 +334,7 @@ Il existe 2 modes d'installation:
  - mode portable (version recommandée)
  - mode installation
 
-La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+La boîte à outils peut être récupérée depuis le site internet https://www.extensiveautomation.org ou bien depuis le serveur de test.
 
 .. image:: /_static/images/webinterface/web_overview_pkgs3.png
 
@@ -345,7 +345,7 @@ Ensuite il faut le décompresser et exécuter le fichier ``ExtensiveTestingToolb
 Installation Linux
 ~~~~~~~~~~~~~~~~~~
 
-La boîte à outils peut être récupérée depuis le site internet https://www.extensivetesting.org ou bien depuis le serveur de test.
+La boîte à outils peut être récupérée depuis le site internet https://www.extensiveautomation.org ou bien depuis le serveur de test.
 2 scripts sont disponibles pour démarrer un agent ou une sonde.
  - ./toolagent
  - ./toolprobe

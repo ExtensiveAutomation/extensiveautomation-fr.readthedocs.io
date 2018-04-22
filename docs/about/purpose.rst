@@ -1,7 +1,7 @@
-Extensive Testing
+Extensive Automation
 =================
 
-Bienvenue sur le projet Extensive Testing.
+Bienvenue sur le projet Extensive Automation.
 
 Concepts
 --------
@@ -36,7 +36,7 @@ Licence
 -------
 
 L'environnement est open source et sous licence ``LGPL 2.1``.
-Le code source est disponible sur github (https://github.com/ExtensiveTesting).
+Le code source est disponible sur github (https://github.com/ExtensiveAutomation).
 
 Auteur
 ------
@@ -48,6 +48,6 @@ Contact
 
 Pour entrer en contact:
  - par email d.machard@gmail.com
- - depuis twitter https://twitter.com/Extensive_Tests
+ - depuis twitter https://twitter.com/Extensive_Auto
  - depuis le forum google https://groups.google.com/forum/#!forum/extensive-testing-users
- - depuis github https://github.com/ExtensiveTesting 
+ - depuis github https://github.com//ExtensiveAutomation
