@@ -49,5 +49,5 @@ Contact
 Pour entrer en contact:
  - par email d.machard@gmail.com
  - depuis twitter https://twitter.com/Extensive_Auto
- - depuis le forum google https://groups.google.com/forum/#!forum/extensive-testing-users
+ - depuis le forum google https://groups.google.com/forum/#!forum/extensive-automation-users
  - depuis github https://github.com//ExtensiveAutomation

@@ -45,8 +45,8 @@ Le niveau DEBUG peut être activé depuis le fichier ``settings.ini``.
     
 .. note:: Un redémarrage de la boîte à outils est nécessaire pour prendre en compte le changement
 
-FAQ
----
+Foire aux questions
+---------------------
 
 Comment changer le port d'écoute (tcp/443) du serveur ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
