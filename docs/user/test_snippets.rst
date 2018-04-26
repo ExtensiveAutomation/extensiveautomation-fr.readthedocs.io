@@ -104,7 +104,7 @@ Les opérateurs disponibles:
 +-----------------+-----------------------------------------------------------------------+
 |Paramètres       |   Description                                                         |
 +-----------------+-----------------------------------------------------------------------+
-| contains        | Permet de vérifier si la valeur contient une chaîne de caractère      |
+| contains        | Permet de vérifier si la valeur contient une chaîne de caractères     |
 +-----------------+-----------------------------------------------------------------------+
 | matches         | Permet de vérifier si la valeur correspond à l'expression régulière   |
 +-----------------+-----------------------------------------------------------------------+
@@ -123,7 +123,7 @@ Les opérateurs disponibles:
 
 .. code-block:: bash
   
-  # Vérifie si valeur contient la chaine de caractère etst
+  # Vérifie si la valeur contient la chaine de caractère test
   [!FROM:CACHE:EXAMPLE:] contains test
   
 
@@ -178,23 +178,23 @@ Arrêt d'un test
 Ce test réutilisable permet de forcer l'arrêt d'un scénario en cas d'erreur.
 Un message expliquant l'arrêt peut être spécifié avec le paramètre ``STOP_TEST_MSG``.
 
-.. note:: Il est possible de personaliser le message d'arrêt en configurant la variable ``STOP_TEST_MSG``.
+.. note:: Il est possible de personnaliser le message d'arrêt en configurant la variable ``STOP_TEST_MSG``.
 
 Chargement d'un environnement de test
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/03_Initilize.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Do/03_Initialize.tux``
 
 Ce test réutilisable permet de charger dans le cache les données de son environnement de tests 
 (les adresses ip, compte d'accès des serveurs, etc.).
 
 Un environnement se décrit avec 4 niveaux:
  - ``environnement``
- - ``clusteur``
+ - ``cluster``
  - ``noeud``
  - ``instance``
  
-Un ``environnement`` peut être constitué de un ou plusieurs clusteurs.
+Un ``environnement`` peut être constitué de un ou plusieurs clusters.
 
 .. code-block:: json
   
@@ -206,7 +206,7 @@ Un ``environnement`` peut être constitué de un ou plusieurs clusteurs.
   }
   
 
-Un ``clusteur`` est constitué d'une liste de noeuds.
+Un ``cluster`` est constitué d'une liste de noeuds.
 
 .. code-block:: json
   
@@ -218,7 +218,7 @@ Un ``clusteur`` est constitué d'une liste de noeuds.
   }
   
 
-Un ``noeud`` est constitué de une ou plusieurs instances.
+Un ``noeud`` est constitué d'une ou plusieurs instances.
 
 .. code-block:: json
   
@@ -256,7 +256,7 @@ Paramètre(s) à configurer:
        
 Exemple d'un environnement de test contenant un serveur http avec une instance de type rest.
 Après chargement dans le cache, l'instance REST est accessible en utilisant la clé ``NODE_HTTP_REST``.
-L'ensemble des clés présentes dans ``COMMON`` sont automatiquement copiés dans chaques instances.
+L'ensemble des clés présentes dans ``COMMON`` sont automatiquement copiées dans chaque instance.
 
 .. code-block:: json
   
@@ -304,7 +304,7 @@ Paramètre(s) à configurer:
 +-----------------+----------------------------------------------------------+
 |Paramètres       |   Description                                            |
 +-----------------+----------------------------------------------------------+
-| DATA_IN         | Chaine de caractère à hasher                             |
+| DATA_IN         | Chaine de caractères à hasher                             |
 +-----------------+----------------------------------------------------------+
 | CACHE_KEY       | Nom de la clé                                            |
 +-----------------+----------------------------------------------------------+
@@ -350,7 +350,7 @@ BASE64
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Base64.tux``
 
-Ce test réutilisable permet d'encoder ou décoder une chaine de caractère et de stocker le résultat dans le cache.
+Ce test réutilisable permet d'encoder ou décoder une chaine de caractères et de stocker le résultat dans le cache.
 
 Paramètre(s) à configurer:
 
@@ -365,7 +365,7 @@ Paramètre(s) à configurer:
 +-----------------+------------------------------------------------------------------------------------+
 | URLSAFE         | A positionner à True si le résulat après encodage doit être utilisé dans une url   |
 +-----------------+------------------------------------------------------------------------------------+
-| STR_BASE64      | Chaine de caractère à encoder/décoder                                              |
+| STR_BASE64      | Chaine de caractères à encoder/décoder                                              |
 +-----------------+------------------------------------------------------------------------------------+
 
 
@@ -374,7 +374,7 @@ GZIP
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Gzip.tux``
 
-Ce test réutilisable permet de compresser ou décompresser une chaine de caractère et de stocker le résultat dans le cache.
+Ce test réutilisable permet de compresser ou décompresser une chaine de caractères et de stocker le résultat dans le cache.
 
 Paramètre(s) à configurer:
 
@@ -387,7 +387,7 @@ Paramètre(s) à configurer:
 +-----------------+-------------------------------------------------------------+
 | UNCOMPRESS      | A positionner à True pour décompresser                      |
 +-----------------+-------------------------------------------------------------+
-| STR_GZIP        | Chaine de caractère à compresser/décompresser               |
+| STR_GZIP        | Chaine de caractères à compresser/décompresser               |
 +-----------------+-------------------------------------------------------------+
 
 Protocoles réseaux
@@ -399,7 +399,7 @@ SSH
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_SSH.tsx``
 
 Ce test réutilisable permet d'envoyer un enchainement de commandes ssh.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer:
 
@@ -413,20 +413,20 @@ Paramètre(s) à configurer:
 | TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
 +-----------------+----------------------------------------------------------+
 
-Le paramètre `COMMANDS` attends un ou plusieurs blocs de 4 lignes.
+Le paramètre `COMMANDS` attend un ou plusieurs blocs de 4 lignes.
 Chaque bloc doit respecter le formalisme suivant:
  1. Un commentaire expliquant l'action, cette information est utilisée pour initialiser l'étape de test
  2. La commande à exécuter
- 3. La chaine de caractère attendue à l'écran, si la valeur attendue n'est pas trouvée alors l'étape sera en erreur. (ligne optionnel)
+ 3. La chaine de caractères attendue à l'écran, si la valeur attendue n'est pas trouvée alors l'étape sera en erreur. (ligne optionnelle)
  4. vide
  
-.. warning:: Chaque bloc sera exécuté même si le précèdent est en erreur. 
+.. warning:: Chaque bloc sera exécuté même si le précédent est en erreur. 
     
 L'exemple suivant effectue les actions suivantes:
- 1. Envoie de 3 pings sur la machine distante dont l'ip est stockée dans le cache ``DEST_HOST``
- 2. Vérification d'avoir le message à l'écran indiquant que les 3 paquets ont été envoyés. Ensuite la valeur mddev est stockée dans le cache avec la clé ``STATS` 
+ 1. Envoi de 3 pings sur la machine distante dont l'ip est stockée dans le cache ``DEST_HOST``
+ 2. Vérification de l'obtention d'un message à l'écran indiquant que les 3 paquets ont été envoyés. Ensuite la valeur mdev est stockée dans le cache avec la clé ``STATS` 
  3. Le deuxième bloc efface l'écran en envoyant la commande clear.
- 4. Enfin te test attend de trouver le prompt à l'écran
+ 4. Enfin le test attend de trouver le prompt à l'écran
  
 .. code-block:: bash
   
@@ -439,10 +439,10 @@ L'exemple suivant effectue les actions suivantes:
   .*root@.*
   
 
-.. note:: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+.. note:: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
 
 .. note:: 
-  Par défaut, le test attend 20 secondes au maximum pour trouver la chaine de caractère attendue.
+  Par défaut, le test attend 20 secondes au maximum pour trouver la chaine de caractères attendue.
   Il est possible de configurer cette valeur avec le paramètre ``TIMEOUT``.
   
 .. note:: 
@@ -455,7 +455,7 @@ HTTP
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_HTTP.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` qui permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -478,7 +478,7 @@ Paramètre(s) pour configurer la requête HTTP à envoyer:
 +-----------------+---------------------------------+
 | HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
 +-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appeler                     |
+| HTTP_REQ_URI    | URI appelée                     |
 +-----------------+---------------------------------+
 
 .. image:: /_static/images/examples/snippets_http_req.png
@@ -506,7 +506,7 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
   
   .. image:: /_static/images/examples/snippets_http_capture.png
 
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
 
 XML
 ~~~
@@ -515,7 +515,7 @@ XML
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du ``XML`` dans le corps de la requête.
 Il permet aussi de vérifier la réponse reçue avec plusieurs critères.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` qui permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -538,7 +538,7 @@ Paramètre(s) pour configurer la requête HTTP à envoyer:
 +-----------------+---------------------------------+
 | HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
 +-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appeler                     |
+| HTTP_REQ_URI    | URI appelée                     |
 +-----------------+---------------------------------+
 
 Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
@@ -561,7 +561,7 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 
 .. warning:: Le test sera en erreur si la réponse ne contient pas de XML.
 
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
 
 
 JSON
@@ -570,7 +570,7 @@ JSON
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_JSON.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP avec du JSON en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initilize.tux`` permet de charger un environnement dans le cache.
+Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
 
@@ -593,7 +593,7 @@ Paramètre(s) pour configurer la requête HTTP à envoyer:
 +-----------------+---------------------------------+
 | HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
 +-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appeler                     |
+| HTTP_REQ_URI    | URI appelée                     |
 +-----------------+---------------------------------+
 
 
@@ -602,7 +602,7 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 +-------------------+----------------------------------------------------+
 |Paramètres         |   Description                                      |
 +-------------------+----------------------------------------------------+
-| HTTP_RSP_BODY     | Liste des json xpaths à vérifier.                  |
+| HTTP_RSP_BODY     | Liste des json paths à vérifier.                   |
 +-------------------+----------------------------------------------------+
 | HTTP_RSP_CODE     | Le code HTTP attendue. 200 par défaut              |
 +-------------------+----------------------------------------------------+
@@ -615,7 +615,7 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 
 .. warning:: Le test sera en erreur si la réponse ne contient pas de JSON.
 
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveur.
+.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
 
 Interface utilisateur
 ---------------------
@@ -643,7 +643,7 @@ Fermeture application Windows
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/02_Win_CloseApp.tux``
 
-Tests réutilisables permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
+Test réutilisable permettant d'ouvrir ou de fermer une application sur un poste Windows ou Linux.
 Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI``.
 
 Paramètre(s) à configurer:
@@ -662,7 +662,7 @@ Ouverture navigateur
 
 .. important:: Chemin d'accès du test réutilisable ``/Snippets/UI/03_OpenBrowser.tux``
 
-Tests réutilisables permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
+Test réutilisable permettant d'ouvrir ou de fermer une navigateur sur un poste Windows ou Linux.
 Ce test nécessite de définir quel agent sera utilisé avec la clé ``AGENT_GUI_BROWSER``.
 
 Paramètre(s) à configurer:
@@ -717,7 +717,7 @@ Paramètre(s) à configurer:
 +-----------------+------------------------------------+
 | XML_XPATH       | xpath qui sera vérifier le test    |
 +-----------------+------------------------------------+
-| XML_NAMESPACES  | Définitions des namespaces         |
+| XML_NAMESPACES  | Définition des namespaces          |
 +-----------------+------------------------------------+
 
 Exemple de valeur pour le paramètre ``XML_STR``:
