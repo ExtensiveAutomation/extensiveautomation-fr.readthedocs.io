@@ -168,4 +168,13 @@ Le nombre de jours est configurable.
 ``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
 Le nombre de jours est configurable.
 
+Bannière de sécurité
+~~~~~~~~~~~~~~~~
+
+Il est possible de configurer une bannière de sécurité sur l'interface web du serveur et sur la 
+fenêtre de connexion du client lourd.
+
+Pour celà il faut configurer le fichier ``BANNER`` présent dans 
+ - dans le répertoire web ``/opt/xtc/current/Web/`` pour le serveur 
+ - à la raccine du fichier d'exécution pour le client graphique.
 
