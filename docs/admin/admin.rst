@@ -143,3 +143,16 @@ Rythme de sauvegarde disponible:
  - 7: une fois par semaine
  - 6: une fois par jour
  - 5: une fois par heure
+ 
+ 
+Scripts crontab
+~~~~~~~~~~~~~~~~~~~~
+
+``cron.backup-tables``: ce script permet de sauvegarder les tables de la solution
+
+``cron.cleanup-backups``: ce script permet de supprimer les backups plus vieux que 14 jours.
+Le nombre de jours est configurable.
+
+``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
+Le nombre de jours est configurable.
+
