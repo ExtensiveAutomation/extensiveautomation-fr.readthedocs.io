@@ -86,9 +86,9 @@ Description des fonctions les plus importantes:
 **Authentification**
 
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/session/login      | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogin>`_          |
+|/rest/session/login      | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogin>`_       |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/session/logout     | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogout>`_         |
+|/rest/session/logout     | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogout>`_      |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. note:: La fonction ``login`` ne nécessite aucune authentification.
@@ -96,19 +96,19 @@ Description des fonctions les plus importantes:
 **Exécution d'un test**
 
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/tests/schedule     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsSchedule>`_           |
+|/rest/tests/schedule     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsSchedule>`_        |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/tests/schedule/tpg | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsScheduleTpg>`_        |
+|/rest/tests/schedule/tpg | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsScheduleTpg>`_     |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 **Récupération des résultats**
 
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/reports    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Reports-resultsReports>`_        |
+|/rest/results/reports    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Reports-resultsReports>`_     |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/status     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsStatus>`_         |
+|/rest/results/status     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsStatus>`_      |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/verdict    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsVerdict>`_        |
+|/rest/results/verdict    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsVerdict>`_     |
 +-------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 

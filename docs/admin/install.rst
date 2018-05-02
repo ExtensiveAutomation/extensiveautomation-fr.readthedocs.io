@@ -69,7 +69,7 @@ Exemple pour vérifier si le serveur fonctionne correctement.
 	
 
 Le serveur est accessible à l'adresse indiquée à la fin de l'installation.
-Il est possible d'utiliser les comptes pas défauts pour se connecter:
+Il est possible d'utiliser les comptes de bases pour se connecter:
  - utilisateur ``admin``
  - utilisateur ``tester``
  - utilisateur ``monitor``
