@@ -1,14 +1,14 @@
 Variables réutilisables
 =======================
 
-Les variables réutilisables sont principalement utilisées pour décrire son environnement de tests.
+Les variables réutilisables sont principalement utilisées pour décrire un environnement de tests.
 Elles sont accessibles depuis un test en utilisant le paramètre de test de type ``shared`` ou ``shared-list``.
 
 Ajout/suppression d'une variable
 -----------------
 
 L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
-Le format attendu est de type ``JSON``. Elles sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
+Le format attendu est de type ``JSON``. Ces variables sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
 
 .. image:: /_static/images/webinterface/read_variable.png
 
