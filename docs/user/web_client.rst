@@ -9,7 +9,7 @@ Partie tests
 Variables réutilisables
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Les variables réutilisables permettent de décrire un jeux de données. Le format ``JSON`` doit être utilisé.
+Les variables réutilisables permettent de décrire un jeu de données. Le format ``JSON`` doit être utilisé.
 Ils sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
 
 Partie administration
@@ -27,9 +27,9 @@ La création d'un utilisateur nécessite à minima de préciser:
  - son niveau d'accès (administrateur, testeur)
  - les projets autorisés
 
-.. note:: Si une adresse email est précisée, alors il est possible de recevoir les résultats des tests automatiquement dans sa boite mail.
+.. note:: Si une adresse email est précisée, alors il est possible de recevoir les résultats des tests automatiquement dans cette boite mail.
 
-.. warning: Ne pas oublier de modifier les mots de passes des utilisateurs ``admin`` et ``tester``, par défaut ils n'ont pas de mot de passe.
+.. warning: Ne pas oublier de modifier les mots de passe des utilisateurs ``admin`` et ``tester``, par défaut ils n'ont pas de mot de passe.
 
 Projets
 ~~~~~~~
