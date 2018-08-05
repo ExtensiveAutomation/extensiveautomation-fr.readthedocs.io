@@ -504,10 +504,10 @@ Le graphique est inséré automatiquement dans le rapport avancé.
 .. image:: /_static/images/examples/report_chart.png
 
   
-Paramètre de tests "custom"
+Paramètre de tests "text"
 -------------------
 
-Le paramètre de type ``custom`` permet de construire des valeurs appelant d'autres variables.
+Le paramètre de type ``text`` permet de construire des valeurs appelant d'autres variables.
 
 Prenons l'exemple d'un test contenant les 2 variables suivantes:
  - DEST_IP avec la valeur 192.168.1.1
@@ -515,7 +515,7 @@ Prenons l'exemple d'un test contenant les 2 variables suivantes:
 
 .. image:: /_static/images/examples/custom_inputs.png
  
-Le type ``custom`` va nous permettre de construire une 3ième variable 
+Le type ``text`` va nous permettre de construire une 3ième variable 
  - DEST_URL avec la valeur 
  
    .. image:: /_static/images/examples/custom_config.png
@@ -536,6 +536,10 @@ Exemple de résultat après exécution:
 
 .. image:: /_static/images/examples/custom_example_cache.png
 
+Paramètre de tests "json"
+-------------------
+
+todo
 
 Paramètre de tests "alias"
 -------------------
@@ -586,8 +590,24 @@ Il faut utiliser un paramètre de type ``alias``, ils ne sont pas surchargés pa
      ---> Test 1 (TIMEOUT_A(int)=2 secondes)
      ---> Test 2 (TIMEOUT_A(alias)=TIMEOUT_B et TIMEOUT_B(int)= 30 secondes)
      ---> Test 3 (TIMEOUT_A(int)=2 secondes)
-     
+  
+Paramètre de tests "global"
+-------------------
 
+Les paramètres de type ``global`` s'ajoutent depuis l'interface web ou depuis l'api REST.
+Ils sont partagés et accessibles par l'ensemble des tests d'un même projet. La valeur attendue 
+pour ce paramètre est de type ``JSON``.
+
+Une fenêtre de sélection dans le client graphique permet de sélectionner le paramètre à utiliser dans le test.
+
+.. image:: /_static/images/examples/client_params_shared.png
+
+Dans l'exemple ci-dessous, le paramètre de test ``MY_SERVER`` contient la valeur de la clé ``IP`` présente dans la variable 
+partagée ``MY_SERVER`` qui est elle-même présente dans le projet ``Common``.
+
+.. image:: /_static/images/examples/client_param_shared.png
+
+.. tip:: Pour avoir un paramètre de test qui contient une liste d'éléments, il faut utiliser le type ``list-global``.
 
 Paramètre de tests "dataset"
 -------------------
@@ -616,24 +636,6 @@ Exemple pour lire la variable:
   
   for d in input('DATA').splitlines():
       Trace(self).info( d ) 
-  
-Paramètre de tests "shared"
--------------------
-
-Les paramètres de type ``shared`` s'ajoutent depuis l'interface web ou depuis l'api REST.
-Ils sont partagés et accessibles par l'ensemble des tests d'un même projet. La valeur attendue 
-pour ce paramètre est de type ``JSON``.
-
-Une fenêtre de sélection dans le client graphique permet de sélectionner le paramètre à utiliser dans le test.
-
-.. image:: /_static/images/examples/client_params_shared.png
-
-Dans l'exemple ci-dessous, le paramètre de test ``MY_SERVER`` contient la valeur de la clé ``IP`` présente dans la variable 
-partagée ``MY_SERVER`` qui est elle-même présente dans le projet ``Common``.
-
-.. image:: /_static/images/examples/client_param_shared.png
-
-.. tip:: Pour avoir un paramètre de test qui contient une liste d'éléments, il faut utiliser le type ``list-shared``.
 
 Utilisation d'une sonde
 -------------------

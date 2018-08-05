@@ -19,7 +19,7 @@ Pour démarrer le serveur il faut utiliser la commande ``xtctl start``.
   Checking database                                          [  OK  ]
   Saving current adapters                                    [  OK  ]
   Saving current libraries                                   [  OK  ]
-  Starting Extensive Testing                                 [  OK  ]
+  Starting Extensive Automation                              [  OK  ]
   
   
 Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
@@ -29,7 +29,7 @@ Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
   # xtctl stop
   Saving current adapters                                    [  OK  ]
   Saving current libraries                                   [  OK  ]
-  Stopping Extensive Testing                                 [  OK  ]
+  Stopping Extensive Automation                              [  OK  ]
   
 
 .. tip::
@@ -39,10 +39,10 @@ Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
   .. code-block:: bash
     
     # tailf /opt/xtc/current/Var/Log/output.log
-    2014-12-06 11:00:54,092 - INFO - Extensive Testing successfully started (in 14 sec.)
+    2014-12-06 11:00:54,092 - INFO - Extensive Automation successfully started (in 14 sec.)
     ...
     2014-12-06 10:58:51,810 - INFO - Stopping server
-    2014-12-06 10:58:51,911 - INFO - Extensive Testing successfully stopped!
+    2014-12-06 10:58:51,911 - INFO - Extensive Automation successfully stopped!
   
 
 Status du serveur
@@ -86,8 +86,8 @@ pour prendre en compte le nouveau client déployé.
 .. code-block:: bash
   
   ./xtctl deploy
-  Deploying clients.(ExtensiveTestingClient_X.X.X_Setup.exe)
-  Deploying tools.(ExtensiveTestingToolbox_X.X.X_Setup.exe)
+  Deploying clients.(ExtensiveAutomationgClient_X.X.X_Setup.exe)
+  Deploying tools.(ExtensiveAutomationToolbox_X.X.X_Setup.exe)
   Deploying portable clients... (No client)
   Deploying portable tools... (No client)
 
@@ -156,17 +156,6 @@ Le nombre de jours est configurable.
 ``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
 Le nombre de jours est configurable.
 
- 
-Scripts crontab
-~~~~~~~~~~~~~~~~~~~~
-
-``cron.backup-tables``: ce script permet de sauvegarder les tables de la solution
-
-``cron.cleanup-backups``: ce script permet de supprimer les backups plus vieux que 14 jours.
-Le nombre de jours est configurable.
-
-``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
-Le nombre de jours est configurable.
 
 Bannière de sécurité
 ~~~~~~~~~~~~~~~~

@@ -324,19 +324,19 @@ Ces plugins peuvent être utilisés directement depuis un test.
 
 Liste des outils supportés:
 
-+------------------+------------------------------------------------------------+
-| Git              |  Clone/commit de fichier sur un dépôt distant              |
-+------------------+------------------------------------------------------------+
-| Jira             |  Création de ticket                                        |
-+------------------+------------------------------------------------------------+
-| HP ALM QC        |  Exécution de test, création de ticket. Version 12 minimum |
-+------------------+------------------------------------------------------------+
-| ExtensiveTesting |  Exécution de test, création de variable                   |
-+------------------+------------------------------------------------------------+
-| Jenkins          |  Exécution de tests avant ou après un build                |
-+------------------+------------------------------------------------------------+
-| VSphere          | Création ou supression de machine virtuelle sur VMware     |
-+------------------+------------------------------------------------------------+
++---------------------+------------------------------------------------------------+
+| Git                 |  Clone/commit de fichier sur un dépôt distant              |
++---------------------+------------------------------------------------------------+
+| Jira                |  Création de ticket                                        |
++---------------------+------------------------------------------------------------+
+| HP ALM QC           |  Exécution de test, création de ticket. Version 12 minimum |
++---------------------+------------------------------------------------------------+
+| ExtensiveAutomation |  Exécution de test, création de variable                   |
++---------------------+------------------------------------------------------------+
+| Jenkins             |  Exécution de tests avant ou après un build                |
++---------------------+------------------------------------------------------------+
+| VSphere             | Création ou supression de machine virtuelle sur VMware     |
++---------------------+------------------------------------------------------------+
 
 
 .. note:: 

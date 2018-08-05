@@ -24,10 +24,14 @@ L'ensemble des fichiers manipulés par le serveur sont stockés dans le réperto
 
 ::
   
-  Core/
+  ServerEngine/
+  ServerControls/
+  ServerInterfaces/
+  ServerRepositories/
   Libs/
   Scripts/
   Packages/
+  TestCreatorLib
   TestExecutorLib/
   TestInterop/
   SutAdapters/
@@ -113,7 +117,7 @@ L'algorithme utilisé:
 Format des fichiers
 -------------------
 
-Les tests sont au format ``XML`` zippés. Il existe plusieurs formats de tests:
+Les tests sont au format ``XML``. Il existe plusieurs formats de tests:
  - Test Abstract Xml
  - Test Unit Xml
  - Test Suite Xml

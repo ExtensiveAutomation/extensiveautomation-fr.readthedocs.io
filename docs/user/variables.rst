@@ -1,7 +1,7 @@
-Variables réutilisables
+Variables globales
 =======================
 
-Les variables réutilisables sont principalement utilisées pour décrire un environnement de tests.
+Les variables globales sont principalement utilisées pour décrire un environnement de tests pour un projet donné.
 Elles sont accessibles depuis un test en utilisant le paramètre de test de type ``shared`` ou ``shared-list``.
 
 Ajout/suppression d'une variable

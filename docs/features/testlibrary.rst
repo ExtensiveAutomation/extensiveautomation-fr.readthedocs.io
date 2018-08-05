@@ -261,22 +261,30 @@ Cette fenêtre est disponible depuis le fenêtre d'analyse.
 Paramètres d'un test
 -----------------------
 
-Les entrants
+Paramètres
 ~~~~~~~~~~~~~~~~~~
 
 Les paramètres entrants (inputs) sont à utiliser pour ajouter des variables sur un test.
 Ils sont configurables depuis le client.
 
-Il existe plusieurs types de paramètres:
+Les principaux types à utiliser sont:
+
++----------------+----------------------------------------------------------+
+| Type           |  Description usage                                       |
++----------------+----------------------------------------------------------+
+| text           | variable de type chaîne de caractères en mode avancé     |
++----------------+----------------------------------------------------------+
+| json           | variable de type JSON en mode avancé                     |
++----------------+----------------------------------------------------------+
+| global         | les variables globales par projets                       |
++----------------+----------------------------------------------------------+
+
+Il existe plusieurs autres types de paramètres:
 
 +----------------+----------------------------------------------------------+
 | Type           |  Description usage                                       |
 +----------------+----------------------------------------------------------+
 | str/pwd        | chaîne de caractères                                     |
-+----------------+----------------------------------------------------------+
-| text           | chaîne de caractères multiligne                          |
-+----------------+----------------------------------------------------------+
-| custom         | paramètre avancé                                         |
 +----------------+----------------------------------------------------------+
 | list           | liste de chaînes de caractères                           |
 +----------------+----------------------------------------------------------+
@@ -287,8 +295,6 @@ Il existe plusieurs types de paramètres:
 | none           | valeur nulle                                             |
 +----------------+----------------------------------------------------------+
 | alias          | raccourci paramètre                                      |
-+----------------+----------------------------------------------------------+
-| shared         | valeur depuis les variables projets                      |
 +----------------+----------------------------------------------------------+
 | list-shared    | liste de valeurs de variables projets                    |
 +----------------+----------------------------------------------------------+
@@ -319,8 +325,6 @@ Il existe plusieurs types de paramètres:
 | self-mac       | liste des adresses MAC du serveur                        |
 +----------------+----------------------------------------------------------+
 | sef-eth        | liste des interfaces réseau du serveur                   |
-+----------------+----------------------------------------------------------+
-| json           | returne une valeur au format JSON                        |
 +----------------+----------------------------------------------------------+
 
 Les variables sont accessibles depuis un test avec la fonction ``input(...)``

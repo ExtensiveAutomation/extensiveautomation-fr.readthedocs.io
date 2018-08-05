@@ -10,9 +10,9 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 +---------------------+------------+------------+
 |Caractéristiques     |   Minimum  | Recommandé |
 +---------------------+------------+------------+
-| OS                  | CentOS 6.5+ ou 7.x      |
+| OS                  | CentOS 7.x              |
 +---------------------+------------+------------+
-| Python              |    2.6     |    2.7     |
+| Python              |     2.7                 |
 +---------------------+------------+------------+
 | Arch                |         x86_64          |
 +---------------------+------------+------------+
@@ -28,6 +28,10 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 +---------------------+------------+------------+
 
 .. note:: Le support de Python 3.x est cours de développement.
+
+.. note:: CentOS 6.6 peut être utilisé mais avec python 2.7 minimum
+
+.. note: Le serveur peut être faite sur n'importe quel système linux mais l'intégration est à faire manuellement.
 
 Client
 ------

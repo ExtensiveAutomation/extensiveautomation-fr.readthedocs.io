@@ -6,11 +6,13 @@ Interface Web
 Partie tests
 ------------
 
-Variables réutilisables
+Variables globales
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Les variables réutilisables permettent de décrire un jeu de données. Le format ``JSON`` doit être utilisé.
-Ils sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
+Les variables globales permettent de décrire un jeu de données pour l'ensemble d'un projet. 
+Ils sont automatiquement accessibles au niveau de chaque test depuis les propriétés.
+
+Le format ``JSON`` doit être utilisé.
 
 Partie administration
 ---------------------

@@ -6,7 +6,31 @@ Version courante
 
 .. note::
 
- **Version 18.0.0 disponible depuis le 11/02/2018**
+ **Version 19.0.0 disponible depuis le 05/08/2018**
+ 
+ - Changement du nom de produit de la solution par ExtensiveAutomation
+ - Fichiers stockés en mode XML par défaut (plus de compression) 
+ - Améliorations et corrections diverses au niveau de l'API REST
+ - Support initial docker
+ - Python 2.6 n'est plus supporté côté serveur
+ - Prévisualisation du cache durant l'écriture des tests dans le client
+ - Simplification des paramètres de tests avec les types "text" et "json"
+ - Optimisation du nombre de requête SQL sur le serveur
+ - Support initial de python 3.5 côté serveur
+ - Le client lourd n'est plus embarqué sur le serveur par défaut
+ - Nouvelle fonction permettant d'ajouter un message de sécurité sur la page de connexion
+ - Mise à jour de selenium en 3.13.0 dans la boite à outils
+ - Nouvelle version majeure pour le client lourd 
+ - Nouvelle version majeure pour la boite à outils
+
+La release notes détaillée est disponible dans le paquet d'installation.
+
+Versions précédentes
+-------------------
+
+..
+
+ **Version 18.0.0 sortie le 11/02/2018**
  
  - Suppression de l'API XmlRPC sur le serveur
  - Refonte complète de l'API REST
@@ -17,11 +41,6 @@ Version courante
  - Corrections de bugs divers
  - Mise à jour de selenium en 3.9.0 dans la boite à outils
  - La boite à outils n'est plus embarquée par défaut sur le serveur
-
-La release notes détaillée est disponible dans le paquet d'installation.
-
-Versions précédentes
--------------------
 
 ..
 
