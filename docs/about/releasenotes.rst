@@ -6,6 +6,10 @@ Version courante
 
 .. note::
 
+ **Version 19.0.1 disponible depuis le 09/08/2018**
+ 
+ - Correction bug deploiement serveur, utilisation de la commande pip
+ 
  **Version 19.0.0 disponible depuis le 05/08/2018**
  
  - Changement du nom de produit de la solution par ExtensiveAutomation
