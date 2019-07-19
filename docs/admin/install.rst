@@ -11,8 +11,14 @@ Plugins  pour le serveur
 
 L'installation des plugins pour le serveurest détaillée sur `github <https://github.com/ExtensiveAutomation/extensiveautomation-plugins-server/blob/master/README_fr.md>`_
 
-Client
-------
+Client Web
+--------------
+
+L'installation est détaillée sur `github <https://github.com/ExtensiveAutomation/extensiveautomation-webclient/blob/master/README_fr.md>`_
+
+
+Client lourd
+--------------
 
 L'installation est détaillée sur `github <https://github.com/ExtensiveAutomation/extensiveautomation-appclient/blob/master/README_fr.md>`_
 
