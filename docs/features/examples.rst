@@ -637,28 +637,6 @@ Exemple pour lire la variable:
   for d in input('DATA').splitlines():
       Trace(self).info( d ) 
 
-Utilisation d'une sonde
--------------------
-
-
-Pour utiliser une sonde, il faut 2 choses:
- - Déployer la boite à outils et démarrer la sonde souhaitée.
- - Déclarer la sonde dans le test.
- 
-Pour sélectionner la sonde dans le test, il faut l'activer et la configurer dans le test (onglet ``Miscellaneous > Probes``)
-
-.. image:: /_static/images/examples/probe_tab.png
-
-Lors qu'une sonde est activée sur un test, l'exécution du test intialise automatiquement la sonde.
-
-.. image:: /_static/images/examples/probe_starting.png
-
-Après exécution, l'ensemble des fichiers collectés par la sonde sont téléchargés dans le serveur et accessible depuis le client graphique.
-
-.. image:: /_static/images/examples/probe_test_archives.png
-
-.. note:: Il est possible d'utiliser plusieurs sondes dans un test.
-
 Utilisation d'un agent
 -------------------
 

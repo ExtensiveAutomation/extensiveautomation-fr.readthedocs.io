@@ -7,30 +7,30 @@ Développement client lourd
 Qt client application
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Regarder le README dans https://github.com/ExtensiveAutomation/extensiveautomation-appclient/blob/stable/README_fr.md
+Regarder le `README <https://github.com/ExtensiveAutomation/extensiveautomation-appclient/blob/master/README_fr.md>`_
 
 
 Boite à outils 
 ~~~~~~~~~~~~~~
 
-Regarder le README dans https://github.com/ExtensiveAutomation/extensiveautomation-apptoobox/blob/stable/README_fr.md
+Regarder le `README <https://github.com/ExtensiveAutomation/extensiveautomation-apptoobox/blob/master/README_fr.md>`_
 
 
 Serveur 
 ~~~~~~~
 
-Regarder le README dans https://github.com/ExtensiveAutomation/extensiveautomation-server/blob/stable/README_fr.md
+Regarder le `README <https://github.com/ExtensiveAutomation/extensiveautomation-server/blob/master/README_fr.md>`_
 
 
 Plugins côté serveur
 ----------------------
 
-Regarder le README dans https://github.com/ExtensiveAutomation/extensiveautomation-plugins-server/blob/stable/README_fr.md
+Regarder le `README <https://github.com/ExtensiveAutomation/extensiveautomation-plugins-server/blob/master/README_fr.md>`_
 
 Plugins côté client et agents
 ------------------------------------------
 
-Please refer to the README in https://github.com/ExtensiveAutomation/extensiveautomation-plugins-client/blob/stable/README.md
+Regarder le `README <https://github.com/ExtensiveAutomation/extensiveautomation-plugins-client/blob/master/README.md>`_
   
   
 Documentations
