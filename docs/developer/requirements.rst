@@ -10,7 +10,7 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 +---------------------+------------+------------+
 |Caractéristiques     |   Minimum  | Recommandé |
 +---------------------+------------+------------+
-| OS                  | CentOS 7.x              |
+| OS                  | Linux                   |
 +---------------------+------------+------------+
 | Python              |     2.7                 |
 +---------------------+------------+------------+
@@ -29,8 +29,6 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 
 .. note:: Le support de Python 3.x est cours de développement.
 
-.. note:: CentOS 6.6 peut être utilisé mais avec python 2.7 minimum
-
 .. note: Le serveur peut être faite sur n'importe quel système linux mais l'intégration est à faire manuellement.
 
 Client
@@ -42,7 +40,7 @@ Le client peut être exécuté sur un environnement Windows ou Linux.
 |Caractéristiques |   Minimum                 | Recommandé                |
 +-----------------+---------------------------+---------------------------+
 | OS              | Windows 7+                | Windows 10+               |
-|                 | Linux CentOS 6.5+         | CentOS7+ ou Ubuntu 17+    |
+|                 | Linux                     | Linux                     |
 +-----------------+---------------------------+---------------------------+
 | Arch            |                     x86_64                            |
 +-----------------+---------------------------+---------------------------+
@@ -67,7 +65,7 @@ La boite à outils peut être exécutée sur un environnement Windows ou Linux.
 |Caractéristiques |   Minimum                 | Recommandé                |
 +-----------------+---------------------------+---------------------------+
 | OS              | Windows 7+                | Windows 10+               |
-|                 | Linux CentOS 6.5+         | CentOS7+ ou Ubuntu 17+    |
+|                 | Linux                     | Linux                     |
 +-----------------+---------------------------+---------------------------+
 | Arch            |                     x86_64                            |
 +-----------------+---------------------------+---------------------------+

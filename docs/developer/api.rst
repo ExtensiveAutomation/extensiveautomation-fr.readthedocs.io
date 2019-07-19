@@ -12,20 +12,19 @@ Basique
 ~~~~~~~~
 
 L'authentification basique nécessite d'utiliser une clé API disponible depuis l'interface web.
-Il est possible de générer une nouvelle clé API en appelant le script ``/opt/xtc/current/Scripts/generate-apikey.py``
+La re-génération de la clé se fait pour l'instant en ligne de commande sur le serveur.
 
 .. code-block:: bash
   
-  ./generate-apikey.py --user=admin
-  API Key ID: admin
-  API Key Secret: c025e7a501f144a2e1b40f9f3a91c10a47c8b1d3
-  API Key: YWRtaW46YzAyNWU3YTUwMWYxNDRhMmUxYjQwZjlmM2E5MWMxMGE0N2M4YjFkMw==
+  ./extensiveautomation --apikey admin
+    API Key ID: admin
+    API Key Secret: d30278d49e4845e45daa748873e2171b14a0c55a
 
-Il faut ensuite ajouter l'header ``Authorization`` dans l'ensemble des requêtes.
+Il faut ensuite ajouter l'header ``Authorization`` dans l'ensemble des requêtes avec la clé et le secret encodé en base 64
 
 .. code-block:: bash
 
-  Authorization: Basic <mon_api_key>
+  Authorization: Basic base64(key_id:key_secret)
 
 .. note:: Avec l'authentification basique, il n'est pas nécessaire d'appeler la fonction login.
 
@@ -85,31 +84,31 @@ Description des fonctions les plus importantes:
 
 **Authentification**
 
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/session/login      | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogin>`_       |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/session/logout     | `Détails <https://demo.extensiveautomation.org/web/common-api-rest/index.html#api-Session-sessionLogout>`_      |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------+
+|/rest/session/login      |      |
++-------------------------+--------------------------------------------------------+
+|/rest/session/logout     |     |
++-------------------------+--------------------------------------------------------+
 
 .. note:: La fonction ``login`` ne nécessite aucune authentification.
 
 **Exécution d'un test**
 
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/tests/schedule     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsSchedule>`_        |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/tests/schedule/tpg | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Tests-testsScheduleTpg>`_     |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------+
+|/rest/tests/schedule     |       |
++-------------------------+--------------------------------------------------------------+
+|/rest/tests/schedule/tpg |   |
++-------------------------+--------------------------------------------------------------+
 
 **Récupération des résultats**
 
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/reports    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Reports-resultsReports>`_     |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/status     | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsStatus>`_      |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
-|/rest/results/verdict    | `Détails <https://demo.extensiveautomation.org/web/tester-api-rest/index.html#api-Results-resultsVerdict>`_     |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------+
++-------------------------+------------------------------------------------------------------------------+
+|/rest/results/reports    |   |
++-------------------------+------------------------------------------------------------------------------+
+|/rest/results/status     |   |
++-------------------------+------------------------------------------------------------------------------+
+|/rest/results/verdict    |  |
++-------------------------+------------------------------------------------------------------------------+
 
 
 

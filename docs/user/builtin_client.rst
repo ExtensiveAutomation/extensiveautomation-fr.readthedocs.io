@@ -49,18 +49,13 @@ Les tests peuvent être organisés par projet si nécessaire.
 
 .. note:: Il est possible d'ouvrir un test en faisant un drag and drop du fichier vers l'espace d'écriture.
 
-Le **dépôt local** donne la possibilité de stocker ses tests sur son poste, donc non partagé.
-Cette fonctionnalité n'est pas activée par défaut car ce n'est pas dans la philosophie de la solution de l'utiliser.
-Néanmoins le dépôt peut être activé à travers les préférences du client.
-
 .. warning:: Certaines fonctionnalités sont manquantes dans le dépôt local, son utilisation n'est pas conseillée!
 
 
 Dépôt des extensions
 ~~~~~~~~~~~~~~~~~~~~
 
-Le client permet l'accès aux dépôts des extensions (adaptateurs et librairies) et peut aussi être utilisé pour en développer des nouvelles, 
-qui seront stockées là aussi. Ces extensions sont organisées par version.
+Le client permet l'accès aux dépôts des extensions (adaptateurs) et peut aussi être utilisé pour en développer des nouvelles, qui seront stockées là aussi. Ces extensions sont organisées par version.
 
 .. image:: /_static/images/client/workspace_remote_adapters.png
 
@@ -76,7 +71,7 @@ Propriétés d'un test
 Les tests peuvent être enrichis avec un certain nombre de propriétés. 
 Les propriétés disponibles sont: 
  - la description du test (auteur, date de création, etc...)
- - les variables entrantes et sortantes
+ - les variables du test
  - la définition des agents et sondes utilisées par le test
  
 La fenêtre ``Test properties > Test Data > Inputs`` contient la liste des variables accessibles depuis le test.
@@ -90,19 +85,6 @@ L'ajout de variable peut se faire en faisant un clic droit 'Add parameter'.
  Il est possible de choisir la version des adaptateurs et librairies à utiliser pour le test
  
  .. image:: /_static/images/client/workspace_tests_properties.png
-
-Conception graphique
-~~~~~~~~~~~~~~~~~~~~
-
-La conception d'un test sous forme graphique est possible avec le test de type ``abstract``.
-Ce mode de conception ne nécessite aucune connaissance en développement. 
-
-.. image:: /_static/images/client/workspace_new_test_abstract.png
-
-Un clic droit sur la zone de dessin permet de choisir l'élement à ajouter.
-
-.. image:: /_static/images/client/workspace_test_abstract.png
-
 
 Conception textuelle
 ~~~~~~~~~~~~~~~~~~~~
@@ -147,11 +129,11 @@ Pour réaliser ce type de test, il est nécessaire de créer un nouveau test ``p
 
 .. image:: /_static/images/client/workspace_new_test_plan_global.png
 
-Le test "plan" permet d'écrire des scénarios de test en incluant des tests de type "abstract", "unit" ou "suite".
+Le test "plan" permet d'écrire des scénarios de test en incluant des tests de type "unit" ou "suite".
 
 .. image:: /_static/images/client/workspace_test_plan.png
 
-Le test "global" permet de décrire des campagnes de tests en incluant des tests "plan", "abstract", "unit" ou "suite".
+Le test "global" permet de décrire des campagnes de tests en incluant des tests "plan", "unit" ou "suite".
 
 .. note:: Il est possible de surcharger les paramètres de tests.
 

@@ -6,12 +6,11 @@ Bienvenue sur le projet Extensive Automation.
 Concepts
 --------
 
-L'ojectif de la solution est de fournir un environnement de création de tests automatiques, complet et clé en main.
-L'installation est simplifiée et intègre d'autres produits open source existants.
+L'ojectif de la solution est de fournir un environnement de création et d'exécution de tâches automatiques
 
 Le projet a plusieurs objectifs depuis sa création:
  - Unifier les différents outils de test dans un seul environnement
- - Simplifier l'écriture, l'exécution et l'analyse des tests automatiques
+ - Simplifier l'écriture, l'exécution et l'analyse des tâches automatiques
  - Partager les tests automatiques et permettre l'exécution depuis n'importe où
  - Fournir un environnement de travail agréable
  - Fournir un tableau de bord

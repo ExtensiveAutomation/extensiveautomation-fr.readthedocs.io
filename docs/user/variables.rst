@@ -2,15 +2,13 @@ Variables globales
 =======================
 
 Les variables globales sont principalement utilisées pour décrire un environnement de tests pour un projet donné.
-Elles sont accessibles depuis un test en utilisant le paramètre de test de type ``shared`` ou ``shared-list``.
+Elles sont accessibles depuis un test en utilisant le paramètre de test de type ``global`` ou ``list-global``.
 
 Ajout/suppression d'une variable
 -----------------
 
 L'ajout ou la suppression d'une variable peut se faire à travers l'interface web ou bien depuis l'api.
 Le format attendu est de type ``JSON``. Ces variables sont accessibles automatiquement au niveau de chaque test depuis les propriétés.
-
-.. image:: /_static/images/webinterface/read_variable.png
 
 
 Description environnement de test
@@ -75,6 +73,6 @@ Déclaration de l'environnement ``SAMPLE_ENVIRONMENT``:
 Import/export des variables
 ---------------------------
 
-Il est possible d'exporter ou d'importer en masse l'ensemble des variables depuis l'interface web au format CSV.
+Il est possible d'exporter ou d'importer en masse l'ensemble des variables depuis l'api REST  au format CSV.
 
 .. warning:: Les différentes variables sont encodées en base64.

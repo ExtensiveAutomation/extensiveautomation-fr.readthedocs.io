@@ -6,11 +6,29 @@ Version courante
 
 .. note::
 
- **Version 19.0.1 disponible depuis le 09/08/2018**
+ **Version 20.0.0 disponible depuis le 20/07/2019**
  
- - Correction bug deploiement serveur, utilisation de la commande pip
- 
- **Version 19.0.0 disponible depuis le 05/08/2018**
+ - Image docker disponible
+ - Rest API: CORS support
+ - Procédure d'installation automatique du produit supprimée 
+ - Suppression d'un maximum de dépendances
+ - Plus de plugins embarqués par défaut
+ - Les sondes sont supprimés du produit, utilisation des agents à la place
+ - Supression de la base de donnée MySQL, remplacer par une base Sqlite
+ - Optimisation du framework de test pour réduire la consommation CPU
+ - Nouveau version majeure du client lourd, simplification de l'interface
+ - Nouvelle version majeure de la boite à outils
+ - Nouvelle version majeure de l'interface web totalement indépendante, non fournie par défaut.
+ - Corrections de bugs divers
+
+La release notes détaillée est disponible dans le paquet d'installation.
+
+Versions précédentes
+-------------------
+
+..
+
+ **Version 19.0.1 sortie le 09/08/2018**
  
  - Changement du nom de produit de la solution par ExtensiveAutomation
  - Fichiers stockés en mode XML par défaut (plus de compression) 
@@ -26,11 +44,7 @@ Version courante
  - Mise à jour de selenium en 3.13.0 dans la boite à outils
  - Nouvelle version majeure pour le client lourd 
  - Nouvelle version majeure pour la boite à outils
-
-La release notes détaillée est disponible dans le paquet d'installation.
-
-Versions précédentes
--------------------
+ - Correction bug deploiement serveur, utilisation de la commande pip
 
 ..
 

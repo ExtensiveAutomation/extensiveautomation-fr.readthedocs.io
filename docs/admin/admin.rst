@@ -4,33 +4,26 @@
 Arrêt/relance du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Le serveur peut être contrôlé en utilisant la commande ``xtctl``.
+Le serveur peut être contrôlé en utilisant la commande ``./extensiveautomation``.
 Cette commande permet 
  - de démarrer ou arrêter le serveur
  - de vérifier le status du serveur
- - de mettre à disposition un nouveau client graphique ou la boite à outils
+ - d'installer un adaptateur
+ - de générer la clé API
  - d'afficher la version du serveur.
 
-Pour démarrer le serveur il faut utiliser la commande ``xtctl start``.
+Pour démarrer le serveur il faut utiliser la commande ``./extensiveautomation start``.
  
 .. code-block:: bash
   
-  # xtctl start
-  Checking database                                          [  OK  ]
-  Saving current adapters                                    [  OK  ]
-  Saving current libraries                                   [  OK  ]
-  Starting Extensive Automation                              [  OK  ]
+  # ./extensiveautomation start
+
   
-  
-Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
+Pour arrêter le serveur il faut utiliser la commande ``./extensiveautomation stop``.
 
 .. code-block:: bash
   
-  # xtctl stop
-  Saving current adapters                                    [  OK  ]
-  Saving current libraries                                   [  OK  ]
-  Stopping Extensive Automation                              [  OK  ]
-  
+  # ./extensiveautomation stop
 
 .. tip::
 
@@ -38,8 +31,8 @@ Pour arrêter le serveur il faut utiliser la commande ``xtctl stop``.
    
   .. code-block:: bash
     
-    # tailf /opt/xtc/current/Var/Log/output.log
-    2014-12-06 11:00:54,092 - INFO - Extensive Automation successfully started (in 14 sec.)
+    # tailf Var/Log/output.log
+    2014-12-06 11:00:54,092 - INFO - Extensive Automation successfully started (in 1 sec.)
     ...
     2014-12-06 10:58:51,810 - INFO - Stopping server
     2014-12-06 10:58:51,911 - INFO - Extensive Automation successfully stopped!
@@ -53,44 +46,6 @@ La commande permet de vérifier le status du serveur, il y a 3 status possible
  - ``running``: le serveur est en cours d'exécution
  - ``stopped``: le serveur est arrêté.
 
-.. tip:: 
-  Vérifier aussi le status du serveur ``httpd`` et la base de donnée ``mysql``.
-  
-Déploiement nouveaux paquets
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-La solution permet de mettre à disposition des utilisateurs les paquets suivants pour faciliter la diffusion:
- - le client lourd
- - la boîte à outils
- - les différents plugins.
-
-Lorsqu'un nouveau client est disponible, il est possible de le déposer sur le serveur pour automatiquement 
-notifier les utilisateurs de la mise à jour.
-
-Les paquets sont à déposer dans le répertoire ``<INSTALL_PATH>/current/Packages/``
-
-+-----------------+-------------------------------------------------+
-|Client           | Contients la version portable et installation   |
-+-----------------+-------------------------------------------------+
-|ClientPlugins    |  Contients les plugins                          |
-+-----------------+-------------------------------------------------+
-|Toolbox          |  Contients la version portable et installation  |
-+-----------------+-------------------------------------------------+
-|ToolboxPlugins   |  Contients les plugins                          |
-+-----------------+-------------------------------------------------+
-
-Après dépôt, les paquets logiciels sont automatiquement disponibles depuis l'interface web.
-Pour la mise à jour en mode automatique du client, il faut exécuter la commande ``xtctl deploy`` sur le serveur
-pour prendre en compte le nouveau client déployé.
-
-.. code-block:: bash
-  
-  ./xtctl deploy
-  Deploying clients.(ExtensiveAutomationgClient_X.X.X_Setup.exe)
-  Deploying tools.(ExtensiveAutomationToolbox_X.X.X_Setup.exe)
-  Deploying portable clients... (No client)
-  Deploying portable tools... (No client)
-
 Configuration du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -100,70 +55,22 @@ Les paramètres de configuration sont découpés en plusieurs sections:
  - Notifications
  - Client_Channel
  - Agent_Channel
- - Probe_Channel
  - WebServices
  - TaskManager
  - Network
  - Paths
  - Bin
  - Server
- - Web
  - Bind
  - Misc
- - MySql
  - Trace
- - Backups
- - Default
- - Csv_Test_Results:
- - Tests_Framework
- - Events_Colors
  - Supervision
  - Users_Session
-  
-Sauvegardes automatiques
-~~~~~~~~~~~~~~~~~~~~~~
-  
-Par défaut la solution sauvegarde l'ensemble des tests, adaptateurs et librairies chaques jours.
-Les sauvegardes sont disponibles dans ``opt/xtc/current/Var/Backups``.
 
-La périodicité peut être configuré dans la section ``Backups`` du fichier ``settings.ini``.
-
-.. code-block:: bash
-  
-  [Backups]
-  ; tests repository
-  ; 0=disable 1=enable
-  tests=1
-  ; backup zip name
-  tests-name=tests-automatic-backup
-  ; backup weekly on sunday at 23:40:00
-  tests-at=6|23,40,00
-  
-Rythme de sauvegarde disponible:
- - 7: une fois par semaine
- - 6: une fois par jour
- - 5: une fois par heure
- 
- 
 Scripts crontab
 ~~~~~~~~~~~~~~~~~~~~
 
-``cron.backup-tables``: ce script permet de sauvegarder les tables de la solution
-
-``cron.cleanup-backups``: ce script permet de supprimer les backups plus vieux que 14 jours.
-Le nombre de jours est configurable.
+Les scripts sont disponibles dans le répertoire ``Build`` depuis les sources du serveur.
 
 ``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
 Le nombre de jours est configurable.
-
-
-Bannière de sécurité
-~~~~~~~~~~~~~~~~
-
-Il est possible de configurer une bannière de sécurité sur l'interface web du serveur et sur la 
-fenêtre de connexion du client lourd.
-
-Pour celà il faut configurer le fichier ``BANNER`` présent dans 
- - dans le répertoire web ``/opt/xtc/current/Web/`` pour le serveur 
- - à la raccine du fichier d'exécution pour le client graphique.
-

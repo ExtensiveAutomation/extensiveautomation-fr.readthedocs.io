@@ -1,30 +1,28 @@
 Boite à outils
 ==============
 
-La boite à outils permet de démarrer des agents ou des sondes sur des postes dédiés.
+La boite à outils permet de démarrer des agents sur des postes dédiés. Les agents sont indispensables pour exécuter des tests avec Selenium sur des postes dédiés ou bien pour déporter l'exécution d'un test.
 
- - Les agents sont indispensables pour exécuter des tests avec Selenium sur des postes dédiés ou bien pour déporter l'exécution d'un test.
- - Les sondes peuvent être utilisées pour récupérer des logs automatiquement durant l'exécution d'un test.
 
 .. image:: /_static/images/toolbox/toolbox.png
    
 Déploiement
 -----------
 
-Cette fenêtre permet de choisir l'agent ou la sonde à démarrer. Le type d'agent ou sonde à démarrer peut être choisi 
-dans la liste déroulante. Enfin un agent ou sonde nécessite d'être enregistré auprès du serveur de test pour pouvoir l'utiliser.
+Cette fenêtre permet de choisir l'agent  à démarrer. Le type d'agent à démarrer peut être choisi 
+dans la liste déroulante. Enfin un agent nécessite d'être enregistré auprès du serveur de test pour pouvoir l'utiliser.
 
 Un agent va permettre de faire une exécution distribuée de vos tests. 
 Par exemple, un agent déployé sur plusieurs machines va permettre d'exécuter le même test sur différent environnement à tester ou piloter.
 
-La liste complète des agents et sondes disponibles sont décrits dans le chapitre `Compléments Serveur > Agents ou Sondes`.
+La liste complète des agents disponibles sont décrits dans le chapitre `Compléments Serveur > Agents`.
 
-.. note:: Le nom de l'agent ou la sonde doit être unique pour réussir l'enregistrement.
+.. note:: Le nom de l'agent doit être unique pour réussir l'enregistrement.
 
 .. tip:: 
-  Pour une meilleure visibilité des agents ou sondes disponibles, il est conseillé de respecter le formalisme suivant
+  Pour une meilleure visibilité des agents disponibles, il est conseillé de respecter le formalisme suivant
   pour les noms:
-    [agent|sonde].[environnement].[prénom_testeur].[nom][numéro_instance]
+    [agent].[environnement].[prénom_testeur].[nom][numéro_instance]
     
     Exemple:
         agent.win.denis.socket01

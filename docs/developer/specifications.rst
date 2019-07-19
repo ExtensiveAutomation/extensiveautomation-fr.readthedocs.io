@@ -20,31 +20,28 @@ La version se découpe en 3 chiffres (A.B.C)
 Arborescence du serveur
 -------------------
 
-L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``/opt/xtc/current/``.
+L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``[...]/Var/``.
 
 ::
   
+  Build/
   ServerEngine/
   ServerControls/
   ServerInterfaces/
   ServerRepositories/
   Libs/
-  Scripts/
-  Packages/
   TestCreatorLib
   TestExecutorLib/
   TestInterop/
-  SutAdapters/
-  SutLibraries/
   Var/
+    SutAdapters/
     Tests/
     TestsResults/
     Logs/
     Backups/
-  Web/
   
 
-Les tests sont stockés dans le répertoire ``/opt/xtc/current/Var/Tests/``, ils sont organisés par identifiant de projet.
+Les tests sont stockés dans le répertoire ``[...]/Var/Tests/``, ils sont organisés par identifiant de projet.
 
 Modèle de données
 -------------------
@@ -59,14 +56,6 @@ Une base de donnée est utilisée par le serveur pour stocker :
 +-------------------------+-----------------------------------------------+
 |  Tables                 |    Description                                |
 +-------------------------+-----------------------------------------------+
-|  xtc-agents             | Non utilisé                                   |
-+-------------------------+-----------------------------------------------+
-|  xtc-agents-stats       | Non utilisé                                   |
-+-------------------------+-----------------------------------------------+
-|  xtc-probes             | Non utilisé                                   |
-+-------------------------+-----------------------------------------------+
-|  xtc-probes-stats       | Non utilisé                                   |
-+-------------------------+-----------------------------------------------+
 |  xtc-config             | Configuration du serveur                      |
 +-------------------------+-----------------------------------------------+
 |  xtc-projects           | Liste des projets                             |
@@ -75,29 +64,10 @@ Une base de donnée est utilisée par le serveur pour stocker :
 +-------------------------+-----------------------------------------------+
 |  xtc-users              | Liste des utilisateurs                        |
 +-------------------------+-----------------------------------------------+
-|  xtc-users-stats        | Statistiques de connexions                    |
-+-------------------------+-----------------------------------------------+
 |  xtc-test-environment   | Liste des variables au format JSON            |
 +-------------------------+-----------------------------------------------+
 |  xtc-tasks-history      | Historique des tâches exécutées sur le serveur|
 +-------------------------+-----------------------------------------------+
-|  xtc-scripts-stats      | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testabstracts-stats| Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testcases-stats    | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testsuites-stats   | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testunits-stats    | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testplans-stats    | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-testglobals-stats  | Statistiques sur les tests exécutés           |
-+-------------------------+-----------------------------------------------+
-|  xtc-writing-stats      | Statistiques sur la durée d'écriture des tests|
-+-------------------------+-----------------------------------------------+
-
 
 Gestion des mots de passes
 -------------------
@@ -118,7 +88,6 @@ Format des fichiers
 -------------------
 
 Les tests sont au format ``XML``. Il existe plusieurs formats de tests:
- - Test Abstract Xml
  - Test Unit Xml
  - Test Suite Xml
  - Test Plan Xml
@@ -136,52 +105,6 @@ Les tests sont au format ``XML``. Il existe plusieurs formats de tests:
             <outputs-parameters>...</ outputs -parameters>
         </properties>
     </file>
-
-**Test Abstract Xml**
-
-.. code-block:: xml
-
-    <?xml version="1.0" encoding="utf-8" ?>
-    <file>
-        <properties>...</properties>
-        <teststeps>
-            <steps>
-                <step>
-                    <id>1</id>
-                    <description>
-                        <type>string</type>
-                        <value>step description</value>
-                    </description>
-                    <summary>
-                        <type>string</type>
-                        <value>step sample</value>
-                    </summary>
-                    <expected>
-                        <type>string</type>
-                        <value>result expected</value>
-                    </expected>
-                </step>
-            </steps>
-        </teststeps>
-        <testadapters><adapters /></testadapters>
-        <testlibraries><libraries /></testlibraries>
-        <testactions>
-            <actions>
-                <action>
-                    <item-id>1</item-id>
-                    <item-text>Start</item-text>
-                    <item-type>2</item-type>
-                    <item-data />
-                    <pos-y>1750.0</pos-y>
-                    <pos-x>2000.0</pos-x>
-                </action>
-            </actions>
-        </testactions>
-        <testaborted><aborted /></testaborted>
-        <testdefinition><![CDATA[pass]]></testdefinition>
-        <testdevelopment>1448190709.095677</testdevelopment>
-    </file>
-    
 
 **Test Unit Xml**
 
@@ -379,20 +302,8 @@ Sens de communications disponibles:
 Les logs serveurs
 ----------------
 
-Les logs du serveur sont localisés dans le répertoire ``/opt/xtc/current/Var/logs/``.
+Les logs du serveur sont localisés dans le répertoire ``[...]/Var/logs/``.
 
-+--------------------+---------------------------------------------------------+
-| access_rp.log      | logs apache pour l'accès reverse                        |
-+--------------------+---------------------------------------------------------+
-| access_ssl_rp.log  | logs apache pour l'accès reverse ssl                    |
-+--------------------+---------------------------------------------------------+
-| access_web.log     | logs apache pour l'accès web interface                  |
-+--------------------+---------------------------------------------------------+
-| error_rp.log       | logs erreurs apache pour l'accès reverse                |
-+--------------------+---------------------------------------------------------+
-| error_ssl_rp.log   | logs erreurs apache pour l'accès reverse ssl            |
-+--------------------+---------------------------------------------------------+
-| error_web.log      | logs erreurs apache pour l'accès web interface          |
 +--------------------+---------------------------------------------------------+
 | output.log         | logs serveurs                                           |
 +--------------------+---------------------------------------------------------+

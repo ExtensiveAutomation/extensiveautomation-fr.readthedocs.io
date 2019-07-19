@@ -7,11 +7,15 @@ La solution est faite de plusieurs composants pouvant être téléchargés sépa
 
 La solution peut être téléchargée depuis le site internet https://www.extensiveautomation.org
 
-Le serveur est disponible sour la forme d'un fichier ``tar.gz``, il intègre:
- - le framework de test
- - un ordonnanceur
- - les adaptateurs et librairies
+Le serveur est disponible sour plusieurs formes:
+ - version depuis les sources directement
+ - image docker
+ - fichier tar.gz
 
+Le client web est disponible sous deux formes:
+ - version compilée
+ - version depuis les sources directement
+ 
 Le client lourd est disponible sous deux formes:
  - version portable
  - version en mode installation
@@ -23,7 +27,7 @@ La boîte à outils est disponible sous trois formes:
  
 .. note:: Le client et la boîte à outils sont compatibles Windows et Linux, en mode 64bits seulement.
 
-.. warning:: Le serveur doit être exécuté sur un serveur Linux (CentOS7 ou RedHat7).
+.. warning:: Le serveur doit être exécuté sur un serveur Linux avec Python.
  
 .. warning:: Le client ou la boîte à outils en mode installation peuvent nécessiter des droits d'administration.
  

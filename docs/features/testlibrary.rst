@@ -361,7 +361,7 @@ Les agents
 .. image:: /_static/images/examples/client_agent_support.png
 
 
-Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé ``agent()``.
+Il est possible d'accéder à la liste des agents depuis un test en utilisant le mode clé ``input()``.
 
 .. code-block:: python
 
@@ -372,15 +372,9 @@ Il est possible d'accéder à la liste des agents depuis un test en utilisant le
                                             debug=input('DEBUG'),
                                             sslSupport=input('USE_SSL'),
                                             agentSupport=input('SUPPORT_AGENT'), 
-                                            agent=agent('AGENT_SOCKET')
+                                            agent=input('AGENT_SOCKET')
                                            )
   
-Les probes
-~~~~~~~~~~
-
-
-.. image:: /_static/images/examples/probe_tab.png
-
 
 Import/export des paramètres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

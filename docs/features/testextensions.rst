@@ -461,23 +461,3 @@ Outils tiers
 +------------------+--------------------------------------------------------------------------------------+
 
 .. note:: L'utilisation de l'agent ``Selenium3-Server`` nécessiste au minimum d'avoir ``Java 8`` sur le poste.
-
-
-Sondes
-------
-
-Les sondes sont disponibles dans la boîte à outils. Le but principal est de récupérer 
-automatiquement des logs (trace réseaux, fichiers) durant l'exécution d'un test.
-
-+----------------+------------------------------------------------------------------------------------------+
-| textual        |  Permet de faire suivre des fichiers de logs sur Windows ou Linux (tailf)                |
-+----------------+------------------------------------------------------------------------------------------+
-| network        |  Prise de traces réseaux, sonde basée sur tcpdump sur linux, ou tshark sur Windows       |
-+----------------+------------------------------------------------------------------------------------------+
-| file           |  Récupération de fichiers de configuration sur Windows ou Linux                          |
-+----------------+------------------------------------------------------------------------------------------+
-
-L'utilisation d'une sonde dans un test est à définir dans les propriétés.
-
- 
-.. note:: L'agent ``dummy`` est à utiliser comme base pour le développement d'un nouvel agent.

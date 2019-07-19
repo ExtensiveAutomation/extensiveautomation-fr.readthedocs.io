@@ -6,14 +6,6 @@ La solution se base sur différents types de tests pour:
  - diminuer l'utilisation de script
 
 .. image:: /_static/images/testlibrary/testing_approach.png
-   
-Test Abstract
--------------
-
-Le ``test abstract`` (tax) permet d'écire un cas de test avec plusieurs étapes.
-Ce format est orienté modélisation graphique donc ne nécessaite aucune connaissance en développement.
-
-.. image:: /_static/images/testlibrary/tax.png
 
 Test Unit
 ---------

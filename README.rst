@@ -1,4 +1,4 @@
-ExtensiveAutomation
-========
+Documentations françaises pour ExtensiveAutomation
+============================================
 
-Welcome
+Disponible ici https://extensiveautomation.readthedocs.io/fr/latest/index.html

@@ -1,8 +1,6 @@
 Interface Web
 =============
 
-.. image:: /_static/images/webinterface/tests_center_main_page.png
-
 Partie tests
 ------------
 
@@ -31,7 +29,7 @@ La création d'un utilisateur nécessite à minima de préciser:
 
 .. note:: Si une adresse email est précisée, alors il est possible de recevoir les résultats des tests automatiquement dans cette boite mail.
 
-.. warning: Ne pas oublier de modifier les mots de passe des utilisateurs ``admin`` et ``tester``, par défaut ils n'ont pas de mot de passe.
+.. warning: Ne pas oublier de modifier les mots de passe des utilisateurs créés par défaut.
 
 Projets
 ~~~~~~~
@@ -41,7 +39,3 @@ L'ajout ou la suppression de projet peut se faire depuis l'interface web ou dire
 
 .. note:: Le projet ``Common`` existe par défaut et est accessible par l'ensemble des utilisateurs, il ne peut pas être supprimé.
 
-Partie système
---------------
-
-La partie système permet de voir le statut du serveur.
