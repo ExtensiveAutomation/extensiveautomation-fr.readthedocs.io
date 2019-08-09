@@ -10,9 +10,9 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 +---------------------+------------+------------+
 |Caractéristiques     |   Minimum  | Recommandé |
 +---------------------+------------+------------+
-| OS                  | Linux                   |
+| OS                  | Linux ou Windows        |
 +---------------------+------------+------------+
-| Python              |     2.7                 |
+| Python              |     2.7 ou 3.x          |
 +---------------------+------------+------------+
 | Arch                |         x86_64          |
 +---------------------+------------+------------+
@@ -26,10 +26,6 @@ Il est possible de l'exécuter sur un environnement virtuel ou physique.
 +---------------------+------------+------------+
 | Nombre Utilisateur  |     2      |     5      |
 +---------------------+------------+------------+
-
-.. note:: Le support de Python 3.x est cours de développement.
-
-.. note: Le serveur peut être faite sur n'importe quel système linux mais l'intégration est à faire manuellement.
 
 Client
 ------

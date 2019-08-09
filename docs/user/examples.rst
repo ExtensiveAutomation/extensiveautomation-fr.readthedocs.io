@@ -139,7 +139,7 @@ Le test se décompose en plusieurs étapes:
    
  3. Affichage de la version depuis le cache.
 
-.. note:: L'exemple complet est disponible dans les échantillons de tests ``/Self Testing/SYSTEM/000_System.tpx``.
+.. note:: L'exemple complet est disponible dans les échantillons de tests ``/Samples/Self Testing/000_SSH_API.tpx``.
 
 Navigateurs Internet
 --------------------

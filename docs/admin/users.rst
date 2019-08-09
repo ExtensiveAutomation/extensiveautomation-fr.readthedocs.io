@@ -7,6 +7,8 @@ Des utilisateurs suivants existent par défaut:
  - ``Tester``
  - ``Monitor``
 
+.. note:: Le mot de passe par défaut est ``password``
+
 .. note:: Ne pas oublier de désactiver les comptes par défaut dans un environnement de production.
 
 Ajout d'un utilisateur

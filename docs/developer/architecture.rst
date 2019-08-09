@@ -9,6 +9,7 @@ La solution se compose de plusieurs composants:
  - Un serveur
  - Un client graphique
  - Des agents
+
 .. image:: /_static/images/testlibrary/archi-extensivetesting.png
 
 Serveur
@@ -20,7 +21,6 @@ Le serveur se compose :
  - d'une serveur API REST
  - du framework de test
  - des adaptateurs
- - des extensions outils
  - d'une interface web
 
 Client Graphique

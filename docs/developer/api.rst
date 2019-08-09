@@ -16,9 +16,9 @@ La re-génération de la clé se fait pour l'instant en ligne de commande sur le
 
 .. code-block:: bash
   
-  ./extensiveautomation --apikey admin
-    API Key ID: admin
-    API Key Secret: d30278d49e4845e45daa748873e2171b14a0c55a
+  python extensiveautomation.py --apikey admin
+  API Key ID: admin
+  API Key Secret: d30278d49e4845e45daa748873e2171b14a0c55a
 
 Il faut ensuite ajouter l'header ``Authorization`` dans l'ensemble des requêtes avec la clé et le secret encodé en base 64
 

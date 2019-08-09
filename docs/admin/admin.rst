@@ -4,7 +4,7 @@
 Arrêt/relance du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Le serveur peut être contrôlé en utilisant la commande ``./extensiveautomation``.
+Si le serveur est installé avec pip alors le serveur peut être contrôlé en utilisant la commande ``./extensiveautomation``.
 Cette commande permet 
  - de démarrer ou arrêter le serveur
  - de vérifier le status du serveur
@@ -12,18 +12,18 @@ Cette commande permet
  - de générer la clé API
  - d'afficher la version du serveur.
 
-Pour démarrer le serveur il faut utiliser la commande ``./extensiveautomation start``.
+Pour démarrer le serveur il faut utiliser la commande ``./extensiveautomation --start``.
  
 .. code-block:: bash
   
-  # ./extensiveautomation start
+  # ./extensiveautomation --start
 
   
-Pour arrêter le serveur il faut utiliser la commande ``./extensiveautomation stop``.
+Pour arrêter le serveur il faut utiliser la commande ``./extensiveautomation --stop``.
 
 .. code-block:: bash
   
-  # ./extensiveautomation stop
+  # ./extensiveautomation --stop
 
 .. tip::
 
@@ -31,7 +31,7 @@ Pour arrêter le serveur il faut utiliser la commande ``./extensiveautomation st
    
   .. code-block:: bash
     
-    # tailf Var/Log/output.log
+    # tailf var/log/output.log
     2014-12-06 11:00:54,092 - INFO - Extensive Automation successfully started (in 1 sec.)
     ...
     2014-12-06 10:58:51,810 - INFO - Stopping server
@@ -41,7 +41,8 @@ Pour arrêter le serveur il faut utiliser la commande ``./extensiveautomation st
 Status du serveur
 ~~~~~~~~~~~~~~~~~~~~~~
 
-La commande permet de vérifier le status du serveur, il y a 3 status possible
+La commande ``./extensiveautomation --status`` permet de vérifier le status du serveur, 
+il y a 3 status possibles:
  - ``starting``: le serveur est en cours de démarrage
  - ``running``: le serveur est en cours d'exécution
  - ``stopped``: le serveur est arrêté.
@@ -70,7 +71,7 @@ Les paramètres de configuration sont découpés en plusieurs sections:
 Scripts crontab
 ~~~~~~~~~~~~~~~~~~~~
 
-Les scripts sont disponibles dans le répertoire ``Build`` depuis les sources du serveur.
+Les scripts sont disponibles dans le répertoire ``scripts`` depuis les sources du serveur.
 
 ``cron.cleanup-testsresult``: ce script permet de supprimer les résultats plus vieux que 30 jours.
 Le nombre de jours est configurable.

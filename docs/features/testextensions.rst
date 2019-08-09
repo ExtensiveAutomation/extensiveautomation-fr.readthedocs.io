@@ -20,10 +20,21 @@ Les adaptateurs ont deux modes d'utilisation:
 
 .. note:: Le mode ``Debug`` n'est pas activé par défaut. Il peut être activé en cas de problème.
 
-.. note:: 
-  Des exemples sont disponibles dans les échantillons de tests ``Samples/Tests_Adapters``
+.. note:: Chaque plugin embarque des examples.
   
 Liste des adaptateurs disponibles par défaut:
+
++----------------+----------------+---------------------------------------------------------------------------------+
+| Adaptateurs    | Agents         | Descriptions                                                                    |
++----------------+----------------+---------------------------------------------------------------------------------+
+| CLI            | ssh            | Sniffer to send and receive ARP packets                                         |
++----------------+----------------+---------------------------------------------------------------------------------+
+| WEB            | curl           | Sniffer to send and receive ICMP packets                                        |
++----------------+----------------+---------------------------------------------------------------------------------+
+| GUI            | selenium2-server or selenium3-server or adb or sikulixserver | UI interactions                   |
++----------------+----------------+---------------------------------------------------------------------------------+
+
+Autres adaptateurs mais non fournis par défaut:
 
 Protocoles réseaux
 ~~~~~~~~~~~~~~~~~~~~
@@ -141,25 +152,6 @@ Protocoles Télécoms
 | RTP          | socket       |  Module permettant d'envoyer et recevoir des flux audios et vidéos          |
 +--------------+--------------+-----------------------------------------------------------------------------+		
 
-Librairies
-----------
-
-Une librairie permet de mettre à disposition rapidement des fonctions pour 
- - supporter les méthodes de chiffrement de données
- - supporter les formats de compression existants
- - supporter les fonctions d'authentification
- - manipuler les différents format de date, heure et unités
- - supporter les codecs (XML, JSON, etc...)
- - supporter les fonctions de hash de données
-
-Une librairie ne communique pas en direct avec le système à tester ou piloter. Elle est utilisée:
- - directement depuis les tests
- - depuis les adaptateurs.
-
-.. tip:: Si plusieurs adaptateurs ont besoin des mêmes fonctions, il est conseillé de les factoriser dans une librairie.
-
-Liste des librairies disponibles par défauts:
-
 Chiffrement
 ~~~~~~~~~~
 
@@ -176,9 +168,6 @@ Chiffrement
 +-----------+---------------------------------------+
 |  RSA      |  Générateur clé RSA                   |
 +-----------+---------------------------------------+
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/02_Ciphers``
 
 Codecs
 ~~~~~~
@@ -197,18 +186,12 @@ Codecs
 | XML          |  Encode ou décode du texte au format XML      |
 +--------------+-----------------------------------------------+
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/03_Codecs``
-
 Compression
 ~~~~~~~~~~
 
 +--------+-------------------------------------------------+
 | GZIP   | Compression ou décompression au format GZIP     |
 +--------+-------------------------------------------------+	
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/09_Compression``
   
 Hashing	
 ~~~~~~~~~~
@@ -225,9 +208,6 @@ Hashing
 | CRC32    | Générateur de checksum                   |
 +----------+------------------------------------------+
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/05_Hashing``
-  
 Identifiant
 ~~~~~~~~~~
 
@@ -236,10 +216,7 @@ Identifiant
 +------------------+-------------------------------------------------------+
 | UUIDS            |  Générateur de UUID (Universally Unique IDentifier)   |
 +------------------+-------------------------------------------------------+
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/07_Identifiers``
-  
+ 
 Média
 ~~~~~
 
@@ -259,19 +236,13 @@ Média
 | Waves        |  Générateur d'ondes simples                                   |
 +--------------+---------------------------------------------------------------+
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/04_Media``
-
 Date
 ~~~~
 
 +------------------+---------------------------------------+
 | Today            |   Permet de récupérer la date du jour |
 +------------------+---------------------------------------+
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/11_Date``
-  
+ 
 Sécurité
 ~~~~~~~~~~
 
@@ -291,9 +262,6 @@ Sécurité
 | JWT         |  Décode ou encode des tokens                         |
 +-------------+------------------------------------------------------+
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/01_Security``
-  
 Temps
 ~~~~~
 
@@ -301,28 +269,15 @@ Temps
 | Timestamp        |  Permet de générer un timestamp ou de convertir en valeur lisible       |
 +------------------+-------------------------------------------------------------------------+
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/06_Time``
-  
 Unités	
 ~~~~~~
 
 +------------------+------------------------------------------------------------+
 | Bytes            |  Permet de convertir des bytes en valeur lisibles          |
 +------------------+------------------------------------------------------------+
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Libraries/08_Units``
-  
+ 
 Outils tiers
 ---------------
-
-Le produit vient à la base avec un certain nombre de plugins pour s'interfacer avec 
-d'autre d'outils existants (suivi de défauts, managements de tests, etc..).
-
-Ces plugins peuvent être utilisés directement depuis un test.
-
-Liste des outils supportés:
 
 +---------------------+------------------------------------------------------------+
 | Git                 |  Clone/commit de fichier sur un dépôt distant              |
@@ -360,18 +315,12 @@ Exemple d'utilisation:
     |                                    v
     +<-------- Push du résultat ---------+
     
-    
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/02_HP_QC``
-  
+ 
 Jenkins
 ~~~~~~
 
 Ce plugin permet de lancer un build depuis la solution Extensive.
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/06_Jenkins``
-  
+ 
 VSphere
 ~~~~~~
 
@@ -379,34 +328,22 @@ Ce plugin permet de piloter un environnement virtuel VMware. Il peut être utili
  - créer des machines virtuelles en mode automatiquement
  - supprimer des machines
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/05_VSphere``
-
-ExtensiveTesting
+ExtensiveAutomation
 ~~~~~~~~~~~~~~~~
 
 Ce plugin permet de faire un lien entre plusieurs environnement (dev, intégration, qualification) en permettant 
 d'exécuter des tests d'un environnement à l'autre.
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/03_ExtensiveTesting``
 
 Jira
 ~~~~
 
 Ce plugin permet de créer des tickets suite à l'exécution d'un test dans l'outil Jira.
 
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/01_Jira``
-
 Git
 ~~~~
 
 Ce plugin permet de récupérer ou pousser des fichiers depuis un dépôt de sources.
 Il peut être utilisé en prérequis d'un test.
-
-.. note:: 
-  Un exemple est disponible dans les échantillons de tests ``/Samples/Tests_Interop/04_Git``
 
 Agents
 ------

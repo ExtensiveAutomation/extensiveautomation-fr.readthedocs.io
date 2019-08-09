@@ -6,6 +6,24 @@ Version courante
 
 .. note::
 
+ **Version 21.0.0 disponible depuis le 10/08/2019**
+
+ - Support complet de Python3 côté serveur
+ - Support de Windows pour l'exécution du serveur
+ - Le répertoire "backups" est supprimé
+ - Réorganisation du projet pour une meilleure gestion des imports
+ - Test interop fusionné dans les sut adapters
+ - Nouvelle image docker du serveur basée sur Python3
+ - Nouveau mode d'installation du serveur à travers pypi
+ - Nouveau mode d'installation des plugins à travers pypi
+
+Une release notes détaillée est disponible dans le paquet du serveur.
+
+Versions précédentes
+-------------------
+
+..
+
  **Version 20.0.0 disponible depuis le 20/07/2019**
  
  - Image docker disponible
@@ -20,11 +38,6 @@ Version courante
  - Nouvelle version majeure de la boite à outils
  - Nouvelle version majeure de l'interface web totalement indépendante, non fournie par défaut.
  - Corrections de bugs divers
-
-La release notes détaillée est disponible dans le paquet d'installation.
-
-Versions précédentes
--------------------
 
 ..
 

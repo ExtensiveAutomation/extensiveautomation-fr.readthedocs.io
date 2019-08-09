@@ -12,6 +12,10 @@ Le serveur est disponible sour plusieurs formes:
  - image docker
  - fichier tar.gz
 
+Les plugins pour le serveur sont disponibles sous deux formes:
+ - directement depuis les sources sur github
+ - sur pypi 
+
 Le client web est disponible sous deux formes:
  - version compilée
  - version depuis les sources directement

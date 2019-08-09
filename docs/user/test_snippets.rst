@@ -77,7 +77,7 @@ Paramètre(s) à configurer:
 Reset du cache
 ~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Reset_Cache.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/03_Reset_Cache.tux``
 
 Ce test réutilisable permet de vider totalement le cache.
 Aucun paramètre à configurer.
@@ -87,7 +87,7 @@ Aucun paramètre à configurer.
 Vérification d'une valeur dans le cache
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Checking_Cache.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/04_Checking_Cache.tux``
 
 Ce test réutilisable permet de vérifier la valeur dans une clé présente dans le cache.
 
@@ -132,7 +132,7 @@ Les opérateurs disponibles:
 Suppression d'une entrée dans le cache
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/02_Delete_Cache.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Cache/05_Delete_Cache.tux``
 
 Ce test réutilisable permet de supprimer une clé et sa valeur associée dans le cache.
 
@@ -314,7 +314,7 @@ Paramètre(s) à configurer:
 Hash MD5
 ~~~~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Md5.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/02_Gen_Md5.tux``
 
 Ce test réutilisable permet de générer un hash md5 d'une valeur et de la stocker dans le cache.
 
@@ -332,7 +332,7 @@ Paramètre(s) à configurer:
 UUID
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Uuid.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/03_Gen_Uuid.tux``
 
 Ce test réutilisable permet de générer un id uuid et de la stocker dans le cache.
 
@@ -348,7 +348,7 @@ Paramètre(s) à configurer:
 BASE64
 ~~~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Base64.tux``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/04_Gen_Base64.tux``
 
 Ce test réutilisable permet d'encoder ou décoder une chaine de caractères et de stocker le résultat dans le cache.
 
@@ -367,28 +367,6 @@ Paramètre(s) à configurer:
 +-----------------+------------------------------------------------------------------------------------+
 | STR_BASE64      | Chaine de caractères à encoder/décoder                                              |
 +-----------------+------------------------------------------------------------------------------------+
-
-
-GZIP
-~~~~
-
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Generators/01_Gen_Gzip.tux``
-
-Ce test réutilisable permet de compresser ou décompresser une chaine de caractères et de stocker le résultat dans le cache.
-
-Paramètre(s) à configurer:
-
-+-----------------+-------------------------------------------------------------+
-|Paramètres       |   Description                                               |
-+-----------------+-------------------------------------------------------------+
-| CACHE_KEY       | Nom de la clé                                               |
-+-----------------+-------------------------------------------------------------+
-| COMPRESS        | A positionner à True pour compresser                        |
-+-----------------+-------------------------------------------------------------+
-| UNCOMPRESS      | A positionner à True pour décompresser                      |
-+-----------------+-------------------------------------------------------------+
-| STR_GZIP        | Chaine de caractères à compresser/décompresser               |
-+-----------------+-------------------------------------------------------------+
 
 Protocoles réseaux
 ------------------
@@ -452,25 +430,18 @@ L'exemple suivant effectue les actions suivantes:
 HTTP
 ~~~~
 
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_HTTP.tsx``
+.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/02_Send_HTTP_CURL.tsx``
 
 Ce test réutilisable permet d'envoyer une requête HTTP en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
 
 Paramètre(s) à configurer pour définir la destination:
-
-+-----------------+----------------------------------------------------------+
-|Paramètres       |   Description                                            |
-+-----------------+----------------------------------------------------------+
-| SERVERS         |  Liste des serveurs à contacter                          |
-+-----------------+----------------------------------------------------------+
-| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
-+-----------------+----------------------------------------------------------+
 
 Paramètre(s) pour configurer la requête HTTP à envoyer:
 
 +-----------------+---------------------------------+
 |Paramètres       |   Description                   |
++-----------------+---------------------------------+
+| HTTP_REQ_HOST   | Destination à charger URL       |
 +-----------------+---------------------------------+
 | HTTP_REQ_BODY   | Corps de la requête             |
 +-----------------+---------------------------------+
@@ -478,10 +449,6 @@ Paramètre(s) pour configurer la requête HTTP à envoyer:
 +-----------------+---------------------------------+
 | HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
 +-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appelée                     |
-+-----------------+---------------------------------+
-
-.. image:: /_static/images/examples/snippets_http_req.png
 
 Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
 
@@ -489,6 +456,10 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
 |Paramètres         |   Description                                      |
 +-------------------+----------------------------------------------------+
 | HTTP_RSP_BODY     | Corps de la réponse attendue.                      |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_BODY_JSON| Json attendu dans le corps de la réponse.          |
++-------------------+----------------------------------------------------+
+| HTTP_RSP_BODY_XML | XML attendu dans le corps de la réponse.           |
 +-------------------+----------------------------------------------------+
 | HTTP_RSP_CODE     | Le code HTTP attendue. 200 par défaut              |
 +-------------------+----------------------------------------------------+
@@ -505,117 +476,6 @@ Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de con
   L'utilisation des expressions régulières est possible pour vérifier ou enregistrer une valeur dans le corps de la réponse ou bien dans les entêtes.
   
   .. image:: /_static/images/examples/snippets_http_capture.png
-
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
-
-XML
-~~~
-
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_XML.tsx``
-
-Ce test réutilisable permet d'envoyer une requête HTTP avec du ``XML`` dans le corps de la requête.
-Il permet aussi de vérifier la réponse reçue avec plusieurs critères.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
-
-Paramètre(s) à configurer pour définir la destination:
-
-+-----------------+----------------------------------------------------------+
-|Paramètres       |   Description                                            |
-+-----------------+----------------------------------------------------------+
-| SERVERS         |  Liste des serveurs à contacter                          |
-+-----------------+----------------------------------------------------------+
-| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
-+-----------------+----------------------------------------------------------+
-
-Paramètre(s) pour configurer la requête HTTP à envoyer:
-
-+-----------------+---------------------------------+
-|Paramètres       |   Description                   |
-+-----------------+---------------------------------+
-| HTTP_REQ_BODY   | Corps de la requête             |
-+-----------------+---------------------------------+
-| HTTP_REQ_HEADERS| Liste des headers à ajouter     |
-+-----------------+---------------------------------+
-| HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
-+-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appelée                     |
-+-----------------+---------------------------------+
-
-Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
-
-+--------------------+----------------------------------------------------+
-|Paramètres          |   Description                                      |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_BODY      | Liste des xpaths à vérifier.                       |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_CODE      | Le code HTTP attendue. 200 par défaut              |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_HEADERS   | Liste des entêtes attendues                        |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_NAMESPACES| Liste des namespaces à prendre en compte           |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_PHRASE    | La phrase HTTP attendue. OK par défaut             |
-+--------------------+----------------------------------------------------+
-| HTTP_RSP_VERSION   | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
-+--------------------+----------------------------------------------------+
-
-.. warning:: Le test sera en erreur si la réponse ne contient pas de XML.
-
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
-
-
-JSON
-~~~~
-
-.. important:: Chemin d'accès du test réutilisable ``/Snippets/Protocols/01_Send_JSON.tsx``
-
-Ce test réutilisable permet d'envoyer une requête HTTP avec du JSON en vérifiant la réponse reçue.
-Il est à utiliser conjointement avec le test réutilisable ``/Snippets/Do/03_Initialize.tux`` qui permet de charger un environnement dans le cache.
-
-Paramètre(s) à configurer pour définir la destination:
-
-+-----------------+----------------------------------------------------------+
-|Paramètres       |   Description                                            |
-+-----------------+----------------------------------------------------------+
-| SERVERS         |  Liste des serveurs à contacter                          |
-+-----------------+----------------------------------------------------------+
-| TIMEOUT_CONNECT |  Durée max pour se connecter sur la machine distante     |
-+-----------------+----------------------------------------------------------+
-
-Paramètre(s) pour configurer la requête HTTP à envoyer:
-
-+-----------------+---------------------------------+
-|Paramètres       |   Description                   |
-+-----------------+---------------------------------+
-| HTTP_REQ_BODY   | Corps de la requête             |
-+-----------------+---------------------------------+
-| HTTP_REQ_HEADERS| Liste des headers à ajouter     |
-+-----------------+---------------------------------+
-| HTTP_REQ_METHOD | Methode HTTP (GET, POST, etc..) |
-+-----------------+---------------------------------+
-| HTTP_REQ_URI    | URI appelée                     |
-+-----------------+---------------------------------+
-
-
-Paramètre(s) pour configurer la réponse HTTP attendue (et qui permettra de considérer le test comme valide):
-
-+-------------------+----------------------------------------------------+
-|Paramètres         |   Description                                      |
-+-------------------+----------------------------------------------------+
-| HTTP_RSP_BODY     | Liste des json paths à vérifier.                   |
-+-------------------+----------------------------------------------------+
-| HTTP_RSP_CODE     | Le code HTTP attendue. 200 par défaut              |
-+-------------------+----------------------------------------------------+
-| HTTP_RSP_HEADERS  | Liste des entêtes attendues                        |
-+-------------------+----------------------------------------------------+
-| HTTP_RSP_PHRASE   | La phrase HTTP attendue. OK par défaut             |
-+-------------------+----------------------------------------------------+
-| HTTP_RSP_VERSION  | La version HTTP attendue. HTTP/1.[0|1] par défaut  |
-+-------------------+----------------------------------------------------+
-
-.. warning:: Le test sera en erreur si la réponse ne contient pas de JSON.
-
-.. note: Il est possible d'exécuter le test plusieurs fois en fournissant une liste de serveurs.
 
 Interface utilisateur
 ---------------------

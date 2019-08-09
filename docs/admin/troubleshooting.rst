@@ -7,7 +7,7 @@ Récupération des logs
 Serveur
 ~~~~~~~
 
-Les logs serveurs sont stockés sur ``[...]Var/Logs/``.
+Les logs serveurs sont stockés sur ``[...]/var/logs/``.
 Les logs sont configurés en mode ``INFO`` par défaut.
 Le niveau DEBUG peut être activé depuis le fichier ``settings.ini``.
 
@@ -63,7 +63,7 @@ Afficher la version du serveur?
 .. code-block:: bash
 
     ./extensiveautomation --version
-    Server version: 20.0.0
+    Server version: 21.0.0
 
 Quoi faire si ma connection au serveur ne fonctionne pas?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -77,7 +77,7 @@ Le 1er reflex à avoir est de se connecter sur le serveur en SSH et d'exécuter 
  - un parefeu bloquant le flux https (443)
 
 2. Si la connectivité réseau est bonne et que le serveur fonctionne (ou pas), il faut vérifier les logs.
-Le fichier est disponible dans le répertoire ``(...]Var/Logs/output.log``. Il faut rechercher les messages de type ``ERROR``
+Le fichier est disponible dans le répertoire ``[...]/var/logs/output.log``. Il faut rechercher les messages de type ``ERROR``
 
 Comment corriger l'erreur "hping3 n'est pas installé" ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

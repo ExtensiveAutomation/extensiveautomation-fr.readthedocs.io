@@ -20,28 +20,26 @@ La version se découpe en 3 chiffres (A.B.C)
 Arborescence du serveur
 -------------------
 
-L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``[...]/Var/``.
+L'ensemble des fichiers manipulés par le serveur sont stockés dans le répertoire ``[...]/var/``.
 
 ::
   
-  Build/
-  ServerEngine/
-  ServerControls/
-  ServerInterfaces/
-  ServerRepositories/
-  Libs/
-  TestCreatorLib
-  TestExecutorLib/
-  TestInterop/
-  Var/
-    SutAdapters/
-    Tests/
-    TestsResults/
-    Logs/
-    Backups/
-  
+  scripts/
+  serverengine/
+  servercontrols/
+  serverinterfaces/
+  serverrepositories/
+  libs/
+  testcreatorlib
+  testexecutorlib/
+  sutadapters/
+  var/
+    tests/
+    testsresult/
+    logs/
+    tasks/
 
-Les tests sont stockés dans le répertoire ``[...]/Var/Tests/``, ils sont organisés par identifiant de projet.
+Les tests sont stockés dans le répertoire ``[...]/var/tests/``, ils sont organisés par identifiant de projet.
 
 Modèle de données
 -------------------
@@ -102,7 +100,6 @@ Les tests sont au format ``XML``. Il existe plusieurs formats de tests:
         <properties>
             <descriptions>...</descriptions>
             <inputs-parameters>...</inputs-parameters>
-            <outputs-parameters>...</ outputs -parameters>
         </properties>
     </file>
 
@@ -184,7 +181,7 @@ Les tests sont au format ``XML``. Il existe plusieurs formats de tests:
 Stockage des résultats de tests
 -------------------------------
 
-Les résultats de tests sont stockés sur le serveur dans le répertoire ``/opt/xtc/current/Var/TestsResult``.
+Les résultats de tests sont stockés sur le serveur dans le répertoire ``[...]/var/testsresult``.
 
 Les résultats sont stockés:
  - par l'id des projets de test
@@ -199,7 +196,7 @@ Organisation des résultats:
         - Répertoire: <yyyy-mm-dd>
             - Répertoire: <yyyy-mm-dd_hh:mm:ss.testid.testname.username>
                 - Fichier: TESTPATH 
-                - Fichier: test.out
+                - Fichier: test.log
                 - Fichier: test.ini
                 - Fichier: <testname>_<replayid>.hdr
                 - Fichier: <testname>_<replayid>_<result>_<nbcomments>.trv
@@ -215,7 +212,7 @@ Organisation des résultats:
 Description des fichiers:
 
  - ``TESTPATH`` contient le chemin d'accès complet pour le résultat de test
- - ``test.out`` contient les logs interne du test, à utiliser pour débugger le framework de test
+ - ``test.log`` contient les logs interne du test, à utiliser pour débugger le framework de test
  - ``test.ini`` contient des paramètres spécifiques au test
  - ``<testname>_<replayid>.hdr`` réprésente l'entête du résultat de test
  - ``<testname>_<replayid>_<result>_<nbcomments>.trv`` contient l'ensemble des évènements générés pendant l'exécution du tests
@@ -302,7 +299,7 @@ Sens de communications disponibles:
 Les logs serveurs
 ----------------
 
-Les logs du serveur sont localisés dans le répertoire ``[...]/Var/logs/``.
+Les logs du serveur sont localisés dans le répertoire ``[...]/var/logs/``.
 
 +--------------------+---------------------------------------------------------+
 | output.log         | logs serveurs                                           |
