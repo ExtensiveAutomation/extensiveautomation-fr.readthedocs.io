@@ -6,6 +6,23 @@ Version courante
 
 .. note::
 
+ **Version 21.1.0 disponible depuis le 25/08/2019**
+
+ - Désactivation de la notification par email sur Windows
+ - Le chiffrement des variables dans la base de donnée est supprimée
+ - Le grain de sel est maintenant généré durant la création de la base de donnée
+ - Création automatique des répertoires du projets au démarrage du serveur
+ - Nettoyage du modèle de la table utilisateurs
+ - Les utilisateurs, projets et variables par défauts sont maintenant déclarés dans des fichiers json
+ - Support de l'authentification LDAP pour les utilisateurs
+
+Une release notes détaillée est disponible dans le paquet du serveur.
+
+Versions précédentes
+-------------------
+
+..
+
  **Version 21.0.0 disponible depuis le 10/08/2019**
 
  - Support complet de Python3 côté serveur
@@ -16,11 +33,6 @@ Version courante
  - Nouvelle image docker du serveur basée sur Python3
  - Nouveau mode d'installation du serveur à travers pypi
  - Nouveau mode d'installation des plugins à travers pypi
-
-Une release notes détaillée est disponible dans le paquet du serveur.
-
-Versions précédentes
--------------------
 
 ..
 
