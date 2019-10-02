@@ -6,16 +6,24 @@ Version courante
 
 .. note::
 
- **Version 21.2.0 disponible depuis le 20/09/2019**
+ **Version 21.3.0 disponible depuis le 02/10/2019**
  
- - Quelques bugs corrigés au niveau de l'API REST
- - Support PEP8 python
- - Nouvelle fonction pour retourner l'ensemble des tâches depuis l'API
+ - Nouvelle fonction dans l'api REST permettant de suivre l'exécution d'un test
+ - Tests d'intégration pour l'intégration continue dans GitHub
+ - Un utilisateur de type Administrator a accès à tous les projets par défaut
 
 Une release notes détaillée est disponible dans le paquet du serveur.
 
 Versions précédentes
 -------------------
+
+..
+
+ **Version 21.2.0 disponible depuis le 20/09/2019**
+ 
+ - Quelques bugs corrigés au niveau de l'API REST
+ - Support PEP8 python
+ - Nouvelle fonction pour retourner l'ensemble des tâches depuis l'API
 
 ..
 
