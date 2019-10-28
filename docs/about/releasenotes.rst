@@ -6,16 +6,25 @@ Version courante
 
 .. note::
 
- **Version 21.3.0 disponible depuis le 02/10/2019**
+ **Version 21.4.0 disponible depuis le 28/10/2019**
  
- - Nouvelle fonction dans l'api REST permettant de suivre l'exécution d'un test
- - Tests d'intégration pour l'intégration continue dans GitHub
- - Un utilisateur de type Administrator a accès à tous les projets par défaut
+ - Framework de test: durée d'exécution des taches ajouté dans les évènements bas niveau
+ - Quelques améliorations au niveaux des messages d'erreur pour l'API REST
+ - Nouveau module python pour la gestion des variables
+ - Quelques bugs corrigés
 
 Une release notes détaillée est disponible dans le paquet du serveur.
 
 Versions précédentes
 -------------------
+
+..
+
+ **Version 21.3.0 disponible depuis le 02/10/2019**
+ 
+ - Nouvelle fonction dans l'api REST permettant de suivre l'exécution d'un test
+ - Tests d'intégration pour l'intégration continue dans GitHub
+ - Un utilisateur de type Administrator a accès à tous les projets par défaut
 
 ..
 
